@@ -1,0 +1,50 @@
+services:
+  app:
+    hostname: civicrm
+    container_name: civicrm
+    image: civicrm/civicrm:latest
+    ports:
+      - 8760:80 # CiviCRM will be available on port 8760.
+    restart: unless-stopped
+    volumes:
+      - private:/var/www/html/private
+      - public:/var/www/html/public
+      - ext:/var/www/html/ext
+    environment:
+      CIVICRM_DB_HOST: db
+      CIVICRM_DB_PORT: 3306
+      CIVICRM_DB_NAME: civicrm
+      CIVICRM_DB_USER: civicrm
+      CIVICRM_DB_PASSWORD: civicrm
+      CIVICRM_UF_BASEURL: https://{{ app_fqdn }}
+    depends_on:
+      db:
+
+    networks:
+      - civicrm
+      - caddy
+
+  db:
+    hostname: db
+    container_name: civicrm_db
+    image: mariadb:10.11
+    restart: unless-stopped
+    volumes:
+      - db:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: civicrm
+      MYSQL_DATABASE: civicrm
+      MYSQL_USER: civicrm
+      MYSQL_PASSWORD: civicrm
+    networks:
+      - civicrm
+volumes:
+  private:
+  public:
+  ext:
+  db:
+
+networks:
+  caddy:
+    external: true
+  civicrm:

@@ -1,0 +1,27 @@
+---
+- name: Create dir for civicrm
+  ansible.builtin.file:
+    path: "/home/{{  ansible_user }}/civicrm"
+    state: directory
+    owner: "{{  ansible_user }}"
+    mode: "0775"
+
+- name: Template civicrm docker compose to server
+  ansible.builtin.template:
+    src: "templates/civicrm/docker-compose.yml.jinja"
+    dest: "/home/{{ ansible_user }}/civicrm/docker-compose.yml"
+    mode: "0775"
+
+- name: Deploying civicrm
+  community.docker.docker_compose_v2:
+    project_src: "/home/{{ ansible_user }}/civicrm/"
+    state: present
+
+# - name: Pause for 1 min
+#   ansible.builtin.pause:
+#     minutes: 1
+
+- name: Install civicrm
+  ansible.builtin.shell: |
+    docker exec -it -u www-data -e CIVICRM_ADMIN_USER=admin -e CIVICRM_ADMIN_PASS={{ CIVICRM_PW.value }} civicrm civicrm-docker-install
+  

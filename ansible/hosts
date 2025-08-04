@@ -1,0 +1,6 @@
+[servers]
+server ansible_host=civicrmanalyse.netbird.cloud
+
+[all:vars]
+ansible_user=correlaid
+    

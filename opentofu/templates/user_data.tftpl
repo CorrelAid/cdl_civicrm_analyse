@@ -1,0 +1,139 @@
+#cloud-config
+
+###########################################
+# BASIC SYSTEM CONFIGURATION
+###########################################
+# Set system locale, timezone and hostname
+locale: en_US.UTF-8
+timezone: Europe/Berlin
+hostname: ${hostname}
+
+# Enable automatic package management
+package_update: true
+package_upgrade: true
+package_reboot_if_required: false
+manage_etc_hosts: true
+
+
+###########################################
+# PACKAGE INSTALLATION
+###########################################
+packages:
+  - apt-transport-https
+  - ca-certificates
+  - curl
+  - gnupg
+  - gnupg-agent
+  - software-properties-common
+  - fail2ban
+  - python3-pip
+
+###########################################
+# USER MANAGEMENT
+###########################################
+users:
+  - default
+  - name: ${user}
+    groups: sudo,docker
+    sudo: "ALL=(ALL) NOPASSWD:ALL"
+    lock_passwd: true
+    shell: /bin/bash
+    ssh_authorized_keys:
+      - "${ssh_key}"
+
+###########################################
+# SYSTEM FILES CONFIGURATION
+###########################################
+
+write_files:
+    - path: /etc/apt/apt.conf.d/20auto-upgrades
+      content: |
+        APT::Periodic::Update-Package-Lists "1";
+        APT::Periodic::Download-Upgradeable-Packages "1";
+        APT::Periodic::AutocleanInterval "1";
+        APT::Periodic::Unattended-Upgrade "1";                  
+        APT::Periodic::Unattended-Upgrade::Automatic-Reboot "false";
+
+    - path: /etc/systemd/system/auto_snapshot.service
+      permissions: "0775"
+      owner: root:root
+      content: |
+        [Unit]
+        Description=Create Snapshot of VPS
+        After=docker.service
+        Requires=docker.service
+
+        [Service]
+        ExecStart=/bin/bash -c "if docker ps -a --filter 'name=do-snapshot' --format '{{.Names}}' | grep -q 'do-snapshot'; then docker start do-snapshot; else docker run -d --name do-snapshot -e DO_TOKEN=${do_token} jtackaberry/do-snapshot -s 1d -r ${do_region} -k 1w:1w -k 1m:1m -t ${auto_snapshot_tag} --verbose; fi"
+
+    - path: /etc/systemd/system/auto_snapshot.timer
+      permissions: "0775"
+      owner: root:root
+      content: |
+        [Unit]
+        Description=Run Snapshot Creation every day
+
+        [Timer]
+        OnCalendar=*-*-* 03:30:00
+        Persistent=true
+
+        OnBootSec=120
+
+        [Install]
+        WantedBy=timers.target
+
+
+###########################################
+# SYSTEM INITIALIZATION COMMANDS
+###########################################
+
+runcmd:
+  # Setup netbird
+  - curl -sSL https://pkgs.netbird.io/debian/public.key | gpg --dearmor --output /usr/share/keyrings/netbird-archive-keyring.gpg
+  - echo "deb [signed-by=/usr/share/keyrings/netbird-archive-keyring.gpg] https://pkgs.netbird.io/debian stable main" | sudo tee /etc/apt/sources.list.d/netbird.list
+  - sudo apt-get update
+  - sudo apt-get install -y netbird
+  - sudo netbird up --setup-key ${setup_key} --hostname ${hostname}
+
+  # Add Docker GPG key and repository
+  - echo "Creating /etc/apt/keyrings directory" && logger "Keyrings directory created"
+  - install -m 0755 -d /etc/apt/keyrings
+  - echo "Adding Docker GPG key" && logger "Docker GPG key added"
+  - curl -fsSL --insecure https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+  - chmod a+r /etc/apt/keyrings/docker.gpg
+  - echo "Adding Docker repository" && logger "Docker repository added"
+  - echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+  # Update package lists and install Docker packages
+  - echo "Updating package lists" && logger "Package lists updated"
+  - apt-get update && logger "Package update completed"
+  - echo "Installing Docker packages" && logger "Docker packages installation started"
+  - apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin && logger "Docker packages installed"
+  - pip3 install requests docker docker-compose
+
+  # Restart and enable Docker service
+  - echo "Restarting Docker service" && logger "Docker service restarted"
+  - systemctl restart docker
+  - systemctl enable docker
+
+  # Harden SSH
+  - sed -i '/PermitRootLogin/d' /etc/ssh/sshd_config
+  - echo "PermitRootLogin no" >> /etc/ssh/sshd_config
+  - sed -i '/AllowUsers/d' /etc/ssh/sshd_config
+  - echo "AllowUsers ${user}" >> /etc/ssh/sshd_config
+  - sed -i '/PasswordAuthentication/d' /etc/ssh/sshd_config
+  - echo "PasswordAuthentication no" >> /etc/ssh/sshd_config
+  - systemctl restart sshd
+
+  # start fail2ban
+  - systemctl start fail2ban
+  - systemctl enable fail2ban
+
+  # Configure snapshot service
+  - systemctl daemon-reload
+  - systemctl enable auto_snapshot.service
+  - systemctl enable auto_snapshot.timer
+  - systemctl start auto_snapshot.service
+  - systemctl start auto_snapshot.timer
+
+final_message: "The system is ready, after $UPTIME seconds"

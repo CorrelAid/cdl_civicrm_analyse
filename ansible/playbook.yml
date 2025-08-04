@@ -1,0 +1,15 @@
+---
+- name: Main Playbook
+  hosts: all
+  gather_facts: true
+  become: false
+  vars_files:
+    - group_vars/group_vars.yml
+    - group_vars/unmanaged.yml
+
+
+  tasks:
+    # - name: Deploy Caddy
+    #   ansible.builtin.include_tasks: "tasks/deploy_caddy.yml"
+    - name: Deploy Civicrm
+      ansible.builtin.include_tasks: "tasks/deploy_civicrm.yml"

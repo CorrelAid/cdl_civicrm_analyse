@@ -1,0 +1,22 @@
+services:
+  caddy:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: caddy
+    hostname: caddy
+    restart: unless-stopped
+    ports:
+            - 80:80
+            - 443:443
+            - 2019:2019
+    volumes:
+            - /home/{{  ansible_user }}/caddy/Caddyfile:/etc/caddy/Caddyfile
+            - /home/{{  ansible_user }}/caddy/data:/data 
+            - /home/{{  ansible_user }}/caddy/config:/config 
+    networks:
+            - caddy
+            
+networks:
+  caddy:
+        external: true

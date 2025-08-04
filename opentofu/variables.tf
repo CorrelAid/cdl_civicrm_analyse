@@ -1,0 +1,36 @@
+variable "infisical_client_secret" {
+  type = string
+}
+
+variable "project_settings" {
+  type = map(any)
+  default = {
+    name   = "civicrmanalyse"
+    region = "fra1"
+  }
+}
+
+variable "vps" {
+  type = map(any)
+  default = {
+    size              = "s-2vcpu-2gb"
+    image             = "ubuntu-24-04-x64"
+    user              = "correlaid"
+    auto_snapshot_tag = "civicrm_auto_snapshot"
+  }
+
+}
+
+variable "dns" {
+  type = map(any)
+  default = {
+    zone      = "correlaid.org"
+    subdomain = "civicrm"
+  }
+}
+
+variable "public_ssh_key" {
+  type    = string
+  default = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIeERanBBo5ijAyt989TCxZj3AnADzI2uIf3gF+m1W+d correlaid"
+
+}
