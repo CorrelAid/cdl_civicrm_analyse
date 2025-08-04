@@ -24,4 +24,3 @@
 - name: Install civicrm
   ansible.builtin.shell: |
     docker exec -it -u www-data -e CIVICRM_ADMIN_USER=admin -e CIVICRM_ADMIN_PASS={{ CIVICRM_PW.value }} civicrm civicrm-docker-install
-  
