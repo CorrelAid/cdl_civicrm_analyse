@@ -13,6 +13,7 @@ dependencies = [
     "requests>=2.32.4",
     "python_tools",
     "python-dotenv>=1.1.1",
+    "faker>=37.5.3",
 ]
 
 [tool.uv.sources]
