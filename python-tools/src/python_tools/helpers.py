@@ -1,8 +1,5 @@
 import yaml
 from infisical_sdk import InfisicalSDKClient
-import os
-from dotenv import load_dotenv
-load_dotenv()
 
 def get_yaml_var(var, file_path):
     with open(file_path, "r") as stream:
@@ -11,13 +8,11 @@ def get_yaml_var(var, file_path):
     return var
 
 
-def create_infisical_client():
-    secret = os.getenv("TF_VAR_infisical_client_secret")
-    assert secret is not None
+def create_infisical_client(client_secret):
     client = InfisicalSDKClient(host="https://app.infisical.com")
     client.auth.universal_auth.login(
         "5fd72230-4272-4738-851f-17c1f83b0e31",
-        os.getenv("TF_VAR_infisical_client_secret"),
+        client_secret,
     )
     return client
 
