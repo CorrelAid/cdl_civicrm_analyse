@@ -26,12 +26,12 @@ resource "digitalocean_droplet" "main" {
   size   = var.vps.size
   tags   = [var.vps.auto_snapshot_tag]
   user_data = templatefile("templates/user_data.tftpl", {
-    ssh_key   = var.public_ssh_key,
-    user      = var.vps.user,
-    setup_key = data.infisical_secrets.main.secrets["CDL_CIVICRM_ANALYSE_NETBIRD_SETUP"].value,
-    hostname  = var.project_settings.name
-    do_region = var.project_settings.region
-    do_token = data.infisical_secrets.main.secrets["DO_TOKEN"].value
+    ssh_key           = var.public_ssh_key,
+    user              = var.vps.user,
+    setup_key         = data.infisical_secrets.main.secrets["CDL_CIVICRM_ANALYSE_NETBIRD_SETUP"].value,
+    hostname          = var.project_settings.name
+    do_region         = var.project_settings.region
+    do_token          = data.infisical_secrets.main.secrets["DO_TOKEN"].value
     auto_snapshot_tag = var.vps.auto_snapshot_tag
     }
   )
@@ -40,6 +40,10 @@ resource "digitalocean_droplet" "main" {
       user_data
     ]
   }
+}
+
+data "digitalocean_vpc" "main" {
+  name = "default-${var.project_settings.region}"
 }
 
 resource "digitalocean_firewall" "main" {
@@ -58,10 +62,15 @@ resource "digitalocean_firewall" "main" {
     port_range       = "443"
     source_addresses = ["0.0.0.0/0", "::/0"]
   }
-   inbound_rule {
+  inbound_rule {
+    protocol         = "icmp"
+    source_addresses = [data.digitalocean_vpc.main.ip_range]
+  }
+
+  inbound_rule {
     protocol         = "tcp"
-    port_range       = "22"
-    source_addresses = ["0.0.0.0/0", "::/0"]
+    port_range       = "1-65535"
+    source_addresses = [data.digitalocean_vpc.main.ip_range]
   }
 
   outbound_rule {
@@ -124,11 +133,11 @@ resource "local_file" "group_vars" {
   filename = "../ansible/group_vars/group_vars.yml"
   content = templatefile("templates/group_vars.tftpl",
     {
-      subdomain  = var.dns.subdomain
-      domain              = var.dns.zone
-      do_region           = var.project_settings.region
-      s3_endpoint  = digitalocean_spaces_bucket.backup.endpoint
-      s3_bucket    = digitalocean_spaces_bucket.backup.name
+      subdomain   = var.dns.subdomain
+      domain      = var.dns.zone
+      do_region   = var.project_settings.region
+      s3_endpoint = digitalocean_spaces_bucket.backup.endpoint
+      s3_bucket   = digitalocean_spaces_bucket.backup.name
     }
   )
 }

@@ -17,10 +17,23 @@
     project_src: "/home/{{ ansible_user }}/civicrm/"
     state: present
 
-# - name: Pause for 1 min
-#   ansible.builtin.pause:
-#     minutes: 1
+- name: Pause for 1 min
+  ansible.builtin.pause:
+    minutes: 1
 
-- name: Install civicrm
-  ansible.builtin.shell: |
-    docker exec -it -u www-data -e CIVICRM_ADMIN_USER=admin -e CIVICRM_ADMIN_PASS={{ CIVICRM_PW.value }} civicrm civicrm-docker-install
+- name: Check if the flag file exists
+  ansible.builtin.stat:
+    path: "/home/{{ ansible_user }}/civicrm/civicrm-installed"
+  register: civicrm_flag_file_check
+
+- name: Install the schema sync extension
+  when: not civicrm_flag_file_check.stat.exists
+  block:
+    - name: Install civicrm
+      ansible.builtin.shell: |
+        docker exec -it -u www-data -e CIVICRM_ADMIN_USER=admin -e CIVICRM_ADMIN_PASS={{ CIVICRM_PW.value }} civicrm civicrm-docker-install
+    - name: Create flag file when succeeded
+      ansible.builtin.file:
+        path: "/home/{{ ansible_user }}/civicrm/civicrm-installed"
+        state: touch
+        mode: "0644"

@@ -4,7 +4,7 @@ services:
     container_name: civicrm
     image: civicrm/civicrm:latest
     ports:
-      - 8760:80 # CiviCRM will be available on port 8760.
+      - 8760:80 
     restart: unless-stopped
     volumes:
       - private:/var/www/html/private
@@ -19,6 +19,7 @@ services:
       CIVICRM_UF_BASEURL: https://{{ app_fqdn }}
     depends_on:
       db:
+       condition: service_healthy
 
     networks:
       - civicrm
@@ -29,6 +30,8 @@ services:
     container_name: civicrm_db
     image: mariadb:10.11
     restart: unless-stopped
+    ports:
+      - 3306:3306
     volumes:
       - db:/var/lib/mysql
     environment:
@@ -38,6 +41,12 @@ services:
       MYSQL_PASSWORD: civicrm
     networks:
       - civicrm
+    healthcheck:
+      test: ["CMD", "mysqladmin", "--silent", "--connect-timeout=5", "ping", "-h", "127.0.0.1", "-ucivicrm", "-pcivicrm"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
 volumes:
   private:
   public:
