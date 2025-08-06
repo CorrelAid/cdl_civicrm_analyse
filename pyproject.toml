@@ -8,4 +8,15 @@ dependencies = [
     "ansible>=11.8.0",
     "ansible-lint>=25.7.0",
     "infisicalsdk>=1.0.9",
+    "jupyter>=1.1.1",
+    "polars>=1.32.0",
+    "requests>=2.32.4",
+    "python_tools",
+    "python-dotenv>=1.1.1",
 ]
+
+[tool.uv.sources]
+python_tools = { workspace = true }
+
+[tool.uv.workspace]
+members = ["python-tools"]
