@@ -117,6 +117,14 @@ resource "hetznerdns_record" "main" {
   type    = "A"
 }
 
+resource "hetznerdns_record" "n8n" {
+  zone_id = data.hetznerdns_zone.dns_zone.id
+  name    = var.dns.n8n_subdomain
+  value   = digitalocean_droplet.main.ipv4_address
+  type    = "A"
+  ttl     = 60
+}
+
 #####################
 
 # writing data to files for ansible
@@ -133,11 +141,12 @@ resource "local_file" "group_vars" {
   filename = "../ansible/group_vars/group_vars.yml"
   content = templatefile("templates/group_vars.tftpl",
     {
-      subdomain   = var.dns.subdomain
-      domain      = var.dns.zone
-      do_region   = var.project_settings.region
-      s3_endpoint = digitalocean_spaces_bucket.backup.endpoint
-      s3_bucket   = digitalocean_spaces_bucket.backup.name
+      subdomain     = var.dns.subdomain
+      n8n_subdomain = var.dns.n8n_subdomain
+      domain        = var.dns.zone
+      do_region     = var.project_settings.region
+      s3_endpoint   = digitalocean_spaces_bucket.backup.endpoint
+      s3_bucket     = digitalocean_spaces_bucket.backup.name
     }
   )
 }

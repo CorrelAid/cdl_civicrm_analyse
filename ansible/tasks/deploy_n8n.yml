@@ -1,0 +1,24 @@
+---
+- name: Create dir for n8n
+  ansible.builtin.file:
+    path: "/home/{{  ansible_user }}/n8n"
+    state: directory
+    owner: "{{  ansible_user }}"
+    mode: "0775"
+
+- name: Template n8n docker compose to server
+  ansible.builtin.template:
+    src: "templates/n8n/docker-compose.yml.jinja"
+    dest: "/home/{{ ansible_user }}/n8n/docker-compose.yml"
+    mode: "0775"
+
+- name: Template n8n entrypoint to server
+  ansible.builtin.template:
+    src: "templates/n8n/entrypoint.sh.jinja"
+    dest: "/home/{{ ansible_user }}/n8n/entrypoint.sh"
+    mode: a+x
+
+- name: Deploying n8n
+  community.docker.docker_compose_v2:
+    project_src: "/home/{{ ansible_user }}/n8n/"
+    state: present

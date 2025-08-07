@@ -24,8 +24,9 @@ variable "vps" {
 variable "dns" {
   type = map(any)
   default = {
-    zone      = "correlaid.org"
-    subdomain = "civicrm"
+    zone          = "correlaid.org"
+    subdomain     = "civicrm"
+    n8n_subdomain = "n8n"
   }
 }
 

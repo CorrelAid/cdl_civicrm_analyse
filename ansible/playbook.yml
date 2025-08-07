@@ -11,5 +11,7 @@
   tasks:
     # - name: Deploy Caddy
     #   ansible.builtin.include_tasks: "tasks/deploy_caddy.yml"
-    - name: Deploy Civicrm
-      ansible.builtin.include_tasks: "tasks/deploy_civicrm.yml"
+    # - name: Deploy Civicrm
+    #   ansible.builtin.include_tasks: "tasks/deploy_civicrm.yml"
+    - name: Deploy n8n
+      ansible.builtin.include_tasks: "tasks/deploy_n8n.yml"
