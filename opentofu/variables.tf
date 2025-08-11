@@ -13,7 +13,7 @@ variable "project_settings" {
 variable "vps" {
   type = map(any)
   default = {
-    size              = "s-2vcpu-2gb"
+    size              = "s-4vcpu-8gb"
     image             = "ubuntu-24-04-x64"
     user              = "correlaid"
     auto_snapshot_tag = "civicrm_auto_snapshot"
@@ -24,9 +24,10 @@ variable "vps" {
 variable "dns" {
   type = map(any)
   default = {
-    zone          = "correlaid.org"
-    subdomain     = "civicrm"
-    n8n_subdomain = "n8n"
+    zone             = "correlaid.org"
+    subdomain        = "civicrm"
+    n8n_subdomain    = "n8n"
+    kestra_subdomain = "kestra"
   }
 }
 

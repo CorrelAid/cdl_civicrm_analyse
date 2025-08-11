@@ -1,0 +1,64 @@
+services:
+  postgres:
+    image: postgres
+    hostname: kestra-postgres
+    container_name: kestra-postgres
+    restart: unless-stopped
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+     - kestra
+    environment:
+      POSTGRES_DB: kestra
+      POSTGRES_USER: kestra
+      POSTGRES_PASSWORD: k3str4
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+
+  kestra:
+    image: kestra/kestra:latest
+    pull_policy: always
+    user: "root"
+    hostname: kestra
+    container_name: kestra
+    command: server standalone --config /etc/config/application.yaml
+    volumes:
+      - kestra-data:/app/storage
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /tmp/kestra-wd:/tmp/kestra-wd
+      - $PWD/application.yaml:/etc/config/application.yaml
+    ports:
+      - "8080:8080"
+      - 8081
+    environment:
+      SECRET_CIVICRM_API_KEY: {{ CIVICRM_API_KEY.value | b64encode }}
+    restart: unless-stopped
+    networks:
+     - kestra
+     - caddy
+    deploy:
+      # Kestra standalone server needs at least 4GiB of memory and 2vCPU to run correctly
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 4096m
+        reservations:
+          cpus: '2.0'
+          memory: 4096m
+    depends_on:
+      postgres:
+        condition: service_started
+
+volumes:
+  postgres-data:
+    driver: local
+  kestra-data:
+    driver: local
+
+networks:
+  kestra:
+  caddy:
+    external: true

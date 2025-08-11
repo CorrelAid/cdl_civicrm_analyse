@@ -1,0 +1,27 @@
+id: civicrm_api_count
+namespace: company.team
+tasks:
+  - id: request
+    type: io.kestra.plugin.core.http.Request
+    uri: http://civicrm.correlaid.org/civicrm/ajax/api4/Contact/get
+    headers:
+      X-Civi-Auth: Bearer {{ secret('CIVICRM_API_KEY')}}
+    method: POST
+    contentType: application/x-www-form-urlencoded
+    body: |
+      params=%7B%22select%22%3A%5B%22id%22%5D%2C%22where%22%3A%5B%5B%22contact_type%22%2C%22%3D%22%2C%22Individual%22%5D%5D%7D
+  - id: count_python
+    type: io.kestra.plugin.scripts.python.Script
+    taskRunner:
+      type: io.kestra.plugin.scripts.runner.docker.Docker
+    containerImage: python:3.11-slim
+    beforeCommands:
+      - pip install polars kestra
+    script: |
+      import polars as pl
+      from kestra import Kestra
+
+      data = {{ outputs.request.body | jq('.values') | first }}
+      df = pl.from_dicts(data)
+      result = len(df)
+      Kestra.outputs({'length':result})

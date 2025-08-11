@@ -15,4 +15,15 @@ N8N_ADMIN_PW:
   universal_auth_client_secret=universal_auth_client_secret,
   project_id=project_id, path=path, secret_name='N8N_ADMIN_PW', env_slug=env_slug) }}"
 
+KESTRA_ADMIN_PW:
+  "{{ lookup('infisical.vault.read_secrets', universal_auth_client_id=universal_auth_client_id,
+  universal_auth_client_secret=universal_auth_client_secret,
+  project_id=project_id, path=path, secret_name='KESTRA_ADMIN_PW', env_slug=env_slug) }}"
+
+CIVICRM_API_KEY:
+  "{{ lookup('infisical.vault.read_secrets', universal_auth_client_id=universal_auth_client_id,
+  universal_auth_client_secret=universal_auth_client_secret,
+  project_id=project_id, path=path, secret_name='SECRET_CIVICRM_API_KEY', env_slug=env_slug) }}"
+
 n8n_admin_email: info@correlaid.org
+kestra_admin_email: info@correlaid.org

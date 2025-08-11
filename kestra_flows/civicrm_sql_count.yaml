@@ -1,0 +1,13 @@
+id: civicrm_sql_count
+namespace: company.team
+description: Counting contacts with application database
+tasks:
+  - id: query
+    type: io.kestra.plugin.jdbc.mysql.Query
+    url: jdbc:mysql://10.114.0.12:3306/civicrm
+    username: civicrm
+    password: civicrm
+    sql: |
+      SELECT COUNT(*) AS total_contacts
+      FROM civicrm_contact
+    fetchType: FETCH_ONE

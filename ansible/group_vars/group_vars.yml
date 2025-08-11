@@ -3,6 +3,7 @@ app_fqdn: civicrm.correlaid.org
 n8n_fqdn: n8n.correlaid.org
 domain: correlaid.org
 n8n_subdomain: n8n
+kestra_fqdn: kestra.correlaid.org
 do_region: fra1
 s3_endpoint: fra1.digitaloceanspaces.com
 s3_bucket: civicrmanalyse-db-backups-do-not-delete

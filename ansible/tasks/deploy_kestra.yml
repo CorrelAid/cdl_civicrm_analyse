@@ -1,0 +1,24 @@
+---
+- name: Create dir for kestra
+  ansible.builtin.file:
+    path: "/home/{{  ansible_user }}/kestra"
+    state: directory
+    owner: "{{  ansible_user }}"
+    mode: "0775"
+
+- name: Template kestra docker compose to server
+  ansible.builtin.template:
+    src: "templates/kestra/docker-compose.yml.jinja"
+    dest: "/home/{{ ansible_user }}/kestra/docker-compose.yml"
+    mode: "0775"
+
+- name: Template kestra application.yaml to server
+  ansible.builtin.template:
+    src: "templates/kestra/application.yaml.jinja"
+    dest: "/home/{{ ansible_user }}/kestra/application.yaml"
+    mode: "0775"
+
+- name: Deploying kestra
+  community.docker.docker_compose_v2:
+    project_src: "/home/{{ ansible_user }}/kestra/"
+    state: present
