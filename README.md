@@ -74,3 +74,33 @@ uv run gen_contacts.py
 uv run gen_contributions.py
 ```
 
+## N8N: Data Warehouse Flow Option 
+- Go to CiviCRM api explorer and add required where and select parameters (select can include fields from nested tables like email or gender)
+- Create a table in UI database manager (create columns for selected fields, can be named differently)
+- Create Flow in N8N with api request, edit fields node, split out node and postgres node
+
+## Kestra: Data Warehouse Flow Option 
+- Go to CiviCRM api explorer and add required where and select parameters (select can include fields from nested tables like email or gender)
+- copy body string to request in kestra
+- use polars to create dataframe and save to data warehouse
+
+Field selection happens with the API, potential joining and processing can be done with polars
+
+
+## Coolify
+- Deploy Metabase, Kestra and database via GUI
+
+## Metabase Deployment
+- Metabase Cloud: https://www.metabase.com/pricing/
+- Elestio: https://elest.io/open-source/metabase
+
+## Data Warehouse 
+
+- UI management (create tables etc.): Neon, Supabase
+- serverless/file-based/in-memory database makes sense because db is not queried often: https://neon.com (can be deployed in the eu/germany)
+- Alternatives: 
+    - https://www.scaleway.com/en/serverless-sql-database/
+    - https://neon.com
+    - https://supabase.com/
+    - https://elest.io/open-source/postgresql
+

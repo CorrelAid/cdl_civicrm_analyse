@@ -25,5 +25,16 @@ CIVICRM_API_KEY:
   universal_auth_client_secret=universal_auth_client_secret,
   project_id=project_id, path=path, secret_name='SECRET_CIVICRM_API_KEY', env_slug=env_slug) }}"
 
+CIVICRM_NEON_WAREHOUSE_HOST:
+  "{{ lookup('infisical.vault.read_secrets', universal_auth_client_id=universal_auth_client_id,
+  universal_auth_client_secret=universal_auth_client_secret,
+  project_id=project_id, path=path, secret_name='CIVICRM_NEON_WAREHOUSE_HOST', env_slug=env_slug) }}"
+
+CIVICRM_NEON_WAREHOUSE_PW:
+  "{{ lookup('infisical.vault.read_secrets', universal_auth_client_id=universal_auth_client_id,
+  universal_auth_client_secret=universal_auth_client_secret,
+  project_id=project_id, path=path, secret_name='CIVICRM_NEON_WAREHOUSE_PW', env_slug=env_slug) }}"
+
+
 n8n_admin_email: info@correlaid.org
 kestra_admin_email: info@correlaid.org

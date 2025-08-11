@@ -35,6 +35,8 @@ services:
       - 8081
     environment:
       SECRET_CIVICRM_API_KEY: {{ CIVICRM_API_KEY.value | b64encode }}
+      SECRET_CIVICRM_NEON_WAREHOUSE_HOST: {{ CIVICRM_NEON_WAREHOUSE_HOST.value | b64encode }}
+      SECRET_CIVICRM_NEON_WAREHOUSE_PW: {{ CIVICRM_NEON_WAREHOUSE_PW.value | b64encode }}
     restart: unless-stopped
     networks:
      - kestra

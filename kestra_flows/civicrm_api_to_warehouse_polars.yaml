@@ -1,0 +1,28 @@
+id: civicrm_api_to_warehouse_polars
+namespace: company.team
+
+tasks:
+  - id: request
+    type: io.kestra.plugin.core.http.Request
+    uri: http://civicrm.correlaid.org/civicrm/ajax/api4/Contact/get
+    headers:
+      X-Civi-Auth: Bearer {{ secret('CIVICRM_API_KEY')}}
+    method: POST
+    contentType: application/x-www-form-urlencoded
+    body: |
+      params=%7B%22select%22%3A%5B%22id%22%2C%22gender_id%3Aname%22%2C%22email_primary.email%22%5D%2C%22where%22%3A%5B%5B%22contact_type%22%2C%22%3D%22%2C%22Individual%22%5D%5D%7D
+
+  - id: count_python
+    type: io.kestra.plugin.scripts.python.Script
+    taskRunner:
+      type: io.kestra.plugin.scripts.runner.docker.Docker
+    containerImage: python:3.12-slim
+    beforeCommands:
+      - pip install polars adbc_driver_manager adbc-driver-postgresql pyarrow
+    script: |
+      import polars as pl
+      data = {{ outputs.request.body | jq('.values') | first }}
+      df = pl.from_dicts(data)
+      df.write_database(table_name="contacts",
+        connection="postgresql://neondb_owner:{{ secret('CIVICRM_NEON_WAREHOUSE_PW')}}@{{ secret('CIVICRM_NEON_WAREHOUSE_HOST')}}:5432/main",
+        engine="adbc", if_table_exists="replace")
