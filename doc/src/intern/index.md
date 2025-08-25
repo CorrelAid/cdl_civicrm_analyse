@@ -1,0 +1,1 @@
+Hier wird erklärt, was man innerhalb von CiviCRM für Möglichkeiten, hat Daten zu analysieren

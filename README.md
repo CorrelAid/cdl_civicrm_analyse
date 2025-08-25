@@ -74,6 +74,14 @@ uv run gen_contacts.py
 uv run gen_contributions.py
 ```
 
+### mdBook
+
+- Installation: https://rust-lang.github.io/mdBook/guide/installation.html
+    - Brew: https://formulae.brew.sh/formula/mdbook
+    - For arch-based: https://archlinux.org/packages/extra/x86_64/mdbook/
+
+- While in doc folder, run `mdbook init` 
+
 ## N8N: Data Warehouse Flow Option 
 - Go to CiviCRM api explorer and add required where and select parameters (select can include fields from nested tables like email or gender)
 - Create a table in UI database manager (create columns for selected fields, can be named differently)
