@@ -14,6 +14,12 @@ n_contributions = 3502
 fake = Faker("de_DE")
 Faker.seed(os.getenv('SEED'))
 
+valid_dt = [None, "Monthly Donor", "Past Donor", "One Time Donor"]
+
+dts = []
+for i in range(n_contacts):
+    dts.append(random.choice(valid_dt))
+
 
 contacts = {
     "Vorname" : [fake.first_name() for _ in range(n_contacts)],
@@ -26,7 +32,8 @@ contacts = {
     "Bundesland" : [fake.state() for _ in range(n_contacts)],
     "Geburtsdatum" : [fake.date_of_birth(minimum_age=18, maximum_age=96) for _ in range(n_contacts)],
     "Geschlecht" : [random.choices(["Weiblich", "Männlich", "Nichtbinär / Nonbinary", "Agender", "Keine Angabe"], [0.4, 0.4, 0.06, 0.02, 0.02])[0] for _ in range(n_contacts)],
-    "Externe ID" : contact_ids
+    "Externe ID" : contact_ids,
+    "Donor Type" : dts
 }
 
 # Create a Polars DataFrame
