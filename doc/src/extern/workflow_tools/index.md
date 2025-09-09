@@ -1,1 +1,0 @@
-Um den Transfer und potentiell die Verarbeitung 
