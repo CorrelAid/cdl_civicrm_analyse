@@ -8,6 +8,8 @@ on:
   # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
+    paths:
+      - doc/**
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -53,7 +55,7 @@ jobs:
           echo "$HOME/.cargo/bin" >> $GITHUB_PATH
       - name: Install mdBook
         run: cargo install --version ${MDBOOK_VERSION} mdbook
-        
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
