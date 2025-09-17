@@ -3,3 +3,17 @@ authors = ["jstet"]
 language = "en"
 src = "src"
 title = "CiviCRM Daten analysieren und visualisieren"
+
+[preprocessor.tagger]
+marker = "tags"
+split = ";"
+tag2posts_path = "tag2posts.json"
+post2tags_path = "post2tags.json"
+
+[output.html]
+additional-js = ["adds/tags.js"]
+additional-css = ["adds/tags.css", "adds/custom.css"]
+
+[output.html.fold]
+enable = true    # whether or not to enable section folding
+level = 1         # the depth to start folding
