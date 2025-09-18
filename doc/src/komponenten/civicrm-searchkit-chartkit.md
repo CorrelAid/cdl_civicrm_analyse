@@ -54,3 +54,22 @@ Wir arbeiten in unseren Beispielen mit einer einfachen Darstellung der Geschlech
 
 ## ChartKit
 
+Mit [ChartKit](https://lab.civicrm.org/extensions/chart_kit) kann man basierend auf SearchKit-Suchen einfache Grafiken wie Balken-, Linien- oder Tortendiagramme erstellen. 
+
+1. Suche in SearchKit anlegen oder bearbeiten
+2. im SearchKit Editor links Hinzufügen -> Diagramm
+3. im ChartKit Editor können verschiedene Visualisierungstypen über ein grafisches User Interface konfiguriert werden. Verwendet werden können die Spalten der Ergebnisse der SearchKit Suche.
+
+Für jede Suche können mehrere Visualisierungen erstellt werden.
+
+Chart Kit sollte bei neueren Versionen von CiviCRM vorinstalliert sein. Sonst wendet euch an euren Hosting-Dienstleister.
+
+#### Vorteile
+
+#### Nachteile
+
+#### Fazit
+
+
+![User Interface einer Suche in SearchKit. Das Dropdown "Hinzufügen" ist geöffnet und die Option "Diagramm" ist ausgewählt.](../images/chartkit.png)
+

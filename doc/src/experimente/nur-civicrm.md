@@ -1,0 +1,4 @@
+    - daten-orgnaisieren: CiviCRM organisiert Daten gut in seiner Datenbank 
+    - daten-auswerten: ihr verwendet SearchKit oder Reports um Daten auszuwerten
+    - daten-visualisieren: ChartKit oder Civisualize
+    - daten-kommunizieren: Export von AnaGrafiken aus ChartKit

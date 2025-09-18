@@ -7,8 +7,17 @@
 
 Man kann Metabase entweder selbst hosten, von einem IT-Dienstleister hosten lassen oder bestehende Hosting-Angebote nutzen:
 
-- Metabase Cloud: https://www.metabase.com/pricing/
-- Elestio: https://elest.io/open-source/metabase
+- [Metabase Cloud](https://www.metabase.com/pricing/)
+- [Elestio](https://elest.io/open-source/metabase])
+
+#### Vorteile
+
+#### Nachteile
+- Kosten für Hosting relativ hoch
+- in der Community Version können Farbpaletten nicht angepasst werden
+- erfordert Einarbeitung und Auseinandersetzung mit Datenkonzepten wie z.B. "Joins" (Zusammenführen von Tabellen). 
+
+#### Fazit 
 
 ## Apache Superset
 

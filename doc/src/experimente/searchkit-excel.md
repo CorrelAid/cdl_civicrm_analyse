@@ -2,13 +2,13 @@
 
 ## Überblick
 
-Idee: **SearchKit Suchen immer aktuell in Excel mithilfe von Power Query.**
+Idee: **SearchKit Suchergebnisse über die API mit Power Query in Excel laden - Datenvisualisierung und weitere Auswertung in Excel.**
 
 
 - 💾 Daten organisieren: CiviCRM
 - 🤓 Daten auswerten: SearchKit
 - 📊 Daten visualisieren: Excel
-- ⚙️ Schnittstellen & Tools: CiviCRM API, Microsoft Power Query
+- ⚙️ Schnittstellen & Tools: CiviCRM API, Microsoft Power Query[^note-powerquery]
 
 
 - ✅ Voraussetzungen
@@ -23,6 +23,7 @@ Idee: **SearchKit Suchen immer aktuell in Excel mithilfe von Power Query.**
     - Microsoft Excel Lizenzkosten
 
 
+[^note-powerquery]: Für die Einrichtung und Konfiguration ist die Desktop Version von Excel notwendig. Das Abrufen der Daten funktioniert dann auch unter Excel für das Web, wenn man die Datei hochgeladen hat.
 [^note]: Der Ansatz wurde getestet unter Microsoft Excel for Mac, Version 16.100.3 unter der Lizenz Microsoft 365.
 
 
