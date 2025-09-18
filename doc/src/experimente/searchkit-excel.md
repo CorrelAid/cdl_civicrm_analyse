@@ -9,8 +9,6 @@ Idee: **SearchKit Suchergebnisse über die API mit Power Query in Excel laden - 
 - 🤓 Daten auswerten: SearchKit
 - 📊 Daten visualisieren: Excel
 - ⚙️ Schnittstellen & Tools: CiviCRM API, Microsoft Power Query[^note-powerquery]
-
-
 - ✅ Voraussetzungen
     - CiviCRM API Zugang
     - Lizenz für *Microsoft Excel Desktop Version*[^note], optional für *Excel für das Web*

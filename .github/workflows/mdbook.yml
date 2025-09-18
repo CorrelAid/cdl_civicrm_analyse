@@ -53,9 +53,23 @@ jobs:
         run: |
           curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf -y | sh
           echo "$HOME/.cargo/bin" >> $GITHUB_PATH
-      - name: Install mdBook
-        run: cargo install --version ${MDBOOK_VERSION} mdbook --force
+      # Check if mdBook is already installed and the correct version
+      - name: Check mdBook version
+        id: check_mdbook
+        run: |
+          if command -v mdbook &> /dev/null && mdbook --version | grep -q "${MDBOOK_VERSION}"; then
+            echo "mdbook is already installed and the correct version."
+            echo "install_needed=false" >> $GITHUB_OUTPUT
+          else
+            echo "mdbook needs to be installed or updated."
+            echo "install_needed=true" >> $GITHUB_OUTPUT
+          fi
 
+      # Install mdBook only if needed
+      - name: Install mdBook
+        if: steps.check_mdbook.outputs.install_needed == 'true'
+        run: cargo install --version ${MDBOOK_VERSION} mdbook --force
+        
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
