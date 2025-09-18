@@ -2,8 +2,8 @@
 
 
 [Einführung](./einfuehrung.md)
-
-- [Ansätze und Use Cases](./experimente/index.md)
+[Datenlebenszyklus](./datenlebenszyklus.md)
+- [Use Cases und Ansätze](./experimente/index.md)
     - [Use Case: Spenderübergänge]()
     - [Search Kit + Excel](./experimente/searchkit-excel.md)
     - [Search Kit + X]()

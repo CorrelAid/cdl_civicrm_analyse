@@ -11,6 +11,11 @@ Man kann Metabase entweder selbst hosten, von einem IT-Dienstleister hosten lass
 - [Elestio](https://elest.io/open-source/metabase])
 
 #### Vorteile
+- ermöglicht eigenständige Exploration von Daten
+- zahlreiche Visualisierungstypen und vielfältige Analysemöglichkeiten
+- zahlreiche Optionen zur Kommunikation von Ergebnissen: automatsierte Email, Export als Bilddatei oder PDF, Teilen über öffentlichen Link, Einbettung von Dashboards und Grafiken in Website (s.u.)
+
+
 
 #### Nachteile
 - Kosten für Hosting relativ hoch
@@ -18,6 +23,8 @@ Man kann Metabase entweder selbst hosten, von einem IT-Dienstleister hosten lass
 - erfordert Einarbeitung und Auseinandersetzung mit Datenkonzepten wie z.B. "Joins" (Zusammenführen von Tabellen). 
 
 #### Fazit 
+
+<iframe width="100%" height="400px%" src="https://mtbs.correlaid.org/public/question/d0f6fa28-8270-4d51-afef-0e3218a4af94"></iframe>
 
 ## Apache Superset
 

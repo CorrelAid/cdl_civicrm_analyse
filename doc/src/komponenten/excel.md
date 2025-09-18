@@ -3,7 +3,20 @@
 
 ## Microsoft Excel
 
+Microsoft Excel ist 
+
+Wozu kann man Microsoft Excel nutzen? 
+
+
+Vorteile:
+
+Nachteile:
+
+
+### Power Query 
 
 ## Libre Office
 
-wie kann ich meine Daten mit Libre Office analysieren?
+Vorteile:
+
+Nachteile:
