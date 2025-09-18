@@ -54,7 +54,7 @@ jobs:
           curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf -y | sh
           echo "$HOME/.cargo/bin" >> $GITHUB_PATH
       - name: Install mdBook
-        run: cargo install --version ${MDBOOK_VERSION} mdbook
+        run: cargo install --version ${MDBOOK_VERSION} mdbook --force
 
       - name: Setup Pages
         id: pages
