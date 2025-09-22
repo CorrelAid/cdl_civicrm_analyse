@@ -3,7 +3,7 @@
 ## Reports/Berichte
 
 ## Civisualize
-`daten-visualisieren` 
+[📊 daten-visualisieren](./../datenlebenszyklus.html#daten-visualisieren)
 
 [Civisualize](https://civicrm.org/extensions/civisualize-missing-data-visualization-extension) ist eine CiviCRM Erweiterung, mit der Nutzer\*innen Grafiken erstellen können. Für die gängigsten CiviCRM Komponenten wie Kontakte, Zuwendungen, Veranstaltungen und Rundschreiben liefert Civisualize einige Überblicksgrafiken mit. Außerdem gibt es ein Mini-Dashboard für Spendentrends ("Donor Trends").
 Eine Beschreibung der schon inkludierten Visualisierungen findet sich [hier](https://lab.civicrm.org/extensions/civisualize) (Englisch). In der Basis-Installation findet ihr Civisualize unter Berichte -> Civisualize.
@@ -31,4 +31,8 @@ Eigene bzw. zusätzliche Grafiken können mithilfe der Javascript Bibliotheken `
 Civisualize liefert einige potenziell hilfreiche Grafiken "out of the box" und macht diese zugänglich direkt in CiviCRM. Wenn diese vorgefertigten Visualisierungen hilfreich sind für einen ersten Einblick in die Daten für interne Nutzer*innen, kann eine Installation sinnvoll sein. Die Lernkurve, um eigene Datenvisualisierungen zu erstellen, ist zu steil - gerade für nicht-technische Nutzer\*innen -, um einen Einsatz darüber hinaus zu rechtfertigen, außer es ist zwingend notwendig, dass Visualisierungen direkt in CiviCRM auffindbar sind. Civisualize ist kein Tool, welches eine einfache, zugängliche Analyse von Daten ermöglicht.
 
 
+## Spezifische Extensions
 
+### Contact Categories
+
+https://lab.civicrm.org/extensions/contactcats

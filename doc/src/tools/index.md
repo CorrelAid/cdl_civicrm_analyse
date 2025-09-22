@@ -5,7 +5,7 @@
 - [CiviCRM API & API Explorer](./tools/civicrm-api.md)
 - [CiviCRM SearchKit & ChartKit](./tools/civicrm-searchkit-chartkit.md)
 - [Weitere CiviCRM Tools](./tools/civicrm-weitere-tools.md)
-- [Excel & Libre Office](./tools/excel.md) 🔢📊⚙️
+- [Excel & Libre Office](./tools/tabellenkalkulation.md) 🔢📊⚙️
 - [Business Intelligence Tools](./tools/bi-tools.md)
 - [Google Workspace](./tools/google-workspace.md)
 - [Managed Datenbank](./tools/managed-datenbank.md) 💾
