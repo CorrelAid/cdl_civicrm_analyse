@@ -1,6 +1,6 @@
 
 CRM_URL='https://civicrm.correlaid.org/civicrm/ajax/api4/SearchDisplay/download'
-CRM_AUTH='X-Civi-Auth: Bearer YOUR_API_KEY'
+CRM_AUTH='X-Civi-Auth: Bearer TOKEN'
 
 # List of searches to process
 SEARCHES=(
@@ -17,3 +17,4 @@ for SEARCH in "${SEARCHES[@]}"; do
 
     # TODO Error handling 
 done
+

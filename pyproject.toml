@@ -14,10 +14,11 @@ dependencies = [
     "python_tools",
     "python-dotenv>=1.1.1",
     "faker>=37.5.3",
+    "marimo>=0.15.2",
 ]
 
 [tool.uv.sources]
 python_tools = { workspace = true }
 
 [tool.uv.workspace]
-members = ["python-tools"]
+members = ["python-tools", "marimo", "marimo-notebook"]

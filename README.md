@@ -77,3 +77,19 @@ tofu apply
 ```
 uv run ansible-playbook ansible/playbook.yml 
 ```
+
+
+## Structure
+
+- Einführung: Hallo & Why & How To & Datenlebenszyklus & Fokus dieses Materials 
+- Beispielhafte Use Cases
+    - Monitoring
+    - Deskriptive Statistik
+    - Wirkungsmessung 
+    - Trends 
+
+- Tool-Kombinationen
+    - API + managed datenbank + Kestra
+    - ..
+
+- Glossar
