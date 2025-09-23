@@ -22,7 +22,7 @@ Dieses Material dokumentiert die Ergebnisse dieses Datenvorhabens und skizziert 
 
 CiviCRM ist ein mächtiges und komplexes Tool und **wir sind weder CiviCRM- noch Fundraising- oder CRM-Expert*innen**>. Deshalb kann es sein, dass uns vielversprechende Optionen aus dem Civi-Universum entgangen sind. Dies gilt v.a. für fachspezifische CiviCRM-Erweiterungen - wir hatten leider nicht die Zeit, um uns tiefergehend mit allen Anwendungsfällen (Fundraising, Freiwilligenmanagement, ...) und den dazugehörigen Erweiterungen auseinanderzusetzen. 
 
-Unsere Experimente haben wir mit unserer <b>selbst gehosteten Basisinstallation</b> von CiviCRM 6.4.0. durchgeführt. Deshalb haben wir uns nicht mit häufig assoziierten CMS wie Drupal oder Wordpress auseinandergesetzt. Auch Spezifika von Hosting-Anbietern (z.B. Systopia-eigene Extensions) konnten wir nicht berücksichten. Über <a href="./ueber.md#beitragen">Beiträge zu dieser Dokumentation<a> von Personen, die in diesen Bereichen mehr Ahnung haben, würden wir uns sehr freuen. 
+Unsere Experimente haben wir mit unserer <b>selbst gehosteten Basisinstallation</b> von CiviCRM 6.4.0. durchgeführt. Zwischen der Standalone-Version von CiviCRM und dessen Nutzung in Kombination mit CMS wie Drupal oder Wordpress gibt es Unterschiede. Auch Spezifika von Hosting-Anbietern (z.B. Systopia-eigene Extensions) konnten wir nicht berücksichtigen. Über <a href="./ueber.md#beitragen">Beiträge zu dieser Dokumentation<a> von Personen, die in diesen Bereichen mehr Ahnung haben, würden wir uns sehr freuen. 
 
 In der Bearbeitung der Use Cases waren wir **inhaltlich beschränkt durch unsere [selbst erstellten Testdaten]()**. Wir hatten Kontakte, Spenden und Events, aber keine Aktivitäten wie Eventteilnahmen o.ä. 
 
