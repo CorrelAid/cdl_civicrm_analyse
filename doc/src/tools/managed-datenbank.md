@@ -11,3 +11,6 @@
     - https://supabase.com/
     - https://elest.io/open-source/postgresql
 
+### Neon
+
+Neon ist eine serverless Postgres Datenbank, die sich im Browser über eine GUI verwalten lässt. Eine Funktion ist das Erstellen von Tabellen, in die man anschließend Daten laden kann.

@@ -1,0 +1,69 @@
+id: civicrm_donor_type_count
+namespace: company.team
+tasks:
+  - id: request
+    type: io.kestra.plugin.core.http.Request
+    uri: http://civicrm.correlaid.org/civicrm/ajax/api4/Contact/get
+    headers:
+      X-Civi-Auth: Bearer 4YsX6JyrOKYkqA5JcBAVYEmI
+    method: POST
+    contentType: application/x-www-form-urlencoded
+    body: |
+      params=%7B%22select%22%3A%5B%22COUNT%28id%29%20AS%20count%22%2C%22Donor_Type.Donor_Type%3Alabel%22%5D%2C%22limit%22%3A25%2C%22groupBy%22%3A%5B%22Donor_Type.Donor_Type%22%5D%7D
+  - id: transform
+    type: io.kestra.plugin.scripts.python.Script
+    taskRunner:
+      type: io.kestra.plugin.scripts.runner.docker.Docker
+    containerImage: python:3.12-slim
+    beforeCommands:
+      - pip install polars adbc_driver_manager adbc-driver-postgresql pyarrow
+    script: |
+      import json
+      import polars as pl
+      from datetime import datetime
+
+      payload = json.loads('''{{ outputs.request.body }}''')
+      values = payload['values']
+
+      row = {
+        "donor_type_none":    0,
+        "donor_type_one_time": 0,
+        "donor_type_monthly":  0,
+        "donor_type_past":     0,
+        "timestamp":           datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
+          }
+
+      for item in values:
+          label = item.get("Donor_Type.Donor_Type:label")
+          c     = item["count"]
+          if   label is None:             row["donor_type_none"]    = c
+          elif label == "One Time Donor": row["donor_type_one_time"] = c
+          elif label == "Monthly Donor":  row["donor_type_monthly"]  = c
+          elif label == "Past Donor":     row["donor_type_past"]     = c
+
+      df = pl.DataFrame([row])
+
+      count_cols = [
+        "donor_type_none",
+        "donor_type_one_time",
+        "donor_type_monthly",
+        "donor_type_past"
+      ]
+      df = df.with_columns([
+        pl.col(c).cast(pl.Int32) for c in count_cols
+      ])
+
+      df = df.with_columns([
+        pl.col("timestamp")
+          .str.strptime(pl.Datetime, "%Y-%m-%d %H:%M:%S", strict=False)
+      ])
+
+      df.write_database(
+        table_name="civicrm_donor_types_counts_kestra",
+        connection=(
+          "postgresql://neondb_owner:{{ secret('CIVICRM_NEON_WAREHOUSE_PW') }}"
+          "@{{ secret('CIVICRM_NEON_WAREHOUSE_HOST') }}:5432/main"
+        ),
+        engine="adbc",
+        if_table_exists="append"
+      )
