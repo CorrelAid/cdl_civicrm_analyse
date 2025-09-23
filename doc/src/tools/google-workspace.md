@@ -29,7 +29,7 @@ Google Apps Script ist eine JavaScript-basierte Programmiersprache, mit der ihr 
 
 ### Vorteile von Google Apps Script
 - **Kostenlos und integriert**: Keine zusätzliche Software nötig – läuft direkt in Google Sheets.
-- **Direkter Datenimport aus CiviCRM mithilfe der CiviCRM API**: Ihr könnt Daten automatisch aktualisieren und spart euch den manuellen Schritt des Datenexports aus CiviCRM. Siehe [unser Experiment zu SearchKit + Google Sheets](./../experimente/searchkit-tabellenkalkulation.md). 
+- **Direkter Datenimport aus CiviCRM mithilfe der CiviCRM API**: Ihr könnt Daten automatisch aktualisieren und spart euch den manuellen Schritt des Datenexports aus CiviCRM. Siehe [unser Experiment zu SearchKit + Google Sheets](./../use_cases/searchkit-tabellenkalkulation.md). 
 
 ### Nachteile von Google Apps Script
 - Erfordert **Grundkenntnisse in JavaScript**.
