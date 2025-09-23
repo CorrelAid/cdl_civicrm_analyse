@@ -1,9 +1,8 @@
 # SearchKit und Excel
 
-## Überblick
-
 Idee: **SearchKit Suchergebnisse über die API mit Power Query in Excel laden - Datenvisualisierung und weitere Auswertung in Excel.**
 
+[💾 daten-organisieren](./../datenlebenszyklus.html#daten-organisieren): CiviCRM 
 
 - 💾 Daten organisieren: CiviCRM
 - 🤓 Daten auswerten: SearchKit
@@ -27,6 +26,11 @@ Idee: **SearchKit Suchergebnisse über die API mit Power Query in Excel laden - 
 
 
 ## Details
+
+<div class="warning">
+<b>Sicherheitshinweis</b>: Wenn ihr mithilfe von Power Query mit der CiviCRM API interagiert, gebt ihr euren API Schlüssel in die Excel Datei ein. Geht daher besonders vorsichtig mit der 
+</div>
+
 
 Mit Microsoft Excel
 

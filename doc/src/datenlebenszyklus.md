@@ -20,7 +20,7 @@ Wir verwenden den Datenlebenszyklus hier, um Komponenten und Tools den Schritten
 
 &rarr; CiviCRM Daten können unterschiedlich ausgewertet und analysiert werden: Von einfachen deskriptiven Analysen über tiefergehende Analysen hin zu komplexen Machine-Learning-Modellen zur Vorhersage von Spenden. Wir haben uns in unserer Arbeit überwiegend auf einfache Auswertungen fokussiert, da diese am übertragbarsten sind. 
 
-[🔢 SearchKit](./tools/civicrm-searchkit-chartkit.md#searchkit) [🔢 Excel](./tools/excel.md) [🔢 Google Sheets](./tools/google-workspace.md#google-sheets) [🔢 Metabase](./tools/bi-tools.md#metabase) [🔢 Python](./tools/python-und-r.md#python) [🔢 R](./tools/python-und-r.md#r) 
+[🔢 SearchKit](./tools/civicrm-searchkit-chartkit.md#searchkit) [🔢 Excel](./tools/tabellenkalkulation.md) [🔢 Google Sheets](./tools/google-workspace.md#google-sheets) [🔢 Metabase](./tools/bi-tools.md#metabase) [🔢 Python](./tools/python-und-r.md#python) [🔢 R](./tools/python-und-r.md#r) 
 
 
 #### Daten visualisieren 📊 {#daten-visualisieren}
@@ -28,7 +28,7 @@ Wir verwenden den Datenlebenszyklus hier, um Komponenten und Tools den Schritten
 
 &rarr; Viele Organisationen möchten ihre CiviCRM-Daten nicht nur auswerten, sondern auch in Datenvisualisierungen oder Dashboards aufbereiten. 
 
-[📊 Excel](./tools/excel.md) [📊 Metabase](./tools/bi-tools.md#metabase) [📊 Power BI](./tools/bi-tools.md#power-bi) [📊 Apache Superset](./tools/bi-tools.md#superset) [📊 ChartKit](./tools/searchkit-chartkit.md#chartkit) [📊 Civisualize](./tools/civicrm-weitere-tools.md#civisualize) [📊 Google Sheets](./tools/google-workspace.md#google-sheets) 
+[📊 Excel](./tools/tabellenkalkulation.md) [📊 Metabase](./tools/bi-tools.md#metabase) [📊 Power BI](./tools/bi-tools.md#power-bi) [📊 Apache Superset](./tools/bi-tools.md#superset) [📊 ChartKit](./tools/searchkit-chartkit.md#chartkit) [📊 Civisualize](./tools/civicrm-weitere-tools.md#civisualize) [📊 Google Sheets](./tools/google-workspace.md#google-sheets) 
 
 #### Daten kommunizieren 💬 {#daten-kommunizieren}
 *Wie werden Ergebnisse zielgruppengerecht kommuniziert und geteilt?*
@@ -42,7 +42,7 @@ Wir verwenden den Datenlebenszyklus hier, um Komponenten und Tools den Schritten
 
 &rarr; Zusätzlich zu den Schritten des Datenlebenszyklus ist es bei unseren Experimenten sehr relevant gewesen, Komponenten und Tools miteinander zu integrieren, sie zu verbinden und Datenflüsse zu ermöglichen. Deshalb sprechen wir zusätzlich auch von *Daten verbinden & Datenflüsse ermöglichen*. 
 
-[⚙️ CiviCRM-API](./tools/civicrm-api.md) [⚙️ Workflow Tools](./tools/workflow-tools.md) [⚙️ MS Power Query](./tools/excel.md#power-query) [⚙️ Google AppScript](./tools/google-workspace.md#google-appscript)
+[⚙️ CiviCRM-API](./tools/civicrm-api.md) [⚙️ Workflow Tools](./tools/workflow-tools.md) [⚙️ MS Power Query](./tools/tabellenkalkulation.md#power-query) [⚙️ Google AppScript](./tools/google-workspace.md#google-appscript)
 
 #### Datenschutz
 &rarr; Da in CiviCRM fast immer personenbezogene Daten gespeichert werden, bildet Datenschutz einen wichtigen Rahmen für die Auswertung von CiviCRM-Daten. Dies ist vor allem relevant, wenn Daten außerhalb von CiviCRM weiterverarbeitet werden. Wir haben bei unserer Arbeit darauf geachtet, Tools zu priorisieren, die Datensouveränität ermöglichen. Trotzdem haben wir auch Software von außereuropäischen Anbietern in unsere Recherche miteinbezogen. Wenn ihr diese Tools nutzen möchtet, empfehlen wir euch, Daten in CiviCRM oder europäischen Umgebungen so weit zu aggregieren, dass kein Rückschluss mehr auf Individuen möglich ist.
