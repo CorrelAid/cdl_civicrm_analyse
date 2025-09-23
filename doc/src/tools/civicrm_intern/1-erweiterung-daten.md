@@ -1,10 +1,6 @@
-Um Daten zu analysieren, benötigt man zunächst Daten
+## Erweiterung der Datengrundlage
 
-## Daten importieren
-
-Nach der Erstellung von z.B. Testdaten können Daten in CiviCRM manuell importiert werden. Hier kann man einfach Felder aus einem CSV Felder in CiviCRM zuordnen.
-
-## Donor Journeys
+Um Daten auf eine bestimmte Fragestellung hin zu analysieren benötigt man zunächst dafür geeignete Daten. CiviCRM bietet eine vernünftige Auswahl an Standard-Feldern für die unterschiedlichen Datenklassen (Kontakte etc.). Man kann diese jedoch um Eingabefelder erweitern, sollte man zusätzliche Informationen benötigen.
 
 ### Tags
 
