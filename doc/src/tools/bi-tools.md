@@ -32,18 +32,25 @@ Man kann Metabase entweder selbst hosten, von einem IT-Dienstleister hosten lass
 - erfordert Einarbeitung und Auseinandersetzung mit Datenkonzepten wie z.B. "Joins" (Zusammenführen von Tabellen). 
 
 #### Fazit 
-Metabase 
+Metabase (und andere BI Tools) sind sinnvoll, wenn ihr mittel- und langfristig eure Daten selbstbestimmt und eigenständig v.a. deskriptiv auswerten wollt. Mit Metabase (und jedem anderen BI Tool) werdet ihr selbst zu Datenanalyst*innen und könnt agil und nach Bedarf neue Visualisierungen und Dashboards anlegen. Komplexe Analysen wie Machine Learning oder KI könnt ihr im Bereich Business Intelligence nicht erwarten. Dafür gibt es nützliche Features, um eure Daten und Datenvisualisierungen mit externen Stakeholdern zu teilen, z.B. über Einbettungen oder öffentliche Links.
+
+Den Vorteilen von Metabase (bzw. BI Tools) stehen **nötige Investitionen in Kompetenzaufbau und Infrastruktur** gegenüber. Metabase ist ein großes Tool mit vielen Funktionen. 
+Deshalb braucht es Zeit und die Bereitschaft, sich einzuarbeiten und dazuzulernen. Hinzu kommt, dass bestehende Hosting-Optionen nicht günstig sind und Self-Hosting ohne interne Kompetenzen nicht möglich ist. Die Zusammenarbeit mit bestehenden IT-Dienstleistern ist eine Möglichkeit, wird aber natürlich trotzdem etwas kosten.
+ 
+Insgesamt ist das Investment in ein Business Intelligence Tool **nicht für alle CiviCRM-Organisationen notwendig**. Es ist aber **sehr sinnvoll, wenn Daten perspektivisch für euch eine zentrale Rolle** spielen werden.
 
 
+## Alternativen: Apache Superset, Power BI und Tableau
 
-## Apache Superset
 [🔢 daten-auswerten](./../datenlebenszyklus.html#daten-auswerten)
 [📊 daten-visualisieren](./../datenlebenszyklus.html#daten-visualisieren) 
 [💬 daten-kommunizieren](./../datenlebenszyklus.html#daten-kommunizieren)
 
-## Alternativen: Power BI und Tableau
-[🔢 daten-auswerten](./../datenlebenszyklus.html#daten-auswerten)
-[📊 daten-visualisieren](./../datenlebenszyklus.html#daten-visualisieren) 
-[💬 daten-kommunizieren](./../datenlebenszyklus.html#daten-kommunizieren)
+Alternativen zu Metabase sind u.a.:
 
-Power BI und Tableau sind 
+- [Apache Superset](https://superset.apache.org/): komplett Open Source
+- [Power BI](https://www.microsoft.com/de-de/power-platform/products/power-bi?market=de): Business Intelligence Tool in der Microsoft Umgebung
+- [Tableau](https://www.tableau.com/): etabliertes BI-Tool aus den USA. Kann auch selbst gehostet werden (Lizenz muss trotzdem erworben werden).
+- [Looker](https://lookerstudio.google.com/u/0/): BI Tool in der Google Umgebung
+
+
