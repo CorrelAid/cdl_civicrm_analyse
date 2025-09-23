@@ -9,7 +9,11 @@ wheels/
 # Virtual environments
 .venv
 
+.ansible/
+
 .env
+
+.claude/
 
 backups/
 
