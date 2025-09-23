@@ -1,17 +1,69 @@
 # Workflow Tools
 
-<!-- tags: komponenten-verbinden -->
+Workflow Tools, oder auch Workflow Automation Tools, meint browserbasierte Anwendungen, über die man einzelne Schritte, wie das Laden, Senden und Verarbeiten von Daten direkt miteinander verknüpfen und automatisieren kann. Viele Workflow Tools sind dabei nicht auf Daten spezialisiert, sondern es lässt sich Beliebiges verknüpfen und automatisieren. Auf Daten bezogen lassen sich diese Tools auch dem Feld der **Data Orchestration** zuordnen. 
 
-## Kestra: Data Warehouse Flow Option 
+Gemeinsam ist diesen Tools, dass Aktionen in Schritten, oft Knoten genannt, durchgeführt werden. Knoten erhalten Inputs und produzieren Outputs, die wiederum zu Inputs eines anderen Knoten werden können. So entsteht sowohl mit Bezug auf die Reihenfolge der Ausführung, also auch mit Bezug auf den Fluss der Daten ein Pfad bzw. Flow. Ein verwandtes Konzept ist das des [DAG](https://en.wikipedia.org/wiki/Directed_acyclic_graph) (Directed acyclic graph). 
 
-- Go to CiviCRM api explorer and add required where and select parameters (select can include fields from nested tables like email or gender)
-- copy body string to request in kestra
-- use polars to create dataframe and save to data warehouse
+Workflow Tools sind hilfreich, um  Prozesse wie Datenexporte oder Verarbeitung nicht wiederholt zeitaufwendig manuell erledigen zu müssen. Gleichzeitig sind sie eine Alternative dazu, Automatisierungen komplett selbst zu programmieren. Somit sind sie zugänglicher für Daten-Anfänger:innen bzw. Menschen, die Skills in anderen Bereichen haben. Oft ist jedoch der Modus, dass man standardmäßig Flows mit Klicken baut, jedoch wenn man es für sinnvoll erachtet, in den Knoten mit Programmieren arbeiten kann.
 
-BeispielFlows
-- Im Repo findet ihr in dem Ordner `kestra_flows` Beispiele dafür, wie ihr Daten über die API oder die Datenbank laden könnt.
+Die folgende Tabelle zeigt eine unvollständige Übersicht (Stand 23.09.2025) über solche Tools und verdeutlicht deren Vielzahl.
 
-## N8N: Data Warehouse Flow Option 
-- Go to CiviCRM api explorer and add required where and select parameters (select can include fields from nested tables like email or gender)
-- Create a table in UI database manager (create columns for selected fields, can be named differently)
-- Create Flow in N8N with api request, edit fields node, split out node and postgres node
+| Name          | Website                                                                                                                | Vollständig OSS | Kostenloser Plan | SaaS-Preis ab (monatlich) | Komplexität Selbst-Hosting (1–10) | DSGVO-Hinweise SaaS                                                                                                                                    | Konfig. mit GUI | Konfig. mit Code | Git-basiert | Allgemeine Hinweise                                            |
+|---------------|------------------------------------------------------------------------------------------------------------------------|-----------------|-----------------|---------------------------|-----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|------------------|-------------|----------------------------------------------------------------|
+| Pipedream     | https://pipedream.com                                                                                                  | Nein            | Ja              | $49                       | –                                 | Unklar: [Privacy & Security (GDPR)](https://pipedream.com/docs/privacy-and-security#gdpr)                                                              | Ja              | Ja               | Nein        | KI-Pipeline-Builder-Assistent                                   |
+| N8N           | https://n8n.io/                                                                                                        | Ja              | Nein            | $24                       | 3                                 | Azure in Frankfurt: [GDPR](https://docs.n8n.io/privacy-security/privacy/#gdpr)                                                                       | Ja              | Ja               | –           | –                                                              |
+| Kestra        | https://kestra.io/                                                                                                     | Ja              | Nein            | Enterprise (unbekannt)    | 4                                 | –                                                                                                                                                      | Nein            | Ja               | Ja          | Komplex mit YAML für nicht-technische Anwender              |
+| Zapier        | https://zapier.com/                                                                                                    | Nein            | –               | $30                       | –                                 | –                                                                                                                                                      | –               | –                | –           | –                                                              |
+| Automatisch   | https://automatisch.io                                                                                                 | Ja              | Ja              | $20                       | –                                 | –                                                                                                                                                      | –               | –                | –           | Begrenzter SQL-Adapter (nur Postgres, wenige Funktionen)       |
+| Make          | https://www.make.com                                                                                                   | Nein            | Ja              | $0 / $9                   | –                                 | AWS in der EU: [Make Sub-Processors (Juni 2025)](https://assets.ctfassets.net/un655fb9wln6/bAi9YXB2XP4fnAtZxkDOb/08a65fe743f91ec7026c07d3de2b8fc2/Make_Sub-Processors_June_2025.pdf) | –               | –                | –           | Auswählen, dass in EU gehostet                                 |
+| KNIME         | https://www.knime.com                                                                                                  | Nein            | –               | –                         | –                                 | –                                                                                                                                                      | –               | –                | –           | –                                                              |
+| Activepieces  | https://www.activepieces.com/                                                                                          | Ja              | Ja              | $25                       | –                                 | Keine Informationen gefunden                                                                                                                           | –               | –                | –           | –                                                              |
+| Rudderstack   | https://www.rudderstack.com/                                                                                           | Ja              | –               | –                         | –                                 | –                                                                                                                                                      | –               | –                | –           | Wahrscheinlich zu vertriebsorientiert                          |
+
+
+In diesem Projekt haben wir uns für das Testen von N8N und Kestra entschieden, da wir Priorität auf Open Source, die Möglichkeit zum [Self-Hosting]((./tools/self-hosting.md)) und ausreichende Funktionen für Data Orchestration legten. 
+
+## N8N
+
+[💾 daten-organisieren](./../datenlebenszyklus.html#daten-organisieren)
+
+[Link zur Dokumentation](https://n8n.io/integrations/google-cloud/)
+
+### Vorteile
+
+- Intuitive Klick-Umgebung
+- Große Community
+
+### Nachteile
+
+- Begrenzte Programmierumgebung
+
+### Betrieb
+
+N8N kann sowohl in der Cloud als Service bezahlt betrieben werden, als auch [selbst gehostet](./tools/self-hosting.md) werden. Für die Cloud-Version gibt es keinen Free Plan, aber einen recht günstigen Einstiegsplan für 24€ pro Monat.
+
+## Kestra
+
+[💾 daten-organisieren](./../datenlebenszyklus.html#daten-organisieren)
+
+[Link zur Dokumentation](https://kestra.io/docs)
+
+### Vorteile
+
+- Quasi unbegrenzte Möglichkeiten und viele Wege ein Problem zu lösen
+- Flows liegen als Datei (yaml) vor und können so leicht persistiert werden
+
+### Nachteile
+
+- Unbekannter als andere Tools
+- Viele Probleme lassen sich nur mit Programmieren lösen
+- Umständlich, Änderungen in Flows zu testen
+
+### Betrieb
+
+Für Kestra gibt es nur die Option es [selbst zu hosten](./tools/self-hosting.md), oder einen nicht öffentlich mit Preis versehenen Enterprise-Vertrag abzuschließen. Bei letzterem ist von einem hohen Preis auszugehen.
+
+### Zusätzliches 
+
+ℹ️ Im [Repository](https://github.com/CorrelAid/cdl_civicrm_analyse) findet ihr in dem Ordner `supporting_code/kestra_flows` Beispiel-Flows dafür, wie ihr Daten über die API oder die Datenbank laden und weitersenden könnt.
+

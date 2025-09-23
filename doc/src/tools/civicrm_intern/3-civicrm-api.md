@@ -51,9 +51,21 @@ Um Zugriff auf die API zu erhalten, kontaktiert am besten euren CiviCRM-Dienstle
 Da die [Dokumentation der CiviCRM API](https://docs.civicrm.org/dev/en/latest/api/) für Nicht-PHP-Entwickler\*innen nicht besonders zugänglich ist, fanden wir es hilfreich, mit dem API-Explorer zu arbeiten. Im API-Explorer kann man mithilfe einer grafischen Benutzeroberfläche direkt in CiviCRM Abfragen an die API konfigurieren und ausprobieren. Das erleichtert es enorm, ...
 
 - ... die richtigen Endpunkte zu finden 
-- ... zu sehen, wie der `body` bei POST-Requests übergeben wird
+- ... zu sehen, wie der `body` bei POST-Requests übergeben wird (siehe unten)
 - ... die Anfrage so anzupassen, dass sie die gewünschten Daten liefert
 
 Wenn ihr selbst mit der API arbeiten möchtet, ist der API-Explorer ein **gutes Werkzeug, um euch in der Entwicklung eurer Lösung zu unterstützen**. 
 
 In der Basisinstallation findet ihr den API-Explorer unter *Unterstützung* -> *Entwickler* -> *API-Explorer*. Sonst fragt euren CiviCRM-Hosting-Dienstleister.
+
+### Den encoded Body-Parameter nutzen
+
+Wenn man eine API-Anfrage konfiguriert hat, hier als Beispiel die Übergabe aller Kontakte, lässt sich weiter unten auf der Seite des API-Explorers der Reiter "REST" auswählen. Hier wird dann für unser Beispiel angezeigt:
+
+```
+curl -X POST -H "$CRM_AUTH" "$CRM_URL" \^
+-d 'params=%7B%22limit%22%3A25%7D'
+```
+
+Nützlich für API-Anfragen mit andere Tools ist folgendes: `params=%7B%22limit%22%3A25%7D`
+

@@ -18,7 +18,7 @@ Bei unserem Projekt gingen wir größenteils davon aus, dass interessierte Organ
 
 [Erweiterung von CiviCRM-Daten](./tools/civicrm_intern/1-erweiterung-datengrundlage.md)
 
-### Daten organisieren 💾 {#daten-organisieren}
+### Daten organisieren 💾{#daten-organisieren}
 *Wo und wie werden Daten gespeichert? Wie werden sie verwaltet und wie werden sie bereinigt?*
 
 &rarr; Im Kontext unseres Datenvorhabens hat CiviCRM und seine [SQL-Datenbank](./tools/civicrm_intern/2-civicrm-datenbank.md) als Ort zur Speicherung und Verwaltung von Daten häufig ausgereicht. Trotzdem gibt es auch Fälle, wo zusätzliche Tools (z.B. eine [Managed Datenbank](./tools/managed-datenbank.md)) zur Organisation und Speicherung von CiviCRM-Daten sinnvoll waren, z.B. um [historische Daten verfügbar zu machen]() und so [Spenderübergänge zu analysieren]().

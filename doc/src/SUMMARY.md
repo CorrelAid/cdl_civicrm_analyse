@@ -12,7 +12,7 @@
     - [CiviCRM-interne Tools](./tools/civicrm_intern/0-index.md)
         - [Erweiterung der CiviCRM-Daten](./tools/civicrm_intern/1-erweiterung-daten.md)
         - [CiviCRM Datenbank](./tools/civicrm_intern/2-civicrm-datenbank.md)
-        - [CiviCRM API & API Explorer](./tools/3-civicrm_intern/3-civicrm-api.md)
+        - [CiviCRM API & API Explorer](./tools/civicrm_intern/3-civicrm-api.md)
         - [CiviCRM SearchKit & ChartKit](./tools/civicrm_intern/4-civicrm-searchkit-chartkit.md)
         - [Weitere CiviCRM Tools](./tools/civicrm_intern/5-civicrm-weitere-tools.md)
     - [Excel & Libre Office](./tools/tabellenkalkulation.md)
@@ -21,7 +21,7 @@
     - [Managed Datenbank](./tools/managed-datenbank.md)
     - [Workflow Tools](./tools/workflow-tools.md)
     - [Python & R](./tools/python-und-r.md)
-
+    - [Self-Hosting](./tools/self-hosting.md)
 [Executive Summary](./executive-summary.md)
 
 [Über das Datenvorhaben](./ueber.md)
