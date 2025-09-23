@@ -1,6 +1,22 @@
 # Weitere CiviCRM Tools
 
 ## Reports/Berichte
+[🔢 daten-auswerten](./../datenlebenszyklus.html#daten-auswerten) [💬 daten-kommunizieren](./../datenlebenszyklus.html#daten-kommunizieren)
+
+_Dieser Einführungstext wurde von ChatGPT erstellt._
+
+CiviCRM Reports sind vorgefertigte oder individuell erstellbare Auswertungen, mit denen Organisationen ihre Daten aus CiviCRM (z. B. Kontakte, Spenden, Mitgliedschaften, Events) analysieren können. Sie bieten Filter- und Gruppierungsoptionen, um genau die Informationen sichtbar zu machen, die für Entscheidungen oder Nachweise gebraucht werden. Die Reports können gespeichert, exportiert und auch automatisiert per E-Mail verschickt werden.
+
+
+#### Vorteile
+- standardisierte Vorlagen
+- können als CSV oder direkt als PDF exportiert werden
+- Versand via Mail möglich
+- einfache Möglichkeit, um "Listen" zu bekommen
+
+#### Nachteile
+- nicht so flexibel und mächtig wie [SearchKit](./4-civicrm-searchkit-chartkit.md#searchkit)
+- Ergebnisse können nicht über die API v4 exportiert werden
 
 ## Civisualize
 [📊 daten-visualisieren](./../datenlebenszyklus.html#daten-visualisieren)
@@ -31,8 +47,14 @@ Eigene bzw. zusätzliche Grafiken können mithilfe der Javascript Bibliotheken `
 Civisualize liefert einige potenziell hilfreiche Grafiken "out of the box" und macht diese zugänglich direkt in CiviCRM. Wenn diese vorgefertigten Visualisierungen hilfreich sind für einen ersten Einblick in die Daten für interne Nutzer*innen, kann eine Installation sinnvoll sein. Die Lernkurve, um eigene Datenvisualisierungen zu erstellen, ist zu steil - gerade für nicht-technische Nutzer\*innen -, um einen Einsatz darüber hinaus zu rechtfertigen, außer es ist zwingend notwendig, dass Visualisierungen direkt in CiviCRM auffindbar sind. Civisualize ist kein Tool, welches eine einfache, zugängliche Analyse von Daten ermöglicht.
 
 
-## Spezifische Extensions
+## Use-Case-spezifsche Extensions
+
+Im Rahmen des Datenvorhabens haben wir uns auf CiviCRM-Komponenten und -Extensions konzentriert, die dediziert auf die Analyse und Visualisierung von Daten ausgelegt sind. Aber auch Extensions, die für spezifische Anwendungsfälle (z.B. Spender*innenanalyse, ...) erstellt wurden, haben z.T. Datenauswertungen und -visualisierungen an Bord. 
+Wir freuen uns über [Hinweise](./../../ueber.md#beitragen) zu den Datenkapazitäten von "inhaltlichen" Extensions und nehmen sie gerne in die Liste auf. 
+
 
 ### Contact Categories
+[📊 daten-visualisieren](./../datenlebenszyklus.html#daten-visualisieren)
 
-https://lab.civicrm.org/extensions/contactcats
+Die Extension [Contact Categories](https://lab.civicrm.org/extensions/contactcats) bietet die Möglichkeit, Kontakte nach Prioritätsgruppen zu kategorisieren. Prioritätsgruppen können eigenständig konfiguriert werden. 
+**Datenanalyse und -visualisierung:** Als Datenvisualisierung steht ein [Flow-Chart](https://lab.civicrm.org/extensions/contactcats#reports--contact-category-flows) zur Verfügung, der die Übergänge von Kontakten zwischen den verschiedenen Kontaktkategorien visualisiert.
