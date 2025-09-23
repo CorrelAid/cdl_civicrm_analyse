@@ -15,7 +15,7 @@ repos:
     hooks:
       - id: ansible-lint
         files: \.(yaml|yml)$
-        args: ['--project-dir', 'ansible/', "--config-file", './ansible/.ansible-lint.yml']
+        args: ['--project-dir', 'iac/ansible/', "--config-file", './iac/ansible/.ansible-lint.yml']
         additional_dependencies:
           - ansible
 
@@ -24,11 +24,11 @@ repos:
     hooks:
       - id: black
         entry: black
-        args: [--config=python-tools/pyproject.toml, --diff, python-tools/]
+        args: [--config=supporting_code/python-tools/pyproject.toml, --diff, supporting_code/python-tools/]
 
   - repo: https://github.com/charliermarsh/ruff-pre-commit
     rev: 'v0.1.4'
     hooks:
       - id: ruff
         entry: ruff
-        args: [--config=python-tools/pyproject.toml]
+        args: [--config=supporting_code/python-tools/pyproject.toml]

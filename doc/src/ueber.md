@@ -2,7 +2,7 @@
 
 Die Inhalte dieser Seite wurden von Jonas Stettner und Leo Preu (beide [CorrelAid e.V.](https://correlaid.org), tätig im [Civic Data Lab](https://civic-data.de)) erstellt. Zum Teil haben LLMs die beiden bei der Recherche, Übersetzung und Formulierung unterstützt.
 
-Diese Seite sowie Code und Dateien der Experimente finden sich im [GitHub Repository](https://github.com/CorrelAid/cdl_civicrm_analyse).
+Diese Seite sowie Code und Dateien der Experimente finden sich in einem [GitHub Repository](https://github.com/CorrelAid/cdl_civicrm_analyse).
 
 ## Lizenz
  [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/deed.de) 

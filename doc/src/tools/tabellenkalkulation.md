@@ -41,10 +41,10 @@ Aufgrund seiner Flexibilität ist und bleibt Excel eine gute Option, um **divers
 
 **Power Query** ist ein Werkzeug in Excel und Power BI, das **Daten aus verschiedenen Quellen** (z. B. CiviCRM-API, Datenbanken, Excel-Dateien) **importiert, bereinigt und für Analysen aufbereitet**. Es **automatisiert wiederkehrende Schritte**, spart Zeit und reduziert Fehler.
 
-Für die Analyse von CiviCRM-Daten sind v.a. Power Query's [Features zum Datenimport](https://support.microsoft.com/de-de/office/importieren-von-daten-aus-datenquellen-power-query-be4330b3-5356-486c-a168-b68e9e616f5a) relevant. Wir haben Power Query verwendet, um Daten mithilfe der CiviCRM API in Excel zu importieren (siehe [unser Experiment zu SearchKit + Excel](./../experimente/searchkit-tabellenkalkulation.md)). Aber auch die anderen Optionen können nützlich sein, z.B. der Import aus anderen Excel-Dateien. 
+Für die Analyse von CiviCRM-Daten sind v.a. Power Query's [Features zum Datenimport](https://support.microsoft.com/de-de/office/importieren-von-daten-aus-datenquellen-power-query-be4330b3-5356-486c-a168-b68e9e616f5a) relevant. Wir haben Power Query verwendet, um Daten mithilfe der CiviCRM API in Excel zu importieren (siehe [unser Experiment zu SearchKit + Excel](./../use_cases/searchkit-tabellenkalkulation.md)). Aber auch die anderen Optionen können nützlich sein, z.B. der Import aus anderen Excel-Dateien. 
 
 #### Vorteile von Power Query 
-- **Direkter Datenimport aus CiviCRM mithilfe der CiviCRM API**: Ihr könnt Daten automatisch aktualisieren und spart euch den manuellen Schritt des Datenexports aus CiviCRM. Siehe [unser Experiment zu SearchKit + Excel](./../experimente/searchkit-tabellenkalkulation.md). 
+- **Direkter Datenimport aus CiviCRM mithilfe der CiviCRM API**: Ihr könnt Daten automatisch aktualisieren und spart euch den manuellen Schritt des Datenexports aus CiviCRM. Siehe [unser Experiment zu SearchKit + Excel](./../use_cases/searchkit-tabellenkalkulation.md). 
 - Flexibilität: Power Query kann mehr als nur API-Daten laden – eine Einarbeitung lohnt sich.
 
 
