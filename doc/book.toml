@@ -4,10 +4,6 @@ language = "en"
 src = "src"
 title = "CiviCRM Daten analysieren und visualisieren"
 
-[output.html]
-additional-js = ["adds/tags.js"]
-additional-css = ["adds/tags.css", "adds/custom.css"]
-
 [output.html.fold]
 enable = true    # whether or not to enable section folding
 level = 1         # the depth to start folding

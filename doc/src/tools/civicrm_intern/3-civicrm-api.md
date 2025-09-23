@@ -1,8 +1,8 @@
 # CiviCRM-API & API-Explorer
 
 ## CiviCRM API
+[⚙️ daten-verbinden](./../datenlebenszyklus.html#daten-verbinden)<br>
 
-<!-- tags: civicrm; komponenten-verbinden; daten-auswerten -->
 
 CiviCRM hat eine Programmierschnittstelle (Application Programming Interface / API[^note2]), welche wir verwenden, um von extern auf CiviCRM-Daten zuzugreifen.
 
@@ -33,27 +33,38 @@ Es gibt eine [API-Dokumentation](https://docs.civicrm.org/dev/en/latest/api/) (E
 
 Um Zugriff auf die API zu erhalten, kontaktiert am besten euren CiviCRM-Dienstleister. Wenn ihr CiviCRM selbst hostet und administriert, folgt der [Dokumentation](https://docs.civicrm.org/sysadmin/en/latest/setup/api-keys/).
 
+### API einrichten
 
-### How to API
-- Congiguring API keys is weird: https://docs.civicrm.org/sysadmin/en/latest/setup/api-keys/
-    - api key extension needs to be installed: https://civicrm.correlaid.org/civicrm/admin/extensions?action=update&id=com.cividesk.apikey&key=com.cividesk.apikey
-    - an api key needs to be created for a contact
-    - the contact needs to be added to a group (e.g. administrators)
-    - Rest authentication needs to be configured: https://civicrm.correlaid.org/civicrm/admin/setting/authx?reset=1 with deleting the Authentication guards (?) and adding api key as methods to the required fields
-
-
+Die Konfiguration der API und die Einrichtung von API-Schlüsseln in CiviCRM ist etwas ungewöhnlich und erfordert mehrere Schritte:
+- Erweiterung installieren: Zuerst muss die Erweiterung für API-Schlüssel installiert werden. Diese ist unter folgendem Link verfügbar:
+https://civicrm.correlaid.org/civicrm/admin/extensions?action=update&id=com.cividesk.apikey&key=com.cividesk.apikey
+- API-Schlüssel erstellen: Anschließend muss ein API-Schlüssel für einen bestimmten Kontakt erstellt werden.
+- Kontakt zu einer Gruppe hinzufügen: Der Kontakt, für den der Schlüssel erstellt wurde, muss einer Gruppe hinzugefügt werden (z. B. der Gruppe „Administratoren“).
+- REST-Authentifizierung konfigurieren: Abschließend muss die REST-Authentifizierung konfiguriert werden. Dies erfolgt über den folgenden Link:
+https://civicrm.correlaid.org/civicrm/admin/setting/authx?reset=1 . Dort müssen die „Authentication Guards“ entfernt und die API-Schlüssel-Methode als erforderliche Authentifizierungsmethode für die relevanten Felder hinzugefügt werden.
 
 
 ## API Explorer
-
-<!-- tags: civicrm; daten-organisieren; daten-auswerten -->
+[⚙️ daten-verbinden](./../datenlebenszyklus.html#daten-verbinden)<br>
 
 Da die [Dokumentation der CiviCRM API](https://docs.civicrm.org/dev/en/latest/api/) für Nicht-PHP-Entwickler\*innen nicht besonders zugänglich ist, fanden wir es hilfreich, mit dem API-Explorer zu arbeiten. Im API-Explorer kann man mithilfe einer grafischen Benutzeroberfläche direkt in CiviCRM Abfragen an die API konfigurieren und ausprobieren. Das erleichtert es enorm, ...
 
 - ... die richtigen Endpunkte zu finden 
-- ... zu sehen, wie der `body` bei POST-Requests übergeben wird
+- ... zu sehen, wie der `body` bei POST-Requests übergeben wird (siehe unten)
 - ... die Anfrage so anzupassen, dass sie die gewünschten Daten liefert
 
 Wenn ihr selbst mit der API arbeiten möchtet, ist der API-Explorer ein **gutes Werkzeug, um euch in der Entwicklung eurer Lösung zu unterstützen**. 
 
 In der Basisinstallation findet ihr den API-Explorer unter *Unterstützung* -> *Entwickler* -> *API-Explorer*. Sonst fragt euren CiviCRM-Hosting-Dienstleister.
+
+### Den encoded Body-Parameter nutzen
+
+Wenn man eine API-Anfrage konfiguriert hat, hier als Beispiel die Übergabe aller Kontakte, lässt sich weiter unten auf der Seite des API-Explorers der Reiter "REST" auswählen. Hier wird dann für unser Beispiel angezeigt:
+
+```
+curl -X POST -H "$CRM_AUTH" "$CRM_URL" \^
+-d 'params=%7B%22limit%22%3A25%7D'
+```
+
+Nützlich für API-Anfragen mit andere Tools ist folgendes: `params=%7B%22limit%22%3A25%7D`
+
