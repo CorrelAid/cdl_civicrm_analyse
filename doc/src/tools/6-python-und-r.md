@@ -1,6 +1,6 @@
 # Python und R
 
-*Der Text dieser Seite wurde von Mistral erstellt und dann inhaltlich und redaktionell überarbeitet und ergänzt.*
+*Dieser Text ist ein **vorläufiger Entwurf**, der von Mistral erstellt wurde. Er wird noch angepasst und mit unseren eigenen Erkenntnissen überarbeitet.*
 
 
 ## Python
@@ -74,8 +74,3 @@ Python ist eine hervorragende Wahl, wenn CiviCRM-Daten nicht nur analysiert, son
 ### Fazit: R
 
 R ist die beste Wahl, wenn der Fokus auf statistischen Analysen und hochwertigen Visualisierungen liegt. Die Sprache bietet eine umfassende Sammlung von Paketen für Datenanalyse und -darstellung, insbesondere für wissenschaftliche oder detaillierte statistische Auswertungen. Mit Tools wie shiny und R Markdown können interaktive Berichte und Dashboards erstellt werden. R eignet sich besonders für Nutzer, die statistische Tiefe und publikationsreife Grafiken benötigen.
-
-
-
-## Transparenzhinweis
-
