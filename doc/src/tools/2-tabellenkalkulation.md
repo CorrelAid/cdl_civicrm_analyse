@@ -1,13 +1,13 @@
 # Excel & Co.
 
 ## Microsoft Excel
-[🔢 daten-auswerten](./../datenlebenszyklus.html#daten-auswerten) [📊 daten-visualisieren](./../datenlebenszyklus.html#daten-visualisieren) [⚙️ daten-verbinden](./../datenlebenszyklus.html#daten-verbinden)<br>
+[🔢 daten-auswerten](./../1-datenlebenszyklus.html#daten-auswerten) [📊 daten-visualisieren](./../1-datenlebenszyklus.html#daten-visualisieren) [⚙️ daten-verbinden](./../1-datenlebenszyklus.html#daten-verbinden)<br>
 
 
 Microsoft Excel ist ein **häufig genutztes Tabellenkalkulationsprogramm**, mit dem ihr Daten aus CiviCRM oder anderen Quellen strukturieren, analysieren und visualisieren könnt. Ihr könnt damit:
-- ... **CiviCRM-Daten** (z. B. Spenden, Mitglieder oder Events) mithilfe von Pivot-Tabellen, Formeln und Filtern **auswerten**, um z. B. Spendenentwicklungen zu analysieren oder Zielgruppen zu vergleichen ([🔢 daten-auswerten](./../datenlebenszyklus.html#daten-auswerten)) 
-- ... mithilfe von Diagrammen die **Ergebnisse anschaulich darstellen** ([📊 daten-visualisieren](./../datenlebenszyklus.html#daten-visualisieren))
-- ... mit Power Query ([s.u.](#power-query)) **Daten automatisch aktuell halten** ([⚙️ daten-verbinden](./../datenlebenszyklus.html#daten-verbinden)).
+- ... **CiviCRM-Daten** (z. B. Spenden, Mitglieder oder Events) mithilfe von Pivot-Tabellen, Formeln und Filtern **auswerten**, um z. B. Spendenentwicklungen zu analysieren oder Zielgruppen zu vergleichen ([🔢 daten-auswerten](./../1-datenlebenszyklus.html#daten-auswerten)) 
+- ... mithilfe von Diagrammen die **Ergebnisse anschaulich darstellen** ([📊 daten-visualisieren](./../1-datenlebenszyklus.html#daten-visualisieren))
+- ... mit Power Query ([s.u.](#power-query)) **Daten automatisch aktuell halten** ([⚙️ daten-verbinden](./../1-datenlebenszyklus.html#daten-verbinden)).
 
 Excel kann sowohl lokal (Desktop-Version) als auch in der Cloud (Excel for the Web) eingesetzt werden.
 
@@ -37,7 +37,7 @@ Aufgrund seiner Flexibilität ist und bleibt Excel eine gute Option, um **divers
 
 
 ### Power Query 
-[⚙️ daten-verbinden](./../datenlebenszyklus.html#daten-verbinden)<br>
+[⚙️ daten-verbinden](./../1-datenlebenszyklus.html#daten-verbinden)<br>
 
 **Power Query** ist ein Werkzeug in Excel und Power BI, das **Daten aus verschiedenen Quellen** (z. B. CiviCRM-API, Datenbanken, Excel-Dateien) **importiert, bereinigt und für Analysen aufbereitet**. Es **automatisiert wiederkehrende Schritte**, spart Zeit und reduziert Fehler.
 
@@ -60,9 +60,48 @@ Power Query ist eine sinnvolle Option, um CiviCRM-Daten (teil-)automatisch in Ex
 Falls bereits (zu) viele Excel-Dateien und -Analysen existieren, hilft Power Query, zentrale Referenzdatensätze zu erstellen, auf die [andere Excel-Dateien mit Power Query zugreifen können](https://support.microsoft.com/de-de/office/importieren-von-daten-aus-datenquellen-power-query-be4330b3-5356-486c-a168-b68e9e616f5a). Dadurch lassen sich Datenkonsistenz verbessern und Ordnung in die Analyseprozesse bringen.
 
 
+## Google Sheets
+*Der Text dieses Abschnitts wurde von Mistral erstellt und dann inhaltlich und redaktionell überarbeitet und ergänzt.*
+
+[🔢 daten-auswerten](./../1-datenlebenszyklus.html#daten-auswerten) [📊 daten-visualisieren](./../1-datenlebenszyklus.html#daten-visualisieren) [⚙️ daten-verbinden](./../1-datenlebenszyklus.html#daten-verbinden)
+
+Google Sheets ist die **kostenlose, webbasierte Tabellenkalkulation** von Google Workspace, die sich besonders für **kollaborative Datenanalyse** eignet. Ihr könnt damit Daten aus CiviCRM oder anderen Quellen analysieren, visualisieren und in Echtzeit gemeinsam bearbeiten.
+
+### Vorteile von Google Sheets
+- **Echtzeit-Kollaboration in der Cloud**: Mehrere Nutzer\*innen können gleichzeitig an einer Datei in der Cloud arbeiten.
+- **Einfache Integration**: Verbindung mit **Google Drive, Data Studio** und anderen Google-Diensten.
+- **Automatisierung**: Mit Google Apps Script (s.u.) könnt ihr Daten aus CiviCRM importieren.
+
+### Nachteile von Google Sheets
+- **Performanz bei großen Datensätzen**: Bei **großen Datenmengen** (ab ~100.000 Zeilen) wird Sheets langsam.
+- **Weniger leistungsfähig als Excel**: **Komplexe Formeln oder Pivot-Tabellen** sind möglich, aber nicht so mächtig.
+- **Datenschutz und Datensouveränität**: Daten werden auf **Google-Servern gespeichert** – für manche Organisationen keine Option.
+
+### Fazit: Google Sheets
+Wenn ihr Google Sheets bereits verwendet, ist es eine gute Option, um kollaborativ und cloud-basiert mit euren CiviCRM-Daten zu arbeiten. Sheets eignet sich besonders gut für einfache bis mittelkomplexe Datenauswertungen und Visualisierungen für den internen Gebrauch. 
+Aufgrund der Datenschutzproblematik solltet ihr vermeiden, personenbezogene Daten in Google Sheets zu speichern. Eine Option kann sein, Daten in [SearchKit](./civicrm-searchkit-chartkit.md) zu aggregieren. 
+
+
+### Google Apps Script
+[⚙️ daten-verbinden](./../1-datenlebenszyklus.html#daten-verbinden)
+
+Google Apps Script ist eine JavaScript-basierte Programmiersprache, mit der ihr u.a. **Abläufe in Google Sheets automatisieren** könnt. Mit AppsScript können wir CiviCRM-Daten mithilfe der CiviCRM-API direkt in Google Sheets laden. 
+
+#### Vorteile von Google Apps Script
+- **Kostenlos und integriert**: Keine zusätzliche Software nötig – läuft direkt in Google Sheets.
+- **Direkter Datenimport aus CiviCRM mithilfe der CiviCRM API**: Ihr könnt Daten automatisch aktualisieren und spart euch den manuellen Schritt des Datenexports aus CiviCRM. Siehe [unser Experiment zu SearchKit + Google Sheets](./../use_cases/searchkit-tabellenkalkulation.md). 
+
+#### Nachteile von Google Apps Script
+- Erfordert **Grundkenntnisse in JavaScript**.
+- **Eingeschränkte Performance**: Bei komplexen Skripten oder großen Datenmengen kann es langsam werden.
+- **Abhängigkeit von Google**: Skripte laufen nur in der Google Workspace-Umgebung.
+
+#### Fazit: Google Apps Script
+Mit Google Apps Script könnt ihr ähnlich wie mit [Power Query](./tabellenkalkulation.md#power-query) Daten von der [CiviCRM API](./civicrm-api.md) und anderen Datenquellen (teil-)automatisiert in Google Sheets laden. So könnt ihr einfache Datenintegrationen selbst umsetzen. Der Einsatz erfordert jedoch Grundkenntnisse in JavaScript. Für komplexe Datenpipelines sind Python, R oder spezialisierte ETL-Tools oft die bessere Wahl.
+
 
 ## Libre Office Calc
-[🔢 daten-auswerten](./../datenlebenszyklus.html#daten-auswerten) [📊 daten-visualisieren](./../datenlebenszyklus.html#daten-visualisieren)
+[🔢 daten-auswerten](./../1-datenlebenszyklus.html#daten-auswerten) [📊 daten-visualisieren](./../1-datenlebenszyklus.html#daten-visualisieren)
 
 LibreOffice Calc ist das Tabellenkalkulationsprogramm der **kostenlosen Open-Source [LibreOffice-Suite](https://www.libreoffice.org/)** – ähnlich wie Microsoft Excel, aber ohne Lizenzkosten und mit offenem Quellcode. Ihr könnt damit Daten analysieren, Berechnungen durchführen, Pivot-Tabellen erstellen und Diagramme generieren. Calc unterstützt gängige Formate wie XLSX und bietet viele Funktionen für Formeln, Filter und Datenvisualisierung, ist aber etwas weniger leistungsstark als Excel bei extrem großen Datenmengen.
 
@@ -71,12 +110,7 @@ Wenn ihr auf Open Source setzen wollt, ist Libre Office Calc eine gute  und soli
 
 
 ## OnlyOffice
-[🔢 daten-auswerten](./../datenlebenszyklus.html#daten-auswerten) [📊 daten-visualisieren](./../datenlebenszyklus.html#daten-visualisieren)
+[🔢 daten-auswerten](./../1-datenlebenszyklus.html#daten-auswerten) [📊 daten-visualisieren](./../1-datenlebenszyklus.html#daten-visualisieren)
 
 Eine weitere Alternative ist die Tabellenkalkulation der [ONLYOFFICE-Suite](https://www.onlyoffice.com/), die **besonders auf kollaboratives Arbeiten** in Echtzeit ausgelegt ist. Ein großer Vorteil gegenüber Libre Office Calc ist die Integration in Cloud-Dienste (z. B. Nextcloud, ownCloud) und die Möglichkeit, Dokumente gleichzeitig mit mehreren Nutzer*innen zu bearbeiten.
 
-## Google Sheets 
-[🔢 daten-auswerten](./../datenlebenszyklus.html#daten-auswerten) [📊 daten-visualisieren](./../datenlebenszyklus.html#daten-visualisieren)
-
-
-wird besprochen unter [Google Workspace](./google-workspace.md#google-sheets).

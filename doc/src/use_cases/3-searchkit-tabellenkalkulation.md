@@ -2,10 +2,10 @@
 
 _**SearchKit Suchergebnisse über die API in Excel oder Google Sheets laden - Datenvisualisierung und weitere Auswertung dort.**_
 
-[💾 daten-organisieren](./../datenlebenszyklus.html#daten-organisieren): CiviCRM Datenbank <br>
-[🔢 daten-auswerten](./../datenlebenszyklus.html#daten-auswerten): [SearchKit](./../tools/civicrm-searchkit-chartkit.md) <br>
-[📊 daten-visualisieren](./../datenlebenszyklus.html#daten-visualisieren): [Excel](./../tools/tabellenkalkulation.md#microsoft-excel) bzw. [Google Sheets](./../tools/google-workspace.md#google-sheets) <br>
-[⚙️ daten-verbinden](./../datenlebenszyklus.html#daten-verbinden): [Power Query](./../tools/tabellenkalkulation.md#power-query) bzw. [Google Apps Script](./../tools/google-workspace.md#google-apps-script)
+[💾 daten-organisieren](./../1-datenlebenszyklus.html#daten-organisieren): CiviCRM Datenbank <br>
+[🔢 daten-auswerten](./../1-datenlebenszyklus.html#daten-auswerten): [SearchKit](./../tools/1-civicrm_intern/4-civicrm-searchkit-chartkit.md#searchkit) <br>
+[📊 daten-visualisieren](./../1-datenlebenszyklus.html#daten-visualisieren): [Excel](./../tools/2-tabellenkalkulation.md#microsoft-excel) bzw. [Google Sheets](./../tools/2-tabellenkalkulation.md#google-sheets) <br>
+[⚙️ daten-verbinden](./../1-datenlebenszyklus.html#daten-verbinden): [Power Query](./../tools/2-tabellenkalkulation.md#power-query) bzw. [Google Apps Script](./../tools/2-tabellenkalkulation.md#google-apps-script)
 
 ## SearchKit, Excel und Power Query
 
