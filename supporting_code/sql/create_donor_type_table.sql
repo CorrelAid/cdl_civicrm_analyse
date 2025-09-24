@@ -1,11 +1,11 @@
 
-CREATE TABLE IF NOT EXISTS"civicrm_donor_types_counts_kestra" (
+CREATE TABLE IF NOT EXISTS"spendende_typen_agg" (
   "id" integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY (
-    sequence name "civicrm_donor_types_counts_kestra_id_seq"
+    sequence name "spendende_typen_agg_id_seq"
   ),
   "timestamp" timestamp NOT NULL,
-  "donor_type_none" integer NOT NULL,
-  "donor_type_monthly" integer NOT NULL,
-  "donor_type_one_time" integer NOT NULL,
-  "donor_type_past" integer NOT NULL
+  "nicht_spendend" integer NOT NULL,
+  "monatlich" integer NOT NULL,
+  "einmalig" integer NOT NULL,
+  "ehemalig" integer NOT NULL
 );

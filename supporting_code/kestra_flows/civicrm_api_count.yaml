@@ -5,7 +5,8 @@ tasks:
     type: io.kestra.plugin.core.http.Request
     uri: http://civicrm.correlaid.org/civicrm/ajax/api4/Contact/get
     headers:
-      X-Civi-Auth: Bearer {{ secret('CIVICRM_API_KEY')}}
+      X-Civi-Auth: "Bearer {{ secret('CIVICRM_API_TOKEN') }}"
+
     method: POST
     contentType: application/x-www-form-urlencoded
     body: |

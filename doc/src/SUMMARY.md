@@ -7,7 +7,7 @@
     - [CiviCRM DB + Metabase](./use_cases/1-cividb_metabase.md)
     - [CiviCRM API + Managed DB + Automation + Metabase](./use_cases/2-api_db_wf_mtbs/0-index.md)
         - [Einfache Deskriptive Statistiken visualisieren](./use_cases/2-api_db_wf_mtbs/1-einfach_deskriptiv.md)
-        - [Spender:innenwanderungen](./use_cases/2-api_db_wf_mtbs/2-spenderinnen_wanderungen.md)
+        - [Spendendewanderungen](./use_cases/2-api_db_wf_mtbs/2-spenderinnen_wanderungen.md)
     - [Search Kit + Excel / Google Sheets](./use_cases/3-searchkit-tabellenkalkulation.md)
     - [Search Kit + Chartkit](./use_cases/4-searchkit-chartkit.md)
 - [Tools](./tools/0-index.md)

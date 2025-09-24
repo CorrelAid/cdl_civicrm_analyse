@@ -1,4 +1,4 @@
-id: civicrm_donor_type_count_polars
+id: civicrm_donor_type_count_warehouse
 namespace: company.team
 tasks:
   - id: request
@@ -9,7 +9,7 @@ tasks:
     method: POST
     contentType: application/x-www-form-urlencoded
     body: |
-      params=%7B%22select%22%3A%5B%22COUNT%28id%29%20AS%20count%22%2C%22Donor_Type.Donor_Type%3Alabel%22%5D%2C%22limit%22%3A25%2C%22groupBy%22%3A%5B%22Donor_Type.Donor_Type%22%5D%7D
+      params=%7B%22select%22%3A%5B%22COUNT%28id%29%20AS%20count%22%2C%22Donor_Type.Donor_Type%3Alabel%22%5D%2C%22orderBy%22%3A%7B%22contact_type%3Alabel%22%3A%22DESC%22%7D%2C%22groupBy%22%3A%5B%22Donor_Type.Donor_Type%22%5D%7D
   - id: transform
     type: io.kestra.plugin.scripts.python.Script
     taskRunner:
