@@ -1,17 +1,39 @@
 This repo contains IaC code to set up a 
 
 
+## IaC Setup
 
-## Misc Knowledge
+1. Install [OpenTofu](https://opentofu.org/docs/intro/install/), [TFlint](https://github.com/terraform-linters/tflint) and [uv](https://docs.astral.sh/uv/getting-started/installation/)
 
-### Internationalisation
-- Requires installation of https://civicrm.org/extensions/update-language-files
-- Afterwards, click on "Update language files" in the localisation menu and select desired language(s)
+2. Set up pre-commit
+    ```
+    uv run pre-commit install
+    ```
+
+3. Install ansible requirements
+    ```
+    uv run ansible-galaxy install -r ansible/requirements.yml
+    ```
+
+4. Setup [Netbird](https://docs.netbird.io/how-to/installation) and ask an admin to be added to the CorrelAid organisation.
+
+5. Set Environment Variables with copy pasting the script in the bitwarden collection belonging to this project.
+
+### Run OpenTofu
+
+```
+tofu apply
+```
+
+### Run Ansible
+
+```
+uv run ansible-playbook ansible/playbook.yml 
+```
 
 # Test data generation
 
 scripts in subfolder `test_data` can be used to generate test data to import into CiviCRM.
-
 
 ## Setup
 rename `test_data/.env-template` to `test_data/.env`. If you want to create more or less data, you can adapt the environment variables.
@@ -44,52 +66,18 @@ uv run gen_contributions.py
     - Brew: https://formulae.brew.sh/formula/mdbook
     - For arch-based: https://archlinux.org/packages/extra/x86_64/mdbook/
 
-- While in doc folder, run `mdbook init` 
+- While in doc folder, run `mdbook init`
+
+- To add Mermaid diagram support:
+
+   ```bash
+   cargo install mdbook-mermaid
+   ```
 
 
+## Misc Knowledge
 
-## Test Infrastructure Setup
+### Internationalisation
+- Requires installation of https://civicrm.org/extensions/update-language-files
+- Afterwards, click on "Update language files" in the localisation menu and select desired language(s)
 
-1. Install [OpenTofu](https://opentofu.org/docs/intro/install/), [TFlint](https://github.com/terraform-linters/tflint) and [uv](https://docs.astral.sh/uv/getting-started/installation/)
-
-2. Set up pre-commit
-    ```
-    uv run pre-commit install
-    ```
-
-3. Install ansible requirements
-    ```
-    uv run ansible-galaxy install -r ansible/requirements.yml
-    ```
-
-4. Setup [Netbird](https://docs.netbird.io/how-to/installation) and ask an admin to be added to the CorrelAid organisation.
-
-5. Set Environment Variables with copy pasting the script in the bitwarden collection belonging to this project.
-
-### Run OpenTofu
-
-```
-tofu apply
-```
-
-### Run Ansible
-
-```
-uv run ansible-playbook ansible/playbook.yml 
-```
-
-
-## Structure
-
-- Einführung: Hallo & Why & How To & Datenlebenszyklus & Fokus dieses Materials 
-- Beispielhafte Use Cases
-    - Monitoring
-    - Deskriptive Statistik
-    - Wirkungsmessung 
-    - Trends 
-
-- Tool-Kombinationen
-    - API + managed datenbank + Kestra
-    - ..
-
-- Glossar

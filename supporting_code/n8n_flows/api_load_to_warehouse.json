@@ -1,0 +1,259 @@
+{
+  "name": "API: Insert into Warehouse",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -64,
+        48
+      ],
+      "id": "3c0a2824-524d-46d6-9193-ba8ed4bd8d0a",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://civicrm.correlaid.org/civicrm/ajax/api4/Contact/get",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-Civi-Auth",
+              "value": "Bearer <Token>"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "form-urlencoded",
+        "specifyBody": "string",
+        "body": "params=%7B%22select%22%3A%5B%22id%22%2C%22gender_id%3Aname%22%5D%2C%22where%22%3A%5B%5B%22contact_type%22%2C%22%3D%22%2C%22Individual%22%5D%5D%7D",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        224,
+        0
+      ],
+      "id": "bc728a90-0539-496b-b423-68022f7aa6ff",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "values",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        560,
+        0
+      ],
+      "id": "da726827-e59b-4a4c-9141-608ae195c4f7",
+      "name": "Split Out"
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "contacts_n8n",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "gender": "={{ $json['gender_id:name'] }}",
+            "civi_id": "={{ $json.id }}"
+          },
+          "matchingColumns": [
+            "civi_id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "civi_id",
+              "displayName": "civi_id",
+              "required": true,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "gender",
+              "displayName": "gender",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        720,
+        0
+      ],
+      "id": "6739851a-4ea8-4de9-aaaf-79ed186d0e44",
+      "name": "Insert or update rows in a table",
+      "credentials": {
+        "postgres": {
+          "id": "jMOQEhtWnzAzTIhc",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c47237ab-7bc8-4cb9-ae26-ccbd15844edf",
+              "name": "values",
+              "value": "={{ $json.values }}",
+              "type": "array"
+            },
+            {
+              "id": "d8af3312-c684-4a90-bcc8-963bbaf41deb",
+              "name": "",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "id": "7e0101bc-518c-4747-9548-5c7350b7d53f",
+              "name": "",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        400,
+        0
+      ],
+      "id": "c0f4b2e8-3677-4275-979d-af02570d369e",
+      "name": "Select Values"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -64,
+        -128
+      ],
+      "id": "7ed31a4c-2ecd-42ac-b496-697d44b6c9a7",
+      "name": "Schedule Trigger"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Select Values",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out": {
+      "main": [
+        [
+          {
+            "node": "Insert or update rows in a table",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Select Values": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "f3ad69fa-7f8a-4215-9f91-90ebde44df76",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "831372a432269538b217cff330b5d0231c440467c0c53862a8bc6cd9523cd67e"
+  },
+  "id": "U1Hxvjm6RbkuIldm",
+  "tags": []
+}
