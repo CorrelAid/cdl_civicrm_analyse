@@ -19,6 +19,30 @@ Man kann Metabase entweder selbst hosten, von einem IT-Dienstleister hosten lass
 - [Metabase Cloud](https://www.metabase.com/pricing/)
 - [Elestio](https://elest.io/open-source/metabase])
 
+### Eine Datenbankverbindung in Metabase hinzufügen
+
+Damit Metabase auf die Daten aus eurer Datenbank (z.B. [CiviCRM Datenbank](./civicrm_intern/2-civicrm-datenbank.md) oder eine [Managed Datenbank](./managed-datenbank.md)) zugreifen kann, müsst ihr eine Verbindung zur Datenbank in Metabase hinzufügen.
+
+1. Als Admin in Metabase einloggen.  
+2. Oben rechts auf das **Zahnrad** → **Admin settings** klicken.  
+3. **Databases** wählen → **Add a database**.  
+4. Datenbank-Typ auswählen (z. B. Postgres, MySQL, SQL Server …).  
+5. Verbindungsdaten eintragen:  
+   - Name 
+   - Host / IP 
+   - Port 
+   - Datenbankname  
+   - Benutzer  
+   - Passwort  
+   - ggf. Connection-String  
+6. Optional: **SSL** oder **SSH-Tunnel** aktivieren, falls nötig.  
+7. **Save changes** (Metabase testet die Verbindung).  
+8. Danach: **Sync database schema** und ggf. **Re-scan** ausführen, damit Tabellen/Spalten sichtbar sind.  
+9. Falls Probleme auftreten: Netzwerk/Firewall, Port, DB-Zugriffsrechte und Metabase-Logs prüfen.
+
+
+In [diesem YouTube Video](https://www.youtube.com/watch?v=P6DFuwqSDmQ) könnt ihr mitverfolgen, wie die Schritte sind. Die [schriftliche Dokumentation](https://www.metabase.com/docs/latest/databases/connecting) kann auch hilfreich sein.
+
 #### Vorteile
 - ermöglicht eigenständige Exploration von Daten
 - zahlreiche Visualisierungstypen
