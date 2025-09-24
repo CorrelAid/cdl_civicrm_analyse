@@ -10,7 +10,7 @@ Wir stellen uns die Frage, wie sich Geschlecht unter den in CiviCRM erfassten Ko
 
  Als SQL, das man auch in den SQL Editor einfügen kann, um die Tabelle zu erstellen, sieht das so aus:
 
- ```
+ ```sql
  CREATE TABLE "kontakte" (
   "id" integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY (sequence name "kontakte_id_seq"),
   "civicrm_id" integer NOT NULL UNIQUE,

@@ -9,4 +9,5 @@ Eine einfache Art, Kontakte im Bezug auf Art der Unterstützung zu visualisieren
 
 ## Benutzerdefinierte Felder
 
-Eine andere Art Typen von Unterstützer:innen zu erfassen ist über das Anlegen von benutzerdefinierten Feldern. Hierfür muss man zunächst eine Gruppe anlegen und dann ein Feld hinzufügen. Für Typen von Unterstützung eignet sich ein alphanumerischer Dropdown ohne Mehrfachauswahl.
+Eine andere Art CiviCRM Erfassungsmöglichkeiten zu erweitern ist das Anlegen von **benutzerdefinierten Feldern**. Hierfür muss man zunächst eine Gruppe anlegen und dann ein Feld hinzufügen.  In der CiviCRM Dokumentation ist dies [hier](https://docs.civicrm.org/user/en/latest/organising-your-data/creating-custom-fields/) erklärt.
+
