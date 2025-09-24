@@ -10,6 +10,9 @@
         - [Spendendewanderungen](./use_cases/2-api_db_wf_mtbs/2-spenderinnen_wanderungen.md)
     - [Search Kit + Excel / Google Sheets](./use_cases/3-searchkit-tabellenkalkulation.md)
     - [Search Kit + Chartkit](./use_cases/4-searchkit-chartkit.md)
+    - [API + Python + Notebooks]()
+    - [API + Python + Streamlit]()
+    - [API + R + Quarto]()
 - [Tools](./tools/0-index.md)
     - [CiviCRM-interne Tools](./tools/1-civicrm_intern/0-index.md)
         - [Erweiterung der CiviCRM-Daten](./tools/1-civicrm_intern/1-erweiterung-daten.md)
@@ -23,6 +26,7 @@
     - [Workflow Automation Tools](./tools/5-workflow-tools.md)
     - [Python & R](./tools/6-python-und-r.md)
     - [Self-Hosting](./tools/7-self-hosting.md)
+    - [Andere Visualisierungstools]()
 
 [Fazit](./2-fazit.md)
 [Über das Datenvorhaben](./3-ueber.md)
