@@ -1,9 +1,9 @@
 # CiviCRM API + Automation + Managed DB + Metabase
 
-[💾 daten-organisieren](./../1-datenlebenszyklus.html#daten-organisieren): [CiviCRM API Explorer](./../../tools/1-civicrm_intern/3-civicrm-api.md#api-explorer) & [Managed Datenbank](./../../tools/4-managed-datenbank.md)<br>
-[🔢 daten-auswerten](./../1-datenlebenszyklus.html#daten-auswerten): [Metabase](./../tools/bi-tools.md#metabase) <br>
-[📊 daten-visualisieren](./../1-datenlebenszyklus.html#daten-visualisieren): [Metabase](./../tools/bi-tools.md#metabase) <br>
-[⚙️ daten-verbinden](./../1-datenlebenszyklus.html#daten-verbinden): 
+[💾 daten-organisieren](./../../1-datenlebenszyklus.html#daten-organisieren): [CiviCRM API Explorer](./../../tools/1-civicrm_intern/3-civicrm-api.md#api-explorer) & [Managed Datenbank](./../../tools/4-managed-datenbank.md)<br>
+[🔢 daten-auswerten](./../../1-datenlebenszyklus.html#daten-auswerten): [Metabase](./../../tools/bi-tools.md#metabase) <br>
+[📊 daten-visualisieren](./../../1-datenlebenszyklus.html#daten-visualisieren): [Metabase](./../../tools/bi-tools.md#metabase) <br>
+[⚙️ daten-verbinden](./../../1-datenlebenszyklus.html#daten-verbinden): 
 [CiviCRM API](./../../tools/1-civicrm_intern/3-civicrm-api.md) & [Workflow Automation Tool](../../tools/5-workflow-tools.md)
 
 ```mermaid
