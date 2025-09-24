@@ -1,6 +1,7 @@
 # Use Cases & Ansätze
 
 ## Use Cases: Wie nutzt die Zivilgesellschaft CiviCRM?
+
 Im Sinne der partizipativen Technikgestaltung haben wir im Rahmen des Datenvorhabens schriftlich und in persönlichen Gesprächen **Meinungen, Bedarfe und Anfoderungen von zivilgesellschaftlichen CiviCRM-Nutzer*innen** eingeholt. Wir danken allen, die mit uns ihre Anliegen geteilt haben. 
 Es zeigte sich, dass es eine große Varianz gibt - in der Nutzung von CiviCRM, aber auch in den Wünschen und Anforderungen an Auswertungen der eigenen Daten. 
 

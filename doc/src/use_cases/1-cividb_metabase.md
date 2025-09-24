@@ -1,0 +1,1 @@
+ [Hier](http://localhost:3000/tools/bi-tools.html#verbinden-von-datenbanken-mit-metabase) ist beschrieben, wie man Datenbanken an Metabase anschließt 
