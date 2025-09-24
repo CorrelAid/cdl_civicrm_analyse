@@ -4,7 +4,7 @@
 [Einführung](./0-einfuehrung.md)
 [Datenlebenszyklus](./datenlebenszyklus.md)
 - [Ansätze und Use Cases](./use_cases/0-index.md)
-    - [CiviCRM DB + Metabase](./use_cases/1-cividb_metabase.md)
+    - [CiviCRM Datenbank + Metabase](./use_cases/1-civicrmdb_metabase.md)
     - [CiviCRM API + Managed DB + Automation + Metabase](./use_cases/2-api_db_wf_mtbs/0-index.md)
         - [Einfache Deskriptive Statistiken visualisieren](./use_cases/2-api_db_wf_mtbs/1-einfach_deskriptiv.md)
         - [Spender:innenwanderungen](./use_cases/2-api_db_wf_mtbs/2-spenderinnen_wanderungen.md)
