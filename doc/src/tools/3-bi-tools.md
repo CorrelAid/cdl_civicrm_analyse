@@ -1,16 +1,16 @@
 # Business Intelligence Tools 
-[🔢 daten-auswerten](./../datenlebenszyklus.html#daten-auswerten)
-[📊 daten-visualisieren](./../datenlebenszyklus.html#daten-visualisieren) 
-[💬 daten-kommunizieren](./../datenlebenszyklus.html#daten-kommunizieren)
+[🔢 daten-auswerten](./../1-datenlebenszyklus.html#daten-auswerten)
+[📊 daten-visualisieren](./../1-datenlebenszyklus.html#daten-visualisieren) 
+[💬 daten-kommunizieren](./../1-datenlebenszyklus.html#daten-kommunizieren)
 
 Business Intelligence Tools (BI-Tools) sind Softwarelösungen, die Organisationen dabei unterstützen, Daten zu sammeln, zu analysieren, zu visualisieren und in verwertbare Erkenntnisse umzuwandeln. Sie helfen, fundierte Entscheidungen zu treffen, indem sie komplexe Datenmengen verständlich und zugänglich machen.
 
 
 
 ## Metabase
-[🔢 daten-auswerten](./../datenlebenszyklus.html#daten-auswerten)
-[📊 daten-visualisieren](./../datenlebenszyklus.html#daten-visualisieren) 
-[💬 daten-kommunizieren](./../datenlebenszyklus.html#daten-kommunizieren)
+[🔢 daten-auswerten](./../1-datenlebenszyklus.html#daten-auswerten)
+[📊 daten-visualisieren](./../1-datenlebenszyklus.html#daten-visualisieren) 
+[💬 daten-kommunizieren](./../1-datenlebenszyklus.html#daten-kommunizieren)
 
 [Metabase](https://www.metabase.com) ist eine Open-Source-Software für Business Intelligence, die Organisationen dabei unterstützt, Daten zu analysieren und in interaktiven Dashboards zu visualisieren. Die Anwendung ermöglicht es Nutzer\*innen, auch ohne SQL-Kenntnisse Abfragen durchzuführen und Dashboards und Berichte zu erstellen. Metabase ist mit einer Vielzahl von Datenbanken kompatibel und richtet sich an Anwender\*innen, die Daten zugänglich und nutzbar machen möchten.
 
@@ -114,9 +114,9 @@ Wenn ihr feststellt, dass ihr bei der Erstellung von **Fragen** immer die gleich
 
 ## Alternativen: Apache Superset, Power BI und Tableau
 
-[🔢 daten-auswerten](./../datenlebenszyklus.html#daten-auswerten)
-[📊 daten-visualisieren](./../datenlebenszyklus.html#daten-visualisieren) 
-[💬 daten-kommunizieren](./../datenlebenszyklus.html#daten-kommunizieren)
+[🔢 daten-auswerten](./../1-datenlebenszyklus.html#daten-auswerten)
+[📊 daten-visualisieren](./../1-datenlebenszyklus.html#daten-visualisieren) 
+[💬 daten-kommunizieren](./../1-datenlebenszyklus.html#daten-kommunizieren)
 
 Alternativen zu Metabase sind u.a.:
 

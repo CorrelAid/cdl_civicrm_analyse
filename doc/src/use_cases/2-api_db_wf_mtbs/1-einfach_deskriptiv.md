@@ -6,7 +6,7 @@ Wir stellen uns die Frage, wie sich Geschlecht unter den in CiviCRM erfassten Ko
 
 ### Anlegen einer Tabelle in der Managed Datenbank (Neon)
 
- Erstelle eine neue Tabelle, wie [hier](http://localhost:3000/tools/managed-datenbank.html#anlegen-einer-datenbank-und-tabelle) beschrieben, mit dem Namen *kontakte* und füge neben der automatischen ID-Spalte lediglich die Spalten **civicrm-id** und **gender** ein. Ersteres sollte den Datentyp **integer** haben, und als contraints ***Not null**, sowie **Unique** haben. Zweiteres sollte den Datentyp **varchar** und den constraint **Not null**.
+ Erstelle eine neue Tabelle, wie [hier](../../tools/4-managed-datenbank.html#anlegen-einer-datenbank-und-tabelle) beschrieben, mit dem Namen *kontakte* und füge neben der automatischen ID-Spalte lediglich die Spalten **civicrm-id** und **gender** ein. Ersteres sollte den Datentyp **integer** haben, und als contraints ***Not null**, sowie **Unique** haben. Zweiteres sollte den Datentyp **varchar** und den constraint **Not null**.
 
  Als SQL, das man auch in den SQL Editor einfügen kann, um die Tabelle zu erstellen, sieht das so aus:
 
@@ -23,7 +23,7 @@ Wir stellen uns die Frage, wie sich Geschlecht unter den in CiviCRM erfassten Ko
 
 #### Datenmodellierung im API Explorer
 
-Navigiert zum [API Explorer](../../tools/civicrm_intern/3-civicrm-api.html#api-explorer) und wählt als Entität **Contact**, sowie als Aktion **get** aus. Unter select, wählt **gender_id:label** und **id** aus. Wichtig ist, dass ihr außerdem **-1** bei **limit** setzt, um alle Daten zu erhalten. Bei diesem Use Case beschränkt sich das Data Modeling auf die Feldauswahl. 
+Navigiert zum [API Explorer](../../tools/1-civicrm_intern/3-civicrm-api.html#api-explorer) und wählt als Entität **Contact**, sowie als Aktion **get** aus. Unter select, wählt **gender_id:label** und **id** aus. Wichtig ist, dass ihr außerdem **-1** bei **limit** setzt, um alle Daten zu erhalten. Bei diesem Use Case beschränkt sich das Data Modeling auf die Feldauswahl. 
 
 🤔 Kleiner Exkurs: **gender** ist eine separate Tabelle, die alle auf dieser CiviCRM auswählbaren Gender enthält. Kontakte haben ein Feld mit dem Namen **gender_id**, dass die ID einer Reihe in der Gender-Tabelle enthält, die zum Beispiel als Spalte **Label** hat. 
 
@@ -31,7 +31,7 @@ Nach diesen Schritten könnt ihr bereits den Request Body weiter unten unter RES
 
 ### Anlegen des Flows in n8n
 
-Auf eurer [n8n](../../tools/workflow-tools.html#n8n) Instanz, erstellt einen neuen Workflow. Am Ende sollte dieser so aussehen:
+Auf eurer [n8n](../../tools/5-workflow-tools.html#n8n) Instanz, erstellt einen neuen Workflow. Am Ende sollte dieser so aussehen:
 
 ![Final n8n Flow](../../images/n8n-final-flow.png)
 
@@ -45,7 +45,7 @@ Der erste richtige Knoten ist die API-Anfrage. Unten seht ihr, wie ihr ihn konfi
 
 ![Screenshot API Anfrage](../../images/n8n-api-request.png)
 
-Fügt unter URL am Anfang die URL eurer Instanz ein. Im API Explorer unter dem Rest Reiter ist dies auch als Variable **CRM_URL** definiert. Wie ihr ein API Token erhaltet, lernt ihr [hier](http://localhost:3000/tools/civicrm_intern/3-civicrm-api.html#api-einrichten). 
+Fügt unter URL am Anfang die URL eurer Instanz ein. Im API Explorer unter dem Rest Reiter ist dies auch als Variable **CRM_URL** definiert. Wie ihr ein API Token erhaltet, lernt ihr [hier](../../tools/1-civicrm_intern/3-civicrm-api.html#api-einrichten). 
 
 Im Feld Body, das bei Setzen der oben angezeigten Optionen erscheint, fügt ihr nun den im API-Explorer generierten Body ein (siehe oben). Dies könnt ihr direkt mit einem Klick auf "Execute Workflow" testen.
 
@@ -73,7 +73,7 @@ Wenn ihr dies erledigt habt, nutzt den Knoten-Typ für Postgres: **Insert or upd
 
 ### Visualisierung in Metabase
 
-Verbindet wie [hier](http://localhost:3000/tools/bi-tools.html#verbinden-von-datenbanken-mit-metabase) beschrieben die Datenbank mit Metabase. An die notwendigen Informationen kommt ihr ähnlich wie beim Anlegen der Postgres Credentials für den letzten Knoten des Workflows. 
+Verbindet wie [hier](../../tools/3-bi-tools.md#mb-db-hinzufuegen) beschrieben die Datenbank mit Metabase. An die notwendigen Informationen kommt ihr ähnlich wie beim Anlegen der Postgres Credentials für den letzten Knoten des Workflows. 
 
 ![Screenshot Final Viz](../../images/n8n-viz.png)
 
