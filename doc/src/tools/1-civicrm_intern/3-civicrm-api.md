@@ -1,7 +1,7 @@
 # CiviCRM-API & API-Explorer
 
 ## CiviCRM API
-[💾 daten-organisieren](./../datenlebenszyklus.html#daten-organisieren) <br>
+[⚙️ daten-verbinden](./../1-datenlebenszyklus.html#daten-verbinden)
 
 CiviCRM hat eine Programmierschnittstelle (Application Programming Interface / API[^note2]), welche wir verwenden, um von extern auf CiviCRM-Daten zuzugreifen.
 
@@ -44,7 +44,7 @@ https://civicrm.correlaid.org/civicrm/admin/setting/authx?reset=1 . Dort müssen
 
 
 ## API Explorer
-[💾 daten-organisieren](./../datenlebenszyklus.html#daten-organisieren) <br>
+[⚙️ daten-verbinden](./../1-datenlebenszyklus.html#daten-verbinden)[🔢 daten-auswerten](./../1-datenlebenszyklus.html#daten-auswerten)<br>
 
 Da die [Dokumentation der CiviCRM API](https://docs.civicrm.org/dev/en/latest/api/) für Nicht-PHP-Entwickler\*innen nicht besonders zugänglich ist, fanden wir es hilfreich, mit dem API-Explorer zu arbeiten. Im API-Explorer kann man mithilfe einer grafischen Benutzeroberfläche direkt in CiviCRM Abfragen an die API konfigurieren und ausprobieren. Das erleichtert es enorm, ...
 

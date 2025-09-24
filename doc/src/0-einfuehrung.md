@@ -11,20 +11,20 @@ Dieses Material dokumentiert die Ergebnisse dieses Datenvorhabens und skizziert 
 
 ## Wie gehts weiter?
 
-1. Zuerst betten wir die typischen Schritte bei der Auswertung von CiviCRM-Daten und potenziell hilfreiche Tools in den **["Datenlebenszyklus"](./datenlebenszyklus.md)** ein. 
+1. Zuerst betten wir die typischen Schritte bei der Auswertung von CiviCRM-Daten und potenziell hilfreiche Tools in den **["Datenlebenszyklus"](./1-datenlebenszyklus.md)** ein. 
 2. **[Use Cases & Ansätze](./use_cases/0-index.md)**: Wie nutzt die Zivilgesellschaft CiviCRM? Welche Anwendungsfälle gibt es und wie können wir ihnen technologisch begegnen? 
 3. In den Unterseiten geht es dann ins Details: Wir beschreiben unsere Experimente und Use Cases, die wir näher untersucht haben.
-4. Die verwendeten CiviCRM-Komponenten und externen Tools beschreiben wir im **[Abschnitt Tools](./tools/index.md)**.
-5. In der **[Executive Summary](./executive-summary.md)** fassen wir unsere Erkenntnisse zusammen.
+4. Die verwendeten CiviCRM-Komponenten und externen Tools beschreiben wir im **[Abschnitt Tools](./tools/0-index.md)**.
+5. Im **[Fazit](./2-fazit.md)** fassen wir unsere Erkenntnisse zusammen.
 
 
 ## Limitationen des Datenvorhabens
 
-CiviCRM ist ein mächtiges und komplexes Tool und **wir sind weder CiviCRM- noch Fundraising- oder CRM-Expert*innen**>. Deshalb kann es sein, dass uns vielversprechende Optionen aus dem Civi-Universum entgangen sind. Dies gilt v.a. für fachspezifische CiviCRM-Erweiterungen - wir hatten leider nicht die Zeit, um uns tiefergehend mit allen Anwendungsfällen (Fundraising, Freiwilligenmanagement, ...) und den dazugehörigen Erweiterungen auseinanderzusetzen. 
+CiviCRM ist ein mächtiges und komplexes Tool und **wir sind weder CiviCRM- noch Fundraising- oder CRM-Expert*innen**. Deshalb kann es sein, dass uns vielversprechende Optionen aus dem Civi-Universum entgangen sind. Dies gilt v.a. für fachspezifische CiviCRM-Erweiterungen - wir hatten leider nicht die Zeit, um uns tiefergehend mit allen Anwendungsfällen (Fundraising, Freiwilligenmanagement, ...) und den dazugehörigen Erweiterungen auseinanderzusetzen. 
 
-Unsere Experimente haben wir mit unserer <b>selbst gehosteten Basisinstallation</b> von CiviCRM 6.4.0. durchgeführt. Zwischen der Standalone-Version von CiviCRM und dessen Nutzung in Kombination mit CMS wie Drupal oder Wordpress gibt es Unterschiede. Auch Spezifika von Hosting-Anbietern (z.B. Systopia-eigene Extensions) konnten wir nicht berücksichtigen. Über <a href="./ueber.md#beitragen">Beiträge zu dieser Dokumentation<a> von Personen, die in diesen Bereichen mehr Ahnung haben, würden wir uns sehr freuen. 
+Unsere Experimente haben wir mit unserer <b>selbst gehosteten Basisinstallation</b> von CiviCRM 6.4.0. durchgeführt. Zwischen der Standalone-Version von CiviCRM und dessen Nutzung in Kombination mit CMS wie Drupal oder Wordpress gibt es Unterschiede. Auch Spezifika von Hosting-Anbietern (z.B. Systopia-eigene Extensions) konnten wir nicht berücksichtigen. Über <a href="./3-ueber.md#beitragen">Beiträge zu dieser Dokumentation<a> von Personen, die in diesen Bereichen mehr Ahnung haben, würden wir uns sehr freuen. 
 
-In der Bearbeitung der Use Cases waren wir **inhaltlich beschränkt durch unsere [selbst erstellten Testdaten]()**. Wir hatten Kontakte, Spenden und Events, aber keine Aktivitäten wie Eventteilnahmen o.ä. 
+In der Bearbeitung der Use Cases waren wir **inhaltlich beschränkt durch unsere [selbst erstellten Testdaten](https://github.com/CorrelAid/cdl_civicrm_analyse/tree/main/supporting_code/test_data)**. Wir hatten Kontakte und Zuwendungen, aber keine Events oder Aktivitäten wie Eventteilnahmen o.ä. 
 
 ## Hinweise zur Bedienung
 Zur Navigation kann die Seitenleiste und/oder die Pfeile am Ende der Unterseiten verwendet werden. Mit der 🔍 Suchfunktion kann die Seite nach Begriffen durchsucht werden.

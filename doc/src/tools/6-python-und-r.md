@@ -4,7 +4,7 @@
 
 
 ## Python
-[🔢 daten-auswerten](./../datenlebenszyklus.html#daten-auswerten) [📊 daten-visualisieren](./../datenlebenszyklus.html#daten-visualisieren) [⚙️ daten-verbinden](./../datenlebenszyklus.html#daten-verbinden)
+[🔢 daten-auswerten](./../1-datenlebenszyklus.html#daten-auswerten) [📊 daten-visualisieren](./../1-datenlebenszyklus.html#daten-visualisieren) [💬 daten-kommunizieren](./../1-datenlebenszyklus.html#daten-kommunizieren) [⚙️ daten-verbinden](./../1-datenlebenszyklus.html#daten-verbinden)
 
 Python ist eine sehr vielseitige und populäre Programmiersprache. Mit Python könnt ihr Daten aus CiviCRM abrufen, transformieren, analysieren und in interaktiven Dashboards oder Notebooks darstellen.
 
@@ -35,7 +35,7 @@ Für die Analyse und Visualisierung von CiviCRM-Daten stehen zahlreiche Biblioth
 ---
 
 ## R
-[🔢 daten-auswerten](./../datenlebenszyklus.html#daten-auswerten) [📊 daten-visualisieren](./../datenlebenszyklus.html#daten-visualisieren) [⚙️ daten-verbinden](./../datenlebenszyklus.html#daten-verbinden)
+[🔢 daten-auswerten](./../1-datenlebenszyklus.html#daten-auswerten) [📊 daten-visualisieren](./../1-datenlebenszyklus.html#daten-visualisieren) [⚙️ daten-verbinden](./../1-datenlebenszyklus.html#daten-verbinden)
 
 R ist eine Programmiersprache und Umgebung, die speziell für statistische Datenanalyse und Visualisierung entwickelt wurde. Sie eignet sich hervorragend für die Integration, Analyse und Darstellung von CiviCRM-Daten, insbesondere wenn statistische Auswertungen im Vordergrund stehen.
 

@@ -1,3 +1,3 @@
 # Search Kit + Chartkit
 
-_folgt_
+_Inhalte folgen_
