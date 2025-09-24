@@ -9,7 +9,7 @@
 - [Business Intelligence Tools](./tools/bi-tools.md)
 - [Google Workspace](./tools/google-workspace.md)
 - [Managed Datenbank](./tools/managed-datenbank.md) 💾
-- [Workflow Tools](./tools/workflow-tools.md)
+- [Workflow Automation Tools](./tools/workflow-tools.md)
 - [Python & R](./tools/python-und-r.md)
 
 

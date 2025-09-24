@@ -14,7 +14,7 @@ Wir verwenden den Datenlebenszyklus hier, um Komponenten und Tools den Schritten
 ### Planen und fragen 🗺️ {#planen-und-fragen}
 *Welche Fragen will ich mithilfe von Daten beantworten? Welche Daten brauche ich?**
 
-Bei unserem Projekt gingen wir größenteils davon aus, dass interessierte Organisation schon Daten haben und auch wissen, welche Fragen sie an die Daten stellen wollen. Allerdings können manche Fragestellungen nur beantwortet werden, wenn man die in CiviCRM erfassten Daten erweitert. 
+Bei unserem Projekt gingen wir größenteils davon aus, dass interessierte Organisation schon Daten haben und auch wissen, welche Fragen sie an die Daten stellen wollen. Allerdings können manche Fragestellungen nur beantwortet werden, wenn man die in CiviCRM erfassten Daten um eigene Felder erweitert. 
 
 [Erweiterung von CiviCRM-Daten](./tools/civicrm_intern/1-erweiterung-datengrundlage.md)
 
@@ -23,7 +23,7 @@ Bei unserem Projekt gingen wir größenteils davon aus, dass interessierte Organ
 
 &rarr; Im Kontext unseres Datenvorhabens hat CiviCRM und seine [SQL-Datenbank](./tools/civicrm_intern/2-civicrm-datenbank.md) als Ort zur Speicherung und Verwaltung von Daten häufig ausgereicht. Trotzdem gibt es auch Fälle, wo zusätzliche Tools (z.B. eine [Managed Datenbank](./tools/managed-datenbank.md)) zur Organisation und Speicherung von CiviCRM-Daten sinnvoll waren, z.B. um [historische Daten verfügbar zu machen]() und so [Spenderübergänge zu analysieren]().
 
-Dabei geht es nicht nur um den Speicherort: Wenn Daten langfristig gespeichert werden und auf deren Basis Analysen stattfinden sollen, lassen sich in diesem Schritt Methoden aus der Disziplin des Data Engineering anwenden. Dies umfasst unter anderem das Aggregieren oder das Kombinieren von Datensätzen. Manchmal muss man jedoch auch anfangen, zusätzliche Informationen zu erfassen, zum Beispiel, indem 
+Dabei geht es nicht nur um den Speicherort: Wenn Daten langfristig gespeichert werden und auf deren Basis Analysen stattfinden sollen, lassen sich in diesem Schritt Methoden aus dem Bereich des **Data Engineering** und **Data Modeling** anwenden. Dies umfasst unter anderem das Aggregieren oder das Kombinieren von Datensätzen.
 
 [💾 CiviCRM Datenbank](./tools/civicrm_intern/2-civicrm-datenbank.md) [💾 Managed Datenbank](./tools/managed-datenbank.md) 
 
@@ -56,7 +56,7 @@ Das Kommunizieren von Daten und Ergebnissen von Datenauswertungen ist eine Kunst
 
 &rarr; Zusätzlich zu den Schritten des Datenlebenszyklus ist es bei unseren Experimenten sehr relevant gewesen, Komponenten und Tools miteinander zu integrieren, sie zu verbinden und Datenflüsse zu ermöglichen. Deshalb sprechen wir zusätzlich auch von *Daten verbinden & Datenflüsse ermöglichen*. 
 
-[⚙️ CiviCRM-API](./tools/civicrm-api.md) [⚙️ Workflow Tools](./tools/workflow-tools.md) [⚙️ MS Power Query](./tools/tabellenkalkulation.md#power-query) [⚙️ Google AppScript](./tools/google-workspace.md#google-appscript)
+[⚙️ CiviCRM-API](./tools/civicrm-api.md) [⚙️ Workflow Automation Tools](./tools/workflow-tools.md) [⚙️ MS Power Query](./tools/tabellenkalkulation.md#power-query) [⚙️ Google AppScript](./tools/google-workspace.md#google-appscript)
 
 ### Datenschutz
 &rarr; Da in CiviCRM fast immer personenbezogene Daten gespeichert werden, bildet Datenschutz einen wichtigen Rahmen für die Auswertung von CiviCRM-Daten. Dies ist vor allem relevant, wenn Daten außerhalb von CiviCRM weiterverarbeitet werden. Wir haben bei unserer Arbeit darauf geachtet, Tools zu priorisieren, die Datensouveränität ermöglichen.

@@ -1,8 +1,7 @@
 # CiviCRM-API & API-Explorer
 
 ## CiviCRM API
-[⚙️ daten-verbinden](./../datenlebenszyklus.html#daten-verbinden)<br>
-
+[💾 daten-organisieren](./../datenlebenszyklus.html#daten-organisieren) <br>
 
 CiviCRM hat eine Programmierschnittstelle (Application Programming Interface / API[^note2]), welche wir verwenden, um von extern auf CiviCRM-Daten zuzugreifen.
 
@@ -45,7 +44,7 @@ https://civicrm.correlaid.org/civicrm/admin/setting/authx?reset=1 . Dort müssen
 
 
 ## API Explorer
-[⚙️ daten-verbinden](./../datenlebenszyklus.html#daten-verbinden)<br>
+[💾 daten-organisieren](./../datenlebenszyklus.html#daten-organisieren) <br>
 
 Da die [Dokumentation der CiviCRM API](https://docs.civicrm.org/dev/en/latest/api/) für Nicht-PHP-Entwickler\*innen nicht besonders zugänglich ist, fanden wir es hilfreich, mit dem API-Explorer zu arbeiten. Im API-Explorer kann man mithilfe einer grafischen Benutzeroberfläche direkt in CiviCRM Abfragen an die API konfigurieren und ausprobieren. Das erleichtert es enorm, ...
 
@@ -57,7 +56,9 @@ Wenn ihr selbst mit der API arbeiten möchtet, ist der API-Explorer ein **gutes 
 
 In der Basisinstallation findet ihr den API-Explorer unter *Unterstützung* -> *Entwickler* -> *API-Explorer*. Sonst fragt euren CiviCRM-Hosting-Dienstleister.
 
-### Den encoded Body-Parameter nutzen
+### POST-Request-Parameter aus dem API-Explorer nutzen
+
+Bei POST-Requests an die CiviCRM API kann ein einzelnes Feld namens `params` verwendet werden , das eine [URL-encoded](https://de.wikipedia.org/wiki/URL-Encoding) [JSON](https://de.wikipedia.org/wiki/JSON)-Zeichenkette der API-Parameter enthält. URL-Encoding wandelt Sonderzeichen in ein Format um, das sicher in URLs und Formulardaten übertragen werden kann (z.B. wird `{` zu `%7B`). Dies ermöglicht es, komplexe JSON-Strukturen als einzelnes Formularfeld im POST-Body zu senden, das CiviCRM dann dekodiert und als API-Parameter verarbeitet.
 
 Wenn man eine API-Anfrage konfiguriert hat, hier als Beispiel die Übergabe aller Kontakte, lässt sich weiter unten auf der Seite des API-Explorers der Reiter "REST" auswählen. Hier wird dann für unser Beispiel angezeigt:
 
@@ -66,5 +67,7 @@ curl -X POST -H "$CRM_AUTH" "$CRM_URL" \^
 -d 'params=%7B%22limit%22%3A25%7D'
 ```
 
-Nützlich für API-Anfragen mit andere Tools ist folgendes: `params=%7B%22limit%22%3A25%7D`
+Nützlich für API-Anfragen mit andere Tools ist folgendes: `params=%7B%22limit%22%3A25%7D` Beachtet, dass die Anführungszeichen nicht mit kopiert werden sollten.
+
+
 

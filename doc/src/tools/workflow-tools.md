@@ -1,17 +1,17 @@
-# Workflow Tools
+# Workflow Automation Tools
 
-Workflow Tools, oder auch Workflow Automation Tools, meint browserbasierte Anwendungen, über die man einzelne Schritte, wie das Laden, Senden und Verarbeiten von Daten direkt miteinander verknüpfen und automatisieren kann. Viele Workflow Tools sind dabei nicht auf Daten spezialisiert, sondern es lässt sich Beliebiges verknüpfen und automatisieren. Auf Daten bezogen lassen sich diese Tools auch dem Feld der **Data Orchestration** zuordnen. 
+Workflow Automation Tools sind browserbasierte Anwendungen, über die man einzelne Schritte, wie das Laden, Senden und Verarbeiten von Daten direkt miteinander verknüpfen und automatisieren kann. Viele Workflow Automation Tools sind dabei nicht auf Daten spezialisiert, sondern es lässt sich Beliebiges verknüpfen und automatisieren. Auf Daten bezogen lassen sich diese Tools auch dem Feld der **Data Orchestration** zuordnen. 
 
 Gemeinsam ist diesen Tools, dass Aktionen in Schritten, oft Knoten genannt, durchgeführt werden. Knoten erhalten Inputs und produzieren Outputs, die wiederum zu Inputs eines anderen Knoten werden können. So entsteht sowohl mit Bezug auf die Reihenfolge der Ausführung, also auch mit Bezug auf den Fluss der Daten ein Pfad bzw. Flow. Ein verwandtes Konzept ist das des [DAG](https://en.wikipedia.org/wiki/Directed_acyclic_graph) (Directed acyclic graph). 
 
-Workflow Tools sind hilfreich, um  Prozesse wie Datenexporte oder Verarbeitung nicht wiederholt zeitaufwendig manuell erledigen zu müssen. Gleichzeitig sind sie eine Alternative dazu, Automatisierungen komplett selbst zu programmieren. Somit sind sie zugänglicher für Daten-Anfänger:innen bzw. Menschen, die Skills in anderen Bereichen haben. Oft ist jedoch der Modus, dass man standardmäßig Flows mit Klicken baut, jedoch wenn man es für sinnvoll erachtet, in den Knoten mit Programmieren arbeiten kann.
+Workflow Automation Tools sind hilfreich, um  Prozesse wie Datenexporte oder Verarbeitung nicht wiederholt zeitaufwendig manuell erledigen zu müssen. Gleichzeitig sind sie eine Alternative dazu, Automatisierungen komplett selbst zu programmieren. Somit sind sie zugänglicher für Daten-Anfänger:innen bzw. Menschen, die Skills in anderen Bereichen haben. Oft ist jedoch der Modus, dass man standardmäßig Flows mit Klicken baut, jedoch wenn man es für sinnvoll erachtet, in den Knoten mit Programmieren arbeiten kann.
 
 Die folgende Tabelle zeigt eine unvollständige Übersicht (Stand 23.09.2025) über solche Tools und verdeutlicht deren Vielzahl.
 
 | Name          | Website                                                                                                                | Vollständig OSS | Kostenloser Plan | SaaS-Preis ab (monatlich) | Komplexität Selbst-Hosting (1–10) | DSGVO-Hinweise SaaS                                                                                                                                    | Konfig. mit GUI | Konfig. mit Code | Git-basiert | Allgemeine Hinweise                                            |
 |---------------|------------------------------------------------------------------------------------------------------------------------|-----------------|-----------------|---------------------------|-----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|------------------|-------------|----------------------------------------------------------------|
 | Pipedream     | https://pipedream.com                                                                                                  | Nein            | Ja              | $49                       | –                                 | Unklar: [Privacy & Security (GDPR)](https://pipedream.com/docs/privacy-and-security#gdpr)                                                              | Ja              | Ja               | Nein        | KI-Pipeline-Builder-Assistent                                   |
-| N8N           | https://n8n.io/                                                                                                        | Ja              | Nein            | $24                       | 3                                 | Azure in Frankfurt: [GDPR](https://docs.n8n.io/privacy-security/privacy/#gdpr)                                                                       | Ja              | Ja               | –           | –                                                              |
+| n8n           | https://n8n.io/                                                                                                        | Ja              | Nein            | $24                       | 3                                 | Azure in Frankfurt: [GDPR](https://docs.n8n.io/privacy-security/privacy/#gdpr)                                                                       | Ja              | Ja               | –           | –                                                              |
 | Kestra        | https://kestra.io/                                                                                                     | Ja              | Nein            | Enterprise (unbekannt)    | 4                                 | –                                                                                                                                                      | Nein            | Ja               | Ja          | Komplex mit YAML für nicht-technische Anwender              |
 | Zapier        | https://zapier.com/                                                                                                    | Nein            | –               | $30                       | –                                 | –                                                                                                                                                      | –               | –                | –           | –                                                              |
 | Automatisch   | https://automatisch.io                                                                                                 | Ja              | Ja              | $20                       | –                                 | –                                                                                                                                                      | –               | –                | –           | Begrenzter SQL-Adapter (nur Postgres, wenige Funktionen)       |
@@ -21,9 +21,9 @@ Die folgende Tabelle zeigt eine unvollständige Übersicht (Stand 23.09.2025) ü
 | Rudderstack   | https://www.rudderstack.com/                                                                                           | Ja              | –               | –                         | –                                 | –                                                                                                                                                      | –               | –                | –           | Wahrscheinlich zu vertriebsorientiert                          |
 
 
-In diesem Projekt haben wir uns für das Testen von N8N und Kestra entschieden, da wir Priorität auf Open Source, die Möglichkeit zum [Self-Hosting]((./tools/self-hosting.md)) und ausreichende Funktionen für Data Orchestration legten. 
+In diesem Projekt haben wir uns für das Testen von n8n und Kestra entschieden, da wir Priorität auf Open Source, die Möglichkeit zum [Self-Hosting]((./tools/self-hosting.md)) und ausreichende Funktionen für Data Orchestration legten. 
 
-## N8N
+## n8n
 
 [💾 daten-organisieren](./../datenlebenszyklus.html#daten-organisieren)
 
@@ -38,9 +38,6 @@ In diesem Projekt haben wir uns für das Testen von N8N und Kestra entschieden, 
 
 - Begrenzte Programmierumgebung
 
-### Betrieb
-
-N8N kann sowohl in der Cloud als Service bezahlt betrieben werden, als auch [selbst gehostet](./tools/self-hosting.md) werden. Für die Cloud-Version gibt es keinen Free Plan, aber einen recht günstigen Einstiegsplan für 24€ pro Monat.
 
 ## Kestra
 
@@ -58,10 +55,6 @@ N8N kann sowohl in der Cloud als Service bezahlt betrieben werden, als auch [sel
 - Unbekannter als andere Tools
 - Viele Probleme lassen sich nur mit Programmieren lösen
 - Umständlich, Änderungen in Flows zu testen
-
-### Betrieb
-
-Für Kestra gibt es nur die Option es [selbst zu hosten](./tools/self-hosting.md), oder einen nicht öffentlich mit Preis versehenen Enterprise-Vertrag abzuschließen. Bei letzterem ist von einem hohen Preis auszugehen.
 
 ### Zusätzliches 
 
