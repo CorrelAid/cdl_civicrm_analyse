@@ -1,6 +1,6 @@
 # Über das Datenvorhaben
 
-Die Inhalte dieser Seite wurden von Jonas Stettner und Leo Preu (beide [CorrelAid e.V.](https://correlaid.org), tätig im [Civic Data Lab](https://civic-data.de)) erstellt. Zum Teil haben LLMs die beiden bei der Recherche, Übersetzung und Formulierung unterstützt.
+Die Inhalte dieser Seite wurden von Jonas Stettner und Leo Preu (beide [CorrelAid e.V.](https://correlaid.org), tätig im [Civic Data Lab](https://civic-data.de)) erstellt. Zum Teil haben LLMs die beiden bei der Recherche, Übersetzung und Formulierung unterstützt. Wenn signifikante Teile von Seiten oder Sektionen von LLMs geschrieben sind, haben wir dies separat gekennzeichnet.
 
 Diese Seite sowie Code und Dateien der Experimente finden sich in einem [GitHub Repository](https://github.com/CorrelAid/cdl_civicrm_analyse).
 
