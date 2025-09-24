@@ -26,5 +26,7 @@ Unsere Experimente haben wir mit unserer <b>selbst gehosteten Basisinstallation<
 
 In der Bearbeitung der Use Cases waren wir **inhaltlich beschränkt durch unsere [selbst erstellten Testdaten](https://github.com/CorrelAid/cdl_civicrm_analyse/tree/main/supporting_code/test_data)**. Wir hatten Kontakte und Zuwendungen, aber keine Events oder Aktivitäten wie Eventteilnahmen o.ä. 
 
-## Hinweise zur Bedienung
+## Hinweise zur Bedienung & zur Kennzeichnung
 Zur Navigation kann die Seitenleiste und/oder die Pfeile am Ende der Unterseiten verwendet werden. Mit der 🔍 Suchfunktion kann die Seite nach Begriffen durchsucht werden.
+
+Die Inhalte dieser Seite wurden von Jonas Stettner und Leo Preu (beide [CorrelAid e.V.](https://correlaid.org), tätig im [Civic Data Lab](https://civic-data.de)) erstellt. Zum Teil haben LLMs die beiden bei der Recherche, Übersetzung und Formulierung unterstützt. Wenn signifikante Teile von Seiten oder Sektionen von LLMs geschrieben sind, haben wir dies separat gekennzeichnet. Alle LLM-generierten Inhalte wurden durch uns inhaltlich überprüft.
