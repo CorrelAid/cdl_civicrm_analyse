@@ -1,10 +1,7 @@
-# CiviCRM API + Automation + Managed DB + Metabase
+# CiviCRM API, Automation, Managed DB & Metabase
 
-[💾 daten-organisieren](./../../1-datenlebenszyklus.html#daten-organisieren): [CiviCRM API Explorer](./../../3-tools/1-civicrm_intern/3-civicrm-api.md#api-explorer) & [Managed Datenbank](./../../3-tools/4-managed-datenbank.md)<br>
-[🔢 daten-auswerten](./../../1-datenlebenszyklus.html#daten-auswerten): [Metabase](./../../3-tools/bi-tools.md#metabase) <br>
-[📊 daten-visualisieren](./../../1-datenlebenszyklus.html#daten-visualisieren): [Metabase](./../../3-tools/bi-tools.md#metabase) <br>
-[⚙️ daten-verbinden](./../../1-datenlebenszyklus.html#daten-verbinden): 
-[CiviCRM API](./../../3-tools/1-civicrm_intern/3-civicrm-api.md) & [Workflow Automation Tool](../../3-tools/5-workflow-tools.md)
+
+<br>
 
 ```mermaid
 flowchart TB
@@ -28,7 +25,7 @@ flowchart TB
     Metabase --> ExtDB 
 
 ```
-
+<br>
 
 Bei dem hier vorgestellten Ansatz werden die Daten über die [API](../../3-tools/1-civicrm_intern/3-civicrm-api.md) bezogen, während der [Datenorganisationsschritt](../../1-datenlebenszyklus.html#daten-organisieren)  bzw. das **Data Modelling**, also z.B. die Auswahl der Datenfelder oder Aggregation einmalig über den [API Explorer](../../3-tools/1-civicrm_intern/3-civicrm-api.html#api-explorer) geschieht. Wie [hier](../../3-tools/1-civicrm_intern/3-civicrm-api.html#api-explorer) beschrieben, lassen sich die notwendigen Parameter über eine GUI generieren und kopieren. 
 

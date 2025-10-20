@@ -2,6 +2,13 @@
 
 Wir stellen uns die Frage, wie sich Geschlecht unter den in CiviCRM erfassten Kontakten verteilt und wollen dafür einen Donut-Chart bauen. 
 
+[💾 daten-organisieren](./../../1-datenlebenszyklus.html#daten-organisieren): [CiviCRM API Explorer](./../../3-tools/1-civicrm_intern/3-civicrm-api.md#api-explorer) & [Managed Datenbank](./../../3-tools/4-managed-datenbank.md)<br>
+[🔢 daten-auswerten](./../../1-datenlebenszyklus.html#daten-auswerten): [Metabase](./../../3-tools/bi-tools.md#metabase) <br>
+[📊 daten-visualisieren](./../../1-datenlebenszyklus.html#daten-visualisieren): [Metabase](./../../3-tools/bi-tools.md#metabase) <br>
+[⚙️ daten-verbinden](./../../1-datenlebenszyklus.html#daten-verbinden): 
+[CiviCRM API](./../../3-tools/1-civicrm_intern/3-civicrm-api.md) & [Workflow Automation Tool](../../3-tools/5-workflow-tools.md)
+
+
 ### Anleitung 
 
 ### Anlegen einer Tabelle in der Managed Datenbank (Neon)

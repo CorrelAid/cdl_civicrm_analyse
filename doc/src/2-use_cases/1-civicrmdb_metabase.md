@@ -1,4 +1,4 @@
-# CiviCRM Datenbank + Metabase
+# CiviCRM Datenbank & Metabase
 
 _**Das Business Intelligence Tool Metabase mit der CiviCRM Datenbank verbinden - Daten auswerten und Daten visualisieren in Metabase**_
 

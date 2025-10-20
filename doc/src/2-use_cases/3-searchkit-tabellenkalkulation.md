@@ -1,4 +1,4 @@
-# SearchKit + Excel / Google Sheets
+# SearchKit & Excel / Google Sheets
 
 _**SearchKit Suchergebnisse über die API in Excel oder Google Sheets laden - Datenvisualisierung und weitere Auswertung dort.**_
 

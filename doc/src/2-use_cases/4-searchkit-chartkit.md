@@ -1,3 +1,3 @@
-# Search Kit + Chartkit
+# Search Kit & Chartkit
 
 _Inhalte folgen_
