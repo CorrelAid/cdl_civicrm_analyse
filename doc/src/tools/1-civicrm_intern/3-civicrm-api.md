@@ -6,7 +6,7 @@
 CiviCRM hat eine Programmierschnittstelle (Application Programming Interface / API[^note2]), welche wir verwenden, um von extern auf CiviCRM-Daten zuzugreifen.
 
 > CiviCRM has a stable, comprehensive API (Application Programming Interface) for accessing and managing data. The API is the recommended way for any extension or external program to interact with CiviCRM. CiviCRM also uses its own API to power all new UIs and bundled extensions.[^note]
-[^note]: [Quelle](https://docs.civicrm.org/dev/en/latest/api/)
+[^note]: [https://docs.civicrm.org/dev/en/latest/api/](https://docs.civicrm.org/dev/en/latest/api/)
 
 
 In der Basisinstallation gibt es für jeden Datentyp in CiviCRM eine sogenannte **Entität** (en: Entity):
@@ -62,7 +62,7 @@ Bei POST-Requests an die CiviCRM API kann ein einzelnes Feld namens `params` ver
 
 Wenn man eine API-Anfrage konfiguriert hat, hier als Beispiel die Übergabe aller Kontakte, lässt sich weiter unten auf der Seite des API-Explorers der Reiter "REST" auswählen. Hier wird dann für unser Beispiel angezeigt:
 
-```
+```bash
 curl -X POST -H "$CRM_AUTH" "$CRM_URL" \^
 -d 'params=%7B%22limit%22%3A25%7D'
 ```

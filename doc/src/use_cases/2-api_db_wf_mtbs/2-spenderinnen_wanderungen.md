@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS"spendende_typen_agg" (
 
 Navigiert zum [API Explorer](../../tools/civicrm_intern/3-civicrm-api.html#api-explorer) und wählt als Entität **Contact**, sowie als Aktion **get** aus. Hier besteht die Datenmodellierung nun aus einer Aggregation nach dem Typ der spendenden Person. 
 
-![Spendende API Explorer](../../images/kestra-api-explorer.png)
+![Spendende API Explorer](../../images/use_cases/2-api_db_wf_mtbs/kestra-api-explorer.png)
 
 Konfiguriert die API-Anfrage so wie in dem Screenshot oben. Wir zählen die ids pro Spendenden-Typ und zeigen den Namen des Typs an. Außerdem nutzen wir die **groupBy** Funktion, um die Reihen nach Spendenden-Typ zu gruppieren. Wichtig ist weiterhin, dass wir die Ergebnisse sortieren, da wir später die Position in der Liste der Ergebnisse verwenden.
 
@@ -81,7 +81,7 @@ $merge(
       )
 ```
 
-Die JSONata-Anfrage iteriert mit $map über das Array values und erzeugt für jeden Eintrag ein Objekt, dessen Schlüssel dynamisch aus $v."Donor_Type.Donor_Type:label" stammt oder, falls null, auf Unlabeled gesetzt wird; der zugehörige Wert ist jeweils $v.count. Weil der Feldname Sonderzeichen enthält, wird er mit dem Pfad ."Donor_Type.Donor_Type:label" in Anführungszeichen adressiert. Anschließend fasst $merge alle Einzelobjekte zu einem einzigen flachen Objekt zusammen, sodass die Spendentypen ihren Zählwerten zugeordnet sind.
+Die JSONata-Anfrage iteriert mit $map über das Array `values` und erzeugt für jeden Eintrag ein Objekt, dessen Schlüssel dynamisch aus $v."Donor_Type.Donor_Type:label" stammt oder, falls null, auf Unlabeled gesetzt wird; der zugehörige Wert ist jeweils $v.count. Weil der Feldname Sonderzeichen enthält, wird er mit dem Pfad ."Donor_Type.Donor_Type:label" in Anführungszeichen adressiert. Anschließend fasst $merge alle Einzelobjekte zu einem einzigen flachen Objekt zusammen, sodass die Spendentypen ihren Zählwerten zugeordnet sind.
 
 Beipsiel-Output 
 
@@ -107,7 +107,7 @@ Die als Key und Value separierten Daten lassen sich nun
 
 Verbindet wie [hier](http://localhost:3000/tools/bi-tools.html#verbinden-von-datenbanken-mit-metabase) beschrieben die Datenbank mit Metabase. An die notwendigen Informationen kommt ihr ähnlich wie beim Anlegen der Postgres Credentials für den letzten Knoten des Workflows. 
 
-![Screenshot Final Viz](../../images/n8n-viz.png)
+![Screenshot Final Viz](../../images/use_cases/2-api_db_wf_mtbs/n8n-viz.png)
 
 Die obige Visualisierung ist ein **Line-Chart**, der direkt auf die Daten angewendet werden kann.
 

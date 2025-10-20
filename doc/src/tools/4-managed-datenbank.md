@@ -28,7 +28,7 @@ Moderne managed Datenbanken bieten oft webbasierte Oberflächen, die es ermögli
 
 [Neon](https://neon.com) ist eine serverless PostgreSQL-Datenbank, die sich komplett im Browser über eine intuitive GUI verwalten lässt. Wir haben uns bei unseren Experimenten für die Nutzung Neon entschieden, weil es serverless ist und gleichzeitig eine benutzerfreundliche Weboberfläche bereitstellt.
 
-![Screenshot der Neon GUI](../images/neon-gui.png)
+![Screenshot der Neon GUI](../images/tools/4-managed-datenbank/neon-gui.png)
 
 ### Vorteile
 
