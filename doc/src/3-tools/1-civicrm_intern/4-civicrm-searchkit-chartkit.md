@@ -77,7 +77,7 @@ Mit [ChartKit](https://lab.civicrm.org/extensions/chart_kit) kann man basierend 
 2. im SearchKit Editor links Hinzufügen -> Diagramm
 3. im ChartKit Editor können verschiedene Visualisierungstypen über ein grafisches User Interface konfiguriert werden. Verwendet werden können die Spalten der Ergebnisse der SearchKit Suche.
 
-![User Interface einer Suche in SearchKit. Das Dropdown "Hinzufügen" ist geöffnet und die Option "Diagramm" ist ausgewählt.](../../images/tools/1-civicrm_intern/4-civicrm-searchkit-chartkit/chartkit.png)
+![User Interface einer Suche in SearchKit. Das Dropdown "Hinzufügen" ist geöffnet und die Option "Diagramm" ist ausgewählt.](../../images/3-tools/1-civicrm_intern/4-civicrm-searchkit-chartkit/chartkit.png)
 
 
 Für jede Suche können mehrere Visualisierungen erstellt werden.

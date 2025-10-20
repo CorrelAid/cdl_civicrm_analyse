@@ -58,4 +58,4 @@
     curl -X POST -H "$CRM_AUTH" "$CRM_URL" \
     -d 'params=%7B%22limit%22%3A25%7D'
     ```
-- Or inline with `code, e.g. for references to code objects
+- Or inline with `code`, e.g. for references to code objects

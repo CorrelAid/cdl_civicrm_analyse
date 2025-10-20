@@ -71,13 +71,13 @@ Einen Überblick über die wichtigsten Metabase-Konzepte findet ihr [hier](https
 #### Sammlungen
 **Sammlungen** sind wie Ordner, in denen ihr eure Fragen und Dashboards sortieren könnt.
 
-![](../images/tools/3-bi-tools/mb-sammlungen.png)
+![](../images/3-tools/3-bi-tools/mb-sammlungen.png)
 
 #### Fragen
 Zentral für die Analyse und Visualisierung von Daten in Metabase sind **Fragen** (en: Questions). Fragen könnt ihr entweder über mit dem grafischen Query-Editor oder mit SQL "stellen". 
-Wir empfehlen euch, den grafischen Editor zu verwenden. Konzeptionell ähnelt der Editor [SearchKit](./../tools/civicrm_intern/4-civicrm-searchkit-chartkit.md): Man kann **Datensätze zusammenfügen, Felder auswählen, Einträge filtern, Daten aggregieren und Kennzahlen auswählen**. 
+Wir empfehlen euch, den grafischen Editor zu verwenden. Konzeptionell ähnelt der Editor [SearchKit](./../3-tools/civicrm_intern/4-civicrm-searchkit-chartkit.md): Man kann **Datensätze zusammenfügen, Felder auswählen, Einträge filtern, Daten aggregieren und Kennzahlen auswählen**. 
 
-![](../images/tools/3-bi-tools/mb-question-editor.png)
+![](../images/3-tools/3-bi-tools/mb-question-editor.png)
 
 1. Um eine neue Frage anzulegen, klickt oben rechts den "Neu" Button -> Frage.
 2. Verwendet die Bedienelemente, um die Daten auszuwählen, zu filtern, ...
@@ -85,7 +85,7 @@ Wir empfehlen euch, den grafischen Editor zu verwenden. Konzeptionell ähnelt de
 4. Sobald ihr zufrieden seid mit den Daten eurer Frage, klickt auf "Darstellen". Das bringt euch zur Visualisierung eures Ergebnisses.
 5. Metabase wählt eine passende Visualisierung aus. Ihr könnt eine andere Visualisierung wählen, in dem ihr unten links auf "Visualisierung" klickt und euch durch die Optionen klickt.
 
-![](../images/tools/3-bi-tools/mb-viz-options.png)
+![](../images/3-tools/3-bi-tools/mb-viz-options.png)
 
 Über den Button "Editor" oben rechts könnt ihr **jederzeit zurück zum Editor zurückkehren** um eure Anfrage anzupassen.
 
@@ -99,14 +99,14 @@ Darüber hinaus bieten Metabase Dashboards noch nützliche eingebaute Funktionen
 
 Ein neues Dashboard erstellt ihr mithilfe des **blauen "Neu" Buttons oben rechts**. 
 
-![](../images/tools/3-bi-tools/mb-dashboard-editor.png)
+![](../images/3-tools/3-bi-tools/mb-dashboard-editor.png)
 
 Eine Einführung zu Dashboards (in Englisch) findet ihr [hier](https://www.metabase.com/docs/latest/dashboards/introduction). Tiefergehende Tutorials sind im [Learn-Bereich](https://www.metabase.com/learn/metabase-basics/querying-and-dashboards/#dashboards) zu finden. 
 
 
 **Tipp:** Wenn ihr **Fragen** in der Dashboard-Ansicht ändern möchtet (z.B. weil ihr vergessen habt, zu filtern), dann geht das nur, wenn ihr den Dashboard-Editor-Modus über "Speichern" verlasst. Dann könnt ihr die einzelnen Fragen/Visualisierungen über das drei Punkte Dropdown -> Ändere Frage anpassen (siehe Screenshot). 
 
-![](../images/tools/3-bi-tools/mb-dashboard-edit-closed.png)
+![](../images/3-tools/3-bi-tools/mb-dashboard-edit-closed.png)
 
 
 ### Daten organisieren in Metabase

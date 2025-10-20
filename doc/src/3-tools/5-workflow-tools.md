@@ -23,7 +23,7 @@ Die folgende Tabelle zeigt eine unvollständige Übersicht (Stand 23.09.2025) ü
 | Rudderstack   | https://www.rudderstack.com/                                                                                           | Ja              | –               | –                         | –                                 | –                                                                                                                                                      | –               | –                | –           | Wahrscheinlich zu vertriebsorientiert                          |
 
 
-In diesem Projekt haben wir uns für das Testen von n8n und Kestra entschieden, da wir Priorität auf Open Source, die Möglichkeit zum [Self-Hosting]((./tools/self-hosting.md)) und ausreichende Funktionen für Data Orchestration legten. 
+In diesem Projekt haben wir uns für das Testen von n8n und Kestra entschieden, da wir Priorität auf Open Source, die Möglichkeit zum [Self-Hosting]((./3-tools/self-hosting.md)) und ausreichende Funktionen für Data Orchestration legten. 
 
 ## n8n
 

@@ -12,9 +12,9 @@ Dieses Material dokumentiert die Ergebnisse dieses Datenvorhabens und skizziert 
 ## Wie gehts weiter?
 
 1. Zuerst betten wir die typischen Schritte bei der Auswertung von CiviCRM-Daten und potenziell hilfreiche Tools in den **["Datenlebenszyklus"](./1-datenlebenszyklus.md)** ein. 
-2. **[Use Cases & Ansätze](./use_cases/0-index.md)**: Wie nutzt die Zivilgesellschaft CiviCRM? Welche Anwendungsfälle gibt es und wie können wir ihnen technologisch begegnen? 
+2. **[Use Cases & Ansätze](./2-use_cases/0-index.md)**: Wie nutzt die Zivilgesellschaft CiviCRM? Welche Anwendungsfälle gibt es und wie können wir ihnen technologisch begegnen? 
 3. In den Unterseiten geht es dann ins Details: Wir beschreiben unsere Experimente und Use Cases, die wir näher untersucht haben.
-4. Die verwendeten CiviCRM-Komponenten und externen Tools beschreiben wir im **[Abschnitt Tools](./tools/0-index.md)**.
+4. Die verwendeten CiviCRM-Komponenten und externen Tools beschreiben wir im **[Abschnitt Tools](./3-tools/0-index.md)**.
 5. Im **[Fazit](./2-fazit.md)** fassen wir unsere Erkenntnisse zusammen.
 
 

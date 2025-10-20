@@ -16,16 +16,16 @@ Wir verwenden den Datenlebenszyklus hier, um Komponenten und Tools den Schritten
 
 Bei unserem Projekt gingen wir größenteils davon aus, dass interessierte Organisation schon Daten haben und auch wissen, welche Fragen sie an die Daten stellen wollen. Allerdings können manche Fragestellungen nur beantwortet werden, wenn man die in CiviCRM erfassten Daten um eigene Felder erweitert. 
 
-[Erweiterung von CiviCRM-Daten](./tools/1-civicrm_intern/1-erweiterung-daten.md)
+[Erweiterung von CiviCRM-Daten](./3-tools/1-civicrm_intern/1-erweiterung-daten.md)
 
 ### Daten organisieren 💾{#daten-organisieren}
 *Wo und wie werden Daten gespeichert? Wie werden sie verwaltet und wie werden sie bereinigt?*
 
-&rarr; Im Kontext unseres Datenvorhabens hat CiviCRM und seine [SQL-Datenbank](./tools/1-civicrm_intern/2-civicrm-datenbank.md) als Ort zur Speicherung und Verwaltung von Daten häufig ausgereicht. Trotzdem gibt es auch Fälle, wo zusätzliche Tools (z.B. eine [Managed Datenbank](./tools/4-managed-datenbank.md)) zur Organisation und Speicherung von CiviCRM-Daten sinnvoll waren.
+&rarr; Im Kontext unseres Datenvorhabens hat CiviCRM und seine [SQL-Datenbank](./3-tools/1-civicrm_intern/2-civicrm-datenbank.md) als Ort zur Speicherung und Verwaltung von Daten häufig ausgereicht. Trotzdem gibt es auch Fälle, wo zusätzliche Tools (z.B. eine [Managed Datenbank](./3-tools/4-managed-datenbank.md)) zur Organisation und Speicherung von CiviCRM-Daten sinnvoll waren.
 
 Dabei geht es nicht nur um den Speicherort: Wenn Daten langfristig gespeichert werden und auf deren Basis Analysen stattfinden sollen, lassen sich in diesem Schritt Methoden aus dem Bereich des **Data Engineering** und **Data Modeling** anwenden. Dies umfasst unter anderem das Aggregieren oder das Kombinieren von Datensätzen.
 
-[💾 CiviCRM Datenbank](./tools/1-civicrm_intern/2-civicrm-datenbank.md) [💾 Managed Datenbank](./tools/4-managed-datenbank.md)
+[💾 CiviCRM Datenbank](./3-tools/1-civicrm_intern/2-civicrm-datenbank.md) [💾 Managed Datenbank](./3-tools/4-managed-datenbank.md)
 
 
 ### Daten auswerten 🔢  {#daten-auswerten}
@@ -33,7 +33,7 @@ Dabei geht es nicht nur um den Speicherort: Wenn Daten langfristig gespeichert w
 
 &rarr; CiviCRM Daten können unterschiedlich ausgewertet und analysiert werden: Von einfachen deskriptiven Analysen über tiefergehende Analysen hin zu komplexen Machine-Learning-Modellen zur Vorhersage von Spenden. Wir haben uns in unserer Arbeit überwiegend auf einfache Auswertungen fokussiert, da diese am übertragbarsten sind. 
 
-[🔢 CiviCRM SearchKit](./tools/1-civicrm_intern/4-civicrm-searchkit-chartkit.md)  [🔢 Excel, Google Sheets & Co.](./tools/2-tabellenkalkulation.md) [🔢 Metabase & andere BI Tools](./tools/3-bi-tools.md) [🔢 Python & R](./tools/6-python-und-r.md) [🔢 CiviCRM Reports/Berichte](./tools/1-civicrm_intern/5-civicrm-weitere-tools.md#reportsberichte) 
+[🔢 CiviCRM SearchKit](./3-tools/1-civicrm_intern/4-civicrm-searchkit-chartkit.md)  [🔢 Excel, Google Sheets & Co.](./3-tools/2-tabellenkalkulation.md) [🔢 Metabase & andere BI Tools](./3-tools/3-bi-tools.md) [🔢 Python & R](./3-tools/6-python-und-r.md) [🔢 CiviCRM Reports/Berichte](./3-tools/1-civicrm_intern/5-civicrm-weitere-tools.md#reportsberichte) 
 
 
 ### Daten visualisieren 📊 {#daten-visualisieren}
@@ -41,7 +41,7 @@ Dabei geht es nicht nur um den Speicherort: Wenn Daten langfristig gespeichert w
 
 &rarr; Viele Organisationen möchten ihre CiviCRM-Daten nicht nur auswerten, sondern auch in Datenvisualisierungen oder Dashboards aufbereiten. 
 
-[📊 CiviCRM ChartKit](./tools/1-civicrm_intern/4-civicrm-searchkit-chartkit.md#chartkit)  [📊 Excel, Google Sheets & Co.](./tools/2-tabellenkalkulation.md) [📊 Metabase & andere BI Tools](./tools/3-bi-tools.md) [📊 Python & R](./tools/6-python-und-r.md) [📊 Civisualize](./tools/1-civicrm_intern/5-civicrm-weitere-tools.md#civisualize) 
+[📊 CiviCRM ChartKit](./3-tools/1-civicrm_intern/4-civicrm-searchkit-chartkit.md#chartkit)  [📊 Excel, Google Sheets & Co.](./3-tools/2-tabellenkalkulation.md) [📊 Metabase & andere BI Tools](./3-tools/3-bi-tools.md) [📊 Python & R](./3-tools/6-python-und-r.md) [📊 Civisualize](./3-tools/1-civicrm_intern/5-civicrm-weitere-tools.md#civisualize) 
 
 
 ### Daten kommunizieren 💬 {#daten-kommunizieren}
@@ -58,7 +58,7 @@ Das Kommunizieren von Daten und Ergebnissen von Datenauswertungen ist eine Kunst
 
 &rarr; Zusätzlich zu den Schritten des Datenlebenszyklus ist es bei unseren Experimenten sehr relevant gewesen, Komponenten und Tools miteinander zu integrieren, sie zu verbinden und Datenflüsse zu ermöglichen. Deshalb sprechen wir zusätzlich auch von *Daten verbinden & Datenflüsse ermöglichen*. 
 
-[⚙️ CiviCRM-API](./tools/1-civicrm_intern/3-civicrm-api.md) [⚙️ Workflow Automation Tools](./tools/5-workflow-tools.md) [⚙️ MS Power Query](./tools/2-tabellenkalkulation.md#power-query) [⚙️ Google Apps Script](./tools/2-tabellenkalkulation.md#google-apps-script) [⚙️ Python](./tools/6-python-und-r.md#python)
+[⚙️ CiviCRM-API](./3-tools/1-civicrm_intern/3-civicrm-api.md) [⚙️ Workflow Automation Tools](./3-tools/5-workflow-tools.md) [⚙️ MS Power Query](./3-tools/2-tabellenkalkulation.md#power-query) [⚙️ Google Apps Script](./3-tools/2-tabellenkalkulation.md#google-apps-script) [⚙️ Python](./3-tools/6-python-und-r.md#python)
 
 ### Datenschutz
 &rarr; Da in CiviCRM fast immer personenbezogene Daten gespeichert werden, bildet **Datenschutz einen wichtigen Rahmen für die Auswertung von CiviCRM-Daten**. Dies ist vor allem relevant, wenn Daten außerhalb von CiviCRM weiterverarbeitet werden. Wir haben bei unserer Arbeit darauf geachtet, Tools zu priorisieren, die Datensouveränität ermöglichen.
