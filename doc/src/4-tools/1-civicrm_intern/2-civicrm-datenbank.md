@@ -1,7 +1,7 @@
 
 ## CiviCRM-Datenbank
 
-[💾 daten-organisieren](./../../1-datenlebenszyklus.html#daten-organisieren) <br>
+[💾 daten-organisieren](./../../2-datenlebenszyklus.html#daten-organisieren) <br>
 
 
 Hinter CiviCRM als Software liegt eine relationale SQL-Datenbank[^note-sql], in der die Daten in zahlreichen Tabellen gespeichert sind. So sind Daten in CiviCRM bereits sehr gut **organisiert und verwaltet**.

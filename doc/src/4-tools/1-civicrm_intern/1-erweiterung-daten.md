@@ -1,5 +1,5 @@
 # Erweiterung der Datengrundlage
-[💾 daten-organisieren](./../../1-datenlebenszyklus.html#daten-organisieren) <br>
+[💾 daten-organisieren](./../../2-datenlebenszyklus.html#daten-organisieren) <br>
 
 Um Daten auf eine bestimmte Fragestellung hin zu analysieren benötigt man zunächst dafür geeignete Daten. CiviCRM bietet eine vernünftige Auswahl an Standard-Feldern für die unterschiedlichen Datenklassen (Kontakte etc.). Man kann diese jedoch um Eingabefelder erweitern, sollte man zusätzliche Informationen benötigen.
 

@@ -2,7 +2,7 @@
 
 
 ## SearchKit
-[🔢 daten-auswerten](./../../1-datenlebenszyklus.html#daten-auswerten)
+[🔢 daten-auswerten](./../../2-datenlebenszyklus.html#daten-auswerten)
 
 CiviCRM [SearchKit](https://docs.civicrm.org/user/en/latest/searching/searchkit/what-is-searchkit/) ist eine Erweiterung für CiviCRM, die es Nutzer\*innen ermöglicht, komplexe Abfragen an ihre Daten zu stellen. Als Nutzer\*in kann man filtern, aggregieren, Felder auswählen und gruppieren. 
 
@@ -69,7 +69,7 @@ Die Option, die Ergebnisse über die API abzurufen, eröffnet einen vielversprec
 
 
 ## ChartKit
-[📊 daten-visualisieren](./../../1-datenlebenszyklus.html#daten-visualisieren)
+[📊 daten-visualisieren](./../../2-datenlebenszyklus.html#daten-visualisieren)
 
 Mit [ChartKit](https://lab.civicrm.org/extensions/chart_kit) kann man basierend auf SearchKit-Suchen einfache Grafiken wie Balken-, Linien- oder Tortendiagramme erstellen. 
 
@@ -77,7 +77,7 @@ Mit [ChartKit](https://lab.civicrm.org/extensions/chart_kit) kann man basierend 
 2. im SearchKit Editor links Hinzufügen -> Diagramm
 3. im ChartKit Editor können verschiedene Visualisierungstypen über ein grafisches User Interface konfiguriert werden. Verwendet werden können die Spalten der Ergebnisse der SearchKit Suche.
 
-![User Interface einer Suche in SearchKit. Das Dropdown "Hinzufügen" ist geöffnet und die Option "Diagramm" ist ausgewählt.](../../images/3-tools/1-civicrm_intern/4-civicrm-searchkit-chartkit/chartkit.png)
+![User Interface einer Suche in SearchKit. Das Dropdown "Hinzufügen" ist geöffnet und die Option "Diagramm" ist ausgewählt.](../../images/4-tools/1-civicrm_intern/4-civicrm-searchkit-chartkit/chartkit.png)
 
 
 Für jede Suche können mehrere Visualisierungen erstellt werden.

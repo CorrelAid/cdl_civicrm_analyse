@@ -1,16 +1,16 @@
 # Business Intelligence Tools 
-[🔢 daten-auswerten](./../1-datenlebenszyklus.html#daten-auswerten)
-[📊 daten-visualisieren](./../1-datenlebenszyklus.html#daten-visualisieren) 
-[💬 daten-kommunizieren](./../1-datenlebenszyklus.html#daten-kommunizieren)
+[🔢 daten-auswerten](./../2-datenlebenszyklus.html#daten-auswerten)
+[📊 daten-visualisieren](./../2-datenlebenszyklus.html#daten-visualisieren) 
+[💬 daten-kommunizieren](./../2-datenlebenszyklus.html#daten-kommunizieren)
 
 Business Intelligence Tools (BI-Tools) sind Softwarelösungen, die Organisationen dabei unterstützen, Daten zu sammeln, zu analysieren, zu visualisieren und in verwertbare Erkenntnisse umzuwandeln. Sie helfen, fundierte Entscheidungen zu treffen, indem sie komplexe Datenmengen verständlich und zugänglich machen.
 
 
 
 ## Metabase
-[🔢 daten-auswerten](./../1-datenlebenszyklus.html#daten-auswerten)
-[📊 daten-visualisieren](./../1-datenlebenszyklus.html#daten-visualisieren) 
-[💬 daten-kommunizieren](./../1-datenlebenszyklus.html#daten-kommunizieren)
+[🔢 daten-auswerten](./../2-datenlebenszyklus.html#daten-auswerten)
+[📊 daten-visualisieren](./../2-datenlebenszyklus.html#daten-visualisieren) 
+[💬 daten-kommunizieren](./../2-datenlebenszyklus.html#daten-kommunizieren)
 
 [Metabase](https://www.metabase.com) ist eine Open-Source-Software für Business Intelligence, die Organisationen dabei unterstützt, Daten zu analysieren und in interaktiven Dashboards zu visualisieren. Die Anwendung ermöglicht es Nutzer\*innen, auch ohne SQL-Kenntnisse Abfragen durchzuführen und Dashboards und Berichte zu erstellen. Metabase ist mit einer Vielzahl von Datenbanken kompatibel und richtet sich an Anwender\*innen, die Daten zugänglich und nutzbar machen möchten.
 
@@ -71,13 +71,13 @@ Einen Überblick über die wichtigsten Metabase-Konzepte findet ihr [hier](https
 #### Sammlungen
 **Sammlungen** sind wie Ordner, in denen ihr eure Fragen und Dashboards sortieren könnt.
 
-![](../images/3-tools/3-bi-tools/mb-sammlungen.png)
+![](../images/4-tools/3-bi-tools/mb-sammlungen.png)
 
 #### Fragen
 Zentral für die Analyse und Visualisierung von Daten in Metabase sind **Fragen** (en: Questions). Fragen könnt ihr entweder über mit dem grafischen Query-Editor oder mit SQL "stellen". 
-Wir empfehlen euch, den grafischen Editor zu verwenden. Konzeptionell ähnelt der Editor [SearchKit](./../3-tools/civicrm_intern/4-civicrm-searchkit-chartkit.md): Man kann **Datensätze zusammenfügen, Felder auswählen, Einträge filtern, Daten aggregieren und Kennzahlen auswählen**. 
+Wir empfehlen euch, den grafischen Editor zu verwenden. Konzeptionell ähnelt der Editor [SearchKit](./../4-tools/civicrm_intern/4-civicrm-searchkit-chartkit.md): Man kann **Datensätze zusammenfügen, Felder auswählen, Einträge filtern, Daten aggregieren und Kennzahlen auswählen**. 
 
-![](../images/3-tools/3-bi-tools/mb-question-editor.png)
+![](../images/4-tools/3-bi-tools/mb-question-editor.png)
 
 1. Um eine neue Frage anzulegen, klickt oben rechts den "Neu" Button -> Frage.
 2. Verwendet die Bedienelemente, um die Daten auszuwählen, zu filtern, ...
@@ -85,7 +85,7 @@ Wir empfehlen euch, den grafischen Editor zu verwenden. Konzeptionell ähnelt de
 4. Sobald ihr zufrieden seid mit den Daten eurer Frage, klickt auf "Darstellen". Das bringt euch zur Visualisierung eures Ergebnisses.
 5. Metabase wählt eine passende Visualisierung aus. Ihr könnt eine andere Visualisierung wählen, in dem ihr unten links auf "Visualisierung" klickt und euch durch die Optionen klickt.
 
-![](../images/3-tools/3-bi-tools/mb-viz-options.png)
+![](../images/4-tools/3-bi-tools/mb-viz-options.png)
 
 Über den Button "Editor" oben rechts könnt ihr **jederzeit zurück zum Editor zurückkehren** um eure Anfrage anzupassen.
 
@@ -99,14 +99,14 @@ Darüber hinaus bieten Metabase Dashboards noch nützliche eingebaute Funktionen
 
 Ein neues Dashboard erstellt ihr mithilfe des **blauen "Neu" Buttons oben rechts**. 
 
-![](../images/3-tools/3-bi-tools/mb-dashboard-editor.png)
+![](../images/4-tools/3-bi-tools/mb-dashboard-editor.png)
 
 Eine Einführung zu Dashboards (in Englisch) findet ihr [hier](https://www.metabase.com/docs/latest/dashboards/introduction). Tiefergehende Tutorials sind im [Learn-Bereich](https://www.metabase.com/learn/metabase-basics/querying-and-dashboards/#dashboards) zu finden. 
 
 
 **Tipp:** Wenn ihr **Fragen** in der Dashboard-Ansicht ändern möchtet (z.B. weil ihr vergessen habt, zu filtern), dann geht das nur, wenn ihr den Dashboard-Editor-Modus über "Speichern" verlasst. Dann könnt ihr die einzelnen Fragen/Visualisierungen über das drei Punkte Dropdown -> Ändere Frage anpassen (siehe Screenshot). 
 
-![](../images/3-tools/3-bi-tools/mb-dashboard-edit-closed.png)
+![](../images/4-tools/3-bi-tools/mb-dashboard-edit-closed.png)
 
 
 ### Daten organisieren in Metabase
@@ -114,9 +114,9 @@ Wenn ihr feststellt, dass ihr bei der Erstellung von **Fragen** immer die gleich
 
 ## Alternativen: Apache Superset, Power BI und Tableau
 
-[🔢 daten-auswerten](./../1-datenlebenszyklus.html#daten-auswerten)
-[📊 daten-visualisieren](./../1-datenlebenszyklus.html#daten-visualisieren) 
-[💬 daten-kommunizieren](./../1-datenlebenszyklus.html#daten-kommunizieren)
+[🔢 daten-auswerten](./../2-datenlebenszyklus.html#daten-auswerten)
+[📊 daten-visualisieren](./../2-datenlebenszyklus.html#daten-visualisieren) 
+[💬 daten-kommunizieren](./../2-datenlebenszyklus.html#daten-kommunizieren)
 
 Alternativen zu Metabase sind u.a.:
 

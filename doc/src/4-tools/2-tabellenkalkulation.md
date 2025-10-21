@@ -1,13 +1,13 @@
 # Excel & Co.
 
 ## Microsoft Excel
-[🔢 daten-auswerten](./../1-datenlebenszyklus.html#daten-auswerten) [📊 daten-visualisieren](./../1-datenlebenszyklus.html#daten-visualisieren) [⚙️ daten-verbinden](./../1-datenlebenszyklus.html#daten-verbinden)<br>
+[🔢 daten-auswerten](./../2-datenlebenszyklus.html#daten-auswerten) [📊 daten-visualisieren](./../2-datenlebenszyklus.html#daten-visualisieren) [⚙️ daten-verbinden](./../2-datenlebenszyklus.html#daten-verbinden)<br>
 
 
 Microsoft Excel ist ein **häufig genutztes Tabellenkalkulationsprogramm**, mit dem ihr Daten aus CiviCRM oder anderen Quellen strukturieren, analysieren und visualisieren könnt. Ihr könnt damit:
-- ... **CiviCRM-Daten** (z. B. Spenden, Mitglieder oder Events) mithilfe von Pivot-Tabellen, Formeln und Filtern **auswerten**, um z. B. Spendenentwicklungen zu analysieren oder Zielgruppen zu vergleichen ([🔢 daten-auswerten](./../1-datenlebenszyklus.html#daten-auswerten)) 
-- ... mithilfe von Diagrammen die **Ergebnisse anschaulich darstellen** ([📊 daten-visualisieren](./../1-datenlebenszyklus.html#daten-visualisieren))
-- ... mit Power Query ([s.u.](#power-query)) **Daten automatisch aktuell halten** ([⚙️ daten-verbinden](./../1-datenlebenszyklus.html#daten-verbinden)).
+- ... **CiviCRM-Daten** (z. B. Spenden, Mitglieder oder Events) mithilfe von Pivot-Tabellen, Formeln und Filtern **auswerten**, um z. B. Spendenentwicklungen zu analysieren oder Zielgruppen zu vergleichen ([🔢 daten-auswerten](./../2-datenlebenszyklus.html#daten-auswerten)) 
+- ... mithilfe von Diagrammen die **Ergebnisse anschaulich darstellen** ([📊 daten-visualisieren](./../2-datenlebenszyklus.html#daten-visualisieren))
+- ... mit Power Query ([s.u.](#power-query)) **Daten automatisch aktuell halten** ([⚙️ daten-verbinden](./../2-datenlebenszyklus.html#daten-verbinden)).
 
 Excel kann sowohl lokal (Desktop-Version) als auch in der Cloud (Excel for the Web) eingesetzt werden.
 
@@ -37,14 +37,14 @@ Aufgrund seiner Flexibilität ist und bleibt Excel eine gute Option, um **divers
 
 
 ### Power Query 
-[⚙️ daten-verbinden](./../1-datenlebenszyklus.html#daten-verbinden)<br>
+[⚙️ daten-verbinden](./../2-datenlebenszyklus.html#daten-verbinden)<br>
 
 **Power Query** ist ein Werkzeug in Excel und Power BI, das **Daten aus verschiedenen Quellen** (z. B. CiviCRM-API, Datenbanken, Excel-Dateien) **importiert, bereinigt und für Analysen aufbereitet**. Es **automatisiert wiederkehrende Schritte**, spart Zeit und reduziert Fehler.
 
-Für die Analyse von CiviCRM-Daten sind v.a. Power Query's [Features zum Datenimport](https://support.microsoft.com/de-de/office/importieren-von-daten-aus-datenquellen-power-query-be4330b3-5356-486c-a168-b68e9e616f5a) relevant. Wir haben Power Query verwendet, um Daten mithilfe der CiviCRM API in Excel zu importieren (siehe [unser Experiment zu SearchKit + Excel](./../2-use_cases/searchkit-tabellenkalkulation.md)). Aber auch die anderen Optionen können nützlich sein, z.B. der Import aus anderen Excel-Dateien. 
+Für die Analyse von CiviCRM-Daten sind v.a. Power Query's [Features zum Datenimport](https://support.microsoft.com/de-de/office/importieren-von-daten-aus-datenquellen-power-query-be4330b3-5356-486c-a168-b68e9e616f5a) relevant. Wir haben Power Query verwendet, um Daten mithilfe der CiviCRM API in Excel zu importieren (siehe [unser Experiment zu SearchKit + Excel](./../3-use_cases/searchkit-tabellenkalkulation.md)). Aber auch die anderen Optionen können nützlich sein, z.B. der Import aus anderen Excel-Dateien. 
 
 #### Vorteile von Power Query 
-- **Direkter Datenimport aus CiviCRM mithilfe der CiviCRM API**: Ihr könnt Daten automatisch aktualisieren und spart euch den manuellen Schritt des Datenexports aus CiviCRM. Siehe [unser Experiment zu SearchKit + Excel](./../2-use_cases/searchkit-tabellenkalkulation.md). 
+- **Direkter Datenimport aus CiviCRM mithilfe der CiviCRM API**: Ihr könnt Daten automatisch aktualisieren und spart euch den manuellen Schritt des Datenexports aus CiviCRM. Siehe [unser Experiment zu SearchKit + Excel](./../3-use_cases/searchkit-tabellenkalkulation.md). 
 - Flexibilität: Power Query kann mehr als nur API-Daten laden – eine Einarbeitung lohnt sich.
 
 
@@ -63,7 +63,7 @@ Falls bereits (zu) viele Excel-Dateien und -Analysen existieren, hilft Power Que
 ## Google Sheets
 *Der Text dieses Abschnitts wurde von Mistral erstellt und dann inhaltlich und redaktionell überarbeitet und ergänzt.*
 
-[🔢 daten-auswerten](./../1-datenlebenszyklus.html#daten-auswerten) [📊 daten-visualisieren](./../1-datenlebenszyklus.html#daten-visualisieren) [⚙️ daten-verbinden](./../1-datenlebenszyklus.html#daten-verbinden)
+[🔢 daten-auswerten](./../2-datenlebenszyklus.html#daten-auswerten) [📊 daten-visualisieren](./../2-datenlebenszyklus.html#daten-visualisieren) [⚙️ daten-verbinden](./../2-datenlebenszyklus.html#daten-verbinden)
 
 Google Sheets ist die **kostenlose, webbasierte Tabellenkalkulation** von Google Workspace, die sich besonders für **kollaborative Datenanalyse** eignet. Ihr könnt damit Daten aus CiviCRM oder anderen Quellen analysieren, visualisieren und in Echtzeit gemeinsam bearbeiten.
 
@@ -83,13 +83,13 @@ Aufgrund der Datenschutzproblematik solltet ihr vermeiden, personenbezogene Date
 
 
 ### Google Apps Script
-[⚙️ daten-verbinden](./../1-datenlebenszyklus.html#daten-verbinden)
+[⚙️ daten-verbinden](./../2-datenlebenszyklus.html#daten-verbinden)
 
 Google Apps Script ist eine JavaScript-basierte Programmiersprache, mit der ihr u.a. **Abläufe in Google Sheets automatisieren** könnt. Mit AppsScript können wir CiviCRM-Daten mithilfe der CiviCRM-API direkt in Google Sheets laden. 
 
 #### Vorteile von Google Apps Script
 - **Kostenlos und integriert**: Keine zusätzliche Software nötig – läuft direkt in Google Sheets.
-- **Direkter Datenimport aus CiviCRM mithilfe der CiviCRM API**: Ihr könnt Daten automatisch aktualisieren und spart euch den manuellen Schritt des Datenexports aus CiviCRM. Siehe [unser Experiment zu SearchKit + Google Sheets](./../2-use_cases/searchkit-tabellenkalkulation.md). 
+- **Direkter Datenimport aus CiviCRM mithilfe der CiviCRM API**: Ihr könnt Daten automatisch aktualisieren und spart euch den manuellen Schritt des Datenexports aus CiviCRM. Siehe [unser Experiment zu SearchKit + Google Sheets](./../3-use_cases/searchkit-tabellenkalkulation.md). 
 
 #### Nachteile von Google Apps Script
 - Erfordert **Grundkenntnisse in JavaScript**.
@@ -101,7 +101,7 @@ Mit Google Apps Script könnt ihr ähnlich wie mit [Power Query](./tabellenkalku
 
 
 ## Libre Office Calc
-[🔢 daten-auswerten](./../1-datenlebenszyklus.html#daten-auswerten) [📊 daten-visualisieren](./../1-datenlebenszyklus.html#daten-visualisieren)
+[🔢 daten-auswerten](./../2-datenlebenszyklus.html#daten-auswerten) [📊 daten-visualisieren](./../2-datenlebenszyklus.html#daten-visualisieren)
 
 LibreOffice Calc ist das Tabellenkalkulationsprogramm der **kostenlosen Open-Source [LibreOffice-Suite](https://www.libreoffice.org/)** – ähnlich wie Microsoft Excel, aber ohne Lizenzkosten und mit offenem Quellcode. Ihr könnt damit Daten analysieren, Berechnungen durchführen, Pivot-Tabellen erstellen und Diagramme generieren. Calc unterstützt gängige Formate wie XLSX und bietet viele Funktionen für Formeln, Filter und Datenvisualisierung, ist aber etwas weniger leistungsstark als Excel bei extrem großen Datenmengen.
 
@@ -110,7 +110,7 @@ Wenn ihr auf Open Source setzen wollt, ist Libre Office Calc eine gute  und soli
 
 
 ## OnlyOffice
-[🔢 daten-auswerten](./../1-datenlebenszyklus.html#daten-auswerten) [📊 daten-visualisieren](./../1-datenlebenszyklus.html#daten-visualisieren)
+[🔢 daten-auswerten](./../2-datenlebenszyklus.html#daten-auswerten) [📊 daten-visualisieren](./../2-datenlebenszyklus.html#daten-visualisieren)
 
 Eine weitere Alternative ist die Tabellenkalkulation der [ONLYOFFICE-Suite](https://www.onlyoffice.com/), die **besonders auf kollaboratives Arbeiten** in Echtzeit ausgelegt ist. Ein großer Vorteil gegenüber Libre Office Calc ist die Integration in Cloud-Dienste (z. B. Nextcloud, ownCloud) und die Möglichkeit, Dokumente gleichzeitig mit mehreren Nutzer*innen zu bearbeiten.
 

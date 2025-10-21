@@ -1,6 +1,6 @@
 ## General Instructions
 
-- Write in German and use "du" or "ihr"
+- Write in German and use “du” or “ihr”
 
 ### Bold Font
 
@@ -24,11 +24,13 @@
 Subtitle (description of the use case)
 
 Reference to the datenlebenszyklus
-├── Stage 1: Tool A, Tool B
-├── Stage 2: Tool C
-└── Stage 3: Tool D
+├── Stage 1: Link Tool A, Link Tool B
+├── Stage 2: LinkTool C
+└── Stage 3: Link Tool D
 
 ## Voraussetzungen
+- Link requirement setup/explanation belonging to Tool A
+- Other Requirement
 
 ## Anleitung
 ├── Setup

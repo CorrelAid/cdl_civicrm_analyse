@@ -6,13 +6,13 @@ Wie viele Menschen werden von einmaligen Spendende zu monatlichen Spendende? Wie
 
 ### Erweiterung der CiviCRM Datenfelder
 
-Wie [hier](../../3-tools/civicrm_intern/1-erweiterung-daten.md) beschrieben, benötigen wir ein neues **benutzerdefiniertes Datenfeld**, dass den Typ einer spendenden Person erfasst. Für Demonstrationszwecke halten wir es simpel und legen das Feld **Donor Type** als **Auswahlliste** mit den Optionen **One Time Donor**, **Monthly Donor** und **Past Donor** an. Die Benennung ist dabei beliebig veränderbar und es könnten auch mehr Optionen genutzt werden.
+Wie [hier](../../4-tools/civicrm_intern/1-erweiterung-daten.md) beschrieben, benötigen wir ein neues **benutzerdefiniertes Datenfeld**, dass den Typ einer spendenden Person erfasst. Für Demonstrationszwecke halten wir es simpel und legen das Feld **Donor Type** als **Auswahlliste** mit den Optionen **One Time Donor**, **Monthly Donor** und **Past Donor** an. Die Benennung ist dabei beliebig veränderbar und es könnten auch mehr Optionen genutzt werden.
 
 🤔 Hinweis: Für unseren Test erstellen wir programmatisch Testdaten mit diesem Dateifeld, in der Realität müsst ihr diesen neue Feld jedoch in eure Erfassung von Kontakten integrieren, oder die Information anderweitig erfassen. Eine Option ist zum Beispiel die Nutzung von **Gruppen** für Kontakte. Auf English ist dies [hier](https://docs.civicrm.org/user/en/latest/organising-your-data/smart-groups) dokumentiert. Ihr könntet Gruppen mit Kriterien wie *ist zu einer Contribution zugeordnet* anlegen.
 
 ### Anlegen einer Tabelle in der Managed Datenbank (Neon)
 
- Erstelle eine neue Tabelle, wie [hier](http://localhost:3000/3-tools/managed-datenbank.html#anlegen-einer-datenbank-und-tabelle) beschrieben, mit dem Namen *spendende_typen_agg* und füge neben der automatischen ID-Spalte jeweils eine Spalte für die Typen von Spendenden ein. Also z.B. **nicht_spendend** oder **einmalig**. Diese Spalten sollten den Typ **integer**, und als Contraints **Not null** haben. Weiterhin benötigen wir noch die Spalte **timestamp** mit dem gleichnamigen Datentyp ***timestamp** und dem Constraint **Not null**.
+ Erstelle eine neue Tabelle, wie [hier](http://localhost:3000/4-tools/managed-datenbank.html#anlegen-einer-datenbank-und-tabelle) beschrieben, mit dem Namen *spendende_typen_agg* und füge neben der automatischen ID-Spalte jeweils eine Spalte für die Typen von Spendenden ein. Also z.B. **nicht_spendend** oder **einmalig**. Diese Spalten sollten den Typ **integer**, und als Contraints **Not null** haben. Weiterhin benötigen wir noch die Spalte **timestamp** mit dem gleichnamigen Datentyp ***timestamp** und dem Constraint **Not null**.
 
  Als SQL, das man auch in den SQL Editor einfügen kann, um die Tabelle zu erstellen, sieht das so aus:
 
@@ -31,9 +31,9 @@ CREATE TABLE IF NOT EXISTS"spendende_typen_agg" (
 
 #### Datenmodellierung im API Explorer
 
-Navigiert zum [API Explorer](../../3-tools/civicrm_intern/3-civicrm-api.html#api-explorer) und wählt als Entität **Contact**, sowie als Aktion **get** aus. Hier besteht die Datenmodellierung nun aus einer Aggregation nach dem Typ der spendenden Person. 
+Navigiert zum [API Explorer](../../4-tools/civicrm_intern/3-civicrm-api.html#api-explorer) und wählt als Entität **Contact**, sowie als Aktion **get** aus. Hier besteht die Datenmodellierung nun aus einer Aggregation nach dem Typ der spendenden Person. 
 
-![Spendende API Explorer](../../images/2-use_cases/2-api_db_wf_mtbs/kestra-api-explorer.png)
+![Spendende API Explorer](../../images/3-use_cases/2-api_db_wf_mtbs/kestra-api-explorer.png)
 
 Konfiguriert die API-Anfrage so wie in dem Screenshot oben. Wir zählen die ids pro Spendenden-Typ und zeigen den Namen des Typs an. Außerdem nutzen wir die **groupBy** Funktion, um die Reihen nach Spendenden-Typ zu gruppieren. Wichtig ist weiterhin, dass wir die Ergebnisse sortieren, da wir später die Position in der Liste der Ergebnisse verwenden.
 
@@ -105,9 +105,9 @@ Die als Key und Value separierten Daten lassen sich nun
 
 ### Visualisierung in Metabase
 
-Verbindet wie [hier](http://localhost:3000/3-tools/bi-tools.html#verbinden-von-datenbanken-mit-metabase) beschrieben die Datenbank mit Metabase. An die notwendigen Informationen kommt ihr ähnlich wie beim Anlegen der Postgres Credentials für den letzten Knoten des Workflows. 
+Verbindet wie [hier](http://localhost:3000/4-tools/bi-tools.html#verbinden-von-datenbanken-mit-metabase) beschrieben die Datenbank mit Metabase. An die notwendigen Informationen kommt ihr ähnlich wie beim Anlegen der Postgres Credentials für den letzten Knoten des Workflows. 
 
-![Screenshot Final Viz](../../images/2-use_cases/2-api_db_wf_mtbs/n8n-viz.png)
+![Screenshot Final Viz](../../images/3-use_cases/2-api_db_wf_mtbs/n8n-viz.png)
 
 Die obige Visualisierung ist ein **Line-Chart**, der direkt auf die Daten angewendet werden kann.
 
