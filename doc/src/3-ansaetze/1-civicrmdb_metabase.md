@@ -18,7 +18,6 @@ _**Das Business Intelligence Tool Metabase mit der CiviCRM Datenbank verbinden -
 Fügt wie [hier](./../4-tools/3-bi-tools.md#mb-db-hinzufuegen) beschrieben eine Verbindung zu eurer Datenbank zu Metabase hinzu.
 
 
-
 ### Daten analysieren und visualisieren
 Sobald Metabase Zugriff auf eure CiviCRM-Datenbank habt, könnt ihr *Fragen* erstellen und diese in *Dashboards* visualisieren und darstellen. Mehr zur Analyse und Visualisierung in Metabase [hier](../4-tools/3-bi-tools.md#mb-daten-analysieren).
 
