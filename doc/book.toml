@@ -2,10 +2,14 @@
 authors = ["jstet"]
 language = "en"
 src = "src"
-title = "CiviCRM Daten analysieren und visualisieren"
+title = "CiviCRM Daten Analysieren & Visualisieren"
 
 [output.html]
 additional-js = ["mermaid.min.js", "mermaid-init.js"]
+default-theme = "light"
+preferred-dark-theme = "navy"
+admonitions = false
+additional-css = ["./mdbook-admonish.css"]
 
 [output.html.fold]
 enable = true    # whether or not to enable section folding
@@ -15,3 +19,15 @@ level = 1         # the depth to start folding
 
 [preprocessor.mermaid]
 command = "mdbook-mermaid"
+
+[preprocessor.admonish]
+command = "mdbook-admonish"
+assets_version = "3.1.0" # do not edit: managed by `mdbook-admonish install`
+
+[preprocessor.admonish.directive.builtin.abstract]
+collapsible = true
+
+
+[preprocessor.admonish.default]
+title = " "
+

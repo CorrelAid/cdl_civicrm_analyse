@@ -1,4 +1,4 @@
-# CiviCRM API, Automation, Managed DB & Metabase
+# ETL: CiviCRM API, Automation, Managed DB & Metabase
 
 
 <br>
@@ -10,28 +10,40 @@ flowchart TB
     end
 
     subgraph ETL[Automation Tool Knoten]
-        Retrieve[Daten Anfragen]
-        Process[Daten verarbeiten]
+        Extract[Daten extrahieren]
+        Transform[Daten transformieren]
         Load[Daten in die DB laden]
 
-        Retrieve --> Process --> Load
+        Extract --> Transform --> Load
     end
 
     ExtDB[(Managed DB)]
     Metabase[Metabase]
 
-    ETL -->|Modelliert in API Explorer| API
+    ETL -->|Modellierung in API Explorer| API
     ETL --> ExtDB
     Metabase --> ExtDB 
 
 ```
 <br>
 
-Bei dem hier vorgestellten Ansatz werden die Daten über die [API](../../3-tools/1-civicrm_intern/3-civicrm-api.md) bezogen, während der [Datenorganisationsschritt](../../1-datenlebenszyklus.html#daten-organisieren)  bzw. das **Data Modelling**, also z.B. die Auswahl der Datenfelder oder Aggregation einmalig über den [API Explorer](../../3-tools/1-civicrm_intern/3-civicrm-api.html#api-explorer) geschieht. Wie [hier](../../3-tools/1-civicrm_intern/3-civicrm-api.html#api-explorer) beschrieben, lassen sich die notwendigen Parameter über eine GUI generieren und kopieren. 
+In diesem Unterkapitel werden Tool-Kombinationen vorgestellt, mit denen sich **ETL-Prozesse (Extract, Transform & Load)** umsetzen lassen. Über eine API extrahieren wir Daten aus CiviCRM, um sie dann zu verarbeiten und schließlich in eine externe Datenbank zu laden. 
 
-Die eigentliche API-Anfrage geschieht schließlich im [Workflow Automation Tool](../../3-tools/5-workflow-tools.md), das die Rolle der **Data Orchestration** erfüllt. Hier kann der Output des Requests auch verarbeitet werden, sodass die Daten anschließend in die externe [managed Datenbank](../../3-tools/4-managed-datenbank.md), das **Data Warehouse**, geladen werden kann. An diese Datenbank kann dann [Metabase](../../3-tools/3-bi-tools.md) angeschlossen werden, um die Daten zu visualisieren.
+Die externe Datenbank dient als **Data Warehouse**. Die Prozesse werden ausgeführt von einem [Workflow Automation Tool](../../3-tools/5-workflow-tools.md), das hier für **Data Orchestration** eingesetzt wird. Zusätzlich schließen wir [Metabase](../../3-tools/3-bi-tools.md#Metabase) an die externe Datenbank an, um die Daten visualisieren zu können. 
 
-Diesen Ansatz wird anhand von zwei Use Cases veranschaulicht, bei denen jeweils eines der zwei ausgewählten Workflow Automation Tools verwendet wird. Zuerst erklären wir, wie man mit [n8n](../../3-tools/5-workflow-tools.html#n8n) durch das Duplizieren eines Datenausschnitts die Datengrundlage für die Visualisierung einfacher deskriptive Statistiken schaffen kann.
+```admonish question title="Warum benötigen wir eine externe Datenbank?"
+Zum einen ist der Betrieb von CiviCRM abhängig von einer Datenbank (Anwendungsdatenbank). Wenn wir nun Anfragen auf dieser Datenbank laufen lassen, könnte das für Nutzer:innen zu längeren Wartezeiten oder gar Ausfällen führen. Zum anderen ist der Sinn von einem klassischen Data Warehouse, Daten aus verschiedenen Quellen für Analyse modelliert und transformiert zu speichern, was bei der Anwendungsdatenbank nicht unbedingt der Fall sein muss. Außerdem haben Data Warehouses andere Betriebsanforderungen.
+```
 
-Danach wird der komplexere Use-Case der Visualisierung von Spender:innenwanderungen thematisiert. Nachdem notwendige Daten aggregiert in einem API-Request aggregiert wurden, geschieht dies mithilfe von [Kestra](../../3-tools/5-workflow-tools.html#kestra).
+```admonish tldr title="ETL & Relational Data Warehouse"
+Die vorgestellten Ansätze sind eine reduzierte Form von ETL und unterscheiden sich in verschiedenen Hinsichten von üblichen Vorgehensweisen. Die wichtigsten Transformationsschritte die wir durchführen, werden über die API abgebildet. Oft wird dafür ein spezielles Tool wie [dbt](https://www.getdbt.com/product/what-is-dbt) genutzt. 
+
+Unsere managed Datenbank, die selbst relational ist, nutzen wir als **Relational Data Warehouse**. Dies bedeutet, das wir die Daten in einer bestimmten strukturierten Form speichern und abfragen können. Alternativen dazu sind Warehouse-Architekturen wie Data Lakes, wo Daten in weniger strukturierter Form gespeichert werden. 
+
+Eine gute Erklärung dieser Begriffe findet ihr in [diesem](https://www.youtube.com/watch?v=FgnzgRD3Gfk) Video.
+```
+
+Dieser ETL-Ansatz wird anhand von zwei Use Cases veranschaulicht, bei denen jeweils eines der zwei ausgewählten Workflow Automation Tools verwendet wird. Zuerst erklären wir, wie man mit [n8n](../../3-tools/5-workflow-tools.html#n8n) durch das Duplizieren eines Datenausschnitts die Datengrundlage für die Visualisierung einfacher deskriptive Statistiken schaffen kann.
+
+Danach wird der komplexere Use-Case der Visualisierung von Spender:innenwanderungen thematisiert. Nachdem notwendige Daten über einen API-Request aggregiert wurden, geschieht dies mithilfe von [Kestra](../../3-tools/5-workflow-tools.html#kestra).
 

@@ -1,15 +1,24 @@
-# Einfache deskriptive Statistiken visualisieren
+# Basic ETL mit n8n - Einfache deskriptive Statistiken
 
-Wir stellen uns die Frage, wie sich Geschlecht unter den in CiviCRM erfassten Kontakten verteilt und wollen dafür einen Donut-Chart bauen. 
+**Wir orchestrieren einen ETL-Prozess (Extract, Transform & Load) mit n8n um die Frage zu beantworten, wie sich Geschlecht unter den in CiviCRM erfassten Kontakten verteilt und wollen dies mit einen Donut-Chart visualisieren.**
 
 [💾 daten-organisieren](./../../1-datenlebenszyklus.html#daten-organisieren): [CiviCRM API Explorer](./../../3-tools/1-civicrm_intern/3-civicrm-api.md#api-explorer) & [Managed Datenbank](./../../3-tools/4-managed-datenbank.md)<br>
 [🔢 daten-auswerten](./../../1-datenlebenszyklus.html#daten-auswerten): [Metabase](./../../3-tools/bi-tools.md#metabase) <br>
 [📊 daten-visualisieren](./../../1-datenlebenszyklus.html#daten-visualisieren): [Metabase](./../../3-tools/bi-tools.md#metabase) <br>
 [⚙️ daten-verbinden](./../../1-datenlebenszyklus.html#daten-verbinden): 
-[CiviCRM API](./../../3-tools/1-civicrm_intern/3-civicrm-api.md) & [Workflow Automation Tool](../../3-tools/5-workflow-tools.md)
+[CiviCRM API](./../../3-tools/1-civicrm_intern/3-civicrm-api.md) & [N8N](../../3-tools/5-workflow-tools.md#n8n)
 
 
-### Anleitung 
+## Voraussetzungen
+
+- Account bei Neon
+- API-Token für eine CiviCRM-Instanz
+- n8n-Instanz oder einen Abo des n8n SaaS
+- Metabase-Instanz oder ein Abo des Metabase SaaS
+
+## Anleitung 
+
+Deses ETL-Setup besteht aus vier Komponenten, die wir nacheinander vorbereiten. Wir 
 
 ### Anlegen einer Tabelle in der Managed Datenbank (Neon)
 
@@ -33,6 +42,8 @@ Wir stellen uns die Frage, wie sich Geschlecht unter den in CiviCRM erfassten Ko
 Navigiert zum [API Explorer](../../3-tools/1-civicrm_intern/3-civicrm-api.html#api-explorer) und wählt als Entität **Contact**, sowie als Aktion **get** aus. Unter select, wählt **gender_id:label** und **id** aus. Wichtig ist, dass ihr außerdem **-1** bei **limit** setzt, um alle Daten zu erhalten. Bei diesem Use Case beschränkt sich das Data Modeling auf die Feldauswahl. 
 
 🤔 Kleiner Exkurs: **gender** ist eine separate Tabelle, die alle auf dieser CiviCRM auswählbaren Gender enthält. Kontakte haben ein Feld mit dem Namen **gender_id**, dass die ID einer Reihe in der Gender-Tabelle enthält, die zum Beispiel als Spalte **Label** hat. 
+
+
 
 Nach diesen Schritten könnt ihr bereits den Request Body weiter unten unter REST kopieren. Dies sollte entsprechen: `params=%7B%22select%22%3A%5B%22gender_id%3Alabel%22%2C%22id%22%5D%7D`.
 

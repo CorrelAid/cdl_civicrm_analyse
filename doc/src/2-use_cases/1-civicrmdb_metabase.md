@@ -10,7 +10,7 @@ _**Das Business Intelligence Tool Metabase mit der CiviCRM Datenbank verbinden -
 
 
 ## Voraussetzungen
-- direkter Zugriff auf eure CiviCRM Datenbank
+- Direkter Zugriff auf eure CiviCRM Datenbank
 - Einen Account für eine Metabase Instanz mit Admin-Rechten
 
 ## Anleitung

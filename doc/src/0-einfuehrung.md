@@ -9,6 +9,30 @@ Diese Fragen zu erkunden, war das Ziel eines internen Datenvorhabens, welches ei
 
 Dieses Material dokumentiert die Ergebnisse dieses Datenvorhabens und skizziert **Use Cases, Ansätze, Experimente und Tools**. Es richtet sich vor allem an **Personen, die CiviCRM bereits nutzen und ihre CiviCRM Daten analysieren (wollen)**. Aber auch Personen, die überlegen, CiviCRM in ihrer Organisation einzuführen, oder die an Open Source Software oder gemeinwohlorientierter Datennutzung interessiert sind, sind herzlich willkommen, hier durchzustöbern. 
 
+## Symbolerklärungen
+
+```admonish info title="API Definition"
+In diesen Boxen erscheinen Tipps oder Informationen, die für das Verständnis des Beschriebenen direkt relevant sind.
+```
+
+```admonish tldr title="Exkurs zu ETL"
+Hier erscheinen zusätzliche, nicht direkt relevanten Informationen.
+```
+
+```admonish question title="Warum X?"
+Die Beantwortung einer antizipierten oder häufigen Frage.
+```
+
+```admonish warning title="Bitte beachten:"
+Hier erscheinen Warnungen.
+```
+
+```admonish quote
+Hier zitieren wir etwas und nennen die Quelle in den Fußnoten.[^example]
+```
+
+[^example]: [Beispielquelle](https://example.com)
+
 ## Wie gehts weiter?
 
 1. Zuerst betten wir die typischen Schritte bei der Auswertung von CiviCRM-Daten und potenziell hilfreiche Tools in den **["Datenlebenszyklus"](./1-datenlebenszyklus.md)** ein. 
@@ -16,7 +40,6 @@ Dieses Material dokumentiert die Ergebnisse dieses Datenvorhabens und skizziert 
 3. In den Unterseiten geht es dann ins Details: Wir beschreiben unsere Experimente und Use Cases, die wir näher untersucht haben.
 4. Die verwendeten CiviCRM-Komponenten und externen Tools beschreiben wir im **[Abschnitt Tools](./3-tools/0-index.md)**.
 5. Im **[Fazit](./2-fazit.md)** fassen wir unsere Erkenntnisse zusammen.
-
 
 ## Limitationen des Datenvorhabens
 

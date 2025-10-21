@@ -17,45 +17,68 @@
 - Two main types of pages: Ansätze und Tools
 - Ansätze and Tools can have sub-chapters based on the type of tool (e.g., CiviCRM-interne Tools) or multiple tools can be summarized on one page
 
-### Ansätze Structure
+### Use Case Structure
 
-- Title + subtitle (description of the ansatz)
-- Reference to the datenlebenszyklus with used tools referenced behind the fitting stage
+```
+# Title
+Subtitle (description of the use case)
+
+Reference to the datenlebenszyklus
+├── Stage 1: Tool A, Tool B
+├── Stage 2: Tool C
+└── Stage 3: Tool D
+
+## Voraussetzungen
+
+## Anleitung
+├── Setup
+├── Step 1
+├── Step 2
+└── ...
+```
 
 ### Tools Structure
 
-- Reference to the stage of the datenlebenszyklus per tool
+```
+# Title
+ Subtitle (description of the tool)
+### Reference to the stage of the datenlebenszyklus
+### Voraussetzungen
+### Anleitung
+├── Setup
+├── Step 1
+├── Step 2
+└── ...
+```
 
 ## Other Formatting Elements
 
-### Notes
+### Admonishments
 
-- Use HTML div tags for creating side notes and important warnings
-    - `class="warning"` for warnings
+- As explained and demonstrated on the introduction page, use admonishments for important or relevant notes
 - Use footnotes (e.g., `[^note-powerquery]`) for less important notes
+
 
 ### Quotes
 
-- Format quotes with `>`
+- Use quote admonisments for quotes (see introduction page)
 - Add source as footnote
-- Example:
 
 ```markdown
-> CiviCRM has a stable, comprehensive API (Application Programming Interface)...[^note]
 
-...
+\```admonish quote
+Hier zitieren wir etwas und nennen die Quelle in den Fußnoten.[^example]
+\```
 
-[^note]: [https://docs.civicrm.org/dev/en/latest/api/](https://docs.civicrm.org/dev/en/latest/api/)
+[^example]: [Beispielquelle](https://example.com)
 ```
 
 ### Code
 
-- Write code in code blocks
-    - Specify code language
-    - Example:
+- Write code in code blocks and specify code language
 
-    ```bash
-    curl -X POST -H "$CRM_AUTH" "$CRM_URL" \
-    -d 'params=%7B%22limit%22%3A25%7D'
-    ```
+```bash
+curl -X POST -H "$CRM_AUTH" "$CRM_URL" \
+-d 'params=%7B%22limit%22%3A25%7D'
+```
 - Or inline with `code`, e.g. for references to code objects
