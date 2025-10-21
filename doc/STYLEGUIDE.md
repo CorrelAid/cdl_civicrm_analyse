@@ -29,11 +29,11 @@ Reference to the datenlebenszyklus
 └── Stage 3: Link Tool D
 
 ## Voraussetzungen
-- Link requirement setup/explanation belonging to Tool A
+- Link requirement setup/explanation on page of Tool A
 - Other Requirement
 
 ## Anleitung
-├── Setup
+├── Setup (Optional)
 ├── Step 1
 ├── Step 2
 └── ...

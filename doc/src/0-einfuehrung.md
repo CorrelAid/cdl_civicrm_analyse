@@ -12,3 +12,5 @@ Dieses Lernmaterial dokumentiert die Ergebnisse dieses Datenvorhabens. Es richte
 ➡️ [Wie sollte dieses Lernmaterial gelesen werden?](1-wie-lesen.md)
 
 ➡️ [Mehr Informationen zum Material und dem Datenvorhaben](6-ueber.md)
+
+➡️ [Wie nutzt die Zivilgesellschaft CiviCRM und was für Bedarfe gibt es im Bezug auf Datennutzung?](7-ergebnisse-umfrage.md)
