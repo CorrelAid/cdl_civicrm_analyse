@@ -129,10 +129,6 @@ triggers:
     cron: 0 0 * * 0
 ```
 
-```admonish info title="Secrets in Kestra"
-Wenn ihr Kestra selbst hostet, könnt ihr API Tokens etc. als [Secrets](https://kestra.io/docs/concepts/secret#secrets-in-the-open-source-version) anlegen.
-```
-
 ```admonish question title="Diesen Flow importieren"
 Diesen und andere Kestra-Flows findet ihr auch im [Repository](https://github.com/CorrelAid/cdl_civicrm_analyse) in dem Ordner `supporting_code/kestra_flows`
 ```
@@ -172,11 +168,11 @@ Der JSONata-Knoten nutzt die Expression:
 
 ```
 [{
-        "nicht_spendend": $sum(values[$."Donor_Type.Donor_Type:label" = null].count),
-        "ehemalig":       $sum(values[$."Donor_Type.Donor_Type:label" = "Past Donor"].count),
-        "monatlich":      $sum(values[$."Donor_Type.Donor_Type:label" = "Monthly Donor"].count),
-        "einmalig":       $sum(values[$."Donor_Type.Donor_Type:label" = "One Time Donor"].count)
-      }]
+  "nicht_spendend": $sum(values[$."Donor_Type.Donor_Type:label" = null].count),
+  "ehemalig":       $sum(values[$."Donor_Type.Donor_Type:label" = "Past Donor"].count),
+  "monatlich":      $sum(values[$."Donor_Type.Donor_Type:label" = "Monthly Donor"].count),
+  "einmalig":       $sum(values[$."Donor_Type.Donor_Type:label" = "One Time Donor"].count)
+}]
 ```
 
 **So funktioniert die Expression:**
@@ -196,8 +192,12 @@ Beispiel-Output:
 
 Dieser letzte Knoten ist für das Laden der Daten in die Managed Datenbank auf Neon, unser Data Warehouse, zuständig:
 
-1. Legt zunächst Credentials für Postgres an. Die notwendigen Informationen findet ihr in der [Neon Konsole](https://neon.com/docs/connect/connect-from-any-app)
+1. Legt zunächst ein Secret für Postgres an. Die notwendigen Informationen findet ihr in der [Neon Konsole](https://neon.com/docs/connect/connect-from-any-app)
 2. Konfiguriert den Knoten so, dass die transformierten Daten als neue Zeile mit dem aktuellen Timestamp in die Tabelle `spendende_typen_agg` eingefügt werden
+
+```admonish info title="Secrets in Kestra"
+Wenn ihr Kestra selbst hostet, könnt ihr API Tokens etc. als [Secrets](https://kestra.io/docs/concepts/secret#secrets-in-the-open-source-version) über Environment Variables anlegen.
+```
 
 **Die SQL-Query im Detail:**
 
@@ -215,7 +215,6 @@ AS t(nicht_spendend int, ehemalig int, monatlich int, einmalig int);
 3. **`jsonb_to_recordset(...)`**: Konvertiert das JSON-Objekt aus dem vorherigen Knoten in eine relationale Tabellenstruktur
 4. **`'{{ outputs.to_rows.value }}'`**: Kestra-Syntax um auf den Output des `to_rows`-Knotens zuzugreifen
 5. **`AS t(nicht_spendend int, ...)`**: Definiert das Schema der temporären Tabelle `t` mit den entsprechenden Spaltentypen
-6. **`fetchType: NONE`**: Da wir nur Daten einfügen und keine Ergebnisse zurückerwarten, setzen wir fetchType auf NONE für bessere Performance
 
 
 ```admonish tldr title="Regelmäßige Snapshots"
