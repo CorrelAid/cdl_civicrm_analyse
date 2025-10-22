@@ -11,14 +11,14 @@ dependencies = [
     "jupyter>=1.1.1",
     "polars>=1.32.0",
     "requests>=2.32.4",
-    "python_tools",
+    "python-tools",
     "python-dotenv>=1.1.1",
     "faker>=37.5.3",
     "marimo>=0.15.2",
 ]
 
 [tool.uv.sources]
-python_tools = { workspace = true }
+python-tools = { workspace = true }
 
 [tool.uv.workspace]
-members = ["python-tools", "marimo", "marimo-notebook"]
+members = ["supporting_code/python-tools", "supporting_code/marimo-notebook"]

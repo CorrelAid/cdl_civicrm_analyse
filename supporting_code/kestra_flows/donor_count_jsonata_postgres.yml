@@ -1,0 +1,40 @@
+id: civicrm_donor_type_count_warehouse
+namespace: company.team
+tasks:
+  - id: request
+    type: io.kestra.plugin.core.http.Request
+    uri: "{{ secret('CIVICRM_API_URI') }}"
+    headers:
+      X-Civi-Auth: "Bearer {{ secret('CIVICRM_API_TOKEN') }}"
+    method: POST
+    contentType: application/x-www-form-urlencoded
+    body: |
+      params=%7B%22select%22%3A%5B%22COUNT%28id%29%20AS%20count%22%2C%22Donor_Type.Donor_Type%3Alabel%22%5D%2C%22orderBy%22%3A%7B%22contact_type%3Alabel%22%3A%22DESC%22%7D%2C%22groupBy%22%3A%5B%22Donor_Type.Donor_Type%22%5D%7D
+
+  - id: to_rows
+    type: io.kestra.plugin.transform.jsonata.TransformValue
+    from: "{{ outputs.request.body }}"
+    expression: |
+      [{
+        "nicht_spendend": $sum(values[$."Donor_Type.Donor_Type:label" = null].count),
+        "ehemalig":       $sum(values[$."Donor_Type.Donor_Type:label" = "Past Donor"].count),
+        "monatlich":      $sum(values[$."Donor_Type.Donor_Type:label" = "Monthly Donor"].count),
+        "einmalig":       $sum(values[$."Donor_Type.Donor_Type:label" = "One Time Donor"].count)
+      }]
+
+  - id: insert_agg
+    type: io.kestra.plugin.jdbc.postgresql.Query
+    url: "jdbc:postgresql://{{ secret('CIVICRM_NEON_WAREHOUSE_HOST') }}:5432/main"
+    username: "{{ secret('CIVICRM_NEON_WAREHOUSE_USER') }}"
+    password: "{{ secret('CIVICRM_NEON_WAREHOUSE_PW') }}"
+    sql: |
+      INSERT INTO spendende_typen_agg(timestamp, nicht_spendend, ehemalig, monatlich, einmalig)
+      SELECT NOW(), nicht_spendend, ehemalig, monatlich, einmalig
+      FROM jsonb_to_recordset('{{ outputs.to_rows.value }}'::jsonb)
+      AS t(nicht_spendend int, ehemalig int, monatlich int, einmalig int);
+    fetchType: NONE
+
+triggers:
+  - id: schedule
+    type: io.kestra.plugin.core.trigger.Schedule
+    cron: 0 0 * * 0

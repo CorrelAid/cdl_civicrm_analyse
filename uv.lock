@@ -427,7 +427,7 @@ requires-dist = [
     { name = "marimo", specifier = ">=0.15.2" },
     { name = "polars", specifier = ">=1.32.0" },
     { name = "python-dotenv", specifier = ">=1.1.1" },
-    { name = "python-tools", editable = "python-tools" },
+    { name = "python-tools", editable = "supporting_code/python-tools" },
     { name = "requests", specifier = ">=2.32.4" },
 ]
 
@@ -436,7 +436,7 @@ name = "click"
 version = "8.2.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "colorama", marker = "platform_system == 'Windows'" },
+    { name = "colorama", marker = "sys_platform == 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/60/6c/8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbc/click-8.2.1.tar.gz", hash = "sha256:27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202", size = 286342 }
 wheels = [
@@ -667,7 +667,7 @@ name = "ipykernel"
 version = "6.30.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "appnope", marker = "platform_system == 'Darwin'" },
+    { name = "appnope", marker = "sys_platform == 'darwin'" },
     { name = "comm" },
     { name = "debugpy" },
     { name = "ipython" },
@@ -1136,7 +1136,7 @@ wheels = [
 [[package]]
 name = "marimo-notebook"
 version = "0.1.0"
-source = { virtual = "marimo-notebook" }
+source = { virtual = "supporting_code/marimo-notebook" }
 dependencies = [
     { name = "marimo" },
 ]
@@ -1520,7 +1520,7 @@ wheels = [
 [[package]]
 name = "python-tools"
 version = "0.1.0"
-source = { editable = "python-tools" }
+source = { editable = "supporting_code/python-tools" }
 
 [[package]]
 name = "pywin32"

@@ -14,7 +14,7 @@ SEED=4321 # random seed
 
 ## Generate data 
 
-_all assuming you're in the folder `test_data`_
+_all assuming you’re in the folder `test_data`_
 
 using `make`
 
@@ -28,3 +28,9 @@ or running python scripts manually
 uv run gen_contacts.py
 uv run gen_contributions.py
 ```
+
+## Update Contacts
+
+1. Run the script `supporting_code/test_data/update_contacts.py`
+2. Import the resulting csv in CiviCRM (Kontakte)
+    - choose “Aktualisieren”

@@ -68,17 +68,13 @@ Diesen und anderen SQL-Code findet ihr auch im [Repository](https://github.com/C
 
 Navigiert zum [API Explorer](../../4-tools/1-civicrm_intern/3-civicrm-api.md#api-explorer) und wählt als Entität `Contact`, sowie als Aktion `get` aus. Hier besteht die Datenmodellierung nun aus einer Aggregation nach dem Typ der spendenden Person.
 
-![Spendende API Explorer](../../images/3-ansaetze/4-api_db_wf_mtbs/kestra-api-explorer.png)
+![Spendende API Explorer](../../images/3-ansaetze/4-api_db_wf_mtbs/2-hist_data/kestra-api-explorer.png)
 
 Konfiguriert die API-Anfrage so wie in dem Screenshot oben:
 
 1. Wählt unter **select** die Felder `COUNT(id) AS count` und `Donor_Type.Donor_Type:label` aus
 2. Nutzt die **groupBy** Funktion, um die Reihen nach `Donor_Type.Donor_Type` zu gruppieren
 3. Sortiert die Ergebnisse unter **orderBy** nach `contact_type:label` in absteigender Reihenfolge (`DESC`)
-
-```admonish tldr title="Aggregation in der API"
-Wir zählen die IDs pro Spenden-Typ und zeigen den Namen des Typs an. Die Sortierung ist wichtig, da wir später die Position in der Liste der Ergebnisse verwenden. Bei diesem Use Case erfolgt die Datenmodellierung hauptsächlich über die Aggregationsfunktionen der API.
-```
 
 Nach diesen Schritten könnt ihr bereits den Request Body weiter unten unter REST kopieren. Dies sollte in etwa so aussehen:
 
@@ -91,18 +87,46 @@ params=%7B%22select%22%3A%5B%22COUNT%28id%29%20AS%20count%22%2C%22Donor_Type.Don
 Erstellt einen neuen Workflow auf eurer Kestra-Instanz. Der vollständige Flow als YAML:
 
 ```yaml
-id: civicrm_donor_type_count_polars
+id: civicrm_donor_type_count_warehouse
 namespace: company.team
 tasks:
   - id: request
     type: io.kestra.plugin.core.http.Request
-    uri: http://civicrm.correlaid.org/civicrm/ajax/api4/Contact/get
+    uri: "{{ secret('CIVICRM_API_URI') }}"
     headers:
       X-Civi-Auth: "Bearer {{ secret('CIVICRM_API_TOKEN') }}"
     method: POST
     contentType: application/x-www-form-urlencoded
     body: |
       params=%7B%22select%22%3A%5B%22COUNT%28id%29%20AS%20count%22%2C%22Donor_Type.Donor_Type%3Alabel%22%5D%2C%22orderBy%22%3A%7B%22contact_type%3Alabel%22%3A%22DESC%22%7D%2C%22groupBy%22%3A%5B%22Donor_Type.Donor_Type%22%5D%7D
+
+  - id: to_rows
+    type: io.kestra.plugin.transform.jsonata.TransformValue
+    from: "{{ outputs.request.body }}"
+    expression: |
+      [{
+        "nicht_spendend": $sum(values[$."Donor_Type.Donor_Type:label" = null].count),
+        "ehemalig":       $sum(values[$."Donor_Type.Donor_Type:label" = "Past Donor"].count),
+        "monatlich":      $sum(values[$."Donor_Type.Donor_Type:label" = "Monthly Donor"].count),
+        "einmalig":       $sum(values[$."Donor_Type.Donor_Type:label" = "One Time Donor"].count)
+      }]
+
+  - id: insert_agg
+    type: io.kestra.plugin.jdbc.postgresql.Query
+    url: "jdbc:postgresql://{{ secret('CIVICRM_NEON_WAREHOUSE_HOST') }}:5432/main"
+    username: "{{ secret('CIVICRM_NEON_WAREHOUSE_USER') }}"
+    password: "{{ secret('CIVICRM_NEON_WAREHOUSE_PW') }}"
+    sql: |
+      INSERT INTO spendende_typen_agg(timestamp, nicht_spendend, ehemalig, monatlich, einmalig)
+      SELECT NOW(), nicht_spendend, ehemalig, monatlich, einmalig
+      FROM jsonb_to_recordset('{{ outputs.to_rows.value }}'::jsonb)
+      AS t(nicht_spendend int, ehemalig int, monatlich int, einmalig int);
+    fetchType: NONE
+    
+triggers:
+  - id: schedule
+    type: io.kestra.plugin.core.trigger.Schedule
+    cron: 0 0 * * 0
 ```
 
 ```admonish info title="Secrets in Kestra"
@@ -110,7 +134,7 @@ Wenn ihr Kestra selbst hostet, könnt ihr API Tokens etc. als [Secrets](https://
 ```
 
 ```admonish question title="Diesen Flow importieren"
-Den Flow als importierbare Datei findet ihr auch im [Repository](https://github.com/CorrelAid/cdl_civicrm_analyse) in dem Ordner `supporting_code/kestra_flows`
+Diesen und andere Kestra-Flows findet ihr auch im [Repository](https://github.com/CorrelAid/cdl_civicrm_analyse) in dem Ordner `supporting_code/kestra_flows`
 ```
 
 ### E: Knoten für die API-Anfrage
@@ -142,29 +166,30 @@ Ein Beispiel-Output der API-Anfrage ist:
 
 ### F: Knoten für die Verarbeitung mit JSONata
 
-[JSONata](https://jsonata.org/) ist eine Sprache für die Abfrage und Verarbeitung von JSON-Daten. In diesem Fall separieren wir die Zählungen der Typen durch folgende Anfrage:
+[JSONata](https://jsonata.org/) ist eine Sprache für die Abfrage und Verarbeitung von JSON-Daten. In diesem Fall transformieren wir die API-Antwort in ein Format, das sich direkt in unsere Datenbank-Tabelle einfügen lässt.
+
+Der JSONata-Knoten nutzt die Expression:
 
 ```
-$merge(
-  $map(values, function($v) {
-    {
-      ($v."Donor_Type.Donor_Type:label" != null ? $v."Donor_Type.Donor_Type:label" : "Unlabeled"): $v.count
-    }
-  })
-)
+[{
+        "nicht_spendend": $sum(values[$."Donor_Type.Donor_Type:label" = null].count),
+        "ehemalig":       $sum(values[$."Donor_Type.Donor_Type:label" = "Past Donor"].count),
+        "monatlich":      $sum(values[$."Donor_Type.Donor_Type:label" = "Monthly Donor"].count),
+        "einmalig":       $sum(values[$."Donor_Type.Donor_Type:label" = "One Time Donor"].count)
+      }]
 ```
 
-Die JSONata-Anfrage iteriert mit `$map` über das Array `values` und erzeugt für jeden Eintrag ein Objekt, dessen Schlüssel dynamisch aus `$v."Donor_Type.Donor_Type:label"` stammt oder, falls `null`, auf `Unlabeled` gesetzt wird. Der zugehörige Wert ist jeweils `$v.count`. Weil der Feldname Sonderzeichen enthält, wird er mit dem Pfad `."Donor_Type.Donor_Type:label"` in Anführungszeichen adressiert. Anschließend fasst `$merge` alle Einzelobjekte zu einem einzigen flachen Objekt zusammen, sodass die Spendentypen ihren Zählwerten zugeordnet sind.
+**So funktioniert die Expression:**
+
+1. **Filtern**: `values[$."Donor_Type.Donor_Type:label" = "Past Donor"]` durchsucht das Array `values` und filtert nur die Objekte, deren Label dem gesuchten Typ entspricht
+2. **Extrahieren**: `.count` greift auf das `count`-Feld der gefilterten Objekte zu
+3. **Aggregieren**: `$sum()` summiert alle gefundenen Werte (relevant wenn mehrere Matches existieren)
+4. **Strukturieren**: Die eckigen Klammern `[]` erstellen ein Array mit einem einzelnen Objekt, dessen Keys (`nicht_spendend`, `ehemalig`, etc.) den Spaltennamen in unserer Datenbank entsprechen
 
 Beispiel-Output:
 
 ```json
-{
-  "Unlabeled": 22,
-  "One Time Donor": 76,
-  "Past Donor": 117,
-  "Monthly Donor": 91
-}
+{ "ehemalig": 117, "einmalig": 76, "monatlich": 91, "nicht_spendend": 22 }
 ```
 
 ### G: Knoten für das Laden der Daten in die Managed Datenbank
@@ -174,18 +199,36 @@ Dieser letzte Knoten ist für das Laden der Daten in die Managed Datenbank auf N
 1. Legt zunächst Credentials für Postgres an. Die notwendigen Informationen findet ihr in der [Neon Konsole](https://neon.com/docs/connect/connect-from-any-app)
 2. Konfiguriert den Knoten so, dass die transformierten Daten als neue Zeile mit dem aktuellen Timestamp in die Tabelle `spendende_typen_agg` eingefügt werden
 
-```admonish tldr title="Daily Snapshot"
-In den Begriffen des Data Engineering vollziehen wir hier einen regelmäßigen **Daily Snapshot**. Jeden Tag wird eine neue Zeile mit den aktuellen Zählungen der verschiedenen Spender:innentypen angelegt. So können wir die Entwicklung über die Zeit nachvollziehen.
+**Die SQL-Query im Detail:**
 
-Eine Alternative wäre ein **Full Load**, bei dem die gesamte Tabelle bei jeder Ausführung überschrieben wird. Der Snapshot-Ansatz erlaubt uns jedoch, historische Entwicklungen zu analysieren.
+```sql
+INSERT INTO spendende_typen_agg(timestamp, nicht_spendend, ehemalig, monatlich, einmalig)
+SELECT NOW(), nicht_spendend, ehemalig, monatlich, einmalig
+FROM jsonb_to_recordset('{{ outputs.to_rows.value }}'::jsonb)
+AS t(nicht_spendend int, ehemalig int, monatlich int, einmalig int);
+```
+
+**So funktioniert die Query:**
+
+1. **`INSERT INTO spendende_typen_agg(...)`**: Definiert in welche Tabelle und Spalten die Daten eingefügt werden
+2. **`NOW()`**: Erzeugt den aktuellen Timestamp für die Zeile, sodass wir später nachvollziehen können, wann diese Daten erfasst wurden
+3. **`jsonb_to_recordset(...)`**: Konvertiert das JSON-Objekt aus dem vorherigen Knoten in eine relationale Tabellenstruktur
+4. **`'{{ outputs.to_rows.value }}'`**: Kestra-Syntax um auf den Output des `to_rows`-Knotens zuzugreifen
+5. **`AS t(nicht_spendend int, ...)`**: Definiert das Schema der temporären Tabelle `t` mit den entsprechenden Spaltentypen
+6. **`fetchType: NONE`**: Da wir nur Daten einfügen und keine Ergebnisse zurückerwarten, setzen wir fetchType auf NONE für bessere Performance
+
+
+```admonish tldr title="Regelmäßige Snapshots"
+In den Begriffen des Data Engineering vollziehen wir hier regelmäßige **Snapshots**. Bei jeder Ausführung wird eine neue Zeile mit den aktuellen Zählungen der verschiedenen Spender:innentypen angelegt. So können wir die Entwicklung über die Zeit nachvollziehen.
 ```
 
 ### H: Visualisierung in Metabase
 
 1. Verbindet wie [hier](../../4-tools/3-bi-tools.md#mb-db-hinzufuegen) beschrieben die Datenbank mit Metabase. An die notwendigen Informationen kommt ihr ähnlich wie beim Anlegen der Postgres Credentials für den letzten Knoten des Workflows
 
-2. Die Visualisierung ist ein **Line-Chart**, der die Entwicklung der verschiedenen Spender:innentypen über die Zeit darstellt. Nutzt die Spalte `timestamp` für die X-Achse und die verschiedenen Typen-Spalten für die Y-Achse
+2. Die Visualisierung ist ein **Line-Chart**, der die Entwicklung der verschiedenen Spender:innentypen mit jeweils einer Linie über die Zeit darstellt. Nutzt die Spalte `timestamp` für die X-Achse und die verschiedenen Typen-Spalten für die Y-Achse
 
 <br/>
 
-![Screenshot Final Viz](../../images/3-ansaetze/4-api_db_wf_mtbs/1-etl-n8n/n8n-viz.png)
+![Line Chart with multiple Series](../../images/3-ansaetze/4-api_db_wf_mtbs/2-hist_data/final_viz_kestra.png)
+
