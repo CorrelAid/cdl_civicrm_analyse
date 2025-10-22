@@ -10,7 +10,10 @@ Grundsätzlich könnt ihr unterscheiden, welche Schritte des Datenlebenszyklus i
 - **Daten extern organisieren** (z. B. in einer zusätzlichen Datenbank oder einem ETL-Tool), Auswertung und Visualisierung ebenfalls extern.
 
 
-Generell gilt: **CiviCRM ist primär ein CRM, kein Datenanalyse- oder Visualisierungstool. Je höher eure Anforderungen an die Auswertung sind, desto eher solltet ihr auf externe Tools setzen.**
+```admonish info title="CiviCRM ≠ Datenanalysetool"
+Generell gilt: CiviCRM ist **primär ein CRM**, kein Datenanalyse- oder Visualisierungstool. **Je höher eure Anforderungen an die Auswertung** sind, **desto eher solltet ihr externe Tools** hinzuziehen.
+```
+
 
 Darüber hinaus hängt die **Wahl des Ansatzes von folgenden Faktoren** ab:
 

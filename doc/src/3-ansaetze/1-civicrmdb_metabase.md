@@ -24,9 +24,9 @@ Sobald Metabase Zugriff auf eure CiviCRM-Datenbank habt, könnt ihr *Fragen* ers
 ### Daten organisieren
 Die CiviCRM-Datenbank hat sehr viele Tabellen - verständlich bei so einer umfassenden Softwarelösung. Zum Beispiel sind in der Tabelle Kontakte nur numerische IDs für das Geschlecht vorhanden. Die Labels finden sich in einer eigenen Tabelle. Diese Tabellen bei jeder *Frage* zusammenzuführen, ist auf Dauer nervig und zeitraubend. Es lohnt es sich daher, ein bisschen Datenmodellierung in Metabase zu machen. Hierfür könnt ihr die [**Modell-Funktion**](https://www.metabase.com/docs/latest/data-modeling/models) verwenden. So könnt ihr z.B. ein Modell “Kontakte” anlegen, welches die Genderoptionen bereits an die Kontakte-Tabelle anfügt. Euer Modell könnt ihr dann in allen weiteren *Fragen* und verbundenen Analyse- und Visualisierungsschritten nutzen.
 
-## Beispiel: Kontakt- und Spendendashboard
+## Use Case: Kontakt- und Spendendashboard
 
-Als Teil des Datenvorhabens haben wir ein [Beispiel-Dashboard](http://mtbs.correlaid.org/public/dashboard/cfbe9014-3548-4234-979d-b0803074a8ed) erstellt, welches einen Überblick über die Kontakte und Spenden + Kampagnenbeiträge in unserer Testdatenbank gibt. 
+Als Teil des Datenvorhabens haben wir ein [Dashboard](http://mtbs.correlaid.org/public/dashboard/cfbe9014-3548-4234-979d-b0803074a8ed) erstellt, welches einen Überblick über die Kontakte und Spenden + Kampagnenbeiträge in unserer Testdatenbank gibt. 
 Das Dashboard hat zwei Tabs:
 - [Kontakte](https://mtbs.correlaid.org/dashboard/11-civicrm-kontakte-und-spenden?tab=20-kontakte): Deskriptive Statistiken zu unseren Fake-Kontakten
 - [Spenden](https://mtbs.correlaid.org/dashboard/11-civicrm-kontakte-und-spenden?tab=21-spenden): Deskriptive Statistiken zu Zuwendungen, spezifisch zu Spenden und Kampagnenbeiträgen.

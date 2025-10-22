@@ -6,49 +6,9 @@
 
 CiviCRM [SearchKit](https://docs.civicrm.org/user/en/latest/searching/searchkit/what-is-searchkit/) ist eine Erweiterung für CiviCRM, die es Nutzer\*innen ermöglicht, komplexe Abfragen an ihre Daten zu stellen. Als Nutzer\*in kann man filtern, aggregieren, Felder auswählen und gruppieren. 
 
+Um sich mit SearchKit vertraut zu machen, empfiehlt es sich, mit einfachen Auswertungen (z.B. "Zählen" von Kontakten nach Kategorie) zu starten und das Komplexitätslevel nach und nach zu starten.  
 
-Wir arbeiten in unseren Beispielen mit einer einfachen Darstellung der Geschlechterverteilung. Diese Suche kann über SearchKit -> Import importiert werden.
-
-```
-[
-  [
-    "SavedSearch",
-    "save",
-    {
-      "records": [
-        {
-          "name": "geschlecht_statistik",
-          "label": "geschlecht statistik",
-          "api_entity": "Contact",
-          "api_params": {
-            "version": 4,
-            "select": [
-              "COUNT(id) AS COUNT_id",
-              "gender_id:label"
-            ],
-            "orderBy": [],
-            "where": [
-              [
-                "gender_id:name",
-                "IS NOT EMPTY"
-              ]
-            ],
-            "groupBy": [
-              "gender_id"
-            ],
-            "join": [],
-            "having": []
-          }
-        }
-      ],
-      "match": [
-        "name"
-      ]
-    }
-  ]
-]
-```
-
+Eine (englischsprachige) Einführung in SearchKit findet sich [in der CiviCRM Dokumentation](https://docs.civicrm.org/user/en/latest/searching/searchkit/what-is-searchkit/#getting-started). Auf dem YouTube-Channel von CiviCRM gibt es eine [Playlist zu SearchKit](https://www.youtube.com/playlist?list=PLjSU7YfE0E028kuK948i7_qxUlbHZbfJR). 
 
 #### Vorteile
 - mächtiges Analysewerkzeug: ihr könnt verschiedene CiviCRM-Datentypen kombinieren, Einträge filtern, relevante Felder auswählen und Kennzahlen wie Anzahl, Mittelwerte, etc. (aggregiert) ausrechnen
@@ -57,6 +17,7 @@ Wir arbeiten in unseren Beispielen mit einer einfachen Darstellung der Geschlech
 #### Nachteile
 - Das Arbeiten mit SearchKit erfordert eine Einarbeitung in datenorientiertes Denken. SearchKit orientiert sich stark an Konzepten von SQL[^note-sql], was für Personen, die sich nicht damit auskennen, erst einmal herausfordernd sein kann. 
 - Das User Interface ist nicht immer intuitiv.
+- Bestimmte Transformationen (z.B. Pivotieren) sind nicht möglich.
 
 
 [^note-sql]: Eine [Erklärung des Begriffs "SQL"](https://civic-data.de/selbstlernmaterial/#sql) gibt es im Selbstlernmaterial des Civic Data Labs. 
@@ -71,18 +32,11 @@ Die Option, die Ergebnisse über die API abzurufen, eröffnet einen vielversprec
 ## ChartKit
 [📊 daten-visualisieren](./../../2-datenlebenszyklus.html#daten-visualisieren)
 
-Mit [ChartKit](https://lab.civicrm.org/extensions/chart_kit) kann man basierend auf SearchKit-Suchen einfache Grafiken wie Balken-, Linien- oder Tortendiagramme erstellen. 
+Mit [ChartKit](https://lab.civicrm.org/extensions/chart_kit) kann man basierend auf SearchKit-Suchen einfache Grafiken wie Balken-, Linien- oder Tortendiagramme erstellen. Konzeptionell sind ChartKit-Visualisierungen eine weitere Möglichkeit, Ergebnisse von SearchKit-Suchen darzustellen ("Search Display"). Für jede Suche können mehrere Visualisierungen erstellt werden.
 
-1. Suche in SearchKit anlegen oder bearbeiten
-2. im SearchKit Editor links Hinzufügen -> Diagramm
-3. im ChartKit Editor können verschiedene Visualisierungstypen über ein grafisches User Interface konfiguriert werden. Verwendet werden können die Spalten der Ergebnisse der SearchKit Suche.
+Um euch mit ChartKit vertraut zu machen, könnt ihr anhand einer einfachen Suche verschiedene Visualisierungen erstellen.
 
-![User Interface einer Suche in SearchKit. Das Dropdown "Hinzufügen" ist geöffnet und die Option "Diagramm" ist ausgewählt.](../../images/4-tools/1-civicrm_intern/4-civicrm-searchkit-chartkit/chartkit.png)
-
-
-Für jede Suche können mehrere Visualisierungen erstellt werden.
-
-Chart Kit sollte bei neueren Versionen von CiviCRM vorinstalliert sein. Sonst wendet euch an euren Hosting-Dienstleister.
+ChartKit sollte bei neueren Versionen von CiviCRM vorinstalliert sein. Sonst wendet euch an euren Hosting-Dienstleister.
 
 #### Vorteile
 - ChartKit ist direkt in SearchKit integriert und Visualisierungen sind direkt in CiviCRM gespeichert
@@ -97,6 +51,6 @@ Chart Kit sollte bei neueren Versionen von CiviCRM vorinstalliert sein. Sonst we
 - Visualisierungen sind "Anhängsel" von SearchKit Suchen und können nicht anders sortiert oder angeordnet werden. 
 
 #### Fazit
-Chart Kit ist eine gute Option, wenn ihr Datenvisualisierungen v.a. für den internen Gebrauch oder für Berichte ohne große Design-Anforderungen nutzen möchtet. Der Export-Button direkt in der Visualisierung ist sehr praktisch. In der Kombination mit SearchKit sind die Analyse- und Visualisierungsmöglichkeiten sehr umfassend - ihr könnt ChartKit Visualisierungen für alle in CiviCRM Daten erstellen. Es bestehen (noch) Einschränkungen bei der Verfeinerung der Visualisierungen sowie bei der Teilbarkeit aus CiviCRM hinaus. Wenn ihr ansprechendere oder komplexere Visualiserungen oder Dashboard-Funktionalitäten benötigt, solltet ihr daher auf externe Tools zurückgreifen. 
+Chart Kit ist eine gute Option, wenn ihr Datenvisualisierungen v.a. für den internen Gebrauch oder für Berichte ohne große Design-Anforderungen nutzen möchtet. Der Export-Button direkt in der Visualisierung ist sehr praktisch. Es bestehen (noch) Einschränkungen bei der Verfeinerung der Visualisierungen sowie bei der Teilbarkeit aus CiviCRM hinaus. Wenn ihr ansprechendere oder komplexere Visualiserungen oder Dashboard-Funktionalitäten benötigt, solltet ihr daher auf externe Tools zurückgreifen. 
 
 

@@ -1,0 +1,37 @@
+[
+  [
+    "SavedSearch",
+    "save",
+    {
+      "records": [
+        {
+          "name": "geschlecht_statistik",
+          "label": "geschlecht statistik",
+          "api_entity": "Contact",
+          "api_params": {
+            "version": 4,
+            "select": [
+              "COUNT(id) AS COUNT_id",
+              "gender_id:label"
+            ],
+            "orderBy": [],
+            "where": [
+              [
+                "gender_id:name",
+                "IS NOT EMPTY"
+              ]
+            ],
+            "groupBy": [
+              "gender_id"
+            ],
+            "join": [],
+            "having": []
+          }
+        }
+      ],
+      "match": [
+        "name"
+      ]
+    }
+  ]
+]
