@@ -1,30 +1,44 @@
 # Basic ETL mit n8n - Einfache deskriptive Statistiken
 
-**Wir orchestrieren einen ETL-Prozess (Extract, Transform & Load) mit n8n um die Frage zu beantworten, wie sich Geschlecht unter den in CiviCRM erfassten Kontakten verteilt und wollen dies mit einen Donut-Chart visualisieren.**
+**Wir orchestrieren einen ETL-Prozess (Extract, Transform & Load) mit n8n um die Frage zu beantworten, wie sich Gender unter den in CiviCRM erfassten Kontakten verteilt und wollen dies mit einen Donut-Chart visualisieren.**
 
-[💾 daten-organisieren](./../../2-datenlebenszyklus.html#daten-organisieren): [CiviCRM API Explorer](./../../4-tools/1-civicrm_intern/3-civicrm-api.md#api-explorer) & [Neon](./../../4-tools/4-managed-datenbank.md#neon)<br>
-[🔢 daten-auswerten](./../../2-datenlebenszyklus.html#daten-auswerten): [Metabase](./../../4-tools/bi-tools.md#metabase) <br>
-[📊 daten-visualisieren](./../../2-datenlebenszyklus.html#daten-visualisieren): [Metabase](./../../4-tools/bi-tools.md#metabase) <br>
-[⚙️ daten-verbinden](./../../2-datenlebenszyklus.html#daten-verbinden): 
+[💾 daten-organisieren](./../../2-datenlebenszyklus.md#daten-organisieren): [CiviCRM API Explorer](./../../4-tools/1-civicrm_intern/3-civicrm-api.md#api-explorer) & [Neon](./../../4-tools/4-managed-datenbank.md#neon)<br>
+[🔢 daten-auswerten](./../../2-datenlebenszyklus.md#daten-auswerten): [Metabase](./../../4-tools/3-bi-tools.md#metabase) <br>
+[📊 daten-visualisieren](./../../2-datenlebenszyklus.md#daten-visualisieren): [Metabase](./../../4-tools/3-bi-tools.md#metabase) <br>
+[⚙️ daten-verbinden](./../../2-datenlebenszyklus.md#daten-verbinden):
 [CiviCRM API](./../../4-tools/1-civicrm_intern/3-civicrm-api.md) & [n8n](../../4-tools/5-workflow-tools.md#n8n)
 
 
 ## Voraussetzungen
 
-- Account bei [Neon](http://localhost:3000/4-tools/4-managed-datenbank.html#neon)
+- Account bei [Neon](./../../4-tools/4-managed-datenbank.md#anlegen-einer-datenbank-und-tabelle)
 - [API-Token](./../../4-tools/1-civicrm_intern/3-civicrm-api.md#api-einrichten) für eine CiviCRM-Instanz
-- [n8n](../../4-tools/5-workflow-tools.md#n8n)-Instanz oder ein Abonnement des n8n SaaS
+- n8n-Instanz oder ein Abonnement des n8n SaaS
 - Metabase-Instanz oder ein Abonnement des Metabase SaaS
 
-## Anleitung 
+## Anleitung
 
-Deses ETL-Setup besteht aus vier Komponenten, die wir nacheinander vorbereiten. Wir 
+Dieser Ansatz besteht aus vier Komponenten, die wir nacheinander vorbereiten.
 
-### Anlegen einer Tabelle in der Managed Datenbank (Neon)
+### A: Anlegen einer Tabelle in der Managed Datenbank (Neon)
 
- Erstelle eine neue Tabelle, wie [hier](../../4-tools/4-managed-datenbank.html#anlegen-einer-datenbank-und-tabelle) beschrieben, mit dem Namen *kontakte* und füge neben der automatischen ID-Spalte lediglich die Spalten **civicrm-id** und **gender** ein. Ersteres sollte den Datentyp **integer** haben, und als contraints ***Not null**, sowie **Unique** haben. Zweiteres sollte den Datentyp **varchar** und den constraint **Not null**.
+#### Option 1: GUI
 
- Als SQL, das man auch in den SQL Editor einfügen kann, um die Tabelle zu erstellen, sieht das so aus:
+Erstelle eine neue Tabelle (wie [hier](../../4-tools/4-managed-datenbank.md#anlegen-einer-datenbank-und-tabelle) beschrieben)
+
+  - Gebe der Tabelle den Namen `kontakte`
+  - Füge die Spalten `civicrm-id` und `gender` hinzu
+  - Wähle für `civicrm-id` den Datentyp `integer` und die contraints `Not null`, sowie `Unique` aus
+  - Wähle für `gender` den Datentyp `varchar` und den contraints `Not null` aus
+
+
+```admonish tldr title="Constraints"
+Constraints sind Regeln, die die Datenintegrität und -konsistenz gewährleisten, indem sie festlegen, welche Daten wie in Tabellen gespeichert werden dürfen. Sie dienen als Datenvalidierungsprüfungen auf Ebene der Datenbank.
+```
+
+#### Option 2: SQL-Editor
+
+Die Tabelle lässt sich im SQL-Editor von Neon durch das Ausführen des folgenden Codes erstellen:
 
  ```sql
  CREATE TABLE "kontakte" (
@@ -34,66 +48,89 @@ Deses ETL-Setup besteht aus vier Komponenten, die wir nacheinander vorbereiten. 
 );
 ```
 
-ℹ️ Diesen und anderen SQL-Code findet ihr auch im [Repository](https://github.com/CorrelAid/cdl_civicrm_analyse) in dem Ordner `supporting_code/sql`.
+```admonish question title="Wo finde ich mehr Beispiel-Code?"
+Diesen und anderen SQL-Code findet ihr auch im [Repository](https://github.com/CorrelAid/cdl_civicrm_analyse) in dem Ordner `supporting_code/sql`.
+```
+
+### B: Datenmodellierung im API-Explorer von CiviCRM
+
+Navigiert zum [API Explorer](../../4-tools/1-civicrm_intern/3-civicrm-api.md#api-explorer) und wählt als Entität `Contact`, sowie als Aktion `get` aus. Unter select, wählt `gender_id:label` und `id` aus. Wichtig ist, dass ihr außerdem `-1` bei `limit` setzt, um alle Daten zu erhalten. Bei diesem Use Case beschränkt sich die Datenmodellierung auf die Feldauswahl. 
+
+```admonish tldr title="Tabellen in CiviCRM"
+`gender` ist eine separate Tabelle, die alle auf dieser CiviCRM-Instanz auswählbaren Gender enthält. Kontakte haben ein Feld mit dem Namen `gender_id`, das die ID einer Reihe in der Gender-Tabelle enthält, die zum Beispiel als Spalte `Label` hat. 
+```
 
 
-#### Datenmodellierung im API Explorer
+Nach diesen Schritten könnt ihr bereits den Request Body weiter unten unter REST kopieren. Dies sollte entsprechen: 
 
-Navigiert zum [API Explorer](../../4-tools/1-civicrm_intern/3-civicrm-api.html#api-explorer) und wählt als Entität **Contact**, sowie als Aktion **get** aus. Unter select, wählt **gender_id:label** und **id** aus. Wichtig ist, dass ihr außerdem **-1** bei **limit** setzt, um alle Daten zu erhalten. Bei diesem Use Case beschränkt sich das Data Modeling auf die Feldauswahl. 
+```
+params=%7B%22select%22%3A%5B%22gender_id%3Alabel%22%2C%22id%22%5D%7D
+```
+### C: Anlegen des Flows in n8n
 
-🤔 Kleiner Exkurs: **gender** ist eine separate Tabelle, die alle auf dieser CiviCRM auswählbaren Gender enthält. Kontakte haben ein Feld mit dem Namen **gender_id**, dass die ID einer Reihe in der Gender-Tabelle enthält, die zum Beispiel als Spalte **Label** hat. 
+Erstellt einen neuen Workflow auf eurer n8n-Instanz. Am Ende sollte dieser so aussehen:
 
+![Final n8n Flow](../../images/3-ansaetze/4-api_db_wf_mtbs/1-etl-n8n/n8n-final-flow.png)
 
+```admonish info title="Diesen Flow importieren"
+Den Flow als importierbare Datei findet ihr auch im [Repository](https://github.com/CorrelAid/cdl_civicrm_analyse) in dem Ordner `supporting_code/n8n_flows`
+```
 
-Nach diesen Schritten könnt ihr bereits den Request Body weiter unten unter REST kopieren. Dies sollte entsprechen: `params=%7B%22select%22%3A%5B%22gender_id%3Alabel%22%2C%22id%22%5D%7D`.
+Als **Trigger** dient sowohl die manuelle Ausführung als auch eine Schedule (regelmäßig terminiertes Ausführen). Letzteres kann zum Beispiel einmal am Tag geschehen. 
 
-### Anlegen des Flows in n8n
+### D: Knoten für die API-Anfrage anlegen
 
-Auf eurer [n8n](../../4-tools/5-workflow-tools.html#n8n) Instanz, erstellt einen neuen Workflow. Am Ende sollte dieser so aussehen:
+Der erste richtige Knoten enthält die **API-Anfrage**. Unten seht ihr, wie ihr ihn konfigurieren müsst.
 
-![Final n8n Flow](../../images/3-ansaetze/4-api_db_wf_mtbs/n8n-final-flow.png)
+![Screenshot API Anfrage](../../images/3-ansaetze/4-api_db_wf_mtbs/1-etl-n8n/n8n-api-request.png)
 
-ℹ️ Den Flow als importierbare Datei findet ihr auch im [Repository](https://github.com/CorrelAid/cdl_civicrm_analyse) in dem Ordner `supporting_code/n8n_flows`. Dies solltet ihr so nicht nachmachen, da der Flow in dieser Version auch ein API Token enthält.
+1. Fügt unter URL am Anfang die URL eurer Instanz ein. Im API Explorer unter dem Reiter **REST** ist dies auch als Variable `CRM_URL` definiert. 
 
-Als Trigger dient sowohl die manuelle Ausführung als auch eine Schedule (regelmäßig terminiertes Ausführen). Letzteres kann zum Beispiel einmal am Tage geschehen. 
+2. Fügt euer API-Token an der Stelle ein, wo im Screenshot \<Token> steht.
 
-#### Knoten: API-Anfrage
+3. Im Feld Body, das bei Setzen der oben angezeigten Optionen erscheint, fügt ihr nun den im API-Explorer generierten Body ein (siehe oben). 
 
-Der erste richtige Knoten ist die API-Anfrage. Unten seht ihr, wie ihr ihn konfigurieren müsst.
+4. Ihr könnt nun eure Angaben direkt mit einem Klick auf **Execute Workflow** testen.
 
-![Screenshot API Anfrage](../../images/3-ansaetze/4-api_db_wf_mtbs/n8n-api-request.png)
+```admonish tldr title="Viele Daten?"
+Wenn ihr mehr als wenige hundert Kontakte in CiviCRM habt, oder viele Datenfelder verarbeiten wollt, solltet ihr nicht alle Daten auf einmal anfragen, sondern mit Pagination arbeiten. Dies lässt sich im API-Explorer konfigurieren und in n8n [so](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.httprequest/#pagination) berücksichtigen.
+```
 
-Fügt unter URL am Anfang die URL eurer Instanz ein. Im API Explorer unter dem Rest Reiter ist dies auch als Variable **CRM_URL** definiert. Wie ihr ein API Token erhaltet, lernt ihr [hier](../../4-tools/1-civicrm_intern/3-civicrm-api.html#api-einrichten). 
+### E: Knoten für die Separation von Zeilen anlegen
 
-Im Feld Body, das bei Setzen der oben angezeigten Optionen erscheint, fügt ihr nun den im API-Explorer generierten Body ein (siehe oben). Dies könnt ihr direkt mit einem Klick auf “Execute Workflow” testen.
+Der Output des vorherigen Knotens ist standardmäßig ein `json` Objekt, das die Daten als Liste als Wert des keys `values` enthält. Der Knoten-Typ **Split Out** ermöglicht es uns, diese Liste, bzw. deren Einträge zu isolieren. 
 
-🤔 Hinweis: Wenn mehr als ein paar hundert Kontakte in CiviCRM habt, oder viele Datenfelder verarbeitet, solltet ihr nicht alle Daten auf einmal anfragen, sondern mit Pagination arbeiten. Dies lässt sich im API-Explorer konfigurieren und in n8n [so](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.httprequest/#pagination) berücksichtigen.
+![Screenshot Split Out](../../images/3-ansaetze/4-api_db_wf_mtbs/1-etl-n8n/n8n-split-out.png)
 
-#### Knoten: Zeilen separieren
+Die Konfiguration dieses Knotens ist simpel: füllt das Feld **Values to Split Out** einfach mit dem Wert `values`.
 
-Der Output des vorherigen Knotens ist standardmäßig ein json Objekt, das die Daten als Liste als Wert des keys “values” enthält. Der Knoten-Typ **Split Out** ermöglicht es uns, diese Liste, bzw. deren Einträge zu isolieren. 
-
-![Screenshot Split Out](../../images/3-ansaetze/4-api_db_wf_mtbs/n8n-split-out.png)
-
-Die Konfiguration dieses Knotens ist simpel: füllt das Feld **Values to Split Out** einfach mit dem Wert **values**.
-
-#### Knoten: Daten in die managed Datenbank laden
+### F: Knoten für das Laden der Daten in die managed Datenbank anlegen
 
 Dieser letzte Knoten ist für das Laden der Daten in die managed Datenbank auf Neon, unser Data Warehouse, zuständig. 
 
-Legt zunächst ein Credential für Postgres an. Wie dies funktioniert, ist [hier] beschrieben. Die notwendigen Informationen findet ihr auf Neon [so](https://neon.com/docs/connect/connect-from-any-app).
+  1. Legt zunächst ein Credential für Postgres an. Wie dies funktioniert, ist [hier](https://docs.n8n.io/credentials/add-edit-credentials/) beschrieben. Die notwendigen Informationen findet ihr in der [Neon Konsole](https://neon.com/docs/connect/connect-from-any-app).
 
-![Screenshot Split Out](../../images/3-ansaetze/4-api_db_wf_mtbs/n8n-load.png)
 
-Wenn ihr dies erledigt habt, nutzt den Knoten-Typ für Postgres: **Insert or update rows in a table** und konfiguriert ihn so wie im Bild oben. Wählt die Tabelle aus, die ihr im ersten Schritt angelegt habt. Bei der Zuordnung der Felder aus der API zu den Spalten der Tabelle ist wichtig, dass es einen Unterschied zwischen **id**, die automatisch erstellt wird, und **civicrm_id**, die Updates von bereits vorhanden Kontakten erlaubt, gibt. So wird sichergestellt, dass bei erneutem Laden der Daten keine Duplikate entstehen.
+  2. Wenn ihr dies erledigt habt, nutzt den Knoten-Typ für Postgres: **Insert or update rows in a table** und konfiguriert ihn so wie im Bild unten. 
 
-🤔 Kleiner Exkurs: In den Begriffen des Data Engineering vollziehen wir hier einen regelmäßigen **Full Load**. Eine alternative wäre ein ressourcensparender **incremental load**, bei dem nur neue Daten geladen werden. Neu könnte mit Bezug auf Kontakte meint solche, die geupdatet oder tatsächlich neu hinzugekommen sind. Incremental Loads können jedoch komplex werden, auch weil sie Informationen wie das Datum eines Updates und die zuverlässige Sortierung von API Ergebnissen voraussetzen.
+![Screenshot Split Out](../../images/3-ansaetze/4-api_db_wf_mtbs/1-etl-n8n/n8n-load.png)
 
-### Visualisierung in Metabase
+```admonish info title="Unterschiede zwischen IDs"
+Bei der Zuordnung der Felder aus der API zu den Spalten der Tabelle ist wichtig, dass es einen Unterschied zwischen `id` und `civicrm_id` gibt. Ersteres wird automatisch durch die Datenbank erstellt, zweiteres erlaubt Updates von bereits vorhanden Kontakten durch die Referenz dieser. So wird sichergestellt, dass bei erneutem Laden der Daten keine Duplikate entstehen, sondern vorhandene Reihen geupdatet werden.
+```
 
-Verbindet wie [hier](../../4-tools/3-bi-tools.md#mb-db-hinzufuegen) beschrieben die Datenbank mit Metabase. An die notwendigen Informationen kommt ihr ähnlich wie beim Anlegen der Postgres Credentials für den letzten Knoten des Workflows. 
+```admonish tldr title="Full Load"
+In den Begriffen des Data Engineering vollziehen wir hier einen regelmäßigen **Full Load**. Eine alternative wäre ein ressourcensparender **Incremental Load**, bei dem nur *neue* Daten geladen werden. *Neu* könnte mit Bezug auf Kontakte solche meinen, die geupdatet oder tatsächlich neu hinzugekommen sind. 
 
-![Screenshot Final Viz](../../images/3-ansaetze/4-api_db_wf_mtbs/n8n-viz.png)
+Das Anlegen von Incremental Loads kann jedoch komplex werden, weil sie Informationen wie das Datum eines Updates und die zuverlässige Sortierung von Ergebnissen der Items einer API-Anfrage voraussetzen.
+```
 
-Die obige Visualisierung ist ein **Pie-Chart**, für den die Daten mit der **Summarize** Funktion verarbeitet wurden, indem die Reihen pro Gender gezählt wurden.
+### G: Visualisierung in Metabase
 
+1. Verbindet wie [hier](../../4-tools/3-bi-tools.md#mb-db-hinzufuegen) beschrieben die Datenbank mit Metabase. An die notwendigen Informationen kommt ihr ähnlich wie beim Anlegen der Postgres Credentials für den letzten Knoten des Workflows. 
+
+2. Die obige Visualisierung ist ein **Pie-Chart**, für den die Daten mit der **Summarize** Funktion verarbeitet wurden, indem die Reihen pro Gender gezählt wurden.
+
+<br/>
+
+![Screenshot Final Viz](../../images/3-ansaetze/4-api_db_wf_mtbs/1-etl-n8n/n8n-viz.png)
