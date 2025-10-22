@@ -8,13 +8,15 @@ Die Hauptvorteile liegen in der Zeitersparnis durch wegfallende Server-Administr
 
 Im Kontext der Visualisierung und Analyse von CiviCRM-Daten können managed Datenbanken als sogenanntes **Data-Warehouse** zum Einsatz kommen. Ein Data-Warehouse ist eine Datenbank, die speziell für Analysen und Berichte optimiert ist und Daten aus verschiedenen Quellen sammelt und strukturiert. 
 
-Wir konzentrieren uns in diesem Projekt auf **relationale** Datenbanken mit **SQL**(Structured Query Language). Relationale Datenbanken organisieren Daten in Tabellen mit Zeilen und Spalten, ähnlich wie Excel-Tabellen. Die Tabellen können über gemeinsame Spalten (Keys) miteinander verknüpft werden. SQL ist die Standardsprache für das Abfragen und Verwalten dieser Datenbanken. 
+Wir konzentrieren uns in diesem Projekt auf **relationale** Datenbanken mit **SQL** (Structured Query Language). Relationale Datenbanken organisieren Daten in Tabellen mit Zeilen und Spalten, ähnlich wie Excel-Tabellen. Die Tabellen können über gemeinsame Spalten (Keys) miteinander verknüpft werden. SQL ist die Standardsprache für das Abfragen und Verwalten dieser Datenbanken. 
 
 ### Serverless Datenbanken
 
-Serverless ist eine spezielle Form von Managed Datenbanken mit zusätzlichen Vorteilen. Normalerweise bezahlt man bei managed Datenbaken für die permanente Nutzung eines Servers, auf der die Datenbank läuft. Wie der Name beschreibt, fällt dies bei serverless jedoch weg. Konkret bedeutet das Pay-per-Use-Bezahlung nur für tatsächlich verbrauchte Ressourcen und die Möglichkeit des "Cold Start". Dies bedeutet, dass die Datenbank bei Inaktivität pausieren und bei Bedarf reaktiviert werden kann.
+Serverless ist eine spezielle Form von Managed Datenbanken mit zusätzlichen Vorteilen. Normalerweise bezahlt man bei managed Datenbaken für die permanente Nutzung eines Servers, auf der die Datenbank läuft. Wie der Name beschreibt, fällt dies bei serverless jedoch weg. Konkret bedeutet das Pay-per-Use-Bezahlung nur für tatsächlich verbrauchte Ressourcen und die Möglichkeit des “Cold Start”. Dies bedeutet, dass die Datenbank bei Inaktivität pausieren und bei Bedarf reaktiviert werden kann.
 
-**Warum ist Serverless ideal für CiviCRM-Analysen?** Bei der Nutzung eine Datenbank als externes Data Warehouse wird diese typischerweise nicht kontinuierlich abgefragt, sondern hauptsächlich für periodische Berichte und Analysen genutzt. Serverless bietet daher Kosteneffizienz bei unregelmäßiger Nutzung.
+```admonish question title="Warum ist Serverless ideal für CiviCRM-Analysen?"
+Bei der Nutzung eine Datenbank als externes Data Warehouse wird diese typischerweise nicht kontinuierlich abgefragt, sondern hauptsächlich für periodische Berichte und Analysen genutzt. Serverless bietet daher Kosteneffizienz bei unregelmäßiger Nutzung.
+```
 
 ### Grafische Nutzeroberfläche statt SQL
 

@@ -1,7 +1,8 @@
 # Python und R
 
-*Dieser Text ist ein **vorläufiger Entwurf**, der von Mistral erstellt wurde. Er wird noch angepasst und mit unseren eigenen Erkenntnissen überarbeitet.*
+Mit Programmiersprachen wie Python und R lässt sich im Prinzip alles umsetzen, was man für die Analyse und Visualisierung braucht. 
 
+Ähnlich wie bei [SQL](./4-managed-datenbank.md#grafische-nutzeroberfläche-statt-sql): Coden ist ein nützlicher Skill, es zu lernen erfordert jedoch Zeit. Deswegen sind Workflow Automation Tools oder andere grafische Nutzeroberflächen eine nützliche Alternative. Selbst geschrieben Skripts und Programme erfordern außerdem oft spezielle Maintenance und können Abhängigkeiten zu Entwickler:innen herstellen. 
 
 ## Python
 [🔢 daten-auswerten](./../2-datenlebenszyklus.html#daten-auswerten) [📊 daten-visualisieren](./../2-datenlebenszyklus.html#daten-visualisieren) [💬 daten-kommunizieren](./../2-datenlebenszyklus.html#daten-kommunizieren) [⚙️ daten-verbinden](./../2-datenlebenszyklus.html#daten-verbinden)
@@ -13,6 +14,10 @@ Python bietet verschiedene Möglichkeiten, um auf CiviCRM-Daten zuzugreifen:
 - API-Anbindung: Mit Bibliotheken wie [requests](https://docs.python-requests.org/) oder [httpx](https://www.python-httpx.org/) können direkt API-Anfragen an CiviCRM gestellt werden.
 - Datenimport: Mit [pandas](https://pandas.pydata.org/) können CSV- oder JSON-Exporte aus CiviCRM eingelesen und weiterverarbeitet werden.
 - Automatisierung: Skripte können regelmäßig ausgeführt werden, um Daten aktuell zu halten.
+
+```admonish info title="Beispiel-Code"
+Beispiele dafür, wie ihr die API in Python nutzen könnt, findet ihr im [Repository](https://github.com/CorrelAid/cdl_civicrm_analyse) in den Ordnern `supporting_code/notebooks` und `supporting_code/test_data`. Letzteres ist der Code, den wir für die Erstellung von Testdaten verwendet haben.
+```
 
 ### Analyse und Visualisierung
 Für die Analyse und Visualisierung von CiviCRM-Daten stehen zahlreiche Bibliotheken zur Verfügung:
@@ -32,7 +37,11 @@ Für die Analyse und Visualisierung von CiviCRM-Daten stehen zahlreiche Biblioth
 - [streamlit](https://streamlit.io/) – Schnelle Erstellung von Web-Apps für Daten
 - [Jupyter Notebooks](https://jupyter.org/) – Interaktive Datenanalyse und Dokumentation
 
----
+
+### Fazit
+
+Python ist eine hervorragende Wahl, wenn CiviCRM-Daten nicht nur analysiert, sondern auch in automatisierte Prozesse, interaktive Dashboards oder Webanwendungen integriert werden sollen. Die Sprache bietet eine große Flexibilität und eine umfangreiche Bibliothek an Tools für Datenanalyse, Visualisierung und Automatisierung. Besonders für Teams, die bereits mit Python arbeiten oder eine skalierbare Lösung für komplexe Datenanalysen suchen, ist Python ideal.
+
 
 ## R
 [🔢 daten-auswerten](./../2-datenlebenszyklus.html#daten-auswerten) [📊 daten-visualisieren](./../2-datenlebenszyklus.html#daten-visualisieren) [⚙️ daten-verbinden](./../2-datenlebenszyklus.html#daten-verbinden)
@@ -63,13 +72,6 @@ R bietet eine Vielzahl von Paketen für die Analyse und Visualisierung von Daten
 - [R Markdown](https://rmarkdown.rstudio.com/) – Interaktive Berichte und Notebooks
 - [RStudio](https://www.rstudio.com/) – Entwicklungsumgebung für R
 
----
-
-### Fazit: Python
-
-Python ist eine hervorragende Wahl, wenn CiviCRM-Daten nicht nur analysiert, sondern auch in automatisierte Prozesse, interaktive Dashboards oder Webanwendungen integriert werden sollen. Die Sprache bietet eine große Flexibilität und eine umfangreiche Bibliothek an Tools für Datenanalyse, Visualisierung und Automatisierung. Besonders für Teams, die bereits mit Python arbeiten oder eine skalierbare Lösung für komplexe Datenanalysen suchen, ist Python ideal.
-
----
 
 ### Fazit: R
 

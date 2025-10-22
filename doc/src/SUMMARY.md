@@ -10,7 +10,7 @@
     - [Search Kit & Excel / Google Sheets](./3-ansaetze/3-searchkit-tabellenkalkulation.md)
     - [ETL: CiviCRM API, Automation, Managed DB & Metabase](./3-ansaetze/4-api_db_wf_mtbs/0-index.md)
         - [Basic ETL mit n8n: Einfache deskriptive Statistiken](./3-ansaetze/4-api_db_wf_mtbs/1-etl-n8n.md)
-        - [Speichern historischer Daten: Spender:innenwanderungen](./3-ansaetze/4-api_db_wf_mtbs/2-spenderinnen_wanderungen.md)
+        - [Speichern historischer Daten: Spender:innenwanderungen](./3-ansaetze/4-api_db_wf_mtbs/2-hist_data.md)
     - [API, Python & Notebooks]()
     - [API, Python & Streamlit]()
     - [API, R & Quarto]()
