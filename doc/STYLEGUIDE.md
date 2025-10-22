@@ -29,15 +29,23 @@ Reference to the datenlebenszyklus
 └── Stage 3: Link Tool D
 
 ## Voraussetzungen
-- Link requirement setup/explanation on page of Tool A
-- Other Requirement
+- requirement A setup # only add a link to the tools chapter when there is an explanation on how to fulfill this requirement
+- requirement B
 
-## Anleitung
-├── Setup (Optional)
-├── Step 1
-├── Step 2
+## Instruction
+├── Setup (Optional) # Steps that are not worth explaining in detail and are more on the preparation side
+├── A: Title Step A
+│   ├── 1. Sub-Step
+│   │   ├── Option 1a
+│   │   └── Option 1b
+├── B: Title Step B
+│   ├── 1. Sub-Step 1
+│   └── 2. Sub-Step 2
+├── C: Title Step C
 └── ...
 ```
+
+- Instructions should be written in a sequential form
 
 ### Tools Structure
 

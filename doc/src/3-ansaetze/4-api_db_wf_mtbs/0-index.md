@@ -42,7 +42,7 @@ Unsere managed Datenbank, die selbst relational ist, nutzen wir als **Relational
 Eine gute Erklärung dieser Begriffe findet ihr in [diesem](https://www.youtube.com/watch?v=FgnzgRD3Gfk) Video.
 ```
 
-Dieser ETL-Ansatz wird anhand von zwei Use Cases veranschaulicht, bei denen jeweils eines der zwei ausgewählten Workflow Automation Tools verwendet wird. Zuerst erklären wir, wie man mit [n8n](../../4-tools/5-workflow-tools.html#n8n) durch das Duplizieren eines Datenausschnitts die Datengrundlage für die Visualisierung einfacher deskriptive Statistiken schaffen kann.
+Dieser ETL-Ansatz wird anhand von zwei Use Cases veranschaulicht, bei denen jeweils eines der zwei ausgewählten Workflow Automation Tools verwendet wird. Zuerst erklären wir, wie man mit [n8n](../../4-tools/5-workflow-tools.md#n8n) durch das Duplizieren eines Datenausschnitts die Datengrundlage für die Visualisierung einfacher deskriptive Statistiken schaffen kann.
 
-Danach wird der komplexere Use-Case der Visualisierung von Spender:innenwanderungen thematisiert. Nachdem notwendige Daten über einen API-Request aggregiert wurden, geschieht dies mithilfe von [Kestra](../../4-tools/5-workflow-tools.html#kestra).
+Danach wird der komplexere Use-Case der Visualisierung von Spender:innenwanderungen thematisiert. Nachdem notwendige Daten über einen API-Request aggregiert wurden, geschieht dies mithilfe von [Kestra](../../4-tools/5-workflow-tools.md#kestra).
 

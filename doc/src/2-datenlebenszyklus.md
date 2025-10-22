@@ -7,12 +7,12 @@
   </p>
 </figure>
 
-Der Datenlebenszyklus, visualisiert in der obigen Grafik, gibt einen Überblick über den Ablauf einer Datenanalyse - von der Planung bis hin zur Umsetzung. Wir werden dieses Konzept hier nicht genauer erklären und verweisen bei Bedarf und Interesse auf die entsprechende [Informationsseite]([Datenlebenszyklus](https://civic-data.de/datenlebenszyklus/)) der Website des CDL.
+Der Datenlebenszyklus, visualisiert in der obigen Grafik, gibt einen Überblick über den Ablauf einer Datenanalyse - von der Planung bis hin zur Umsetzung. Wir werden dieses Konzept hier nicht genauer erklären und verweisen bei Bedarf und Interesse auf die entsprechende [Informationsseite](https://civic-data.de/datenlebenszyklus/) der Website des CDL.
 
 Wir verwenden den Datenlebenszyklus hier, um Tools einzuordnen und fokussieren uns dabei auf die folgenden Aspekte:
 
 ### Planen und fragen 🗺️ {#planen-und-fragen}
-*Welche Fragen will ich mithilfe von Daten beantworten? Welche Daten brauche ich?**
+*Welche Fragen will ich mithilfe von Daten beantworten? Welche Daten brauche ich?*
 
 Bei unserem Projekt gingen wir größenteils davon aus, dass interessierte Organisation schon Daten haben und auch wissen, welche Fragen sie an die Daten stellen wollen. Allerdings können manche Fragestellungen nur beantwortet werden, wenn man die in CiviCRM erfassten Daten um eigene Felder erweitert. 
 

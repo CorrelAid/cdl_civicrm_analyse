@@ -2,7 +2,7 @@
 
 ## Aufbau
 
-Hauptteil dieser Ressource ist die Erklärung von Ansätzen zur Analyse und Visualisierung von Daten aus CiviCRM mithilfe von **Toolkombinationen** und anhand von konkreten **Beispielen** in [Kapitel 2️⃣](./3-ansaetze/0-index.md). Dabei wird auf detaillierte Beschreibungen und Erklärungen zu Tools verwiesen, die sich im [Kapitel 3️⃣](http://localhost:3000/4-tools/0-index.html) befinden. 
+Hauptteil dieser Ressource ist die Erklärung von Ansätzen zur Analyse und Visualisierung von Daten aus CiviCRM mithilfe von **Toolkombinationen** und anhand von konkreten **Beispielen** in [Kapitel 2️⃣](./3-ansaetze/0-index.md). Dabei wird auf detaillierte Beschreibungen und Erklärungen zu Tools verwiesen, die sich im [Kapitel 3️⃣](./4-tools/0-index.md) befinden. 
 
 Mit **Tools** meinen wir technische Mittel unterschiedlicher Art: von Komponenten innerhalb von CiviCRM, über externe Anwendungen bis hin zu Programmiersprachen. Gemeinsam ist diesen Tools, dass sie eine Rolle bei der Analyse oder Visualisierung, bzw. der Herstellung der Möglichkeit zu letzterem spielen. Für die Definition dieser Rollen nutzen wir das Konzept des Datenlebenszyklus, das wir im [Kapitel 1️⃣](./2-datenlebenszyklus.md) vorstellen. 
 
