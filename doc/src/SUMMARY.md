@@ -27,9 +27,9 @@
     - [Workflow Automation Tools](./4-tools/5-workflow-tools.md)
     - [Python & R](./4-tools/6-python-und-r.md)
     - [Self-Hosting](./4-tools/7-self-hosting.md)
-    - [Andere Visualisierungstools]()
+    - [Andere Visualisierungstools](./4-tools/8-visualisierung-andere.md)
 - [Fazit](./5-fazit.md)
 
-[Anhang: Nutzungszwecke CiviCRM genutzt und Bedarfe](./7-ergebnisse-umfrage.md)
+[Anhang: Nutzungszwecke und Bedarfe CiviCRM](./7-ergebnisse-umfrage.md)
 
 [Über das Datenvorhaben](./6-ueber.md)
