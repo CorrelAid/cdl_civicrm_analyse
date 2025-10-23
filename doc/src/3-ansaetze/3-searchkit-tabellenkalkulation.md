@@ -76,6 +76,14 @@ Falls ihr die Funktion bearbeiten möchtet, könnt ihr dies über Rechtsklick au
 Power Query wird in Excel für das Web nur eingeschränkt unterstützt. Es gibt keinen Power Query Editor, aber bestehende Queries funktionieren und es gibt den "Alle aktualisieren" Button. Verwendet ihr Excel in der Cloud, kann ein\*e Kolleg\*in die Queries anlegen und dann die Excel-Datei in die Cloud laden.
 ```
 
+## Fazit
+Die Verwendung von Microsoft Excel und PowerQuery ist vor allem sinnvoll, wenn ihr ...
+
+- a) ... sowieso schon Daten in Excel verwaltet und ihr diese mit Daten aus eurem CiviCRM kombinieren wollt
+- b) ... eine unkomplizierte, interne Lösung sucht, um einfache Grafiken und "Dashboards" zu erstellen 
+
+Da es sich bei Microsoft um einen US-amerikanischen "Big-Tech" Anbieter handelt, solltet ihr auf Datenschutz und auch -sicherheit achten, vorzugsweise nur aggregierte Daten importieren und generell überlegen, welche Art von Daten ihr "in die Hände von Google" geben wollt, selbst wenn sie nicht mehr unter die DSGVO fallen.
+
 # SearchKit, Google Sheets und Google Apps Script
 
 ## Voraussetzungen
@@ -99,7 +107,7 @@ Bei diesem Ansatz hinterlegt ihr euren API-Schlüssel in einem Google Apps Scrip
 
 #### Schneller Setup
 1. Erstellt eine Kopie dieses [Google Sheets](https://docs.google.com/spreadsheets/d/1KOru4DDJRK9KSCHCSNt3m9SYxvppOjYuBZpzrw1MyG0/edit?pli=1&gid=1127353823#gid=1127353823): Datei -> Kopie erstellen. 
-2. Ihr bekommt eine Warnung, dass eine Apps Script-Datei ebenfalls kopiert werden. Ihr könnt den Code erst überprüfen, bevor ihr eine Kopie erstellt. 
+2. Ihr bekommt eine Warnung, dass eine Apps Script-Datei ebenfalls kopiert wird. Ihr könnt den Code erst überprüfen, bevor ihr eine Kopie erstellt. 
 3. Öffnet das erstellte Google Sheet und öffnet die **Google Apps Script Konsole** über Erweiterungen -> Apps Script. Ein neues Fenster öffnet sich mit der Datei `runAllSearches.gs` geöffnet.
 
 ```admonish question title="Was ist das für Code?"
@@ -128,41 +136,98 @@ Was ist hier drin?
 
 5. Löscht den Beispielcode und kopiert den [Code der Datei `fetchSavedSearch.js`](https://github.com/CorrelAid/cdl_civicrm_analyse/blob/main/supporting_code/google-apps-script/fetchSavedSearch.js) in das Editorfenster. Speichert mithilfe von `STRG/CMD+S` oder dem Diskettensymbol.
 
-### B. Apps Script laufen lassen
+### B. Apps Script ausführen & automatisieren {#gs-ausfuehren}
 
-Um den Code laufen zu lassen, drückt ihr auf den Button "Ausführen" (en: "Run") (**nicht**: "Bereitstellen"!), wenn ihr `runAllSearches.gs` geöffnet hat. 
+#### Manuelle Ausführung
+Um den Code laufen zu lassen, drückt ihr auf den **Button "Ausführen"** (en: "Run") (nicht: "Bereitstellen"!), wenn ihr `runAllSearches.gs` geöffnet habt. Wenn ihr zum ersten Mal den Code ausführt, werdet ihr dazu aufgefordert, der **App Berechtigungen zu geben** (mehr dazu im aufklappbaren Infokasten). 
 
-Wenn ihr dies zum ersten Mal tut, werdet ihr dazu aufgefordert, dem **Skript Berechtigungen** zu geben. Dies müsst ihr tun, damit das Skript auf die CiviCRM-API zugreifen kann und die Daten in das Google Sheet schreiben kann. Wenn ihr Google Chrome verwendet, folgen weitere Warnungen, da es sich nicht um eine "verifizierte App" handelt.
+Im _Ausführungsprotokoll_ (en: Execution Log) könnt ihr nachvollziehen, ob die Ausführung funktioniert.  
 
-![Screenshot des Apps Script Editors: wie man eine neue Datei erstellt](../images/3-ansaetze/3-searchkit-tabellenkalkulation/gs-authorization.png)
+![Screenshot des Apps Script Editors: Ausführungsprotokoll](../images/3-ansaetze/3-searchkit-tabellenkalkulation/gs-execution-log.png)
 
 
-```admonish question title="Mich verunsichern die Warnungen ... ist das nicht gefährlich?"
+
+```admonish tldr title="Die Sache mit den Berechtigungen"
+Wenn ihr zum ersten Mal den Code ausführt, werdet ihr dazu aufgefordert, der **App Berechtigungen zu geben**. Dies müsst ihr tun, damit das Skript auf die CiviCRM-API zugreifen kann und die Daten in das Google Sheet schreiben kann. Wenn ihr Google Chrome verwendet, folgen weitere Warnungen, da es sich nicht um eine "verifizierte App" handelt.
+
+![Warnhinweis von Google: "Autorisierung erforderlich"](../images/3-ansaetze/3-searchkit-tabellenkalkulation/gs-authorization.png)
+
+
 Die Berechtigungen gelten nur für eure eigene Kopie der App. Diese habt ihr erstellt, ...
-- ... indem ihr das von uns bereitgestellte Google Sheet mit dem dazugehörigen Apps Script Code *kopiert* habt ("schneller Setup"). Wir haben auf eure *Kopie* des Google Sheets **keinen Zugriff**.
-- ... indem ihr eine *eigenes* Google Sheet plus eigenem Apps Script Code erstellt habt ("manueller Setup"). Wir haben auf euer Google Sheet und auch den Code **keinen Zugriff**.  
+- ... indem ihr das von uns bereitgestellte Google Sheet mit dem dazugehörigen Apps Script Code *kopiert* habt (["schneller Setup"](#schneller-setup)). Wir haben auf eure *Kopie* des Google Sheets **keinen Zugriff**. 
+- ... indem ihr eine *eigenes* Google Sheet plus eigenem Apps Script Code erstellt habt (["manueller Setup"](#manueller-setup)). Wir haben auf euer Google Sheet und auch den Code **keinen Zugriff**.  
 
 Trotzdem solltet ihr Code, den ihr von anderen übernehmt, immer sorgfältig prüfen. Hier können euch LLMs oder ein Blick durch Expert*innen weiterhelfen.
 ```
 
+#### Automatisierte Ausführung
+Damit ihr nicht jedes Mal auf "Ausführen" klicken müsst, könnt ihr die Ausführung von `runAllSearches.gs` auch **mithilfe von sogenannten Triggern automatisieren**. Trigger lösen die Ausführung des Skripts aus. Es gibt verschiedene Trigger (z.B. beim Öffnen des Google Sheets etc.), eine Übersicht findet ihr [hier](https://developers.google.com/apps-script/guides/triggers/installable?hl=de).
+
+Die genaue Wahl des Triggers hängt von eurer Anwendung ab. Wir empfehlen:
+
+- Zeitgesteuert: Aktualisiert die Daten und damit verknüpften Visualisierungen regelmäßig. Den genauen Rhythmus (stündlich/täglich/wöchentlich) legt ihr fest. Eine populäre Wahl ist einmal pro Tag mit Ausführung in der Nacht (siehe Screenshot).
+- beim Öffnen des Google Sheets: Garantiert, dass sich eure Daten und damit verknüpfte Visualisierungen bei jedem Öffnen des Sheets aktualisieren. 
+
+
+Die Einrichtung eines Triggers ist intuitiv über eine grafische Benutzeroberfläche im Google Apps Script Editor möglich. Eine kurze Anleitung findet ihr [hier](https://developers.google.com/apps-script/guides/triggers/installable?hl=de#manage_triggers_manually).
+
+![Screenshot des Apps Script Editors: Maske, in der mithilfe von mehreren Dropdowns ein Trigger konfiguriert werden kann.](../images/3-ansaetze/3-searchkit-tabellenkalkulation/gs-trigger.png)
+
+
+
 ### C. Eure eigenen Suchen abrufen
-1. Öffnet das erstellte Google Sheet und öffnet die Google Apps Script Konsole über Erweiterungen -> Apps Script. Ein neues Fenster öffnet sich mit der Datei `runAllSearches.gs` geöffnet.
-2. Ergänzt in Zeile 2 euren API-Schlüssel zwischen den "". 
+
+Um eure eigenen Suchen abzurufen, müsst ihr den **Code im Google Apps Script Editor anpassen**. 
+
+In der Datei `runAllSearches.gs`:
+
+1. Fügt in Zeile 2 euren API-Schlüssel zwischen den "" ein. 
+2. Fügt in Zeile 10 den Namen eurer SearchKit Suche und den Namen des Tabellenblatts in den Funktionsaufruf von `fetchSavedSearch` jeweils **zwischen den ""** ein. Das Tabellenblatt muss noch nicht existieren, die Funktion erstellt es dann automatisch.
+3. _Optional_: Wiederholt Schritt 1+2 in Zeile 14, wenn ihr zusätzlich Ergebnisse einer anderen Suche in ein weiteres Tabellenblatt importieren wollt. Falls nicht, löscht den Code in Zeile 14. 
+4. _Optional_: Wenn ihr noch mehr Suchen importieren wollt, könnt ihr den Code aus Zeile 10 so oft kopieren und anpassen (siehe Schritte 1+2), wie ihr wollt. 
 
 ```js
 function runAllSearches() {
-  var apiKey = "hier euer API-Schlüssel"; // Replace with your actual API key within the "", e.g. "b2391932kss"
+  var apiKey = "fügt euren API-SCHLÜSSEL hier ein"; // Replace with your actual API key within the "", e.g. "b2391932kss"
 
+ // Dokumentation der fetchSavedSearch Funktion
+ // fetchSavedSearch(searchName, sheetName, apiKey);
  // @param {string} searchName - The name of the saved search in CiviCRM.
  // @param {string} sheetName - The name of the sheet in the Google Spreadsheet where data should be written. Does not need to exist when executed
  // @param {string} apiKey - Your CiviCRM API key.
 
-  fetchSavedSearch("der Name eurer SearchKit Suche", "Name des Google Sheet Blattes", apiKey);
+  fetchSavedSearch("fügt den Namen eurer SearchKit Suche hier ein", "fügt den Namen des Google Sheet Blattes hier ein", apiKey);
+  //Beispiel: fetchSavedSearch("geschlecht_statistik", "Geschlechtsverteilung", apiKey);
 
   // ihr könnt noch mehr Suchen in anderen Blättern abrufen
-  fetchSavedSearch("der Name eurer SearchKit Suche", "Name eines weiteren Google Sheet Blattes", apiKey);
+  fetchSavedSearch("fügt den Namen eurer SearchKit Suche hier ein", "fügt den Namen des Google Sheet Blattes hier ein", apiKey);
+  //Beispiel: fetchSavedSearch("Bundesland", "Bundeslandverteilung", apiKey);
 }
 ```
 
+Folgt der Anleitung in [**B. Apps Script ausführen**](#gs-ausfuehren), um euren angepassten Code auszuführen.
 
-https://developers.google.com/apps-script/guides/triggers/installable?hl=de
+### D. Visualisierung
+
+Sobald die Daten in Google Sheets importiert sind, könnt ihr wie gewohnt die Visualisierungstools von Google Sheets verwenden, um Balken-, Tortendiagramme usw. zu erstellen. Auf YouTube und mit der Suchmaschine eurer Wahl findet ihr zahlreiche Ressourcen.
+
+Die Visualisierungen könnt ihr im jeweiligen Tabellenblatt hinzufügen oder in einem eigenen "Dashboard"-Sheet arrangieren (z.B. [hier](https://docs.google.com/spreadsheets/d/1KOru4DDJRK9KSCHCSNt3m9SYxvppOjYuBZpzrw1MyG0/edit?gid=742986434#gid=742986434)).
+
+Die interaktiven Datenvisualisierungen lassen sich **einzeln veröffentlichen und in eine Website einbetten**. Hier der Donut-Chart zur Geschlechtsverteilung, den ihr auch im Sheet "Dashboard" unseres Google Sheets findet: 
+
+<iframe width="780" height="483" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSrORqcVwuayUOI74kzfZ5tveuTZAdl7nIfcTI9Sm1p5ssiODtYa3Nt5n4pNNAzDV9_nkum3rgeaFrQ/pubchart?oid=513068507&amp;format=interactive"></iframe>
+
+```admonish tldr title="Google Sheets als Datenquelle für andere Visualisierungstools"
+Einige Tools zur Datenvisualisierung können Google Sheets als Datenquelle verwenden (z.B. DataWrapper oder Canva). Anstelle die Visualisierungen direkt in Google Sheets zu erstellen, könnt ihr Google Sheets auch nur als "automatisiert aktualisierten Zwischenspeicher" verwenden. Achtet hierbei auf Datensicherheit - manchmal müsst ihr euer Google Sheet (teilweise) publizieren.
+```
+
+
+
+## Fazit
+Die Verwendung von Google Sheets und Google Apps Script ist vor allem sinnvoll, wenn ihr ...
+
+- a) ... sowieso schon Daten in Google Sheets verwaltet und ihr diese mit Daten aus eurem CiviCRM kombinieren wollt
+- b) ... eine unkomplizierte, interne Lösung sucht, um einfache Grafiken und "Dashboards" zu erstellen 
+- c) ... einen "Zwischenspeicher" für andere Anwendungen benötigt, die Google Sheets als Datenquelle verwenden können
+
+Da es sich bei Google um einen US-amerikanischen "Big-Tech" Anbieter handelt, solltet ihr auf Datenschutz und auch -sicherheit achten, vorzugsweise nur aggregierte Daten importieren und generell überlegen, welche Art von Daten ihr "in die Hände von Google" geben wollt, selbst wenn sie nicht mehr unter die DSGVO fallen.

@@ -232,3 +232,4 @@ cython_debug/
 
 # DS.Store
 .DS_Store
+supporting_code/powerquery/~$test-excel.xlsx
