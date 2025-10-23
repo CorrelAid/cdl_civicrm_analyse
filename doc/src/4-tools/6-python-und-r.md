@@ -21,11 +21,11 @@ Beispiele dafür, wie ihr die API in Python nutzen könnt, findet ihr im [Reposi
 
 ### Analyse und Visualisierung
 Für die Analyse und Visualisierung von CiviCRM-Daten stehen zahlreiche Bibliotheken zur Verfügung:
+- Interaktive Dashboards und Anwendungen: Mit [dash](https://plotly.com/dash/), [streamlit](https://streamlit.io/), [Quarto](https://quarto.org/) oder [Marimo](https://marimo.io/) können interaktive Dashboards bzw. kleine Datenanwendungen erstellt werden.
+- Notebooks & Berichte: [Marimo](https://marimo.io/), [Jupyter Notebooks](https://jupyter.org/), [JupyterLab](https://jupyterlab.readthedocs.io/) oder [Quarto](https://quarto.org/) ermöglichen eine interaktive Datenanalyse und Dokumentation in einem Dokument. Aus diesen Dokumenten können PDF- oder HTML-Berichte/Reports erstellt werden. Letztere bieten abhängig vom gewählten Tool und der genauen Implementation ein gewisses Maß an Interaktivität.
 - Datenanalyse: pandas und [numpy](https://numpy.org/) ermöglichen komplexe Datenanalysen, Filterungen und Transformationen.
 - Statistische Analysen: [scipy](https://scipy.org/) und [statsmodels](https://www.statsmodels.org/) bieten erweiterte statistische Funktionen.
 - Visualisierung: [matplotlib](https://matplotlib.org/), [seaborn](https://seaborn.pydata.org/) und [plotly](https://plotly.com/python/) helfen, Daten in ansprechenden Grafiken darzustellen.
-- Interaktive Dashboards: Mit [dash](https://plotly.com/dash/) oder [streamlit](https://streamlit.io/) können interaktive Dashboards erstellt werden.
-- Notebooks: [Jupyter Notebooks](https://jupyter.org/) oder [JupyterLab](https://jupyterlab.readthedocs.io/) ermöglichen eine interaktive Datenanalyse und Dokumentation in einem Dokument.
 
 ### Potenziell interessante Frameworks und Tools
 - [pandas](https://pandas.pydata.org/) – Datenanalyse und -manipulation
@@ -40,7 +40,7 @@ Für die Analyse und Visualisierung von CiviCRM-Daten stehen zahlreiche Biblioth
 
 ### Fazit
 
-Python ist eine hervorragende Wahl, wenn CiviCRM-Daten nicht nur analysiert, sondern auch in automatisierte Prozesse, interaktive Dashboards oder Webanwendungen integriert werden sollen. Die Sprache bietet eine große Flexibilität und eine umfangreiche Bibliothek an Tools für Datenanalyse, Visualisierung und Automatisierung. Besonders für Teams, die bereits mit Python arbeiten oder eine skalierbare Lösung für komplexe Datenanalysen suchen, ist Python ideal.
+Python ist eine sehr gute Wahl, wenn ihr CiviCRM-Daten nicht nur analysieren, sondern auch in automatisierte Prozesse, interaktive Dashboards oder Webanwendungen integrieren wollt. Die Sprache bietet eine große Flexibilität und viele Tools für Datenanalyse, Visualisierung und Automatisierung. Wenn ihr bereits mit Python arbeitet oder eine skalierbare Lösung für komplexe Datenanalysen sucht, ist Python richtig für euch.
 
 
 ## R
@@ -63,16 +63,14 @@ R bietet eine Vielzahl von Paketen für die Analyse und Visualisierung von Daten
 - Notebooks: [R Markdown](https://rmarkdown.rstudio.com/) und [RStudio](https://www.rstudio.com/) ermöglichen die Erstellung von interaktiven Berichten und Notebooks, die Analyse und Dokumentation kombinieren.
 
 ### Potenziell interessante Pakete und Tools
-- [dplyr](https://dplyr.tidyverse.org/) – Datenmanipulation
-- [tidyr](https://tidyr.tidyverse.org/) – Datenbereinigung
-- [ggplot2](https://ggplot2.tidyverse.org/) – Datenvisualisierung
+- [RStudio](https://www.rstudio.com/) – Entwicklungsumgebung für R
+- [Quarto](https://quarto.org/) oder [RMarkdown](https://rmarkdown.rstudio.com/) – Interaktive Berichte, Dashboards und Notebooks
 - [shiny](https://shiny.rstudio.com/) – Interaktive Dashboards und Web-Apps
+- [tidyverse Packages](https://tidyverse.org/): Sammlung von aufeinander abgestimmten Packages, die Datenmanipulation, Datenbereinigung (u.a. `dplyr`, `tidyr`) und Datenvisualisierung (`ggplot2`) in R ermöglichen. 
 - [httr](https://httr.r-lib.org/) – API-Anfragen
 - [jsonlite](https://cran.r-project.org/web/packages/jsonlite/index.html) – JSON-Datenverarbeitung
-- [R Markdown](https://rmarkdown.rstudio.com/) – Interaktive Berichte und Notebooks
-- [RStudio](https://www.rstudio.com/) – Entwicklungsumgebung für R
 
 
 ### Fazit: R
 
-R ist die beste Wahl, wenn der Fokus auf statistischen Analysen und hochwertigen Visualisierungen liegt. Die Sprache bietet eine umfassende Sammlung von Paketen für Datenanalyse und -darstellung, insbesondere für wissenschaftliche oder detaillierte statistische Auswertungen. Mit Tools wie shiny und R Markdown können interaktive Berichte und Dashboards erstellt werden. R eignet sich besonders für Nutzer, die statistische Tiefe und publikationsreife Grafiken benötigen.
+R ist die beste Wahl, wenn euer Fokus auf statistischen Analysen und hochwertigen Visualisierungen liegt. Die Sprache bietet viele Pakete für Datenanalyse und -darstellung, insbesondere für wissenschaftliche oder detaillierte statistische Auswertungen. Mit Tools wie shiny, Quarto und RMarkdown könnt ihr interaktive Berichte und Dashboards erstellen; mit ggplot könnt ihr eure Daten visualisieren.
