@@ -1,6 +1,6 @@
 # Workflow Automation Tools
 [🔢 daten-auswerten](./../2-datenlebenszyklus.html#daten-auswerten)
-[⚙️ daten-verbinden](./../2-datenlebenszyklus.html#daten-verbinden)<br>
+[🧹 daten-organisieren](./../2-datenlebenszyklus.html#daten-organisieren)<br>
 
 Workflow Automation Tools sind browserbasierte Anwendungen, über die man einzelne Schritte, wie das Laden, Senden und Verarbeiten von Daten direkt miteinander verknüpfen und automatisieren kann. Viele Workflow Automation Tools sind dabei nicht auf Daten spezialisiert, sondern es lässt sich Beliebiges verknüpfen und automatisieren. Auf Daten bezogen lassen sich diese Tools auch dem Feld der **Data Orchestration** zuordnen. Wir legten jedoch den Fokus auf Tools, die primär über eine zugängliche graphische Nutzungsoberfläche funktionieren, was bei vielen dedizierten Data Orchestration Tools, die oft als Paket für Programmiersprachen wie Python existieren, oft nicht der Fall ist.
 
@@ -27,7 +27,7 @@ In diesem Projekt haben wir uns für das Testen von n8n und Kestra entschieden, 
 
 ## n8n
 
-[💾 daten-organisieren](./../2-datenlebenszyklus.html#daten-organisieren)
+[🧹 daten-organisieren](./../2-datenlebenszyklus.html#daten-organisieren)
 
 [Link zur Dokumentation](https://n8n.io/integrations/google-cloud/)
 
@@ -43,7 +43,7 @@ In diesem Projekt haben wir uns für das Testen von n8n und Kestra entschieden, 
 
 ## Kestra
 
-[💾 daten-organisieren](./../2-datenlebenszyklus.html#daten-organisieren)
+[🧹 daten-organisieren](./../2-datenlebenszyklus.html#daten-organisieren)
 
 [Link zur Dokumentation](https://kestra.io/docs)
 

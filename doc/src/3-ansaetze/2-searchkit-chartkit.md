@@ -1,9 +1,8 @@
 # SearchKit & ChartKit
 
-[💾 daten-organisieren](./../2-datenlebenszyklus.md#daten-organisieren): CiviCRM Datenbank <br>
+[🧹 daten-organisieren](./../2-datenlebenszyklus.md#daten-organisieren): CiviCRM Datenbank <br>
 [🔢 daten-auswerten](./../2-datenlebenszyklus.md#daten-auswerten): [SearchKit](./../4-tools/1-civicrm_intern/4-civicrm-searchkit-chartkit.md#searchkit) <br>
 [📊 daten-visualisieren](./../2-datenlebenszyklus.md#daten-visualisieren): [ChartKit](./../4-tools/1-civicrm_intern/4-civicrm-searchkit-chartkit.md#chartkit) <br>
-[⚙️ daten-verbinden](./../2-datenlebenszyklus.md#daten-verbinden): nicht nötig
 
 ## Voraussetzungen
 - [SearchKit](./../4-tools/1-civicrm_intern/4-civicrm-searchkit-chartkit.md#searchkit) ist installiert

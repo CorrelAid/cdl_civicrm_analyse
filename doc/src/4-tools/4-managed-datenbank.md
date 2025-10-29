@@ -1,6 +1,6 @@
 # Managed Datenbank
 
-[💾 daten-organisieren](./../2-datenlebenszyklus.html#daten-organisieren)
+[🧹 daten-organisieren](./../2-datenlebenszyklus.html#daten-organisieren)
 
 Managed Datenbanken sind cloud-basierte Datenbankdienste, bei denen sich der Anbieter um die technische Infrastruktur, Wartung und Skalierung kümmert. Der Anbieter übernimmt Aufgaben wir das Durchführen von automatische Updates oder Backups. 
 
@@ -26,7 +26,7 @@ Moderne managed Datenbanken bieten oft webbasierte Oberflächen, die es ermögli
 
 ## Neon
 
-[💾 daten-organisieren](./../2-datenlebenszyklus.html#daten-organisieren)
+[🧹 daten-organisieren](./../2-datenlebenszyklus.html#daten-organisieren)
 
 [Neon](https://neon.com) ist eine serverless PostgreSQL-Datenbank, die sich komplett im Browser über eine intuitive GUI verwalten lässt. Wir haben uns bei unseren Experimenten für die Nutzung Neon entschieden, weil es serverless ist und gleichzeitig eine benutzerfreundliche Weboberfläche bereitstellt.
 

@@ -3,10 +3,9 @@
 _**Das Business Intelligence Tool Metabase mit der CiviCRM Datenbank verbinden - Daten auswerten und Daten visualisieren in Metabase**_
 
 
-[💾 daten-organisieren](./../2-datenlebenszyklus.md#daten-organisieren): [CiviCRM Datenbank](./../4-tools/1-civicrm_intern/2-civicrm-datenbank.md) und (partiell) in [Metabase](./../4-tools/3-bi-tools.md#metabase) <br>
+[🧹 daten-organisieren](./../2-datenlebenszyklus.md#daten-organisieren): [CiviCRM Datenbank](./../4-tools/1-civicrm_intern/2-civicrm-datenbank.md) und (partiell) in [Metabase](./../4-tools/3-bi-tools.md#metabase), direkte Anbindung der CiviCRM Datenbank an Metabase <br>
 [🔢 daten-auswerten](./../2-datenlebenszyklus.md#daten-auswerten): [Metabase](./../4-tools/3-bi-tools.md#metabase) <br>
 [📊 daten-visualisieren](./../2-datenlebenszyklus.md#daten-visualisieren): [Metabase](./../4-tools/3-bi-tools.md#metabase) <br>
-[⚙️ daten-verbinden](./../2-datenlebenszyklus.md#daten-verbinden): über direkte Anbindung der CiviCRM Datenbank an Metabase
 
 
 ## Voraussetzungen

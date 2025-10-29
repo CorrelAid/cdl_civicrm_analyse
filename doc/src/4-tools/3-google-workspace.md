@@ -3,7 +3,7 @@
 
 
 ## Google Sheets
-[🔢 daten-auswerten](./../2-datenlebenszyklus.html#daten-auswerten) [📊 daten-visualisieren](./../2-datenlebenszyklus.html#daten-visualisieren) [⚙️ daten-verbinden](./../2-datenlebenszyklus.html#daten-verbinden)
+[🔢 daten-auswerten](./../2-datenlebenszyklus.html#daten-auswerten) [📊 daten-visualisieren](./../2-datenlebenszyklus.html#daten-visualisieren) [🧹 daten-organisieren](./../2-datenlebenszyklus.html#daten-organisieren)
 
 Google Sheets ist die **kostenlose, webbasierte Tabellenkalkulation** von Google Workspace, die sich besonders für **kollaborative Datenanalyse** eignet. Ihr könnt damit Daten aus CiviCRM oder anderen Quellen analysieren, visualisieren und in Echtzeit gemeinsam bearbeiten.
 
@@ -23,7 +23,7 @@ Aufgrund der Datenschutzproblematik solltet ihr vermeiden, personenbezogene Date
 
 
 ## Google Apps Script
-[⚙️ daten-verbinden](./../2-datenlebenszyklus.html#daten-verbinden)
+[🧹 daten-organisieren](./../2-datenlebenszyklus.html#daten-organisieren)
 
 Google Apps Script ist eine JavaScript-basierte Programmiersprache, mit der ihr u.a. **Abläufe in Google Sheets automatisieren** könnt. Mit AppsScript können wir CiviCRM-Daten mithilfe der CiviCRM-API direkt in Google Sheets laden. 
 

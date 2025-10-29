@@ -2,11 +2,9 @@
 
 **Wir orchestrieren einen ETL-Prozess (Extract, Transform & Load) mit n8n um die Frage zu beantworten, wie sich Gender unter den in CiviCRM erfassten Kontakten verteilt und wollen dies mit einen Donut-Chart visualisieren.**
 
-[💾 daten-organisieren](./../../2-datenlebenszyklus.md#daten-organisieren): [CiviCRM API Explorer](./../../4-tools/1-civicrm_intern/3-civicrm-api.md#api-explorer) & [Neon](./../../4-tools/4-managed-datenbank.md#neon)<br>
+[🧹 daten-organisieren](./../../2-datenlebenszyklus.md#daten-organisieren): [CiviCRM API Explorer](./../../4-tools/1-civicrm_intern/3-civicrm-api.md#api-explorer) & [Neon](./../../4-tools/4-managed-datenbank.md#neon); [CiviCRM API](./../../4-tools/1-civicrm_intern/3-civicrm-api.md) & [n8n](../../4-tools/5-workflow-tools.md#n8n)<br>
 [🔢 daten-auswerten](./../../2-datenlebenszyklus.md#daten-auswerten): [Metabase](./../../4-tools/3-bi-tools.md#metabase) <br>
 [📊 daten-visualisieren](./../../2-datenlebenszyklus.md#daten-visualisieren): [Metabase](./../../4-tools/3-bi-tools.md#metabase) <br>
-[⚙️ daten-verbinden](./../../2-datenlebenszyklus.md#daten-verbinden):
-[CiviCRM API](./../../4-tools/1-civicrm_intern/3-civicrm-api.md) & [n8n](../../4-tools/5-workflow-tools.md#n8n)
 
 
 ## Voraussetzungen

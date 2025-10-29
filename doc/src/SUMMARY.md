@@ -2,7 +2,6 @@
 
 
 [Einführung](./0-einfuehrung.md)
-[Wie sollte dieses Lernmaterial gelesen werden?](./1-wie-lesen.md)
 - [Lebenszyklus von CiviCRM-Daten](./2-datenlebenszyklus.md)
 - [Ansätze: Toolkombinationen](./3-ansaetze/0-index.md)
     - [CiviCRM DB & Metabase](./3-ansaetze/1-civicrmdb_metabase.md)
@@ -11,9 +10,6 @@
     - [ETL: CiviCRM API, Automation, Managed DB & Metabase](./3-ansaetze/4-api_db_wf_mtbs/0-index.md)
         - [Basic ETL mit n8n: Einfache deskriptive Statistiken](./3-ansaetze/4-api_db_wf_mtbs/1-etl-n8n.md)
         - [Speichern historischer Daten: Spender:innenwanderungen](./3-ansaetze/4-api_db_wf_mtbs/2-hist_data.md)
-    - [API, Python & Notebooks]()
-    - [API, Python & Streamlit]()
-    - [API, R & Quarto]()
 - [Toolerklärungen](./4-tools/0-index.md)
     - [CiviCRM-interne Tools](./4-tools/1-civicrm_intern/0-index.md)
         - [Erweiterung der CiviCRM-Daten](./4-tools/1-civicrm_intern/1-erweiterung-daten.md)
@@ -28,7 +24,6 @@
     - [Python & R](./4-tools/6-python-und-r.md)
     - [Self-Hosting](./4-tools/7-self-hosting.md)
     - [Andere Visualisierungstools](./4-tools/8-visualisierung-andere.md)
-- [Fazit](./5-fazit.md)
 
 [Anhang: Nutzungszwecke und Bedarfe CiviCRM](./7-ergebnisse-umfrage.md)
 

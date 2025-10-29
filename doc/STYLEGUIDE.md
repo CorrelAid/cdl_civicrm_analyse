@@ -49,17 +49,26 @@ Reference to the datenlebenszyklus
 
 ### Tools Structure
 
+either references one tool or an overview over different tools of a category. 
+
+
 ```
-# Title
- Subtitle (description of the tool)
-### Reference to the stage of the datenlebenszyklus
-### Voraussetzungen
-### Anleitung
-├── Setup
-├── Step 1
-├── Step 2
-└── ...
+# Title (of tool or category)
+
+Reference to the stage of the datenlebenszyklus
+
+introduction
+
+Subtitle (optional)
+
+- description of the tool
+- advantages
+- disadvantages
+- summary
+- instructions (optional)
+
 ```
+
 
 ## Other Formatting Elements
 

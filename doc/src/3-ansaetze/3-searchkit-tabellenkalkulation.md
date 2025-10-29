@@ -2,10 +2,9 @@
 
 _**SearchKit Suchergebnisse über die API in Excel oder Google Sheets laden - Datenvisualisierung und weitere Auswertung dort.**_
 
-[💾 daten-organisieren](./../2-datenlebenszyklus.md#daten-organisieren): CiviCRM Datenbank <br>
+[🧹 daten-organisieren](./../2-datenlebenszyklus.md#daten-organisieren): CiviCRM Datenbank; [Power Query](./../4-tools/2-tabellenkalkulation.md#power-query) bzw. [Google Apps Script](./../4-tools/2-tabellenkalkulation.md#google-apps-script) zur Ansprache der [CiviCRM API](./../4-tools/1-civicrm_intern/3-civicrm-api.md) <br>
 [🔢 daten-auswerten](./../2-datenlebenszyklus.md#daten-auswerten): [SearchKit](./../4-tools/1-civicrm_intern/4-civicrm-searchkit-chartkit.md#searchkit) <br>
 [📊 daten-visualisieren](./../2-datenlebenszyklus.md#daten-visualisieren): [Excel](./../4-tools/2-tabellenkalkulation.md#microsoft-excel) bzw. [Google Sheets](./../4-tools/2-tabellenkalkulation.md#google-sheets) <br>
-[⚙️ daten-verbinden](./../2-datenlebenszyklus.md#daten-verbinden): [Power Query](./../4-tools/2-tabellenkalkulation.md#power-query) bzw. [Google Apps Script](./../4-tools/2-tabellenkalkulation.md#google-apps-script)
 
 # SearchKit, Excel und Power Query
 
@@ -121,8 +120,6 @@ Den Code findet ihr auch im [GitHub Repository](https://github.com/CorrelAid/cdl
 
 ```
 
-[^footnote-gs]: `gs` steht für **G**oogle Apps **S**cript. Technisch gesehen ist Google Apps Script eine Version von JavaScript.
-Was ist hier drin?
 
 #### Manueller Setup
 
@@ -231,3 +228,5 @@ Die Verwendung von Google Sheets und Google Apps Script ist vor allem sinnvoll, 
 - c) ... einen "Zwischenspeicher" für andere Anwendungen benötigt, die Google Sheets als Datenquelle verwenden können
 
 Da es sich bei Google um einen US-amerikanischen "Big-Tech" Anbieter handelt, solltet ihr auf Datenschutz und auch -sicherheit achten, vorzugsweise nur aggregierte Daten importieren und generell überlegen, welche Art von Daten ihr "in die Hände von Google" geben wollt, selbst wenn sie nicht mehr unter die DSGVO fallen.
+
+[^footnote-gs]: `gs` steht für **G**oogle Apps **S**cript. Technisch gesehen ist Google Apps Script eine Version von JavaScript.

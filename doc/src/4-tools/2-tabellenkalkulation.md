@@ -1,13 +1,13 @@
-# Excel & Co.
+# Excel, Google Sheets & Co.
 
 ## Microsoft Excel
-[🔢 daten-auswerten](./../2-datenlebenszyklus.html#daten-auswerten) [📊 daten-visualisieren](./../2-datenlebenszyklus.html#daten-visualisieren) [⚙️ daten-verbinden](./../2-datenlebenszyklus.html#daten-verbinden)<br>
+[🔢 daten-auswerten](./../2-datenlebenszyklus.html#daten-auswerten) [📊 daten-visualisieren](./../2-datenlebenszyklus.html#daten-visualisieren) [🧹 daten-organisieren](./../2-datenlebenszyklus.html#daten-organisieren)<br>
 
 
 Microsoft Excel ist ein **häufig genutztes Tabellenkalkulationsprogramm**, mit dem ihr Daten aus CiviCRM oder anderen Quellen strukturieren, analysieren und visualisieren könnt. Ihr könnt damit:
 - ... **CiviCRM-Daten** (z. B. Spenden, Mitglieder oder Events) mithilfe von Pivot-Tabellen, Formeln und Filtern **auswerten**, um z. B. Spendenentwicklungen zu analysieren oder Zielgruppen zu vergleichen ([🔢 daten-auswerten](./../2-datenlebenszyklus.html#daten-auswerten)) 
 - ... mithilfe von Diagrammen die **Ergebnisse anschaulich darstellen** ([📊 daten-visualisieren](./../2-datenlebenszyklus.html#daten-visualisieren))
-- ... mit Power Query ([s.u.](#power-query)) **Daten automatisch aktuell halten** ([⚙️ daten-verbinden](./../2-datenlebenszyklus.html#daten-verbinden)).
+- ... mit Power Query ([s.u.](#power-query)) **Daten automatisch aktuell halten** ([🧹 daten-organisieren](./../2-datenlebenszyklus.html#daten-organisieren)).
 
 Excel kann sowohl lokal (Desktop-Version) als auch in der Cloud (Excel for the Web) eingesetzt werden.
 
@@ -37,7 +37,7 @@ Aufgrund seiner Flexibilität ist und bleibt Excel eine gute Option, um **divers
 
 
 ### Power Query 
-[⚙️ daten-verbinden](./../2-datenlebenszyklus.html#daten-verbinden)<br>
+[🧹 daten-organisieren](./../2-datenlebenszyklus.html#daten-organisieren)<br>
 
 **Power Query** ist ein Werkzeug in Excel und Power BI, das **Daten aus verschiedenen Quellen** (z. B. CiviCRM-API, Datenbanken, Excel-Dateien) **importiert, bereinigt und für Analysen aufbereitet**. Es **automatisiert wiederkehrende Schritte**, spart Zeit und reduziert Fehler.
 
@@ -63,7 +63,7 @@ Falls bereits (zu) viele Excel-Dateien und -Analysen existieren, hilft Power Que
 ## Google Sheets
 *Der Text dieses Abschnitts wurde von Mistral erstellt und dann inhaltlich und redaktionell überarbeitet und ergänzt.*
 
-[🔢 daten-auswerten](./../2-datenlebenszyklus.html#daten-auswerten) [📊 daten-visualisieren](./../2-datenlebenszyklus.html#daten-visualisieren) [⚙️ daten-verbinden](./../2-datenlebenszyklus.html#daten-verbinden)
+[🔢 daten-auswerten](./../2-datenlebenszyklus.html#daten-auswerten) [📊 daten-visualisieren](./../2-datenlebenszyklus.html#daten-visualisieren) [🧹 daten-organisieren](./../2-datenlebenszyklus.html#daten-organisieren)
 
 Google Sheets ist die **kostenlose, webbasierte Tabellenkalkulation** von Google Workspace, die sich besonders für **kollaborative Datenanalyse** eignet. Ihr könnt damit Daten aus CiviCRM oder anderen Quellen analysieren, visualisieren und in Echtzeit gemeinsam bearbeiten.
 
@@ -83,7 +83,7 @@ Aufgrund der Datenschutzproblematik solltet ihr vermeiden, personenbezogene Date
 
 
 ### Google Apps Script
-[⚙️ daten-verbinden](./../2-datenlebenszyklus.html#daten-verbinden)
+[🧹 daten-organisieren](./../2-datenlebenszyklus.html#daten-organisieren)
 
 Google Apps Script ist eine JavaScript-basierte Programmiersprache, mit der ihr u.a. **Abläufe in Google Sheets automatisieren** könnt. Mit AppsScript können wir CiviCRM-Daten mithilfe der CiviCRM-API direkt in Google Sheets laden. 
 

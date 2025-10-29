@@ -16,17 +16,18 @@ Wir verwenden den Datenlebenszyklus hier, um Tools einzuordnen und fokussieren u
 
 Bei unserem Projekt gingen wir größenteils davon aus, dass interessierte Organisation schon Daten haben und auch wissen, welche Fragen sie an die Daten stellen wollen. Allerdings können manche Fragestellungen nur beantwortet werden, wenn man die in CiviCRM erfassten Daten um eigene Felder erweitert. 
 
-[Erweiterung von CiviCRM-Daten](./4-tools/1-civicrm_intern/1-erweiterung-daten.md)
+[🗺️ Erweiterung von CiviCRM-Daten](./4-tools/1-civicrm_intern/1-erweiterung-daten.md)
 
-### Daten organisieren 💾{#daten-organisieren}
-*Wo und wie werden Daten gespeichert? Wie werden sie verwaltet und wie werden sie bereinigt?*
+### Daten organisieren 🧹{#daten-organisieren}
+*Wo und wie werden Daten gespeichert? Wie werden sie verwaltet und wie werden sie bereinigt? Wie werden Datenflüsse zwischen Tools ermöglicht?*
 
-&rarr; Im Kontext unseres Datenvorhabens hat CiviCRM und seine [SQL-Datenbank](./4-tools/1-civicrm_intern/2-civicrm-datenbank.md) als Ort zur Speicherung und Verwaltung von Daten häufig ausgereicht. Trotzdem gibt es auch Fälle, wo zusätzliche Tools (z.B. eine [Managed Datenbank](./4-tools/4-managed-datenbank.md)) zur Organisation und Speicherung von CiviCRM-Daten sinnvoll waren.
+&rarr; Daten in CiviCRM liegen in einer [SQL-Datenbank](./4-tools/1-civicrm_intern/2-civicrm-datenbank.md) bereits organisiert vor, was als Ort zur Speicherung, Organisation und Verwaltung von Daten häufig ausreicht. Wenn wir allerdings auf externe Tools zur Analyse und/oder Visualisierung zurückgreifen wollen, werden Ansätze und Methoden aus dem Bereich des **Data Engineering** und **Data Modeling** relevant, z.B. die Verwendung der [CiviCRM API](./4-tools/1-civicrm_intern/3-civicrm-api.md), einer [Managed Datenbank](./4-tools/4-managed-datenbank.md) oder die Integration von mehreren Tools mithilfe von [Workflow Automation Tools](./4-tools/5-workflow-tools.md).
 
-Dabei geht es nicht nur um den Speicherort: Wenn Daten langfristig gespeichert werden und auf deren Basis Analysen stattfinden sollen, lassen sich in diesem Schritt Methoden aus dem Bereich des **Data Engineering** und **Data Modeling** anwenden. Dies umfasst unter anderem das Aggregieren oder das Kombinieren von Datensätzen.
 
-[💾 CiviCRM Datenbank](./4-tools/1-civicrm_intern/2-civicrm-datenbank.md) [💾 Managed Datenbank](./4-tools/4-managed-datenbank.md)
 
+
+
+[🧹 CiviCRM Datenbank](./4-tools/1-civicrm_intern/2-civicrm-datenbank.md) [🧹 Managed Datenbank](./4-tools/4-managed-datenbank.md) [🧹 CiviCRM-API](./4-tools/1-civicrm_intern/3-civicrm-api.md) [🧹 Workflow Automation Tools](./4-tools/5-workflow-tools.md) [🧹 MS Power Query](./4-tools/2-tabellenkalkulation.md#power-query) [🧹 Google Apps Script](./4-tools/2-tabellenkalkulation.md#google-apps-script) [🧹 Python](./4-tools/6-python-und-r.md#python)
 
 ### Daten auswerten 🔢  {#daten-auswerten}
 *Wie werden Daten analysiert? Wie werden Ergebnisse analysiert?*
@@ -53,12 +54,6 @@ Das Kommunizieren von Daten und Ergebnissen von Datenauswertungen ist eine Kunst
 
 [^note-datastorytelling]: Das [E-Learning Datenvisualisierung und Storytelling](https://civic-data.de/bildungsangebote/e-learning-datenvisualisierung-und-storytelling/) des Civic Data Labs gibt einen guten Einstieg ins Thema. 
 
-### Daten verbinden & Datenflüsse ermöglichen ⚙️ {#daten-verbinden}
-*Wie werden Daten zusammengeführt? Wie werden Datenflüsse zwischen Tools ermöglicht?*
-
-&rarr; Zusätzlich zu den Schritten des Datenlebenszyklus ist es bei unseren Experimenten sehr relevant gewesen, Komponenten und Tools miteinander zu integrieren, sie zu verbinden und Datenflüsse zu ermöglichen. Deshalb sprechen wir zusätzlich auch von *Daten verbinden & Datenflüsse ermöglichen*. 
-
-[⚙️ CiviCRM-API](./4-tools/1-civicrm_intern/3-civicrm-api.md) [⚙️ Workflow Automation Tools](./4-tools/5-workflow-tools.md) [⚙️ MS Power Query](./4-tools/2-tabellenkalkulation.md#power-query) [⚙️ Google Apps Script](./4-tools/2-tabellenkalkulation.md#google-apps-script) [⚙️ Python](./4-tools/6-python-und-r.md#python)
 
 ### Datenschutz
 &rarr; Da in CiviCRM fast immer personenbezogene Daten gespeichert werden, bildet **Datenschutz einen wichtigen Rahmen für die Auswertung von CiviCRM-Daten**. Dies ist vor allem relevant, wenn Daten außerhalb von CiviCRM weiterverarbeitet werden. Wir haben bei unserer Arbeit darauf geachtet, Tools zu priorisieren, die Datensouveränität ermöglichen.
