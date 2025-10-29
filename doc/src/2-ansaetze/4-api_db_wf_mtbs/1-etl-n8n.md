@@ -2,15 +2,15 @@
 
 **Wir orchestrieren einen ETL-Prozess (Extract, Transform & Load) mit n8n um die Frage zu beantworten, wie sich Gender unter den in CiviCRM erfassten Kontakten verteilt und wollen dies mit einen Donut-Chart visualisieren.**
 
-[🧹 daten-organisieren](./../../2-datenlebenszyklus.md#daten-organisieren): [CiviCRM API Explorer](./../../4-tools/1-civicrm_intern/3-civicrm-api.md#api-explorer) & [Neon](./../../4-tools/4-managed-datenbank.md#neon); [CiviCRM API](./../../4-tools/1-civicrm_intern/3-civicrm-api.md) & [n8n](../../4-tools/5-workflow-tools.md#n8n)<br>
-[🔢 daten-auswerten](./../../2-datenlebenszyklus.md#daten-auswerten): [Metabase](./../../4-tools/3-bi-tools.md#metabase) <br>
-[📊 daten-visualisieren](./../../2-datenlebenszyklus.md#daten-visualisieren): [Metabase](./../../4-tools/3-bi-tools.md#metabase) <br>
+[🧹 daten-organisieren](./../../1-datenlebenszyklus.md#daten-organisieren): [CiviCRM API Explorer](./../../3-tools/1-civicrm_intern/3-civicrm-api.md#api-explorer) & [Neon](./../../3-tools/4-managed-datenbank.md#neon); [CiviCRM API](./../../3-tools/1-civicrm_intern/3-civicrm-api.md) & [n8n](../../3-tools/5-workflow-tools.md#n8n)<br>
+[🔢 daten-auswerten](./../../1-datenlebenszyklus.md#daten-auswerten): [Metabase](./../../3-tools/3-bi-tools.md#metabase) <br>
+[📊 daten-visualisieren](./../../1-datenlebenszyklus.md#daten-visualisieren): [Metabase](./../../3-tools/3-bi-tools.md#metabase) <br>
 
 
 ## Voraussetzungen
 
-- Account bei [Neon](./../../4-tools/4-managed-datenbank.md#anlegen-einer-datenbank-und-tabelle)
-- [API-Token](./../../4-tools/1-civicrm_intern/3-civicrm-api.md#api-einrichten) für eine CiviCRM-Instanz
+- Account bei [Neon](./../../3-tools/4-managed-datenbank.md#anlegen-einer-datenbank-und-tabelle)
+- [API-Token](./../../3-tools/1-civicrm_intern/3-civicrm-api.md#api-einrichten) für eine CiviCRM-Instanz
 - n8n-Instanz oder ein Abonnement des n8n SaaS
 - Metabase-Instanz oder ein Abonnement des Metabase SaaS
 
@@ -22,7 +22,7 @@ Dieser Ansatz besteht aus vier Komponenten, die wir nacheinander vorbereiten.
 
 #### Option 1: GUI
 
-Erstelle eine neue Tabelle (wie [hier](../../4-tools/4-managed-datenbank.md#anlegen-einer-datenbank-und-tabelle) beschrieben)
+Erstelle eine neue Tabelle (wie [hier](../../3-tools/4-managed-datenbank.md#anlegen-einer-datenbank-und-tabelle) beschrieben)
 
   - Gebe der Tabelle den Namen `kontakte`
   - Füge die Spalten `civicrm-id` und `gender` hinzu
@@ -52,7 +52,7 @@ Diesen und anderen SQL-Code findet ihr auch im [Repository](https://github.com/C
 
 ### B: Datenmodellierung im API-Explorer von CiviCRM
 
-Navigiert zum [API Explorer](../../4-tools/1-civicrm_intern/3-civicrm-api.md#api-explorer) und wählt als Entität `Contact`, sowie als Aktion `get` aus. Unter select, wählt `gender_id:label` und `id` aus. Wichtig ist, dass ihr außerdem `-1` bei `limit` setzt, um alle Daten zu erhalten. Bei diesem Use Case beschränkt sich die Datenmodellierung auf die Feldauswahl. 
+Navigiert zum [API Explorer](../../3-tools/1-civicrm_intern/3-civicrm-api.md#api-explorer) und wählt als Entität `Contact`, sowie als Aktion `get` aus. Unter select, wählt `gender_id:label` und `id` aus. Wichtig ist, dass ihr außerdem `-1` bei `limit` setzt, um alle Daten zu erhalten. Bei diesem Use Case beschränkt sich die Datenmodellierung auf die Feldauswahl. 
 
 ```admonish tldr title="Tabellen in CiviCRM"
 `gender` ist eine separate Tabelle, die alle auf dieser CiviCRM-Instanz auswählbaren Gender enthält. Kontakte haben ein Feld mit dem Namen `gender_id`, das die ID einer Reihe in der Gender-Tabelle enthält, die zum Beispiel als Spalte `Label` hat. 
@@ -68,7 +68,7 @@ params=%7B%22select%22%3A%5B%22gender_id%3Alabel%22%2C%22id%22%5D%7D
 
 Erstellt einen neuen Workflow auf eurer n8n-Instanz. Am Ende sollte dieser so aussehen:
 
-![Final n8n Flow](../../images/3-ansaetze/4-api_db_wf_mtbs/1-etl-n8n/n8n-final-flow.png)
+![Final n8n Flow](../../images/2-ansaetze/4-api_db_wf_mtbs/1-etl-n8n/n8n-final-flow.png)
 
 ```admonish info title="Diesen Flow importieren"
 Den Flow als importierbare Datei findet ihr auch im [Repository](https://github.com/CorrelAid/cdl_civicrm_analyse) in dem Ordner `supporting_code/n8n_flows`
@@ -80,7 +80,7 @@ Als **Trigger** dient sowohl die manuelle Ausführung als auch eine Schedule (re
 
 Der erste richtige Knoten enthält die **API-Anfrage**. Unten seht ihr, wie ihr ihn konfigurieren müsst.
 
-![Screenshot API Anfrage](../../images/3-ansaetze/4-api_db_wf_mtbs/1-etl-n8n/n8n-api-request.png)
+![Screenshot API Anfrage](../../images/2-ansaetze/4-api_db_wf_mtbs/1-etl-n8n/n8n-api-request.png)
 
 1. Fügt unter URL am Anfang die URL eurer Instanz ein. Im API Explorer unter dem Reiter **REST** ist dies auch als Variable `CRM_URL` definiert. 
 
@@ -98,7 +98,7 @@ Wenn ihr mehr als wenige hundert Kontakte in CiviCRM habt, oder viele Datenfelde
 
 Der Output des vorherigen Knotens ist standardmäßig ein `json` Objekt, das die Daten als Liste als Wert des keys `values` enthält. Der Knoten-Typ **Split Out** ermöglicht es uns, diese Liste, bzw. deren Einträge zu isolieren. 
 
-![Screenshot Split Out](../../images/3-ansaetze/4-api_db_wf_mtbs/1-etl-n8n/n8n-split-out.png)
+![Screenshot Split Out](../../images/2-ansaetze/4-api_db_wf_mtbs/1-etl-n8n/n8n-split-out.png)
 
 Die Konfiguration dieses Knotens ist simpel: füllt das Feld **Values to Split Out** einfach mit dem Wert `values`.
 
@@ -111,7 +111,7 @@ Dieser letzte Knoten ist für das Laden der Daten in die managed Datenbank auf N
 
   2. Wenn ihr dies erledigt habt, nutzt den Knoten-Typ für Postgres: **Insert or update rows in a table** und konfiguriert ihn so wie im Bild unten. 
 
-![Screenshot Split Out](../../images/3-ansaetze/4-api_db_wf_mtbs/1-etl-n8n/n8n-load.png)
+![Screenshot Split Out](../../images/2-ansaetze/4-api_db_wf_mtbs/1-etl-n8n/n8n-load.png)
 
 ```admonish info title="Unterschiede zwischen IDs"
 Bei der Zuordnung der Felder aus der API zu den Spalten der Tabelle ist wichtig, dass es einen Unterschied zwischen `id` und `civicrm_id` gibt. Ersteres wird automatisch durch die Datenbank erstellt, zweiteres erlaubt Updates von bereits vorhanden Kontakten durch die Referenz dieser. So wird sichergestellt, dass bei erneutem Laden der Daten keine Duplikate entstehen, sondern vorhandene Reihen geupdatet werden.
@@ -125,10 +125,18 @@ Das Anlegen von Incremental Loads kann jedoch komplex werden, weil sie Informati
 
 ### G: Visualisierung in Metabase
 
-1. Verbindet wie [hier](../../4-tools/3-bi-tools.md#mb-db-hinzufuegen) beschrieben die Datenbank mit Metabase. An die notwendigen Informationen kommt ihr ähnlich wie beim Anlegen der Postgres Credentials für den letzten Knoten des Workflows. 
+1. Verbindet wie [hier](../../3-tools/3-bi-tools.md#mb-db-hinzufuegen) beschrieben die Datenbank mit Metabase. An die notwendigen Informationen kommt ihr ähnlich wie beim Anlegen der Postgres Credentials für den letzten Knoten des Workflows. 
 
-2. Die obige Visualisierung ist ein **Pie-Chart**, für den die Daten mit der **Summarize** Funktion verarbeitet wurden, indem die Reihen pro Gender gezählt wurden.
+2. Lest euch den Abschnitt zu [Visualisierung in Metabase](../../3-tools/3-bi-tools.html#mb-daten-analysieren) durch. Die obige Visualisierung ist ein **Pie-Chart**, für den die Daten mit der **Summarize** Funktion verarbeitet wurden, indem die Reihen pro Gender gezählt wurden.
 
 <br/>
 
-![Screenshot Final Viz](../../images/3-ansaetze/4-api_db_wf_mtbs/1-etl-n8n/n8n-viz.png)
+![Screenshot Final Viz](../../images/2-ansaetze/4-api_db_wf_mtbs/1-etl-n8n/n8n-viz.png)
+
+
+## Fazit
+
+Mit dem vorgestellten Tool-Setup lässt sich der Use Case ohne Code umsetzen, in dem viel Komplexität abstrahiert und versteckt wird. Für simple Use Cases reicht das obige Setup aus. Die Funktionalitäten von n8n sind für anspruchsvollere Data Orchestration jedoch begrenzt. 
+
+Ein wesentlicher Nachteil ist die deutlich langsamere Iteration beim Debugging: Workflows müssen komplett durchlaufen werden, Zwischenschritte sind schwer inspizierbar, und es fehlen Debugging-Tools wie Breakpoints oder detaillierte Logs. Zudem ist das Setup weniger transparent als code-basierte Lösungen – Versionskontrolle via Git, Code Reviews und Knowledge Transfer sind schwieriger, da Tool-spezifisches Wissen erforderlich ist. Die Flexibilität ist eingeschränkt, wenn komplexe Transformationslogik benötigt wird, die über die verfügbaren Nodes hinausgeht. Schließlich entsteht ein Vendor Lock-in: Eine Migration zu anderen Tools ist aufwendig, und man ist abhängig von der Weiterentwicklung der eingesetzten Produkte. 
+

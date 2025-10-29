@@ -32,7 +32,7 @@ Wir beschreiben Vor- und Nachteile der Tools und Ansätze, um euch bei der Entsc
 Bei der Sortierung der nachfolgenden Unterseiten haben wir die Ansätze nach Komplexität im Sinne von Menge an benötigten technischen Kenntnissen und Komponenten geordnet.
 ```
 
-- Der am wenigsten komplexe Ansatz ist die [ausschließliche Verwendung von CiviCRM-eigenen Tools wie SearchKit und ChartKit](./2-searchkit-chartkit.md) zur Analyse & Visualisierung. 
-- Wenn ihr externe Tools wie z.B. Metabase benötigt, ist deren Anschluss am einfachsten mit einer [direkten Verbindung mit der CiviCRM-eigenen Datenbank](./1-civicrmdb_metabase.md) möglich. 
-- Wenn eine direkte Anbindung an die CiviCRM-Datnbank nicht möglich ist (z.B. aus Sicherheitsgründen), könnt ihr selbst die API verwenden, um CiviCRM-Daten in anderen Tools zu analysieren, z.B. mithilfe von [Excel oder Google Sheets](./3-searchkit-tabellenkalkulation.md)
+- Der am wenigsten komplexe Ansatz ist die [ausschließliche Verwendung von CiviCRM-eigenen Tools wie SearchKit und ChartKit](./1-searchkit-chartkit.md) zur Analyse & Visualisierung. 
+- Wenn ihr externe Tools wie z.B. Metabase benötigt, ist deren Anschluss am einfachsten mit einer [direkten Verbindung mit der CiviCRM-eigenen Datenbank](./3-civicrmdb_metabase.md) möglich. 
+- Wenn eine direkte Anbindung an die CiviCRM-Datnbank nicht möglich ist (z.B. aus Sicherheitsgründen), könnt ihr selbst die API verwenden, um CiviCRM-Daten in anderen Tools zu analysieren, z.B. mithilfe von [Excel oder Google Sheets](./2-searchkit-tabellenkalkulation.md)
 - Der Kategorie von Ansätzen, die am meisten der in der Disziplin des Data Engineering verbreiteten ETL-Prozessen (Extract, Transform & Load) gleichen, haben wir dabei mit einer [eigenen Erklärungsseite](./4-api_db_wf_mtbs/0-index.md) ausgestattet.

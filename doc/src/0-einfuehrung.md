@@ -5,7 +5,7 @@ Kontakte, Spenden, Mitglieder oder Events managen, Kampagnen durchführen, mit d
 Doch wie können zivilgesellschaftliche Akteur*innen **in CiviCRM gesammelte Daten für ihre Arbeit nutzen** - zur Fördermittelakquise, zur Berichterstattung, zur Wirkungsmessung, zur Verbesserung ihrer Prozesse oder zum organisationellen Lernen?
 **Mit welchen technischen Ansätzen können CiviCRM-Daten ausgewertet, analysiert und visualisiert werden?**
 
-Diese Fragen zu erkunden, war das Ziel eines internen Datenvorhabens, welches ein Team des [Civic Data Labs](https://civic-data.de) im Sommer 2025 durchgeführt hat. Ausgehend von [Gesprächen und schriftlichen Austauschen mit zivilgesellschaftlichen Akteur*innen](./7-ergebnisse-umfrage.md) zu ihrer CiviCRM-Nutzung recherchierten wir Tools und führten verschiedene technische Experimente durch, in denen wir Testdaten einer eigens eingerichteten CiviCRM-Instanz analysierten und visualisierten.
+Diese Fragen zu erkunden, war das Ziel eines internen Datenvorhabens, welches ein Team des [Civic Data Labs](https://civic-data.de) im Sommer 2025 durchgeführt hat. Ausgehend von [Gesprächen und schriftlichen Austauschen mit zivilgesellschaftlichen Akteur*innen](./6-ergebnisse-umfrage.md) zu ihrer CiviCRM-Nutzung recherchierten wir Tools und führten verschiedene technische Experimente durch, in denen wir Testdaten einer eigens eingerichteten CiviCRM-Instanz analysierten und visualisierten.
 
 Dieses Lernmaterial dokumentiert die Ergebnisse dieses Datenvorhabens. Es richtet sich vor allem an **Personen, die CiviCRM bereits nutzen und ihre CiviCRM Daten analysieren (wollen)**. Aber auch Personen, die überlegen, CiviCRM in ihrer Organisation einzuführen, oder die an Open Source Software oder gemeinwohlorientierter Datennutzung interessiert sind, sind herzlich willkommen, hier duchzustöbern. 
 
@@ -13,9 +13,9 @@ Dieses Lernmaterial dokumentiert die Ergebnisse dieses Datenvorhabens. Es richte
 
 ### Aufbau
 
-Hauptteil dieser Ressource ist die Erklärung von Ansätzen zur Analyse und Visualisierung von Daten aus CiviCRM mithilfe von **Toolkombinationen** und anhand von konkreten **Beispielen** in [Kapitel 2️⃣](./3-ansaetze/0-index.md). Dabei wird auf detaillierte Beschreibungen und Erklärungen zu Tools verwiesen, die sich im [Kapitel 3️⃣](./4-tools/0-index.md) befinden. 
+Hauptteil dieser Ressource ist die Erklärung von Ansätzen zur Analyse und Visualisierung von Daten aus CiviCRM mithilfe von **Toolkombinationen** und anhand von konkreten **Beispielen** in [Kapitel 2️⃣](./2-ansaetze/0-index.md). Dabei wird auf detaillierte Beschreibungen und Erklärungen zu Tools verwiesen, die sich im [Kapitel 3️⃣](./3-tools/0-index.md) befinden. 
 
-Mit **Tools** meinen wir technische Mittel unterschiedlicher Art: von Komponenten innerhalb von CiviCRM, über externe Anwendungen bis hin zu Programmiersprachen. Gemeinsam ist diesen Tools, dass sie eine Rolle bei der Analyse oder Visualisierung, bzw. der Herstellung der Möglichkeit zu letzterem spielen. Für die Definition dieser Rollen nutzen wir das Konzept des Datenlebenszyklus, das wir im [Kapitel 1️⃣](./2-datenlebenszyklus.md) vorstellen. 
+Mit **Tools** meinen wir technische Mittel unterschiedlicher Art: von Komponenten innerhalb von CiviCRM, über externe Anwendungen bis hin zu Programmiersprachen. Gemeinsam ist diesen Tools, dass sie eine Rolle bei der Analyse oder Visualisierung, bzw. der Herstellung der Möglichkeit zu letzterem spielen. Für die Definition dieser Rollen nutzen wir das Konzept des Datenlebenszyklus, das wir im [Kapitel 1️⃣](./1-datenlebenszyklus.md) vorstellen. 
 
 
 In Kapitel 4️⃣ ziehen wir ein Fazit zu unseren Experimenten.

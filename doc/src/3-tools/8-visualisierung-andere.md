@@ -1,6 +1,6 @@
 # Andere Visualisierungstools
 
-[📊 daten-visualisieren](./../2-datenlebenszyklus.html#daten-visualisieren) 
+[📊 daten-visualisieren](./../1-datenlebenszyklus.html#daten-visualisieren) 
 
 
 Neben [Business Intelligence Tools](./3-bi-tools.md), [Tabellenkalkulationsprogrammen (Excel, Google Sheets)](./2-tabellenkalkulation.md) und [Programmiersprachen](./6-python-und-r.md) gibt es auch viele andere Tools, in denen Daten visualisiert werden können. Einige, die uns inzwischen häufiger untergekommen sind, nennen wir hier.
@@ -21,4 +21,4 @@ Weniger geeignet für Verwendung im Teamkontext, aber gut zum niedrigschwelligen
 
 
 
-Wir konnten diese Tools im Rahmen dieses Datenvorhabens nicht in unseren Experimenten berücksichtigen. Vor allem Datawrapper, flourish und Canva sind jedoch aufgrund ihres grundsätzlich webbasierten Ansatzes gut anschlussfähig an hier vorgestellte Tools und Ansätze (siehe z.B. [Infokasten hier](./../3-ansaetze/3-searchkit-tabellenkalkulation.md#d-visualisierung) zur Verwendung von Google Sheets als Datenquelle für Visualisierungstools). 
+Wir konnten diese Tools im Rahmen dieses Datenvorhabens nicht in unseren Experimenten berücksichtigen. Vor allem Datawrapper, flourish und Canva sind jedoch aufgrund ihres grundsätzlich webbasierten Ansatzes gut anschlussfähig an hier vorgestellte Tools und Ansätze (siehe z.B. [Infokasten hier](./../2-ansaetze/2-searchkit-tabellenkalkulation.md#d-visualisierung) zur Verwendung von Google Sheets als Datenquelle für Visualisierungstools). 

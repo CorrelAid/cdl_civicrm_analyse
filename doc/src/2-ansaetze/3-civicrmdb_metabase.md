@@ -3,9 +3,9 @@
 _**Das Business Intelligence Tool Metabase mit der CiviCRM Datenbank verbinden - Daten auswerten und Daten visualisieren in Metabase**_
 
 
-[🧹 daten-organisieren](./../2-datenlebenszyklus.md#daten-organisieren): [CiviCRM Datenbank](./../4-tools/1-civicrm_intern/2-civicrm-datenbank.md) und (partiell) in [Metabase](./../4-tools/3-bi-tools.md#metabase), direkte Anbindung der CiviCRM Datenbank an Metabase <br>
-[🔢 daten-auswerten](./../2-datenlebenszyklus.md#daten-auswerten): [Metabase](./../4-tools/3-bi-tools.md#metabase) <br>
-[📊 daten-visualisieren](./../2-datenlebenszyklus.md#daten-visualisieren): [Metabase](./../4-tools/3-bi-tools.md#metabase) <br>
+[🧹 daten-organisieren](./../1-datenlebenszyklus.md#daten-organisieren): [CiviCRM Datenbank](./../3-tools/1-civicrm_intern/2-civicrm-datenbank.md) und (partiell) in [Metabase](./../3-tools/3-bi-tools.md#metabase), direkte Anbindung der CiviCRM Datenbank an Metabase <br>
+[🔢 daten-auswerten](./../1-datenlebenszyklus.md#daten-auswerten): [Metabase](./../3-tools/3-bi-tools.md#metabase) <br>
+[📊 daten-visualisieren](./../1-datenlebenszyklus.md#daten-visualisieren): [Metabase](./../3-tools/3-bi-tools.md#metabase) <br>
 
 
 ## Voraussetzungen
@@ -14,11 +14,11 @@ _**Das Business Intelligence Tool Metabase mit der CiviCRM Datenbank verbinden -
 
 ## Anleitung
 ### Setup
-Fügt wie [hier](./../4-tools/3-bi-tools.md#mb-db-hinzufuegen) beschrieben eine Verbindung zu eurer Datenbank zu Metabase hinzu.
+Fügt wie [hier](./../3-tools/3-bi-tools.md#mb-db-hinzufuegen) beschrieben eine Verbindung zu eurer Datenbank zu Metabase hinzu.
 
 
 ### Daten analysieren und visualisieren
-Sobald Metabase Zugriff auf eure CiviCRM-Datenbank habt, könnt ihr *Fragen* erstellen und diese in *Dashboards* visualisieren und darstellen. Mehr zur Analyse und Visualisierung in Metabase [hier](../4-tools/3-bi-tools.md#mb-daten-analysieren).
+Sobald Metabase Zugriff auf eure CiviCRM-Datenbank habt, könnt ihr *Fragen* erstellen und diese in *Dashboards* visualisieren und darstellen. Mehr zur Analyse und Visualisierung in Metabase [hier](../3-tools/3-bi-tools.md#mb-daten-analysieren).
 
 ### Daten organisieren
 Die CiviCRM-Datenbank hat sehr viele Tabellen - verständlich bei so einer umfassenden Softwarelösung. Zum Beispiel sind in der Tabelle Kontakte nur numerische IDs für das Geschlecht vorhanden. Die Labels finden sich in einer eigenen Tabelle. Diese Tabellen bei jeder *Frage* zusammenzuführen, ist auf Dauer nervig und zeitraubend. Es lohnt es sich daher, ein bisschen Datenmodellierung in Metabase zu machen. Hierfür könnt ihr die [**Modell-Funktion**](https://www.metabase.com/docs/latest/data-modeling/models) verwenden. So könnt ihr z.B. ein Modell “Kontakte” anlegen, welches die Genderoptionen bereits an die Kontakte-Tabelle anfügt. Euer Modell könnt ihr dann in allen weiteren *Fragen* und verbundenen Analyse- und Visualisierungsschritten nutzen.
@@ -36,14 +36,14 @@ Als kleiner Vorgeschmack hier die Visualisierung unserer fiktiven Spendenkampagn
 
 ## Vorteile
 - Über die Datenbank erhaltet ihr Zugriff auf den gesamten Umfang eurer Daten und seid somit sehr flexibel in euren Auswertungen
-- Tools wie [BI-Tools](../4-tools/3-bi-tools.md) funktionieren am besten mit einer direkten Verbindung mit der CiviCRM-Datenbank
+- Tools wie [BI-Tools](../3-tools/3-bi-tools.md) funktionieren am besten mit einer direkten Verbindung mit der CiviCRM-Datenbank
 
 ## Nachteile
-- Datensicherheit: ein direkter Zugriff auf die Datenbank ist auch immer ein Datensicherheitsrisiko. Deshalb kann euer CiviCRM-Dienstleister (berechtigte) Bedenken haben, euch diesen Zugriff zu gewähren. Greift wenn möglich auf die [API](../4-tools/1-civicrm_intern/3-civicrm-api.md) zurück.
+- Datensicherheit: ein direkter Zugriff auf die Datenbank ist auch immer ein Datensicherheitsrisiko. Deshalb kann euer CiviCRM-Dienstleister (berechtigte) Bedenken haben, euch diesen Zugriff zu gewähren. Greift wenn möglich auf die [API](../3-tools/1-civicrm_intern/3-civicrm-api.md) zurück.
 - Komplexität: Die Daten liegen in der CiviCRM in zahlreichen Tabellen ab. Sich hier zurecht zu finden, erfordert eine Einarbeitung in SQL und einen gewissen Spürsinn: Die Entity-Relationship-Diagramme (ERDs) für CiviCRM sind zwar [hier](https://docs.civicrm.org/dev/en/latest/api/ERDs/#contact-info) dokumentiert, aber trotzdem müsst ihr euch sicher zu einem gewissen Grad selbst durch die Daten "wühlen", v.a. wenn ihr Daten aus verschiedenen CiviCRM-Datentypen kombinieren wollt.
 
 ## Fazit
 Für die Verwendung von bestimmten externen Tools (v.a. BI-Tools) kann ein direkter Zugriff auf die CiviCRM-Datenbank sinnvoll sein. Aufgrund der Datensicherheitsrisiken solltet ihr sehr verantwortungsbewusst mit dieser Option umgehen und Rücksprache mit eurem CiviCRM-Dienstleister halten.
 
-Falls ihr für externe Tools den Zugriff auf eine Datenbank benötigt, ist alternativ das Duplizieren eines Teils der CiviCRM Daten in eine [Managed Datenbank](../4-tools/4-managed-datenbank.md) über die API und [Workflow-Tools](../4-tools/5-workflow-tools.md) eine Option. Siehe dafür das [Kapitel zu ETL](./4-api_db_wf_mtbs/0-index.md).
+Falls ihr für externe Tools den Zugriff auf eine Datenbank benötigt, ist alternativ das Duplizieren eines Teils der CiviCRM Daten in eine [Managed Datenbank](../3-tools/4-managed-datenbank.md) über die API und [Workflow-Tools](../3-tools/5-workflow-tools.md) eine Option. Siehe dafür das [Kapitel zu ETL](./4-api_db_wf_mtbs/0-index.md).
 

@@ -1,7 +1,7 @@
 # Weitere CiviCRM Tools
 
 ## Reports/Berichte
-[🔢 daten-auswerten](./../../2-datenlebenszyklus.html#daten-auswerten) [💬 daten-kommunizieren](./../../2-datenlebenszyklus.html#daten-kommunizieren)
+[🔢 daten-auswerten](./../../1-datenlebenszyklus.html#daten-auswerten) [💬 daten-kommunizieren](./../../1-datenlebenszyklus.html#daten-kommunizieren)
 
 _Dieser Einführungstext wurde von ChatGPT erstellt._
 
@@ -19,7 +19,7 @@ CiviCRM Reports sind vorgefertigte oder individuell erstellbare Auswertungen, mi
 - Ergebnisse können nicht über die API v4 exportiert werden
 
 ## Civisualize
-[📊 daten-visualisieren](./../../2-datenlebenszyklus.html#daten-visualisieren)
+[📊 daten-visualisieren](./../../1-datenlebenszyklus.html#daten-visualisieren)
 
 [Civisualize](https://civicrm.org/extensions/civisualize-missing-data-visualization-extension) ist eine CiviCRM Erweiterung, mit der Nutzer\*innen Grafiken erstellen können. Für die gängigsten CiviCRM Komponenten wie Kontakte, Zuwendungen, Veranstaltungen und Rundschreiben liefert Civisualize einige Überblicksgrafiken mit. Außerdem gibt es ein Mini-Dashboard für Spendentrends ("Donor Trends").
 Eine Beschreibung der schon inkludierten Visualisierungen findet sich [hier](https://lab.civicrm.org/extensions/civisualize) (Englisch). In der Basis-Installation findet ihr Civisualize unter Berichte -> Civisualize.
@@ -54,7 +54,7 @@ Wir freuen uns über [Hinweise](./../../ueber.md#beitragen) zu den Datenkapazit�
 
 
 ### Contact Categories
-[📊 daten-visualisieren](./../../2-datenlebenszyklus.html#daten-visualisieren)
+[📊 daten-visualisieren](./../../1-datenlebenszyklus.html#daten-visualisieren)
 
 Die Extension [Contact Categories](https://lab.civicrm.org/extensions/contactcats) bietet die Möglichkeit, Kontakte nach Prioritätsgruppen zu kategorisieren. Prioritätsgruppen können eigenständig konfiguriert werden. 
 **Datenanalyse und -visualisierung:** Als Datenvisualisierung steht ein [Flow-Chart](https://lab.civicrm.org/extensions/contactcats#reports--contact-category-flows) zur Verfügung, der die Übergänge von Kontakten zwischen den verschiedenen Kontaktkategorien visualisiert.

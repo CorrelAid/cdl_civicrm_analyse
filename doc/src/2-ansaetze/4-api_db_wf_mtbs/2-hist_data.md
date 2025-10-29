@@ -2,26 +2,26 @@
 
 **Wir orchestrieren einen ETL-Prozess (Extract, Transform & Load) mit Kestra um die Frage zu beantworten, wie sich Spender:innentypen über die Zeit entwickeln. Dazu aggregieren wir Daten über die CiviCRM API und laden sie täglich in eine Datenbank, um die Entwicklung mit einem Line-Chart zu visualisieren.**
 
-[🧹 daten-organisieren](./../../2-datenlebenszyklus.md#daten-organisieren): [CiviCRM API Explorer](./../../4-tools/1-civicrm_intern/3-civicrm-api.md#api-explorer) & [Neon](./../../4-tools/4-managed-datenbank.md#neon); [CiviCRM API](./../../4-tools/1-civicrm_intern/3-civicrm-api.md) & [Kestra](../../4-tools/5-workflow-tools.md#kestra)<br>
-[🔢 daten-auswerten](./../../2-datenlebenszyklus.md#daten-auswerten): [Metabase](./../../4-tools/3-bi-tools.md#metabase) <br>
-[📊 daten-visualisieren](./../../2-datenlebenszyklus.md#daten-visualisieren): [Metabase](./../../4-tools/3-bi-tools.md#metabase) <br>
+[🧹 daten-organisieren](./../../1-datenlebenszyklus.md#daten-organisieren): [CiviCRM API Explorer](./../../3-tools/1-civicrm_intern/3-civicrm-api.md#api-explorer) & [Neon](./../../3-tools/4-managed-datenbank.md#neon); [CiviCRM API](./../../3-tools/1-civicrm_intern/3-civicrm-api.md) & [Kestra](../../3-tools/5-workflow-tools.md#kestra)<br>
+[🔢 daten-auswerten](./../../1-datenlebenszyklus.md#daten-auswerten): [Metabase](./../../3-tools/3-bi-tools.md#metabase) <br>
+[📊 daten-visualisieren](./../../1-datenlebenszyklus.md#daten-visualisieren): [Metabase](./../../3-tools/3-bi-tools.md#metabase) <br>
 
 
 ## Voraussetzungen
 
-- Account bei [Neon](./../../4-tools/4-managed-datenbank.md#anlegen-einer-datenbank-und-tabelle)
-- [API-Token](./../../4-tools/1-civicrm_intern/3-civicrm-api.md#api-einrichten) für eine CiviCRM-Instanz
+- Account bei [Neon](./../../3-tools/4-managed-datenbank.md#anlegen-einer-datenbank-und-tabelle)
+- [API-Token](./../../3-tools/1-civicrm_intern/3-civicrm-api.md#api-einrichten) für eine CiviCRM-Instanz
 - Kestra-Instanz oder ein Abonnement des Kestra SaaS
 - Metabase-Instanz oder ein Abonnement des Metabase SaaS
-- Benutzerdefiniertes Datenfeld [Donor Type](../../4-tools/1-civicrm_intern/1-erweiterung-daten.md) in CiviCRM
+- Benutzerdefiniertes Datenfeld [Donor Type](../../3-tools/1-civicrm_intern/1-erweiterung-daten.md) in CiviCRM
 
 ## Anleitung
 
-Dieser Ansatz besteht aus vier Komponenten, die wir nacheinander vorbereiten. 
+Dieser Ansatz besteht aus 5 Komponenten , die wir nacheinander vorbereiten. 
 
 ### A: Erweiterung der CiviCRM Datenfelder
 
-Wie [hier](../../4-tools/1-civicrm_intern/1-erweiterung-daten.md) beschrieben, benötigen wir ein neues **benutzerdefiniertes Datenfeld**, das den Typ einer spendenden Person erfasst. Für Demonstrationszwecke halten wir es simpel und legen das Feld **Donor Type** als **Auswahlliste** mit den Optionen **One Time Donor**, **Monthly Donor** und **Past Donor** an. Die Benennung ist dabei beliebig veränderbar und es könnten auch mehr Optionen genutzt werden.
+Wie [hier](../../3-tools/1-civicrm_intern/1-erweiterung-daten.md) beschrieben, benötigen wir ein neues **benutzerdefiniertes Datenfeld**, das den Typ einer spendenden Person erfasst. Für Demonstrationszwecke halten wir es simpel und legen das Feld **Donor Type** als **Auswahlliste** mit den Optionen **One Time Donor**, **Monthly Donor** und **Past Donor** an. Die Benennung ist dabei beliebig veränderbar und es könnten auch mehr Optionen genutzt werden.
 
 ```admonish info title="Integration in die Datenerfassung"
 Für unseren Test erstellen wir programmatisch Testdaten mit diesem Datenfeld. In der Realität müsst ihr dieses neue Feld jedoch in eure Erfassung von Kontakten integrieren, oder die Information anderweitig erfassen. Eine Option ist zum Beispiel die Nutzung von **Gruppen** für Kontakte. Auf Englisch ist dies [hier](https://docs.civicrm.org/user/en/latest/organising-your-data/smart-groups) dokumentiert. Ihr könntet Gruppen mit Kriterien wie *ist zu einer Contribution zugeordnet* anlegen.
@@ -31,7 +31,7 @@ Für unseren Test erstellen wir programmatisch Testdaten mit diesem Datenfeld. I
 
 #### Option 1: GUI
 
-Erstelle eine neue Tabelle (wie [hier](../../4-tools/4-managed-datenbank.md#anlegen-einer-datenbank-und-tabelle) beschrieben):
+Erstelle eine neue Tabelle (wie [hier](../../3-tools/4-managed-datenbank.md#anlegen-einer-datenbank-und-tabelle) beschrieben):
 
 - Gebe der Tabelle den Namen `spendende_typen_agg`
 - Füge die Spalte `timestamp` mit dem Datentyp `timestamp` und dem Constraint `Not null` hinzu
@@ -65,9 +65,9 @@ Diesen und anderen SQL-Code findet ihr auch im [Repository](https://github.com/C
 
 ### C: Datenmodellierung im API-Explorer von CiviCRM
 
-Navigiert zum [API Explorer](../../4-tools/1-civicrm_intern/3-civicrm-api.md#api-explorer) und wählt als Entität `Contact`, sowie als Aktion `get` aus. Hier besteht die Datenmodellierung nun aus einer Aggregation nach dem Typ der spendenden Person.
+Navigiert zum [API Explorer](../../3-tools/1-civicrm_intern/3-civicrm-api.md#api-explorer) und wählt als Entität `Contact`, sowie als Aktion `get` aus. Hier besteht die Datenmodellierung nun aus einer Aggregation nach dem Typ der spendenden Person.
 
-![Spendende API Explorer](../../images/3-ansaetze/4-api_db_wf_mtbs/2-hist_data/kestra-api-explorer.png)
+![Spendende API Explorer](../../images/2-ansaetze/4-api_db_wf_mtbs/2-hist_data/kestra-api-explorer.png)
 
 Konfiguriert die API-Anfrage so wie in dem Screenshot oben:
 
@@ -132,7 +132,7 @@ triggers:
 Diesen und andere Kestra-Flows findet ihr auch im [Repository](https://github.com/CorrelAid/cdl_civicrm_analyse) in dem Ordner `supporting_code/kestra_flows`
 ```
 
-### E: Knoten für die API-Anfrage
+#### 1. Knoten für die API-Anfrage
 
 Der erste Knoten enthält die **API-Anfrage**:
 
@@ -159,7 +159,7 @@ Ein Beispiel-Output der API-Anfrage ist:
 }
 ```
 
-### F: Knoten für die Verarbeitung mit JSONata
+#### 2. Knoten für die Verarbeitung mit JSONata
 
 [JSONata](https://jsonata.org/) ist eine Sprache für die Abfrage und Verarbeitung von JSON-Daten. In diesem Fall transformieren wir die API-Antwort in ein Format, das sich direkt in unsere Datenbank-Tabelle einfügen lässt.
 
@@ -187,7 +187,7 @@ Beispiel-Output:
 { "ehemalig": 117, "einmalig": 76, "monatlich": 91, "nicht_spendend": 22 }
 ```
 
-### G: Knoten für das Laden der Daten in die Managed Datenbank
+#### 3. Knoten für das Laden der Daten in die Managed Datenbank
 
 Dieser letzte Knoten ist für das Laden der Daten in die Managed Datenbank auf Neon, unser Data Warehouse, zuständig:
 
@@ -222,11 +222,19 @@ In den Begriffen des Data Engineering vollziehen wir hier regelmäßige **Snapsh
 
 ### H: Visualisierung in Metabase
 
-1. Verbindet wie [hier](../../4-tools/3-bi-tools.md#mb-db-hinzufuegen) beschrieben die Datenbank mit Metabase. An die notwendigen Informationen kommt ihr ähnlich wie beim Anlegen der Postgres Credentials für den letzten Knoten des Workflows
+1. Verbindet wie [hier](../../3-tools/3-bi-tools.md#mb-db-hinzufuegen) beschrieben die Datenbank mit Metabase. An die notwendigen Informationen kommt ihr ähnlich wie beim Anlegen der Postgres Credentials für den letzten Knoten des Workflows
 
-2. Die Visualisierung ist ein **Line-Chart**, der die Entwicklung der verschiedenen Spender:innentypen mit jeweils einer Linie über die Zeit darstellt. Nutzt die Spalte `timestamp` für die X-Achse und die verschiedenen Typen-Spalten für die Y-Achse
+2. Lest euch den Abschnitt zu [Visualisierung in Metabase](../../3-tools/3-bi-tools.html#mb-daten-analysieren) durch. Die Visualisierung ist ein **Line-Chart**, der die Entwicklung der verschiedenen Spender:innentypen mit jeweils einer Linie über die Zeit darstellt. Nutzt die Spalte `timestamp` für die X-Achse und die verschiedenen Typen-Spalten für die Y-Achse
 
 <br/>
 
 ![Line Chart with multiple Series](../../images/3-ansaetze/4-api_db_wf_mtbs/2-hist_data/final_viz_kestra.png)
+
+
+## Fazit
+
+Es lässt sich ein ähnliches Fazit wie für den Abschnitt zu [ETL mit n8n](1-etl-n8n.md) ziehen. Ein Unterschied ist die Erforderniss der Erweiterung der CiviCRM-Datenfelder, um das Informationen zu Spender:innen zu erfassen.
+
+Kestra als Workflow Tool benötigt im Vergleich zu n8n deutlich mehr technische Skills. Ein wesentlicher Vorteil ist die Versionierbarkeit: Flows werden als YAML-Dateien definiert und können in Git-Repositories gespeichert werden, was Code Reviews, Knowledge Transfer und Zusammenarbeit im Team erheblich erleichtert. Zudem bietet Kestra deutlich mehr Flexibilität – die Code-Umgebung ist erweiterbar, und es stehen umfangreiche Transformationsmöglichkeiten zur Verfügung.
+
 

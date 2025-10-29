@@ -2,7 +2,7 @@
 
 <figure style="margin: 0">
 <p>
-  <img src="./images/2-datenlebenszyklus/datenlebenszyklus.png" alt="Darstellung der sieben Schritte des Datenlebenszyklus: planen &fragen, Daten finden, Daten organisieren, Daten auswerten, Daten visualiseren, Daten kommunizieren, entscheiden und handeln. Der Zyklus fängt dann wieder von vorne an. Rahmenthemen sind Datenschutz & Ethik sowie Datenkultur.">
+  <img src="./images/1-datenlebenszyklus/datenlebenszyklus.png" alt="Darstellung der sieben Schritte des Datenlebenszyklus: planen &fragen, Daten finden, Daten organisieren, Daten auswerten, Daten visualiseren, Daten kommunizieren, entscheiden und handeln. Der Zyklus fängt dann wieder von vorne an. Rahmenthemen sind Datenschutz & Ethik sowie Datenkultur.">
   <figcaption><small>Grafik "Datenlebenszyklus blau", ursprünglich von Gesellschaft für Informatik e.V. (2024), zugeschnitten von CorrelAid e.V., ist lizenziert unter <a href="https://creativecommons.org/licenses/by/4.0/deed.de">CC BY 4.0</a>.</small></figcaption>
   </p>
 </figure>
@@ -16,25 +16,25 @@ Wir verwenden den Datenlebenszyklus hier, um Tools einzuordnen und fokussieren u
 
 Bei unserem Projekt gingen wir größenteils davon aus, dass interessierte Organisation schon Daten haben und auch wissen, welche Fragen sie an die Daten stellen wollen. Allerdings können manche Fragestellungen nur beantwortet werden, wenn man die in CiviCRM erfassten Daten um eigene Felder erweitert. 
 
-[🗺️ Erweiterung von CiviCRM-Daten](./4-tools/1-civicrm_intern/1-erweiterung-daten.md)
+[🗺️ Erweiterung von CiviCRM-Daten](./3-tools/1-civicrm_intern/1-erweiterung-daten.md)
 
 ### Daten organisieren 🧹{#daten-organisieren}
 *Wo und wie werden Daten gespeichert? Wie werden sie verwaltet und wie werden sie bereinigt? Wie werden Datenflüsse zwischen Tools ermöglicht?*
 
-&rarr; Daten in CiviCRM liegen in einer [SQL-Datenbank](./4-tools/1-civicrm_intern/2-civicrm-datenbank.md) bereits organisiert vor, was als Ort zur Speicherung, Organisation und Verwaltung von Daten häufig ausreicht. Wenn wir allerdings auf externe Tools zur Analyse und/oder Visualisierung zurückgreifen wollen, werden Ansätze und Methoden aus dem Bereich des **Data Engineering** und **Data Modeling** relevant, z.B. die Verwendung der [CiviCRM API](./4-tools/1-civicrm_intern/3-civicrm-api.md), einer [Managed Datenbank](./4-tools/4-managed-datenbank.md) oder die Integration von mehreren Tools mithilfe von [Workflow Automation Tools](./4-tools/5-workflow-tools.md).
+&rarr; Daten in CiviCRM liegen in einer [SQL-Datenbank](./3-tools/1-civicrm_intern/2-civicrm-datenbank.md) bereits organisiert vor, was als Ort zur Speicherung, Organisation und Verwaltung von Daten häufig ausreicht. Wenn wir allerdings auf externe Tools zur Analyse und/oder Visualisierung zurückgreifen wollen, werden Ansätze und Methoden aus dem Bereich des **Data Engineering** und **Data Modeling** relevant, z.B. die Verwendung der [CiviCRM API](./3-tools/1-civicrm_intern/3-civicrm-api.md), einer [Managed Datenbank](./3-tools/4-managed-datenbank.md) oder die Integration von mehreren Tools mithilfe von [Workflow Automation Tools](./3-tools/5-workflow-tools.md).
 
 
 
 
 
-[🧹 CiviCRM Datenbank](./4-tools/1-civicrm_intern/2-civicrm-datenbank.md) [🧹 Managed Datenbank](./4-tools/4-managed-datenbank.md) [🧹 CiviCRM-API](./4-tools/1-civicrm_intern/3-civicrm-api.md) [🧹 Workflow Automation Tools](./4-tools/5-workflow-tools.md) [🧹 MS Power Query](./4-tools/2-tabellenkalkulation.md#power-query) [🧹 Google Apps Script](./4-tools/2-tabellenkalkulation.md#google-apps-script) [🧹 Python](./4-tools/6-python-und-r.md#python)
+[🧹 CiviCRM Datenbank](./3-tools/1-civicrm_intern/2-civicrm-datenbank.md) [🧹 Managed Datenbank](./3-tools/4-managed-datenbank.md) [🧹 CiviCRM-API](./3-tools/1-civicrm_intern/3-civicrm-api.md) [🧹 Workflow Automation Tools](./3-tools/5-workflow-tools.md) [🧹 MS Power Query](./3-tools/2-tabellenkalkulation.md#power-query) [🧹 Google Apps Script](./3-tools/2-tabellenkalkulation.md#google-apps-script) [🧹 Python](./3-tools/6-python-und-r.md#python)
 
 ### Daten auswerten 🔢  {#daten-auswerten}
 *Wie werden Daten analysiert? Wie werden Ergebnisse analysiert?*
 
 &rarr; CiviCRM Daten können unterschiedlich ausgewertet und analysiert werden: Von einfachen deskriptiven Analysen über tiefergehende Analysen hin zu komplexen Machine-Learning-Modellen zur Vorhersage von Spenden. Wir haben uns in unserer Arbeit überwiegend auf einfache Auswertungen fokussiert, da diese am übertragbarsten sind. 
 
-[🔢 CiviCRM SearchKit](./4-tools/1-civicrm_intern/4-civicrm-searchkit-chartkit.md)  [🔢 Excel, Google Sheets & Co.](./4-tools/2-tabellenkalkulation.md) [🔢 Metabase & andere BI Tools](./4-tools/3-bi-tools.md) [🔢 Python & R](./4-tools/6-python-und-r.md) [🔢 CiviCRM Reports/Berichte](./4-tools/1-civicrm_intern/5-civicrm-weitere-tools.md#reportsberichte) 
+[🔢 CiviCRM SearchKit](./3-tools/1-civicrm_intern/4-civicrm-searchkit-chartkit.md)  [🔢 Excel, Google Sheets & Co.](./3-tools/2-tabellenkalkulation.md) [🔢 Metabase & andere BI Tools](./3-tools/3-bi-tools.md) [🔢 Python & R](./3-tools/6-python-und-r.md) [🔢 CiviCRM Reports/Berichte](./3-tools/1-civicrm_intern/5-civicrm-weitere-tools.md#reportsberichte) 
 
 
 ### Daten visualisieren 📊 {#daten-visualisieren}
@@ -42,7 +42,7 @@ Bei unserem Projekt gingen wir größenteils davon aus, dass interessierte Organ
 
 &rarr; Viele Organisationen möchten ihre CiviCRM-Daten nicht nur auswerten, sondern auch in Datenvisualisierungen oder Dashboards aufbereiten. 
 
-[📊 CiviCRM ChartKit](./4-tools/1-civicrm_intern/4-civicrm-searchkit-chartkit.md#chartkit)  [📊 Excel, Google Sheets & Co.](./4-tools/2-tabellenkalkulation.md) [📊 Metabase & andere BI Tools](./4-tools/3-bi-tools.md) [📊 Python & R](./4-tools/6-python-und-r.md) [📊 Civisualize](./4-tools/1-civicrm_intern/5-civicrm-weitere-tools.md#civisualize) 
+[📊 CiviCRM ChartKit](./3-tools/1-civicrm_intern/4-civicrm-searchkit-chartkit.md#chartkit)  [📊 Excel, Google Sheets & Co.](./3-tools/2-tabellenkalkulation.md) [📊 Metabase & andere BI Tools](./3-tools/3-bi-tools.md) [📊 Python & R](./3-tools/6-python-und-r.md) [📊 Civisualize](./3-tools/1-civicrm_intern/5-civicrm-weitere-tools.md#civisualize) 
 
 
 ### Daten kommunizieren 💬 {#daten-kommunizieren}

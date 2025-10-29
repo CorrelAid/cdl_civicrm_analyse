@@ -3,7 +3,7 @@
 
 
 ## Google Sheets
-[🔢 daten-auswerten](./../2-datenlebenszyklus.html#daten-auswerten) [📊 daten-visualisieren](./../2-datenlebenszyklus.html#daten-visualisieren) [🧹 daten-organisieren](./../2-datenlebenszyklus.html#daten-organisieren)
+[🔢 daten-auswerten](./../1-datenlebenszyklus.html#daten-auswerten) [📊 daten-visualisieren](./../1-datenlebenszyklus.html#daten-visualisieren) [🧹 daten-organisieren](./../1-datenlebenszyklus.html#daten-organisieren)
 
 Google Sheets ist die **kostenlose, webbasierte Tabellenkalkulation** von Google Workspace, die sich besonders für **kollaborative Datenanalyse** eignet. Ihr könnt damit Daten aus CiviCRM oder anderen Quellen analysieren, visualisieren und in Echtzeit gemeinsam bearbeiten.
 
@@ -23,13 +23,13 @@ Aufgrund der Datenschutzproblematik solltet ihr vermeiden, personenbezogene Date
 
 
 ## Google Apps Script
-[🧹 daten-organisieren](./../2-datenlebenszyklus.html#daten-organisieren)
+[🧹 daten-organisieren](./../1-datenlebenszyklus.html#daten-organisieren)
 
 Google Apps Script ist eine JavaScript-basierte Programmiersprache, mit der ihr u.a. **Abläufe in Google Sheets automatisieren** könnt. Mit AppsScript können wir CiviCRM-Daten mithilfe der CiviCRM-API direkt in Google Sheets laden. 
 
 ### Vorteile von Google Apps Script
 - **Kostenlos und integriert**: Keine zusätzliche Software nötig – läuft direkt in Google Sheets.
-- **Direkter Datenimport aus CiviCRM mithilfe der CiviCRM API**: Ihr könnt Daten automatisch aktualisieren und spart euch den manuellen Schritt des Datenexports aus CiviCRM. Siehe [unser Experiment zu SearchKit + Google Sheets](./../3-ansaetze/1-searchkit-tabellenkalkulation.md. 
+- **Direkter Datenimport aus CiviCRM mithilfe der CiviCRM API**: Ihr könnt Daten automatisch aktualisieren und spart euch den manuellen Schritt des Datenexports aus CiviCRM. Siehe [unser Experiment zu SearchKit + Google Sheets](./../2-ansaetze/1-searchkit-tabellenkalkulation.md. 
 
 ### Nachteile von Google Apps Script
 - Erfordert **Grundkenntnisse in JavaScript**.

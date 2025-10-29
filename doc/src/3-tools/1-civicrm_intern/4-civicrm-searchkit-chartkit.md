@@ -2,7 +2,7 @@
 
 
 ## SearchKit
-[🔢 daten-auswerten](./../../2-datenlebenszyklus.html#daten-auswerten)
+[🔢 daten-auswerten](./../../1-datenlebenszyklus.html#daten-auswerten)
 
 CiviCRM [SearchKit](https://docs.civicrm.org/user/en/latest/searching/searchkit/what-is-searchkit/) ist eine Erweiterung für CiviCRM, die es Nutzer\*innen ermöglicht, komplexe Abfragen an ihre Daten zu stellen. Als Nutzer\*in kann man filtern, aggregieren, Felder auswählen und gruppieren. 
 
@@ -30,7 +30,7 @@ Die Option, die Ergebnisse über die API abzurufen, eröffnet einen vielversprec
 
 
 ## ChartKit
-[📊 daten-visualisieren](./../../2-datenlebenszyklus.html#daten-visualisieren)
+[📊 daten-visualisieren](./../../1-datenlebenszyklus.html#daten-visualisieren)
 
 Mit [ChartKit](https://lab.civicrm.org/extensions/chart_kit) kann man basierend auf SearchKit-Suchen einfache Grafiken wie Balken-, Linien- oder Tortendiagramme erstellen. Konzeptionell sind ChartKit-Visualisierungen eine weitere Möglichkeit, Ergebnisse von SearchKit-Suchen darzustellen ("Search Display"). Für jede Suche können mehrere Visualisierungen erstellt werden.
 

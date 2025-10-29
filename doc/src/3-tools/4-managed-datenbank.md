@@ -1,10 +1,10 @@
 # Managed Datenbank
 
-[🧹 daten-organisieren](./../2-datenlebenszyklus.html#daten-organisieren)
+[🧹 daten-organisieren](./../1-datenlebenszyklus.html#daten-organisieren)
 
 Managed Datenbanken sind cloud-basierte Datenbankdienste, bei denen sich der Anbieter um die technische Infrastruktur, Wartung und Skalierung kümmert. Der Anbieter übernimmt Aufgaben wir das Durchführen von automatische Updates oder Backups. 
 
-Die Hauptvorteile liegen in der Zeitersparnis durch wegfallende Server-Administration. Nachteile gegenüber dem [Self-Hosting](./4-tools/self-hosting.md) sind höhere Kosten, Vendor Lock-in und eingeschränkte Konfigurationsmöglichkeiten.
+Die Hauptvorteile liegen in der Zeitersparnis durch wegfallende Server-Administration. Nachteile gegenüber dem [Self-Hosting](./3-tools/self-hosting.md) sind höhere Kosten, Vendor Lock-in und eingeschränkte Konfigurationsmöglichkeiten.
 
 Im Kontext der Visualisierung und Analyse von CiviCRM-Daten können managed Datenbanken als sogenanntes **Data-Warehouse** zum Einsatz kommen. Ein Data-Warehouse ist eine Datenbank, die speziell für Analysen und Berichte optimiert ist und Daten aus verschiedenen Quellen sammelt und strukturiert. 
 
@@ -26,16 +26,16 @@ Moderne managed Datenbanken bieten oft webbasierte Oberflächen, die es ermögli
 
 ## Neon
 
-[🧹 daten-organisieren](./../2-datenlebenszyklus.html#daten-organisieren)
+[🧹 daten-organisieren](./../1-datenlebenszyklus.html#daten-organisieren)
 
 [Neon](https://neon.com) ist eine serverless PostgreSQL-Datenbank, die sich komplett im Browser über eine intuitive GUI verwalten lässt. Wir haben uns bei unseren Experimenten für die Nutzung Neon entschieden, weil es serverless ist und gleichzeitig eine benutzerfreundliche Weboberfläche bereitstellt.
 
-![Screenshot der Neon GUI](../images/4-tools/4-managed-datenbank/neon-gui.png)
+![Screenshot der Neon GUI](../images/3-tools/4-managed-datenbank/neon-gui.png)
 
 ### Vorteile
 
 - GUI-Management: Tabellen können direkt im Browser erstellt und verwaltet werden
-- PostgreSQL: Vollständig kompatibel mit dem dem weit verbreitenden SQL-Flavor Postgres
+- PostgreSQL: Vollständig kompatibel mit dem weit verbreitenden SQL-Flavor Postgres
 - Automatische Backups und Sicherheit
 - Kostenloser Plan für kleinere Projekte verfügbar
 - Datenbanken können in der EU betrieben werden 

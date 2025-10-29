@@ -5,7 +5,7 @@ Mit Programmiersprachen wie Python und R lässt sich im Prinzip alles umsetzen, 
 Ähnlich wie bei [SQL](./4-managed-datenbank.md#grafische-nutzeroberfläche-statt-sql): Coden ist ein nützlicher Skill, es zu lernen erfordert jedoch Zeit. Deswegen sind Workflow Automation Tools oder andere grafische Nutzeroberflächen eine nützliche Alternative. Selbst geschrieben Skripts und Programme erfordern außerdem oft spezielle Maintenance und können Abhängigkeiten zu Entwickler:innen herstellen. 
 
 ## Python
-[🔢 daten-auswerten](./../2-datenlebenszyklus.html#daten-auswerten) [📊 daten-visualisieren](./../2-datenlebenszyklus.html#daten-visualisieren) [💬 daten-kommunizieren](./../2-datenlebenszyklus.html#daten-kommunizieren) [🧹 daten-organisieren](./../2-datenlebenszyklus.html#daten-organisieren)
+[🔢 daten-auswerten](./../1-datenlebenszyklus.html#daten-auswerten) [📊 daten-visualisieren](./../1-datenlebenszyklus.html#daten-visualisieren) [💬 daten-kommunizieren](./../1-datenlebenszyklus.html#daten-kommunizieren) [🧹 daten-organisieren](./../1-datenlebenszyklus.html#daten-organisieren)
 
 Python ist eine sehr vielseitige und populäre Programmiersprache. Mit Python könnt ihr Daten aus CiviCRM abrufen, transformieren, analysieren und in interaktiven Dashboards oder Notebooks darstellen.
 
@@ -44,7 +44,7 @@ Python ist eine sehr gute Wahl, wenn ihr CiviCRM-Daten nicht nur analysieren, so
 
 
 ## R
-[🔢 daten-auswerten](./../2-datenlebenszyklus.html#daten-auswerten) [📊 daten-visualisieren](./../2-datenlebenszyklus.html#daten-visualisieren) [🧹 daten-organisieren](./../2-datenlebenszyklus.html#daten-organisieren)
+[🔢 daten-auswerten](./../1-datenlebenszyklus.html#daten-auswerten) [📊 daten-visualisieren](./../1-datenlebenszyklus.html#daten-visualisieren) [🧹 daten-organisieren](./../1-datenlebenszyklus.html#daten-organisieren)
 
 R ist eine Programmiersprache und Umgebung, die speziell für statistische Datenanalyse und Visualisierung entwickelt wurde. Sie eignet sich hervorragend für die Integration, Analyse und Darstellung von CiviCRM-Daten, insbesondere wenn statistische Auswertungen im Vordergrund stehen.
 
