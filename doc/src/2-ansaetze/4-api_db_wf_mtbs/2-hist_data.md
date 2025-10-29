@@ -67,7 +67,7 @@ Diesen und anderen SQL-Code findet ihr auch im [Repository](https://github.com/C
 
 Navigiert zum [API Explorer](../../3-tools/1-civicrm_intern/3-civicrm-api.md#api-explorer) und wählt als Entität `Contact`, sowie als Aktion `get` aus. Hier besteht die Datenmodellierung nun aus einer Aggregation nach dem Typ der spendenden Person.
 
-![Spendende API Explorer](../../images/2-ansaetze/4-api_db_wf_mtbs/2-hist_data/kestra-api-explorer.png)
+![Spendende API Explorer](../../images/3-ansaetze/4-api_db_wf_mtbs/2-hist_data/kestra-api-explorer.png)
 
 Konfiguriert die API-Anfrage so wie in dem Screenshot oben:
 

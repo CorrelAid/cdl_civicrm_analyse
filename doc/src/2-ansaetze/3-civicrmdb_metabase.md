@@ -1,6 +1,6 @@
 # CiviCRM Datenbank & Metabase
 
-_**Das Business Intelligence Tool Metabase mit der CiviCRM Datenbank verbinden - Daten auswerten und Daten visualisieren in Metabase**_
+**Wir verbinden das Business Intelligence Tool Metabase mit der CiviCRM Datenbank und verwenden es, um Daten auszuwerten und zu visualisieren.**
 
 
 [🧹 daten-organisieren](./../1-datenlebenszyklus.md#daten-organisieren): [CiviCRM Datenbank](./../3-tools/1-civicrm_intern/2-civicrm-datenbank.md) und (partiell) in [Metabase](./../3-tools/3-bi-tools.md#metabase), direkte Anbindung der CiviCRM Datenbank an Metabase <br>
@@ -13,14 +13,14 @@ _**Das Business Intelligence Tool Metabase mit der CiviCRM Datenbank verbinden -
 - Einen Account für eine Metabase Instanz mit Admin-Rechten
 
 ## Anleitung
-### Setup
+### A. Setup
 Fügt wie [hier](./../3-tools/3-bi-tools.md#mb-db-hinzufuegen) beschrieben eine Verbindung zu eurer Datenbank zu Metabase hinzu.
 
 
-### Daten analysieren und visualisieren
+### B. Daten analysieren und visualisieren
 Sobald Metabase Zugriff auf eure CiviCRM-Datenbank habt, könnt ihr *Fragen* erstellen und diese in *Dashboards* visualisieren und darstellen. Mehr zur Analyse und Visualisierung in Metabase [hier](../3-tools/3-bi-tools.md#mb-daten-analysieren).
 
-### Daten organisieren
+### C. Daten organisieren
 Die CiviCRM-Datenbank hat sehr viele Tabellen - verständlich bei so einer umfassenden Softwarelösung. Zum Beispiel sind in der Tabelle Kontakte nur numerische IDs für das Geschlecht vorhanden. Die Labels finden sich in einer eigenen Tabelle. Diese Tabellen bei jeder *Frage* zusammenzuführen, ist auf Dauer nervig und zeitraubend. Es lohnt es sich daher, ein bisschen Datenmodellierung in Metabase zu machen. Hierfür könnt ihr die [**Modell-Funktion**](https://www.metabase.com/docs/latest/data-modeling/models) verwenden. So könnt ihr z.B. ein Modell “Kontakte” anlegen, welches die Genderoptionen bereits an die Kontakte-Tabelle anfügt. Euer Modell könnt ihr dann in allen weiteren *Fragen* und verbundenen Analyse- und Visualisierungsschritten nutzen.
 
 ## Use Case: Kontakt- und Spendendashboard

@@ -1,5 +1,7 @@
 # SearchKit & ChartKit
 
+**Wir verwenden die Tools, die bereits in CiviCRM vorhanden sind, um Daten zu analysieren und zu visualisieren.**
+
 [🧹 daten-organisieren](./../1-datenlebenszyklus.md#daten-organisieren): CiviCRM Datenbank <br>
 [🔢 daten-auswerten](./../1-datenlebenszyklus.md#daten-auswerten): [SearchKit](./../3-tools/1-civicrm_intern/4-civicrm-searchkit-chartkit.md#searchkit) <br>
 [📊 daten-visualisieren](./../1-datenlebenszyklus.md#daten-visualisieren): [ChartKit](./../3-tools/1-civicrm_intern/4-civicrm-searchkit-chartkit.md#chartkit) <br>
@@ -20,11 +22,11 @@ kein weiterer Setup nötig. :)
 ### Visualisierung
 1. im SearchKit Editor links Hinzufügen -> Diagramm
 
-![User Interface einer Suche in SearchKit. Das Dropdown "Hinzufügen" ist geöffnet und die Option "Diagramm" ist ausgewählt.](../images/2-ansaetze/1-searchkit-chartkit/chartkit-add.png)
+![User Interface einer Suche in SearchKit. Das Dropdown "Hinzufügen" ist geöffnet und die Option "Diagramm" ist ausgewählt.](../images/3-ansaetze/1-searchkit-chartkit/chartkit-add.png)
 
 2. im ChartKit Editor können verschiedene Visualisierungstypen über ein grafisches User Interface konfiguriert werden. Verwendet werden können die Spalten der Ergebnisse der SearchKit Suche.
 
-![User Interface von ChartKit: Oben gibt es verschiedene Visualisierungstypen zur Auswahl, darunter können mit zahlreichen Dropdowns und Textboxen die Details der Grafik konfiguriert werden.](../images/2-ansaetze/1-searchkit-chartkit/chartkit-ui.png)
+![User Interface von ChartKit: Oben gibt es verschiedene Visualisierungstypen zur Auswahl, darunter können mit zahlreichen Dropdowns und Textboxen die Details der Grafik konfiguriert werden.](../images/3-ansaetze/1-searchkit-chartkit/chartkit-ui.png)
 
 ### Use Case: Darstellung der Geschlechtsverteilung
 
@@ -49,14 +51,14 @@ Um die Daten darzustellen, können wir wie oben beschrieben ChartKit nutzen. Hie
 
 Ihr könnt eure Visualisierungen **in CiviCRM im Browser ansehen**. Personen, die Zugriff auf die CiviCRM-Suche haben, haben auch Zugriff auf die dazugehörigen ChartKit-Visualisierungen. Es ist nicht möglich, diesen Link mit Externen ohne CiviCRM-Account zu teilen.
 
-![Ein Tortendiagramm der Geschlechtsverteilung ist im Browser geöffnet. In die Grafik eingebettet sind zwei Buttons zum Download als png und svg](../images/2-ansaetze/1-searchkit-chartkit/torte-browser.png)
+![Ein Tortendiagramm der Geschlechtsverteilung ist im Browser geöffnet. In die Grafik eingebettet sind zwei Buttons zum Download als png und svg](../images/3-ansaetze/1-searchkit-chartkit/torte-browser.png)
 
 
 Mithilfe der eingebetteten Download-Links könnt ihr sie als **PNG- oder SVG-Datei herunterladen**.
 
-![Ein Tortendiagramm der Geschlechtsverteilung](../images/2-ansaetze/1-searchkit-chartkit/torte.png)
+![Ein Tortendiagramm der Geschlechtsverteilung](../images/3-ansaetze/1-searchkit-chartkit/torte.png)
 
-![Ein Balkendiagramm der Geschlechtsverteilung](../images/2-ansaetze/1-searchkit-chartkit/balken.png)
+![Ein Balkendiagramm der Geschlechtsverteilung](../images/3-ansaetze/1-searchkit-chartkit/balken.png)
 
 ## Fazit
 

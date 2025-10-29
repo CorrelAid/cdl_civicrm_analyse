@@ -42,6 +42,9 @@ Für die Analyse und Visualisierung von CiviCRM-Daten stehen zahlreiche Biblioth
 
 Python ist eine sehr gute Wahl, wenn ihr CiviCRM-Daten nicht nur analysieren, sondern auch in automatisierte Prozesse, interaktive Dashboards oder Webanwendungen integrieren wollt. Die Sprache bietet eine große Flexibilität und viele Tools für Datenanalyse, Visualisierung und Automatisierung. Wenn ihr bereits mit Python arbeitet oder eine skalierbare Lösung für komplexe Datenanalysen sucht, ist Python richtig für euch.
 
+```admonish question title="Wo gibt es konkrete Ansätze mit Python?"
+Leider war es im Rahmen des Datenvorhabens zeitlich nicht möglich, die zahlreichen und vielfältigen Umsetzungsmöglichkeiten von Python in einem angemessenen Umfang zu erkunden. Deswegen haben wir uns dagegen entschieden, konkrete Ansätze mit Python vorzustellen. Wenn ihr Interesse an Python habt, schaut gerne in der [Datensprechstunde](https://zeeg.me/correlaid/dss-cdl) vorbei und wir besprechen eure konkreten Fragen und Anforderungen!
+```
 
 ## R
 [🔢 daten-auswerten](./../1-datenlebenszyklus.html#daten-auswerten) [📊 daten-visualisieren](./../1-datenlebenszyklus.html#daten-visualisieren) [🧹 daten-organisieren](./../1-datenlebenszyklus.html#daten-organisieren)
@@ -74,3 +77,7 @@ R bietet eine Vielzahl von Paketen für die Analyse und Visualisierung von Daten
 ### Fazit: R
 
 R ist die beste Wahl, wenn euer Fokus auf statistischen Analysen und hochwertigen Visualisierungen liegt. Die Sprache bietet viele Pakete für Datenanalyse und -darstellung, insbesondere für wissenschaftliche oder detaillierte statistische Auswertungen. Mit Tools wie shiny, Quarto und RMarkdown könnt ihr interaktive Berichte und Dashboards erstellen; mit ggplot könnt ihr eure Daten visualisieren.
+
+```admonish question title="Wo gibt es konkrete Ansätze mit R?"
+Leider war es im Rahmen des Datenvorhabens zeitlich nicht möglich, die zahlreichen und vielfältigen Umsetzungsmöglichkeiten von R in einem angemessenen Umfang zu erkunden. Deswegen haben wir uns dagegen entschieden, konkrete Ansätze mit R vorzustellen. Wenn ihr Interesse an R habt, schaut gerne in der [Datensprechstunde](https://zeeg.me/correlaid/dss-cdl) vorbei und wir besprechen eure konkreten Fragen und Anforderungen!
+```

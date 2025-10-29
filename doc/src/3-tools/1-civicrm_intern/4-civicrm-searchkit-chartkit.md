@@ -1,7 +1,8 @@
 # CiviCRM SearchKit & ChartKit
 
+SearchKit und ChartKit sind direkt in CiviCRM integrierte Tools für die Auswertung und Visualisierung von CiviCRM-Daten.
 
-## SearchKit
+# SearchKit
 [🔢 daten-auswerten](./../../1-datenlebenszyklus.html#daten-auswerten)
 
 CiviCRM [SearchKit](https://docs.civicrm.org/user/en/latest/searching/searchkit/what-is-searchkit/) ist eine Erweiterung für CiviCRM, die es Nutzer\*innen ermöglicht, komplexe Abfragen an ihre Daten zu stellen. Als Nutzer\*in kann man filtern, aggregieren, Felder auswählen und gruppieren. 
@@ -29,7 +30,7 @@ SearchKit erfordert etwas Einarbeitung, aber dann ist es eine gute und mächtige
 Die Option, die Ergebnisse über die API abzurufen, eröffnet einen vielversprechenden Lösungsraum insb. für einfache deskriptive Auswertungen wie Output-Monitoring etc., in dem Daten in CiviCRM ausgewertet und aggregiert werden und in einem externen Tool visualisiert werden. Bei datenschutzsensibler und verantwortungsbewusster Aggregation der Daten in SearchKit können dann ggf. auch Tools von US-Anbietern zur Weiterverarbeitung verwendet werden, ohne den Datenschutz zu kompromittieren.
 
 
-## ChartKit
+# ChartKit
 [📊 daten-visualisieren](./../../1-datenlebenszyklus.html#daten-visualisieren)
 
 Mit [ChartKit](https://lab.civicrm.org/extensions/chart_kit) kann man basierend auf SearchKit-Suchen einfache Grafiken wie Balken-, Linien- oder Tortendiagramme erstellen. Konzeptionell sind ChartKit-Visualisierungen eine weitere Möglichkeit, Ergebnisse von SearchKit-Suchen darzustellen ("Search Display"). Für jede Suche können mehrere Visualisierungen erstellt werden.
@@ -51,6 +52,6 @@ ChartKit sollte bei neueren Versionen von CiviCRM vorinstalliert sein. Sonst wen
 - Visualisierungen sind "Anhängsel" von SearchKit Suchen und können nicht anders sortiert oder angeordnet werden. 
 
 #### Fazit
-ChartKit ist eine gute Option, wenn ihr Datenvisualisierungen v.a. für den internen Gebrauch oder für Berichte ohne große Design-Anforderungen nutzen möchtet. Der Export-Button direkt in der Visualisierung ist sehr praktisch. Es bestehen (noch) Einschränkungen bei der Verfeinerung der Visualisierungen sowie bei der Teilbarkeit aus CiviCRM hinaus. Wenn ihr ansprechendere oder komplexere Visualiserungen oder Dashboard-Funktionalitäten benötigt, solltet ihr daher auf externe Tools zurückgreifen. 
+ChartKit ist eine gute Option, wenn ihr **Datenvisualisierungen v.a. für den internen Gebrauch oder für Berichte ohne große Design-Anforderungen** nutzen möchtet. Der Export-Button direkt in der Visualisierung ist sehr praktisch. Es bestehen (noch) Einschränkungen bei der Verfeinerung der Visualisierungen sowie bei der Teilbarkeit aus CiviCRM hinaus. Wenn ihr ansprechendere oder komplexere Visualiserungen oder Dashboard-Funktionalitäten benötigt, solltet ihr daher auf externe Tools zurückgreifen. 
 
 

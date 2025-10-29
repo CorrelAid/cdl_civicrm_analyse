@@ -68,7 +68,7 @@ params=%7B%22select%22%3A%5B%22gender_id%3Alabel%22%2C%22id%22%5D%7D
 
 Erstellt einen neuen Workflow auf eurer n8n-Instanz. Am Ende sollte dieser so aussehen:
 
-![Final n8n Flow](../../images/2-ansaetze/4-api_db_wf_mtbs/1-etl-n8n/n8n-final-flow.png)
+![Final n8n Flow](../../images/3-ansaetze/4-api_db_wf_mtbs/1-etl-n8n/n8n-final-flow.png)
 
 ```admonish info title="Diesen Flow importieren"
 Den Flow als importierbare Datei findet ihr auch im [Repository](https://github.com/CorrelAid/cdl_civicrm_analyse) in dem Ordner `supporting_code/n8n_flows`
@@ -80,7 +80,7 @@ Als **Trigger** dient sowohl die manuelle Ausführung als auch eine Schedule (re
 
 Der erste richtige Knoten enthält die **API-Anfrage**. Unten seht ihr, wie ihr ihn konfigurieren müsst.
 
-![Screenshot API Anfrage](../../images/2-ansaetze/4-api_db_wf_mtbs/1-etl-n8n/n8n-api-request.png)
+![Screenshot API Anfrage](../../images/3-ansaetze/4-api_db_wf_mtbs/1-etl-n8n/n8n-api-request.png)
 
 1. Fügt unter URL am Anfang die URL eurer Instanz ein. Im API Explorer unter dem Reiter **REST** ist dies auch als Variable `CRM_URL` definiert. 
 
@@ -98,7 +98,7 @@ Wenn ihr mehr als wenige hundert Kontakte in CiviCRM habt, oder viele Datenfelde
 
 Der Output des vorherigen Knotens ist standardmäßig ein `json` Objekt, das die Daten als Liste als Wert des keys `values` enthält. Der Knoten-Typ **Split Out** ermöglicht es uns, diese Liste, bzw. deren Einträge zu isolieren. 
 
-![Screenshot Split Out](../../images/2-ansaetze/4-api_db_wf_mtbs/1-etl-n8n/n8n-split-out.png)
+![Screenshot Split Out](../../images/3-ansaetze/4-api_db_wf_mtbs/1-etl-n8n/n8n-split-out.png)
 
 Die Konfiguration dieses Knotens ist simpel: füllt das Feld **Values to Split Out** einfach mit dem Wert `values`.
 
@@ -111,7 +111,7 @@ Dieser letzte Knoten ist für das Laden der Daten in die managed Datenbank auf N
 
   2. Wenn ihr dies erledigt habt, nutzt den Knoten-Typ für Postgres: **Insert or update rows in a table** und konfiguriert ihn so wie im Bild unten. 
 
-![Screenshot Split Out](../../images/2-ansaetze/4-api_db_wf_mtbs/1-etl-n8n/n8n-load.png)
+![Screenshot Split Out](../../images/3-ansaetze/4-api_db_wf_mtbs/1-etl-n8n/n8n-load.png)
 
 ```admonish info title="Unterschiede zwischen IDs"
 Bei der Zuordnung der Felder aus der API zu den Spalten der Tabelle ist wichtig, dass es einen Unterschied zwischen `id` und `civicrm_id` gibt. Ersteres wird automatisch durch die Datenbank erstellt, zweiteres erlaubt Updates von bereits vorhanden Kontakten durch die Referenz dieser. So wird sichergestellt, dass bei erneutem Laden der Daten keine Duplikate entstehen, sondern vorhandene Reihen geupdatet werden.
@@ -131,7 +131,7 @@ Das Anlegen von Incremental Loads kann jedoch komplex werden, weil sie Informati
 
 <br/>
 
-![Screenshot Final Viz](../../images/2-ansaetze/4-api_db_wf_mtbs/1-etl-n8n/n8n-viz.png)
+![Screenshot Final Viz](../../images/3-ansaetze/4-api_db_wf_mtbs/1-etl-n8n/n8n-viz.png)
 
 
 ## Fazit
