@@ -1,4 +1,5 @@
 # Python und R
+*Große Teile dieses Abschnitts wurden von ChatGPT erstellt und dann inhaltlich und redaktionell überarbeitet und ergänzt.*
 
 Mit Programmiersprachen wie Python und R lässt sich im Prinzip alles umsetzen, was man für die Analyse und Visualisierung braucht. 
 
