@@ -25,6 +25,6 @@
     - [Self-Hosting](./3-tools/7-self-hosting.md)
     - [Andere Visualisierungstools](./3-tools/8-visualisierung-andere.md)
 
-[Anhang: Nutzungszwecke und Bedarfe CiviCRM](./6-ergebnisse-umfrage.md)
-
+[Fazit](./4-fazit.md)
 [Über das Datenvorhaben](./5-ueber.md)
+[Anhang: Nutzungszwecke und Bedarfe CiviCRM](./6-ergebnisse-umfrage.md)
