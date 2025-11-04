@@ -55,7 +55,11 @@ Alle relevanten internen Stakeholder sollten in diesen Prozess miteinbezogen wer
 
 Kompetenzaufbau und personelle Ressourcen
 
+#### Nutzer*innen nicht alleine lassen
 
-Unterstützungsstrukturen wie das Civic Data Lab und CorrelAId (und andere Data4Good Initaitiven wie AI for good) k¨ønnen helfen. 
+- große Herausforderung
+- wenig Ressourcen
+- Unterstützungsstrukturen wie das Civic Data Lab und CorrelAId (und andere Data4Good Initaitiven wie AI for good) k¨ønnen helfen. 
+- bestehende Community toll, viel Wissen in Köpfen -> Förderung von strukturierteren Wissenteilen  (auch außerhalb von Events)
 
 
