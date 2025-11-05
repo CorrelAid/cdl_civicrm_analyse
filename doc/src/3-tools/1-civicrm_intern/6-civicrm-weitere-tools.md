@@ -1,24 +1,7 @@
 # Weitere CiviCRM Tools
 
-Neben SearchKit und ChartKit gibt es noch weitere Tools und Erweiterungen in CiviCRM, mithilfe derer ihr Daten analysieren und visualisieren könnt. Hier gehen wir noch auf Reports/Berichte und die Erweiterung Civisualize ein.
+Neben SearchKit und ChartKit und Reports/Berichten gibt es noch weitere Tools und Erweiterungen in CiviCRM, mithilfe derer ihr Daten analysieren und visualisieren könnt. Hier gehen wir noch auf die Erweiterung Civisualize und spezifische Erweiterungen ein.
 
-# Reports/Berichte
-[🔢 daten-auswerten](./../../1-datenlebenszyklus.html#daten-auswerten) [💬 daten-kommunizieren](./../../1-datenlebenszyklus.html#daten-kommunizieren)
-
-_Dieser Einführungstext wurde von ChatGPT erstellt._
-
-CiviCRM Reports sind vorgefertigte oder individuell erstellbare Auswertungen, mit denen Organisationen ihre Daten aus CiviCRM (z. B. Kontakte, Spenden, Mitgliedschaften, Events) analysieren können. Sie bieten Filter- und Gruppierungsoptionen, um genau die Informationen sichtbar zu machen, die für Entscheidungen oder Nachweise gebraucht werden. Die Reports können gespeichert, exportiert und auch automatisiert per E-Mail verschickt werden.
-
-
-#### Vorteile
-- standardisierte Vorlagen
-- können als CSV oder direkt als PDF exportiert werden
-- Versand via Mail möglich
-- einfache Möglichkeit, um "Listen" zu bekommen
-
-#### Nachteile
-- nicht so flexibel und mächtig wie [SearchKit](./4-civicrm-searchkit-chartkit.md#searchkit)
-- Ergebnisse können nicht über die API v4 exportiert werden
 
 # Civisualize
 [📊 daten-visualisieren](./../../1-datenlebenszyklus.html#daten-visualisieren)

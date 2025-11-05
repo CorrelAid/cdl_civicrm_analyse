@@ -16,7 +16,8 @@
         - [CiviCRM Datenbank](./3-tools/1-civicrm_intern/2-civicrm-datenbank.md)
         - [CiviCRM API & API Explorer](./3-tools/1-civicrm_intern/3-civicrm-api.md)
         - [CiviCRM SearchKit & ChartKit](./3-tools/1-civicrm_intern/4-civicrm-searchkit-chartkit.md)
-        - [Weitere CiviCRM Tools](./3-tools/1-civicrm_intern/5-civicrm-weitere-tools.md)
+        - [Reports/Berichte & Dashlets](./3-tools/1-civicrm_intern/5-reports-dashlets.md)
+        - [Weitere CiviCRM Tools](./3-tools/1-civicrm_intern/6-civicrm-weitere-tools.md)
     - [Excel, Google Sheets & Co.](./3-tools/2-tabellenkalkulation.md)
     - [Business Intelligence Tools](./3-tools/3-bi-tools.md)
     - [Managed Datenbank](./3-tools/4-managed-datenbank.md)
@@ -25,6 +26,6 @@
     - [Self-Hosting](./3-tools/7-self-hosting.md)
     - [Andere Visualisierungstools](./3-tools/8-visualisierung-andere.md)
 
-[Anhang: Nutzungszwecke und Bedarfe CiviCRM](./6-ergebnisse-umfrage.md)
-
+[Fazit](./4-fazit.md)
 [Über das Datenvorhaben](./5-ueber.md)
+[Anhang: Nutzungszwecke und Bedarfe CiviCRM](./6-ergebnisse-umfrage.md)

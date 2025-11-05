@@ -31,6 +31,7 @@ Man kann Metabase entweder selbst hosten, von einem IT-Dienstleister hosten lass
 - Kosten für Hosting relativ hoch
 - in der Community Version können Farbpaletten nicht angepasst werden
 - erfordert Einarbeitung und Auseinandersetzung mit Datenkonzepten wie z.B. "Joins" (Zusammenführen von Tabellen). 
+- komplexe statistische Analysen und Modellierungen und spezielle Visualisierungen eher nicht möglich
 
 ### Fazit 
 Metabase (und andere BI Tools) sind sinnvoll, wenn ihr mittel- und langfristig eure Daten selbstbestimmt und eigenständig v.a. deskriptiv auswerten wollt. Mit Metabase (und jedem anderen BI Tool) werdet ihr selbst zu Datenanalyst*innen und könnt agil und nach Bedarf neue Visualisierungen und Dashboards anlegen. Komplexe Analysen wie Machine Learning oder KI könnt ihr im Bereich Business Intelligence nicht erwarten. Dafür gibt es nützliche Features, um eure Daten und Datenvisualisierungen mit externen Stakeholdern zu teilen, z.B. über Einbettungen oder öffentliche Links.
