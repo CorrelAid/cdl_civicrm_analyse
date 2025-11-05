@@ -8,4 +8,4 @@ This repository contains:
 Check `README`s of the respective subfolders for more information.
 
 ## License
-Check `README`s of subfolders. Documentation is available under CC-BY, see [here](https://correlaid.github.io/cdl_civicrm_analyse/3-ueber.html#lizenz) until specified otherwise in the text.
+Check `README`s of subfolders. Documentation is available under CC-BY, see [here](https://correlaid.github.io/cdl_civicrm_analyse/5-ueber.html#lizenz) until specified otherwise in the text.
