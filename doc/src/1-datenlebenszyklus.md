@@ -2,7 +2,7 @@
 
 <figure style="margin: 0">
 <p>
-  <img src="./images/1-datenlebenszyklus/datenlebenszyklus.png" alt="Darstellung der sieben Schritte des Datenlebenszyklus: planen &fragen, Daten finden, Daten organisieren, Daten auswerten, Daten visualiseren, Daten kommunizieren, entscheiden und handeln. Der Zyklus fängt dann wieder von vorne an. Rahmenthemen sind Datenschutz & Ethik sowie Datenkultur.">
+  <img src="./images/2-datenlebenszyklus/datenlebenszyklus.png" alt="Darstellung der sieben Schritte des Datenlebenszyklus: planen &fragen, Daten finden, Daten organisieren, Daten auswerten, Daten visualiseren, Daten kommunizieren, entscheiden und handeln. Der Zyklus fängt dann wieder von vorne an. Rahmenthemen sind Datenschutz & Ethik sowie Datenkultur.">
   <figcaption><small>Grafik "Datenlebenszyklus blau", ursprünglich von Gesellschaft für Informatik e.V. (2024), zugeschnitten von CorrelAid e.V., ist lizenziert unter <a href="https://creativecommons.org/licenses/by/4.0/deed.de">CC BY 4.0</a>.</small></figcaption>
   </p>
 </figure>
