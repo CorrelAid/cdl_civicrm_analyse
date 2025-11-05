@@ -2,7 +2,7 @@
 
 [📊 daten-visualisieren](./../../1-datenlebenszyklus.html#daten-visualisieren)
 
-_Diese Seite wurde von ChatGPT erstellt und redaktionell und inhaltlich überarbeitet._
+_Diese Seite wurde von ChatGPT erstellt und redaktionell und inhaltlich überarbeitet und erweitert._
 
 CiviCRM Reports sind vorgefertigte oder individuell erstellbare Auswertungen, mit denen ihr eure Daten aus CiviCRM (z. B. Kontakte, Spenden, Mitgliedschaften, Events) analysieren könnt. Berichte bieten Filter- und Gruppierungsoptionen und können gespeichert, exportiert und auch automatisiert per E-Mail verschickt werden.
 
@@ -34,7 +34,7 @@ CiviCRM Reports sind vorgefertigte oder individuell erstellbare Auswertungen, mi
 - Individuelle oder dynamische Visualisierungen erfordern Entwicklungsaufwand.
 
 
-#### Fazit
+### Fazit
 
 CiviCRM-Berichte sind gut geeignet, um in CiviCRM Überblick zu bekommen über operative Abläufe und Kennzahlen. Berichte eignen sich auch für die Erstellung von Datensätzen zur weiteren Verarbeitung in anderen Tools (z.B. Excel). Allerdings können diese Datensätze dann nur manuell exportiert werden, während dies bei SearchKit über die API möglich ist. Generell ist SearchKit und ChartKit 
 
