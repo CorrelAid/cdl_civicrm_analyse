@@ -9,7 +9,7 @@ In diesem Datenvorhaben haben wir uns der Frage gewidmet: Wie können zivilgesel
 
 
 
-#### Datenanalyse und -visualisierung in CiviCRM ist möglich - eigene Erwartungen managen und Bedarfe realistisch einschätzen {#civicrm-tools}
+### Datenanalyse und -visualisierung in CiviCRM ist möglich - eigene Erwartungen managen und Bedarfe realistisch einschätzen {#civicrm-tools}
 CiviCRM ist primär ein CRM zur Organisation von Prozessen und Kontakten. Das bedeutet, dass [CiviCRM-interne Tools](./3-tools/1-civicrm_intern/0-index.md) zur Analyse und Visualisierung von Daten **(verständlicherweise) nicht so flexibel, umfassend und mächtig sind wie dedizierte Tools**. 
 Die Implementation von CiviCRM-internen Tools und Workflows ist allerdings im Vergleich zur Verwendung von zusätzlichen Tools **relativ niedrigschwellig und kosteneffizient umsetzbar**. Die Beschränkung auf einen CiviCRM-internen Setup kann ausreichend sein, ...
 - ... wenn es wichtig ist, dass Analysen und Visualisierungen direkt in CiviCRM verfügbar sind. 
@@ -61,7 +61,7 @@ Auch für umfassendere, dauerhafte Datenintegrationen von CiviCRM-Daten ist die 
 [^note-slm]: Erklärungen von Begriffen wie API, Server etc. gibt es im [Selbstlernmaterial des Civic Data Labs](https://civic-data.de/selbstlernmaterial/)
 
 
-#### Nutzer*innen nicht alleine lassen
+### Nutzer*innen nicht alleine lassen
 
 Die Analyse und Visualisierung von CiviCRM-Daten ist kein triviales Unterfangen und erfordert die Auseinandersetzung mit strategisch-organisatorischen Fragestellungen und z.T. die Einarbeitung in (neue) technische Konzepte und Tools. 
 Das ist für viele Organisationen eine Herausforderung – meist fehlt es an Zeit, Personal, Geld oder technischer Unterstützung.
