@@ -25,13 +25,13 @@ Die CiviCRM-Datenbank hat sehr viele Tabellen - verständlich bei so einer umfas
 
 ## Use Case: Kontakt- und Spendendashboard
 
-Als Teil des Datenvorhabens haben wir ein [Dashboard](http://mtbs.correlaid.org/public/dashboard/cfbe9014-3548-4234-979d-b0803074a8ed) erstellt, welches einen Überblick über die Kontakte und Spenden + Kampagnenbeiträge in unserer Testdatenbank gibt. 
+Als Teil des Datenvorhabens haben wir ein [Dashboard](https://mtbs.correlaid.org/public/dashboard/cfbe9014-3548-4234-979d-b0803074a8ed) erstellt, welches einen Überblick über die Kontakte und Spenden + Kampagnenbeiträge in unserer Testdatenbank gibt. 
 Das Dashboard hat zwei Tabs:
 - [Kontakte](https://mtbs.correlaid.org/dashboard/11-civicrm-kontakte-und-spenden?tab=20-kontakte): Deskriptive Statistiken zu unseren Fake-Kontakten
 - [Spenden](https://mtbs.correlaid.org/dashboard/11-civicrm-kontakte-und-spenden?tab=21-spenden): Deskriptive Statistiken zu Zuwendungen, spezifisch zu Spenden und Kampagnenbeiträgen.
 
 Als kleiner Vorgeschmack hier die Visualisierung unserer fiktiven Spendenkampagne im Dezember 2024: 
-<iframe width="100%" height="400px%" src="http://mtbs.correlaid.org/public/question/fea84d3c-32e0-4cf5-adb9-a4e19c665483"></iframe>
+<iframe width="100%" height="400px%" src="https://mtbs.correlaid.org/public/question/fea84d3c-32e0-4cf5-adb9-a4e19c665483"></iframe>
 
 
 ## Vorteile
