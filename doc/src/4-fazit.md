@@ -17,7 +17,7 @@ Die Implementation von CiviCRM-internen Tools und Workflows ist allerdings im Ve
 - ... wenn Analysen und Visualisierungen nur punktuell (z.B. für einen Jahresbericht) benötigt werden und manuelle Prozesse (z.B. Exporte, einmalige Aufbereitung in Excel) keine große Belastung darstellen. 
 - ... wenn Ansprüche an statistische Tiefe und Design der Visualisierungen eher niedrig sind (deskriptive Auswertungen, Kreuztabellen; geringe Anpassungen bei Visualisierungen)
 
-**➡️ Empfehlung:** NPOs sollten ehrlich für sich evaluieren, wie viel, wie tiefgehend, wie oft und für wen sie ihre CiviCRM-Daten auswerten und visualisieren wollen, können und müssen**.
+**➡️ Empfehlung:** NPOs sollten ehrlich für sich evaluieren, wie viel, wie tiefgehend, wie oft und für wen sie ihre CiviCRM-Daten auswerten und visualisieren wollen, können und müssen.
 Alle relevanten internen Stakeholder sollten in diesen Prozess miteinbezogen werden, um zu einem gemeinsamen Verständnis zu gelangen, ob die Möglichkeiten von CiviCRM "good enough"[^note-erwartungsmanagement] für alle sind. 
 
 [^note-erwartungsmanagement]: Alle wollen tolle Datenvisualisierungen mit eigenen Farben und Schriftarten. Aber ist es der Aufwand - zeitlich, finanziell, ... - wirklich wert oder reicht doch die nicht ganz so schöne ChartKit-Grafik?
@@ -65,7 +65,7 @@ Auch für umfassendere, dauerhafte Datenintegrationen von CiviCRM-Daten ist die 
 
 Die Analyse und Visualisierung von CiviCRM-Daten ist kein triviales Unterfangen und erfordert die Auseinandersetzung mit strategisch-organisatorischen Fragestellungen und z.T. die Einarbeitung in (neue) technische Konzepte und Tools. 
 Das ist für viele Organisationen eine Herausforderung – meist fehlt es an Zeit, Personal, Geld oder technischer Unterstützung.
-Mit diesem Material wollten wir zeigen, welche Wege und Tools es gibt, um CiviCRM-Daten besser zu nutzen. Unterstützungsstrukturen wie das [Civic Data Lab](https://community.civic-data.de), [CorrelAid](https://correlaid.org) oder die [CiviCRM-Community](https://community.software-fuer-engagierte.de/) sind essenzielle Anlaufpunkte um Wissen zu teilen und gemeinsam erste Schritte zu gehen.
+Mit diesem Material wollten wir zeigen, welche Wege und Tools es gibt, um CiviCRM-Daten besser zu nutzen. Unterstützungsstrukturen wie das [Civic Data Lab](https://community.civic-data.de), [CorrelAid](https://correlaid.org) oder die [Software-für-Engagierte-Community](https://community.software-fuer-engagierte.de/) sind essenzielle Anlaufpunkte um Wissen zu teilen und gemeinsam erste Schritte zu gehen.
 
 
 ```admonish info "Ihr habt Fragen, Ideen, Feedback?"
