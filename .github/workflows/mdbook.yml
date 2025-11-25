@@ -31,7 +31,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      MDBOOK_VERSION: 0.4.36
+      MDBOOK_VERSION: 0.4.52
+      MDBOOK_MERMAID_VERSION: 0.16.0
+      MDBOOK_ADMONISH_VERSION: 1.20.0
     steps:
       - uses: actions/checkout@v4
       # Cache Rust toolchain and mdBook
@@ -71,10 +73,10 @@ jobs:
         run: cargo install --version ${MDBOOK_VERSION} mdbook --force
 
       - name: Install mdbook-mermaid
-        run: cargo install --force mdbook-mermaid
+        run: cargo install --version ${MDBOOK_MERMAID_VERSION} --force mdbook-mermaid
 
       - name: Install mdbook-admonish
-        run: cargo install --force mdbook-admonish
+        run: cargo install --version ${MDBOOK_ADMONISH_VERSION} --force mdbook-admonish
 
       - name: Setup Pages
         id: pages
